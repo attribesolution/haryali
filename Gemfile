@@ -31,6 +31,8 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
+gem 'rails_script', '~> 2.0'
+gem "figaro"
 group :development do
   gem 'better_errors'
   gem 'foreman'
