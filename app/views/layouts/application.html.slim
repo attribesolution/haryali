@@ -9,8 +9,144 @@ html
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
   body
-    header
-      == render 'layouts/navigation'
-    main[role="main"]
+    / header
+    /   == render 'layouts/navigation'
+    / main[role="main"]
+    /   == render 'layouts/messages'
+    /   == yield
+
+    header#header
+      /! header-top
+      .header-top
+        .container
+          .row
+            .col-md-12
+              ul.header-info.pull-left
+                li
+                  i.fa.fa-phone aria-hidden="true" 
+                  | Phone: +92-21-32800214
+                li
+                  a href="mailto:info@haryali.pk" 
+                    i.fa.fa-envelope aria-hidden="true" 
+                    | info@haryali.pk
+              .pull-right
+                ul.header-social.social-icon
+                  li
+                    a.facebook-color href="#" 
+                      i.fa.fa-facebook aria-hidden="true" 
+                  li
+                    a.twitter-color href="#" 
+                      i.fa.fa-twitter aria-hidden="true" 
+                  li
+                    a.google-color href="#" 
+                      i.fa.fa-google-plus aria-hidden="true" 
+                  li
+                    a.instagram-color href="#" 
+                      i.fa.fa-instagram aria-hidden="true" 
+      /! header-top end here
+      .header-main
+        .container
+          .row
+            .col-md-12
+              .header-logo
+                a href="index-2.html"                   
+                  = image_tag "logo-white.png", alt: "logo"
+                  / img.logo-responsive alt="logo" src="img/logo.png" /
+                  = image_tag "logo.png", class: "logo-responsive", alt: "logo"
+                  / img.logo-sticky alt="logo" src="img/logo-black.png" /
+                  = image_tag "logo-black.png", class: "logo-sticky", alt: "logo"
+              nav.menu-container
+                ul#menu.sm.me-menu
+                  li.active
+                    a href="#"  Home
+                  li
+                    a href="#"  Services
+                  li
+                    a href="#"  Gallery
+                  li
+                    a href="#"  Blog
+                  li
+                    a href="#"  Contact
+    #page-header.content-contrast
+      .page-title-container
+        .background-overlay
+        .container.centered-container
+          .centered-inner-container
+            h1.page-title Own a Tree
+            hr.separator.small-separator/
+            .heading-caption We are Expert In All Aspect of Garden and Landscape Design
+      .breadcrumb-container
+        .container
+          .row
+            .col-md-12
+              nav.breadcrumb
+                a.breadcrumb-item href="#"  Home
+                span.breadcrumb-item.active Own a Tree
       == render 'layouts/messages'
-      == yield
+
+    section.section
+      .container
+        .row
+          .col-md-12
+            == yield
+    footer#footer
+      .container
+        .row
+          .col-md-5.col-lg-3
+            .footer-logo
+              a href="index-2.html" 
+                = image_tag "logo.png", alt: "Footer Logo"
+                
+            p Haryali.pk is a social cause initiative by a an Organization called ‘Umeed-e-Sahar’. Haryali.pk aspires to initiate a community drive that plants trees and flowers to bring a green change in Pakistan.
+          .col-md-3.col-lg-2
+            h5.footer-title Quick Links
+            ul.me-list
+              li
+                a href="#"  Home
+              li
+                a href="#"  Services
+              li
+                a href="#"  Gallery
+              li
+                a href="#"  Privacy Policy
+              li
+                a href="#"  Contact
+          .col-md-4.col-lg-2
+            h5.footer-title Contact Us
+            p
+              strong General Contact :
+              br/
+              a.text-color href="mailto:info@haryali.pk"  info@haryali.pk
+              br/
+              strong Information :
+              br/
+              a.text-color href="mailto:info@haryali.pk"  info@haryali.pk
+          .col-md-12.col-lg-5
+            | \&nbsp;
+      .footer-bottom
+        .container
+          .row
+            .col-md-12.text-center
+              .copyright.pull-left
+                | \&copy; All rights reserved 2017,
+                strong Haryali.pk
+              ul.footer-social.social-icon.pull-right
+                li
+                  a.facebook-color href="#" 
+                    i.fa.fa-facebook
+                li
+                  a.twitter-color href="#" 
+                    i.fa.fa-twitter
+                li
+                  a.google-color href="#" 
+                    i.fa.fa-google-plus
+                li
+                  a.dribbble-color href="#" 
+                    i.fa.fa-dribbble
+                li
+                  a.linkedin-color href="#" 
+                    i.fa.fa-linkedin
+                li
+                  a.instagram-color href="#" 
+                    i.fa.fa-instagram
+

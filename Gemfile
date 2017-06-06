@@ -3,7 +3,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-ruby '2.3.1'
+# ruby '2.3.1'
 gem 'rails', '~> 5.1.1'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -11,6 +11,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
+gem "font-awesome-rails"
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
@@ -34,7 +35,7 @@ gem 'therubyracer', :platform=>:ruby
 gem 'rails_script', '~> 2.0'
 gem "figaro"
 group :development do
-  gem 'better_errors'
+  # gem 'better_errors'
   gem 'foreman'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
