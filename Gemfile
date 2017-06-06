@@ -34,6 +34,9 @@ gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'rails_script', '~> 2.0'
 gem "figaro"
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 group :development do
   # gem 'better_errors'
   gem 'foreman'

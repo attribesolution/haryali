@@ -11,7 +11,13 @@
 // about supported directives.
 //
 //= require jquery
-//= require rails-ujs
+//= require jquery_ujs
+//= require tether
 //= require bootstrap-sprockets
 //= require rails_script
+//= require jquery.countTo.js
+//= require jquery.flexslider.min.js
+//= require jquery.waypoints.min.js
+//= require modernizr.min.js
+//= require smartmenu.min.js
 //= require_tree .
