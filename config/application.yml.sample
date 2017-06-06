@@ -1,21 +1,19 @@
 development:
-  admin_name: First User
-  admin_email: user@example.com
-  admin_password: changeme
-  domain_name: example.com
-  secret_key_base: 59f8fe7cda076024135d73652ddf94ceb0eda7d6620a7e4799db95e1acd4efe6e11cd6d0e842323cad4676a6dca142e6d4f8874324d71c409b61702b115a706f
+  GMAIL_USERNAME: gmail_email
+  GMAIL_PASSWORD: gmail_password
+  DOMAIN_NAME: domain_name
+  SECRET_KEY_BASE: secret_key_base
 
 test:
-  domain_name: example.com 
-  secret_key_base: e4ff6793523f57139ef651bb7dcf2f5cb262d3c71ee112114fc2f754bf4612e7fa5b1f075d7aa62df5dcaaf104cb65320bbdbf1ed18a8be2a2b55b8e45e2964c
-
-# Do not keep production secrets in the unencrypted secrets file.
-# Instead, either read values from the environment.
-# Or, use `bin/rails secrets:setup` to configure encrypted secrets
-# and move the `production:` environment over there.
+  GMAIL_USERNAME: gmail_email
+  GMAIL_PASSWORD: gmail_password
+  DOMAIN_NAME: domain_name
+  SECRET_KEY_BASE: secret_key_base
 
 production:
-  admin_name: <%= ENV["ADMIN_NAME"] %>
-  admin_email: <%= ENV["ADMIN_EMAIL"] %>
-  admin_password: <%= ENV["ADMIN_PASSWORD"] %>
-  domain_name: <%= ENV["DOMAIN_NAME"] %>
+  GMAIL_USERNAME: gmail_email
+  GMAIL_PASSWORD: gmail_password
+  DOMAIN_NAME: domain_name
+  SECRET_KEY_BASE: secret_key_base
+  RAILS_SERVE_STATIC_FILES: "true"
+  RAILS_LOG_TO_STDOUT: "true"
