@@ -1,0 +1,5 @@
+= simple_form_for(@lead, html: { class: 'form-horizontal' }) do |f|
+  - if params[:all].nil?
+    = render 'leads/steps/current_step', f: f
+  - else
+    = render 'leads/steps/all_steps', f: f
