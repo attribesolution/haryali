@@ -8,3 +8,6 @@
 # user = CreateAdminService.new.call
 # puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
+
+CreatePlantsService.new.call
+puts 'ADDED PLANTS'

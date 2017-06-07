@@ -1,0 +1,12 @@
+<div class="field">
+  <%= f.input :name, required: true %>
+</div>
+<div class="field">
+  <%= f.input :contact, required: true %>
+</div>
+<div class="field">
+  <%= f.input :email %>
+</div>
+<div class="field">
+  <%= f.association :plant, as: :radio_buttons, label_method: :name_with_price_label %>
+</div>
