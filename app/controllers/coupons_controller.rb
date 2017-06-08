@@ -2,7 +2,7 @@ class CouponsController < ApplicationController
 
   def show
     code = params[:id]    
-    coupon = Coupon.find_by_code(code)
+    coupon = Coupon.active.find_by_code(code)
 
     if coupon.nil?
       response = { error: true, coupon: coupon }

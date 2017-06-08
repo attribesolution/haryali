@@ -15,6 +15,7 @@
 
 .field
   = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1 }
+  span.price Rs. #{f.object.plant.price}
 
 .field
   = f.select(:payment_type, Lead.payment_types.keys.map {|pt| [pt.titleize, pt]})
