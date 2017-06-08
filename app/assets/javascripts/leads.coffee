@@ -22,7 +22,6 @@ class App.Leads extends App.Base
       $(".preloader").show()
       
       $.get "/coupons/" + $("#lead_coupon_code").val(), (data)->
-        debugger
 
         $(".preloader").hide()
 

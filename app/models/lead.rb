@@ -20,6 +20,7 @@ class Lead < ApplicationRecord
 
   private
     def check_location_type
+      return true if self.step1?
       if self.location_type == "HaryaliLocation"
         return true
       end
