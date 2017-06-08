@@ -1,0 +1,21 @@
+p
+  strong Name:
+  = @lead.name
+p
+  strong Contact:
+  = @lead.contact
+p
+  strong Email:
+  = @lead.email
+p
+  strong Plant:
+  = @lead.plant.name
+p
+  strong Location:
+  = @lead.location.try(:address)
+p
+  strong Quantity:
+  = @lead.quantity.to_s
+p
+  strong Payment Type:
+  = @lead.payment_type
