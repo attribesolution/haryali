@@ -1,15 +1,16 @@
-= f.fields_for :location do |location_form|
-  .field
-    = location_form.radio_button :type,"DesiredLocation",checked: true,class: "switch_location"
-    label Desired Location
-    = location_form.radio_button :type,"HaryaliLocation",class: "switch_location"
-    label Haryali Location
+.field
+  = f.radio_button :location_type,"DesiredLocation",class: "switch_location",checked: true
+  label for="lead_location_type_desiredlocation" Desired Location
+  = f.radio_button :location_type,"HaryaliLocation",class: "switch_location"
+  label for="lead_location_type_haryalilocation" Haryali Location
+= f.fields_for :location_attributes do |location_form|
   .field.location_section type="DesiredLocation"
-    = location_form.input :lat, as: :hidden
-    = location_form.input :lng, as: :hidden
-    = location_form.input :address
+    = location_form.hidden_field :type,value:"DesiredLocation"
+    = location_form.hidden_field :lat
+    = location_form.hidden_field :lng
+    = location_form.input :address,label: "Location"
   .field.location_section type="HaryaliLocation" style="display: none;"
-    = f.association :location, as: :select,label_method: :address
+    = f.association :location, as: :select,collection: HaryaliLocation.all,label_method: :address
 
 .field
   = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1 }
