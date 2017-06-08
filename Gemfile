@@ -35,6 +35,7 @@ gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'rails_script', '~> 2.0'
 gem "figaro"
+gem 'gmaps4rails'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end

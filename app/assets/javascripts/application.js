@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require gmaps/google
 //= require tether
 //= require bootstrap-sprockets
 //= require rails_script

@@ -6,9 +6,9 @@
 = f.fields_for :location_attributes do |location_form|
   .field.location_section type="DesiredLocation"
     = location_form.hidden_field :type,value:"DesiredLocation"
-    = location_form.hidden_field :lat
-    = location_form.hidden_field :lng
-    = location_form.input :address,label: "Location"
+    = location_form.hidden_field :lat,id: "location_lat"
+    = location_form.hidden_field :lng,id: "location_lng"
+    = location_form.input :address,label: "Location",input_html:{id: "autocomplete_address"}
   .field.location_section type="HaryaliLocation" style="display: none;"
     = f.association :location, as: :select,collection: HaryaliLocation.all,label_method: :address
 
