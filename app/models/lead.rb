@@ -8,6 +8,8 @@ class Lead < ApplicationRecord
   validates :quantity, :payment_type,:location, presence: true, if: :step2?
   validates :quantity, numericality: true, if: :step2?
 
+  attr_accessor :coupon_code
+
   include MultiStepModel
 
   def self.total_steps

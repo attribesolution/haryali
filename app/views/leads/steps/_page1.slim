@@ -6,3 +6,10 @@
   = f.input :email
 .field
   = f.association :plant, as: :radio_buttons, label_method: :name_with_price_label
+
+.field
+  = f.input :coupon_code
+  a.lnk_verify_coupon href="#!" Verify
+  .status
+  .preloader style="display: none;"
+    | Loading ...
