@@ -1,0 +1,2 @@
+class HaryaliLocation < Location
+end

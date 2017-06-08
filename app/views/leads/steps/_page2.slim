@@ -1,0 +1,18 @@
+= f.fields_for :location do |location_form|
+  .field
+    = location_form.radio_button :type,"DesiredLocation",checked: true,class: "switch_location"
+    label Desired Location
+    = location_form.radio_button :type,"HaryaliLocation",class: "switch_location"
+    label Haryali Location
+  .field.location_section type="DesiredLocation"
+    = location_form.input :lat, as: :hidden
+    = location_form.input :lng, as: :hidden
+    = location_form.input :address
+  .field.location_section type="HaryaliLocation" style="display: none;"
+    = f.association :location, as: :select,label_method: :address
+
+.field
+  = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1 }
+
+.field
+  = f.select(:payment_type, Lead.payment_types.keys.map {|pt| [pt.titleize, pt]})

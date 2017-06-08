@@ -1,0 +1,2 @@
+class DesiredLocation < Location
+end

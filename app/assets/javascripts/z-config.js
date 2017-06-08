@@ -730,7 +730,8 @@
     // ready function
     jQuery(document).ready(function($) {
         console.log('All resources have loaded');
-        themeApp.theme_init_ready();
+        /* for removing exception commented bellow line: themeApp.theme_init_ready(); */
+        //themeApp.theme_init_ready();
 
         if (Modernizr.touch) {
             $('.section-parallax').css('background-size','cover');

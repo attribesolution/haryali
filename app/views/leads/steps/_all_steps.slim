@@ -1,0 +1,4 @@
+= hidden_field_tag :all, 1
+- Lead.total_steps.times do |step|
+  = render "leads/steps/page#{step + 1}", f: f
+= f.submit
