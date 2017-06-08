@@ -43,9 +43,11 @@ private
       :contact,
       :email,
       :plant_id,
-      :address,
       :quantity,
-      :payment_type
+      :payment_type,
+      :location_type,
+      :location_id,
+      location_attributes: [:address,:lat,:lng,:type]
     )
   end
 end
