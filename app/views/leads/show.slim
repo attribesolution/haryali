@@ -18,7 +18,7 @@ p
   = @lead.quantity.to_s
 p
   strong Price:
-  | #{@lead.total_price(@lead.quantity)}
+  = total_price(@lead)
 p
   strong Payment Type:
   = @lead.payment_type
