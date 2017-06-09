@@ -11,3 +11,5 @@
 
 CreatePlantsService.new.call
 puts 'ADDED PLANTS'
+CreateLocationsService.new.call
+puts "ADDED HARYALI LOCATIONS"
