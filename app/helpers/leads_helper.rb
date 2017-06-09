@@ -4,11 +4,11 @@ module LeadsHelper
     html = ""
     if lead.coupon.nil?
       html = <<-HTML
-        <strike> Rs. #{lead.quantity * lead.plant.price}</strike>
         <span> Rs. #{lead.total_price(lead.quantity)}</span>
       HTML
     else
       html = <<-HTML
+        <strike> Rs. #{lead.quantity * lead.plant.price}</strike>
         <span> Rs. #{lead.total_price(lead.quantity)}</span>
       HTML
     end
