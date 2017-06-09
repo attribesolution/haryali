@@ -8,6 +8,7 @@
   = f.association :plant, as: :radio_buttons, label_method: :name_with_price_label
 
 .field
+  = f.hidden_field :coupon_id
   = f.input :coupon_code
   a.lnk_verify_coupon href="#!" Verify
   .status

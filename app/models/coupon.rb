@@ -1,8 +1,15 @@
 class Coupon < ApplicationRecord
+
+  has_one :lead
   validates_uniqueness_of :code
   before_create :generate_code
 
   scope :active,->{where(is_active: true)}
+
+
+  def de_activate
+    self.update(is_active: false)
+  end
 
   private
     def generate_code
