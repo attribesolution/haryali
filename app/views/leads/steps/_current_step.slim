@@ -3,5 +3,5 @@
 = render "leads/steps/page#{f.object.current_step + 1}", f: f
 
 .field
-  = f.submit "Back", name: "back_button", class: "btn btn-primary" unless f.object.first_step?
+  = f.submit "Back", name: "back_button", class: "btn btn-success" unless f.object.first_step?
   = f.submit f.object.last_step? ? "Plant": "Next", class: "btn btn-success"

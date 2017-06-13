@@ -1,3 +1,57 @@
 // Place all the styles related to the leads controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-control {
+  width: 80%;
+}
+
+.row {
+  width: 90%;
+}
+
+.right {
+  float: left;
+  padding-right: 5px;
+  padding-left: 5px;
+  
+}
+
+.caption-3 {
+  float: left;
+  margin-right: 2%;
+}
+
+.caption-2 {
+  float: left;
+  margin-right: 2%;
+  margin-top: -5%;
+}
+
+.parent {
+    margin-bottom: 15px;
+    padding: 10px;
+    color: #0A416B;
+    clear:both;
+}
+.left, .center, .right{
+    float:left;
+    width:28%;
+    padding:5px;
+
+}
+h1 {
+  color: #87ba45;
+  
+}
+.radio-inline {
+  width: 10%;
+  align-content: center;;
+}
+
+.add1 {
+  width: 80%;
+}
+.form-width {
+  width: 41%;
+}
