@@ -14,7 +14,7 @@ class LeadsController < ApplicationController
     @wizard = ModelWizard.new(Lead, session, params, lead_params).continue
     @lead = @wizard.object
     if @wizard.save
-      redirect_to @lead, notice: "Thank you!"
+      redirect_to @lead
     else
       render :new
     end
