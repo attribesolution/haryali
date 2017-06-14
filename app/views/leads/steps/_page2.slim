@@ -1,5 +1,6 @@
 - hide_desired_location = f.object.location_type == "HaryaliLocation"
-.form-group
+.form-group.form-side
+br
   .btn-group data-toggle="buttons"
     = f.label :location_type, class: "btn btn-success #{ 'active' if f.object.location_type != "HaryaliLocation" }" do |a|
       | Desired Location
@@ -18,12 +19,12 @@
   .form-group.location_section type="HaryaliLocation" style="#{!hide_desired_location ? 'display:none;' : ''}"
     = f.association :location, as: :select, label: false, include_blank: "Select Haryali Location", collection: HaryaliLocation.all,label_method: :address, input_html: { class: "form-control form-width" }
 
-.form-group
+.form-group.form-quantity
   = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1, discount: f.object.discount, price: f.object.plant.try(:price).to_f, class: "form-width" }
   span.total_price.font-weight-bold Rs. #{ f.object.total_price(f.object.quantity || 1) }
 
 br
 h3.font-weight-bold Payment Methods
 hr
-.form-group
+.form-group.mainselection
   = f.select(:payment_type, Lead.payment_types.keys.map {|pt| [pt.titleize, pt]})
