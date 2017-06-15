@@ -67,22 +67,12 @@ label[for=lead_plant_id_12] {
   margin-left: 16%;
 }
 .location_section {
-  width:140%;
+  width:130%;
   margin-left: 15%;
 }
 .btn-group {
   width:100%;
   margin-left:15%;
-}
-.caption-3 {
-  float: left;
-  margin-right: 2%;
-}
-
-.caption-2 {
-  float: left;
-  margin-right: 2%;
-  margin-top: -5%;
 }
 
 .parent {
@@ -99,14 +89,15 @@ label[for=lead_plant_id_12] {
 }
 .form-horizontal{
   width:70%;
+  margin-left:15%;
 }
-h1 {
+.h1-green {
   color: #8ac53a;
-  margin-left:29%;
+  margin-left:26%;
   text-shadow: 2px 2px #D3D3D3;
   font-weight: bold;
 }
-h3 {
+.h3-para {
   margin-left: 27%;
 }
 .radio-inline {
@@ -152,8 +143,8 @@ h3 {
    border-radius: 9px 9px 9px 9px;
    box-shadow: 1px 1px 11px #330033;
    margin-left: 20%;
-   background-color: #8ac53a; 
-   background: #8ac53a url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
+   background-color: #D8DFD9; 
+   background: #D8DFD9   url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
 }
 .t1{
   text-decoration: bold;
@@ -220,7 +211,10 @@ width: 10%;
 } 
 
 .color-active {
-  background-color: #60CD71    ;  
+  background-color: #BCC2BD      ;
+}
+.color-btn {
+  background-color: #888C89 
 }
 .table.table-striped {
   width:60%;
@@ -242,4 +236,11 @@ width: 10%;
 }
 ._large {
   margin-right:10%;
+}
+
+.btn-gray {
+  background-color: #939994  ;  
+}
+.container {
+  margin-left: 10%;
 }

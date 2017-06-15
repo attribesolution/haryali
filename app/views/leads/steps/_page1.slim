@@ -1,3 +1,5 @@
+h1.h1-green OWN A TREE
+
 br
 .form-group
   = f.input :name, label: false, placeholder: "Your full name", class: "form-control"
@@ -7,8 +9,8 @@ br
   = f.input :email, label: false, placeholder: "Your email address", class: "form-control"
 
 .row
-  .col-sm-4._small
-    img.img-responsive2._active alt="small tree" src="/assets/tree-small.png" /
+  .col-sm-4._small._active
+    img.img-responsive2 alt="small tree" src="/assets/tree-small.png" /
     p 
       strong Small tree
       br
@@ -32,7 +34,33 @@ br
       br
       | Rs.2000.0
 
-/ .parent
+.row
+  .col-sm-4._small
+    img.img-responsive2 alt="small tree" src="/assets/tree-small.png" /
+    p 
+      strong Small tree
+      br
+      | This is a small tree
+      br
+      | Rs.500.0
+  .col-sm-4._medium
+    img.img-responsive2 alt="medium tree" src="/assets/tree-medium.png" /
+    p 
+      strong Medium tree
+      br
+      | This is a medium tree
+      br
+      | Rs.1500.0
+  .col-sm-4._large
+    img.img-responsive2 alt="large tree" src="/assets/tree-large.png" /
+    p 
+      strong Large tree
+      br
+      | This is a large tree
+      br
+      | Rs.2000.0
+
+.parent
   = f.association :plant, as: :radio_buttons, label: false, label_method: lambda { |plant| "<div class='item'><img src='/assets/#{plant.image}' class='img-full-width img-tree'/> <p><strong>#{plant.name.capitalize}</strong><br>#{plant.detail}<br>Rs.#{plant.price}</p></div>".html_safe }
 
 .row

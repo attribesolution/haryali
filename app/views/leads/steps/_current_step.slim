@@ -3,8 +3,8 @@
 = render "leads/steps/page#{f.object.current_step + 1}", f: f
 
 .field
-  = f.submit "Back", name: "back_button", class: "btn btn-info pull-left" unless f.object.first_step?
+  = f.submit "Back", name: "back_button", class: "btn btn-basic pull-left color-btn" unless f.object.first_step?
   - if f.object.last_step?
     = f.submit "Plant", class: "btn color pull-right"
   - else
-    = f.submit "Next", class: "btn btn-info pull-right "
+    = f.submit "Next", class: "btn btn-basic pull-right color-btn"
