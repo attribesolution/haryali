@@ -1,8 +1,9 @@
+/ h1.h1-green OWN A TREE
 - hide_desired_location = f.object.location_type == "HaryaliLocation"
 .form-group.form-side
 br
   .btn-group data-toggle="buttons"
-    = f.label :location_type, class: "btn color #{ 'active' if f.object.location_type != "HaryaliLocation" }" do |a|
+    = f.label :location_type, class: "btn color-btn #{ 'active' if f.object.location_type != "HaryaliLocation" }" do |a|
       | Desired Location
       = f.radio_button :location_type, "DesiredLocation", class: 'form-control switch_location'
 
@@ -32,7 +33,7 @@ br
   span.total_price.font-weight-bold Rs. #{ f.object.total_price(f.object.quantity || 1) }
 
 br
-h3.font-weight-bold Payment Methods
+h3.font-weight-bold.h3-para Payment Methods
 hr
 .form-group.mainselection
   = f.select(:payment_type, Lead.payment_types.keys.map {|pt| [pt.titleize, pt]})
