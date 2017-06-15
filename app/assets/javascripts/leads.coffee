@@ -4,10 +4,8 @@ class App.Leads extends App.Base
   beforeAction: (action) =>
     return
 
-
   afterAction: (action) =>
     return
-
 
   index: =>
     return
@@ -15,7 +13,6 @@ class App.Leads extends App.Base
 
   show: =>
     return
-
 
   new: =>
     cooldown = false
@@ -41,7 +38,6 @@ class App.Leads extends App.Base
       else
         $(".status").hide()
 
-
     $(document).on "change",".switch_location",->
       type = $(this).val()
       $(".location_section").hide()
@@ -56,10 +52,24 @@ class App.Leads extends App.Base
 
     calculateTotalPrice = (quantity,price,discount) ->
       return (quantity*price) - discount
+
+    $.validator.addMethod 'intlphone', ((value) ->
+      value.match /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/
+    ), 'Please enter a valid phone number'
+    
+    $('#new_lead').validate 
+      rules: 
+        'lead[name]':
+          required: true
+        'lead[contact]':
+          required: true
+          intlphone: true
+          minlength: 11
+          maxlength: 14
+        'lead[email]':
+          required: true
+ 
     return
-
-
-
 
   edit: =>
     return
