@@ -1,13 +1,10 @@
 br
 .form-group
-  .field
-    = f.input :name, label: false, placeholder: "Your full name", class: "form-control"
+  = f.input :name, label: false, placeholder: "Your full name", class: "form-control"
 .form-group
-  .field
-    = f.input :contact, label: false, placeholder: "Your contact number", class: "form-control"
+  = f.input :contact, label: false, placeholder: "Your contact number", class: "form-control"
 .form-group
-  .field
-    = f.input :email, label: false, placeholder: "Your email address", class: "form-control"
+  = f.input :email, label: false, placeholder: "Your email address", class: "form-control"
 
 .row
   .col-sm-4._small
@@ -35,7 +32,6 @@ br
       br
       | Rs.2000.0
 
-
 / .parent
   = f.association :plant, as: :radio_buttons, label: false, label_method: lambda { |plant| "<div class='item'><img src='/assets/#{plant.image}' class='img-full-width img-tree'/> <p><strong>#{plant.name.capitalize}</strong><br>#{plant.detail}<br>Rs.#{plant.price}</p></div>".html_safe }
 
@@ -44,9 +40,6 @@ br
     .input-group.input-lg
       = f.hidden_field :coupon_id
       = f.input :coupon_code, label: false, wrapper: false, placeholder: "Enter coupon code", class: "form-control"
-      | &nbsp;&nbsp;
-      button.btn.color.lnk_verify_coupon type="button" Apply
-      .status
-      .preloader style="display: none;"
-        | Loading ...
+  .col-sm-6  
+    .status
 br
