@@ -17,19 +17,29 @@ class App.Leads extends App.Base
     return
 
 
-  new: =>    
-    $(document).on "click",".lnk_verify_coupon",->
-      $(".preloader").show()
-      
-      $.get "/coupons/" + $("#lead_coupon_code").val(), (data)->
+  new: =>
+    cooldown = false
+    code = ""
 
-        $(".preloader").hide()
-
-        if(data.error)
-          $(".status").html("Invalid code")
-        else
-          $("#lead_coupon_id").val(data.coupon.id)
-          $(".status").html("Verified")
+    $("#lead_coupon_code").keyup ->
+      if ($(this).val().length > 1)
+        if ($(this).val() != code)
+          code = $(this).val()
+          if(!cooldown)
+            $(".status").html("Verifying...")
+            $(".status").show()
+            cooldown = true
+            setTimeout ( ->
+              cooldown = false
+              $.get "/coupons/" + code, (data)->
+                if(data.error)
+                  $(".status").html("Invalid code")
+                else
+                  $("#lead_coupon_id").val(data.coupon.id)
+                  $(".status").html("Verified")
+            ), 1000
+      else
+        $(".status").hide()
 
 
     $(document).on "change",".switch_location",->
