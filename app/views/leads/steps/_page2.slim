@@ -2,11 +2,11 @@
 .form-group.form-side
 br
   .btn-group data-toggle="buttons"
-    = f.label :location_type, class: "btn btn-success #{ 'active' if f.object.location_type != "HaryaliLocation" }" do |a|
+    = f.label :location_type, class: "btn color #{ 'active' if f.object.location_type != "HaryaliLocation" }" do |a|
       | Desired Location
       = f.radio_button :location_type, "DesiredLocation", class: 'form-control switch_location'
 
-    = f.label :location_type, class: "btn btn-success #{ 'active' if f.object.location_type == "HaryaliLocation" }" do |a|
+    = f.label :location_type, class: "btn color-active #{ 'active' if f.object.location_type == "HaryaliLocation" }" do |a|
       | Haryali Location
       = f.radio_button :location_type, "HaryaliLocation", class: 'form-control switch_location'
 
