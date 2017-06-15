@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20170615085105) do
     t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "current"
-    t.integer "target"
+    t.integer "current", default: 0, null: false
+    t.integer "target", default: 0, null: false
   end
 
   create_table "plants", force: :cascade do |t|

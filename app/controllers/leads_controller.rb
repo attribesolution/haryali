@@ -14,6 +14,7 @@ class LeadsController < ApplicationController
     @wizard = ModelWizard.new(Lead, session, params, lead_params).continue
     @lead = @wizard.object
     @locations = HaryaliLocation.select(:id, :address, :current, :target)
+    
     if @wizard.save
       redirect_to @lead
     else
@@ -47,6 +48,7 @@ private
       :quantity,
       :payment_type,
       :location_type,
+      :coupon_code,
       :location_id,
       :coupon_id,
       location_attributes: [:address,:lat,:lng,:type]
