@@ -204,8 +204,12 @@ width: 10%;
   margin-right: 5%
 
 }
+.bar-size {
+  width: 50%;
+  margin-left: 11%;
+}
 
-.has-error .help-block{
+.error{
   color: red;
   text-decoration: italic;
 } 
@@ -243,4 +247,7 @@ width: 10%;
 }
 .container {
   margin-left: 10%;
+}
+.btn-position {
+  margin-top:-12%;
 }
