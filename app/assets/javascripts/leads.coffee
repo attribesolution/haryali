@@ -18,7 +18,7 @@ class App.Leads extends App.Base
     counter = -1
     code = ""
 
-    $("#lead_coupon_code").keyup ->
+    $("#lead_coupon_code").bind 'input', ->
       if ($(this).val().length > 1)
         if ($(this).val() != code)
           $(".status").hide()
@@ -38,6 +38,7 @@ class App.Leads extends App.Base
           $(".status").show()
       else
         $(".status").hide()
+      return
 
     $(document).on "change",".switch_location",->
       type = $(this).val()
