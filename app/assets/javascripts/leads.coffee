@@ -15,26 +15,27 @@ class App.Leads extends App.Base
     return
 
   new: =>
-    cooldown = false
+    counter = -1
     code = ""
 
     $("#lead_coupon_code").keyup ->
       if ($(this).val().length > 1)
         if ($(this).val() != code)
+          $(".status").hide()
           code = $(this).val()
-          if(!cooldown)
-            $(".status").html("Verifying...")
-            $(".status").show()
-            cooldown = true
-            setTimeout ( ->
-              cooldown = false
+          counter++ 
+          setTimeout ( ->
+            counter-- 
+            if (counter < 0)
               $.get "/coupons/" + code, (data)->
                 if(data.error)
                   $(".status").html("Invalid code")
                 else
-                  $("#lead_coupon_id").val(data.coupon.id)
                   $(".status").html("Verified")
-            ), 1000
+                $(".status").show()
+          ), 1000
+        else
+          $(".status").show()
       else
         $(".status").hide()
 
