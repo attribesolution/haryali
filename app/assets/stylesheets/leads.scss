@@ -80,11 +80,14 @@ label[for=lead_plant_id_12] {
     color: #0A416B;
    
 }
-.left, .center, .right{
-    float:left;
-    width:28%;
-    padding:5px;
 
+.img-tree {
+  height:10%;
+  width: 35%;
+
+}
+.form-horizontal{
+  width:70%;
 }
 .img-tree {
   height:10%;
@@ -187,7 +190,6 @@ width: 10%;
 .col-sm-4 {
  padding-right: 2%;
   padding-right: 2%; 
-
 }
 .col-sm-4 p{
   text-align: center;

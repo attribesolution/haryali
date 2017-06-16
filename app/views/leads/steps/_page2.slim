@@ -2,11 +2,11 @@
 .form-group.form-side
 br
   .btn-group data-toggle="buttons"
-    = f.label :location_type, class: "btn btn-success #{ 'active' if f.object.location_type != "HaryaliLocation" }" do |a|
+    = f.label :location_type, class: "btn color #{ 'active' if f.object.location_type != "HaryaliLocation" }" do |a|
       | Desired Location
       = f.radio_button :location_type, "DesiredLocation", class: 'form-control switch_location'
 
-    = f.label :location_type, class: "btn btn-success #{ 'active' if f.object.location_type == "HaryaliLocation" }" do |a|
+    = f.label :location_type, class: "btn color-active #{ 'active' if f.object.location_type == "HaryaliLocation" }" do |a|
       | Haryali Location
       = f.radio_button :location_type, "HaryaliLocation", class: 'form-control switch_location'
 
@@ -17,7 +17,14 @@ br
     = location_form.hidden_field :lng, id: "location_lng"
     = location_form.input :address, label: false, placeholder: "Enter address", input_html: { id: "autocomplete_address", class: "form-control form-width" }
   .form-group.location_section type="HaryaliLocation" style="#{!hide_desired_location ? 'display:none;' : ''}"
-    = f.association :location, as: :select, label: false, include_blank: "Select Haryali Location", collection: HaryaliLocation.all,label_method: :address, input_html: { class: "form-control form-width" }
+    ul.col-md-6
+      - @locations.each do |loc|
+        li
+          a href="locations/#{loc.id}"
+            = loc['address']
+          .progress 
+            .progress-bar [ style=("width: #{ (loc['current'].to_f / loc['target']) * 100 }%") ]
+          | Progress: #{loc['current']}/#{loc['target']} Trees planted 
 
 .form-group.form-quantity
   = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1, discount: f.object.discount, price: f.object.plant.try(:price).to_f, class: "form-width" }
