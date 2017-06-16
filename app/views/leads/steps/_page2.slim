@@ -22,7 +22,6 @@ br
         li
           a href="locations/#{loc.id}"
             = loc['address']
-          br
           .progress 
             .progress-bar [ style=("width: #{ (loc['current'].to_f / loc['target']) * 100 }%") ]
           | Progress: #{loc['current']}/#{loc['target']} Trees planted 
