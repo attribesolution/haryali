@@ -21,24 +21,6 @@ label[for=lead_plant_id_10] {
 }
 
 
-label[for=lead_plant_id_11] {
-  float: left;
-  margin-left:36%;
-  margin-top: -54%;
-}
-
-label[for=lead_plant_id_12] {
-  float: left;
-  margin-left:70%;
-  margin-top: -54%;
-  height:100%;
-  width: 70%;
--webkit-align-self: center; /* Safari 7.0+ */
-    align-self: center;
-}
-
-
-
 .form-control {
   width: 100%;
 
@@ -58,6 +40,58 @@ label[for=lead_plant_id_12] {
   padding-left: 5px;
   
 } 
+.side {
+  margin-top: -12.5%;
+  margin-right: 5%
+
+}
+.bar-size {
+  width: 50%;
+  margin-left: 11%;
+}
+ 
+.has-error .help-block{
+  color: red;
+  text-decoration: italic;
+} 
+
+.color-active {
+  background-color: #60CD71    ;  
+}
+.table.table-striped {
+  width:60%;
+  margin-left: 10%;
+}
+._active {
+  background-color: #E5E9E6  ;
+  border-color: #B3F1BC  ;
+  border-style: solid;
+}
+.simple_form {
+  margin-left:4%;
+}
+._small {
+  margin-left:-4%;
+}
+._medium {
+
+}
+._large {
+  margin-right:10%;
+} 
+.total_price {
+  float: left;
+  margin-left: 70%;
+  margin-top: -13%;
+}
+.form-quantity {
+  margin-left: 16%;
+}
+.location_section {
+  
+  width:130%;
+   margin-left: 15%;
+}
 
 .btn-group {
   width:100%;
@@ -116,7 +150,7 @@ h3 {
  
 }
 .form-width {
-  width: 46%;
+  width: 67%;
 }
 
 .row {
@@ -135,7 +169,7 @@ h3 {
    padding: 2px 10px;
    width: 378px;
    *width: 200px;
-   *background: #58B14C;
+   *background: #8ac53a;
    -webkit-appearance: none;
 }
 .mainselection {
@@ -145,9 +179,9 @@ h3 {
    -webkit-border-radius: 9px 9px 9px 9px;
    border-radius: 9px 9px 9px 9px;
    box-shadow: 1px 1px 11px #330033;
-   margin-left: 20%;
-   background-color: #419641; 
-   background: #58B14C url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
+   margin-left: 16%;
+   background-color: #D8DFD9; 
+   background: #D8DFD9   url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
 }
 .t1{
   text-decoration: bold;
@@ -203,3 +237,28 @@ width: 10%;
   width: 65%;
   margin-left: 15%;
 }
+.color-active {
+  background-color: #60CD71    ;  
+  background-color: #BCC2BD      ;
+}
+.color-btn {
+  background-color: #888C89 
+}
+ .table.table-striped {
+   width:60%;
+
+ }
+ ._large {
+   margin-right:10%;
+}
+
+.btn-gray {
+  background-color: #939994  ;  
+}
+.h1-green {
+   color: #8ac53a;
+ margin-left:29%;
+  margin-left:26%;
+   text-shadow: 2px 2px #D3D3D3;
+   font-weight: bold;
+ }
