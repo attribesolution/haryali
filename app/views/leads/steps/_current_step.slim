@@ -7,6 +7,6 @@
   = f.submit "Back", name: "back_button", class: "btn btn-basic pull-left color-btn" unless f.object.first_step?
 
   - if f.object.last_step?
-    = f.submit "Plant", class: "btn color pull-right"
+    = f.submit "Plant", class: "btn color pull-right btn-position"
   - else
     = f.submit "Next", class: "btn btn-basic pull-right btn-gray"
