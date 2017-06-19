@@ -46,6 +46,7 @@ private
       :quantity,
       :payment_type,
       :location_type,
+      :coupon_code,
       :location_id,
       :coupon_id,
       location_attributes: [:address,:lat,:lng,:type]
