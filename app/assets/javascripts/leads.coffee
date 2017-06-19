@@ -46,6 +46,17 @@ class App.Leads extends App.Base
 
     calculateTotalPrice = (quantity,price,discount) ->
       return (quantity*price) - discount
+
+
+    ## ######## Select a tree
+    $(".lnk_tree").click ->
+      $(".lnk_tree").removeClass("selected_tree")
+      $(this).addClass("selected_tree")
+      
+      id = $(this).attr("tree_id")
+      $("#lead_plant_id").val(id)
+
+
     return
 
 
