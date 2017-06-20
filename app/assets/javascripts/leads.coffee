@@ -14,30 +14,7 @@ class App.Leads extends App.Base
     return
 
   new: =>
-    counter = -1
-    code = ""
-
-    $("#lead_coupon_code").bind 'input', ->
-      if ($(this).val().length > 1)
-        if ($(this).val() != code)
-          $(".status").hide()
-          code = $(this).val()
-          counter++ 
-          setTimeout ( ->
-            counter-- 
-            if (counter < 0)
-              $.get "/coupons/" + code, (data)->
-                if(data.error)
-                  $(".status").html("Invalid code")
-                else
-                  $(".status").html("Verified")
-                $(".status").show()
-          ), 1000
-        else
-          $(".status").show()
-      else
-        $(".status").hide()
-      return
+    @couponVerify = new Utility.VerifyCoupon($("#lead_coupon_code"))
 
     $(document).on "change",".switch_location",->
       type = $(this).val()
