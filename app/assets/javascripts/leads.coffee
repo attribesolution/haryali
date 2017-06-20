@@ -4,33 +4,40 @@ class App.Leads extends App.Base
   beforeAction: (action) =>
     return
 
-
   afterAction: (action) =>
     return
-
 
   index: =>
     return
 
-
   show: =>
     return
 
+  new: =>
+    counter = -1
+    code = ""
 
-  new: =>    
-    $(document).on "click",".lnk_verify_coupon",->
-      $(".preloader").show()
-      
-      $.get "/coupons/" + $("#lead_coupon_code").val(), (data)->
-
-        $(".preloader").hide()
-
-        if(data.error)
-          $(".status").html("Invalid code")
+    $("#lead_coupon_code").bind 'input', ->
+      if ($(this).val().length > 1)
+        if ($(this).val() != code)
+          $(".status").hide()
+          code = $(this).val()
+          counter++ 
+          setTimeout ( ->
+            counter-- 
+            if (counter < 0)
+              $.get "/coupons/" + code, (data)->
+                if(data.error)
+                  $(".status").html("Invalid code")
+                else
+                  $(".status").html("Verified")
+                $(".status").show()
+          ), 1000
         else
-          $("#lead_coupon_id").val(data.coupon.id)
-          $(".status").html("Verified")
-
+          $(".status").show()
+      else
+        $(".status").hide()
+      return
 
     $(document).on "change",".switch_location",->
       type = $(this).val()
@@ -47,7 +54,6 @@ class App.Leads extends App.Base
     calculateTotalPrice = (quantity,price,discount) ->
       return (quantity*price) - discount
 
-
     ## ######## Select a tree
     $(".lnk_tree").click ->
       $(".lnk_tree").removeClass("selected_tree")
@@ -56,11 +62,23 @@ class App.Leads extends App.Base
       id = $(this).attr("tree_id")
       $("#lead_plant_id").val(id)
 
+    $.validator.addMethod 'intlphone', ((value) ->
+      value.match /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/
+    ), 'Please enter a valid phone number'
+    
+    $('#new_lead').validate 
+      rules: 
+        'lead[name]':
+          required: true
+        'lead[contact]':
+          required: true
+          intlphone: true
+          minlength: 11
+          maxlength: 14
+        'lead[email]':
+          required: true
 
     return
-
-
-
 
   edit: =>
     return
