@@ -23,21 +23,6 @@ br
 
   = f.input :plant_id, as: :hidden
 
-  .row
-  - Plant.all.each do |p|
-    .col-sm-4
-      a.lnk_tree tree_id="#{p.id}" href="#!"
-        img.img-responsive2 alt="#{p.name}" src="/assets/#{p.image}" /
-      p 
-        strong = p.name
-        br
-        = p.detail
-        br
-        | Rs. #{p.price}
-
-  = f.input :plant_id, as: :hidden
-
-
 .row
   .col-sm-6
     .input-group.input-lg

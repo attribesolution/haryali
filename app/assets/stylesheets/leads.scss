@@ -118,7 +118,7 @@ label[for=lead_plant_id_10] {
     float:left;
     width:28%;
     padding:5px;
-
+-
 }
 .img-tree {
   height:10%;
@@ -148,7 +148,7 @@ h3 {
 .form-drop {
  margin-left: 30%;
  
-}
+}-
 .form-width {
   width: 67%;
 }
@@ -228,6 +228,7 @@ width: 10%;
   padding-right: 8%;
   padding-right: 8%;
 }
+
 ._center {
   width:120%;
   margin-left: 38%;
@@ -264,12 +265,13 @@ width: 10%;
    font-weight: bold;
  }
  .btn-position {
-  margin-right:-12%;
+  margin-right:-15%;
  }
  .btn-position-next {
   margin-top: -17%;
+  margin-right:-17%;
  }
-.selected_tree a{
-  height:10%;
+.lnk_tree a{
+  height:80%;
  }
  
