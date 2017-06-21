@@ -39,6 +39,12 @@ class App.Leads extends App.Base
       id = $(this).attr("tree_id")
       $("#lead_plant_id").val(id)
 
+    $(".haryali_location").click -> 
+      $(".haryali_location").removeClass("selected_tree")
+      $(this).addClass("selected_tree")
+      id = $(this).attr("location_id")
+      $("#lead_location_id").val(id)
+
     $.validator.addMethod 'intlphone', ((value) ->
       value.match /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/
     ), 'Please enter a valid phone number'
