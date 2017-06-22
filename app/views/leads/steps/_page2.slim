@@ -28,22 +28,6 @@ br
             h5.mb-1  
               | Progress #{loc.current} / #{loc.target}
     = f.input :location_id, as: :hidden
-          /p.mb-1 =loc.current
-         
-      
-
-
-
-   
-  
-
-      /- @locations.each do |loc|
-        li
-          a href="locations/#{loc.id}"
-            = loc['address']
-          .progress 
-            .progress-bar [ style=("width: #{ (loc['current'].to_f / loc['target']) * 100 }%") ]
-          | Progress: #{loc['current']}/#{loc['target']} Trees planted 
 
 .form-group.form-quantity
   = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1, discount: f.object.discount, price: f.object.plant.try(:price).to_f, class: "form-width" }
