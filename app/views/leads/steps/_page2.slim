@@ -19,29 +19,15 @@ br
   .form-group.location_section type="HaryaliLocation" style="#{!hide_desired_location ? 'display:none;' : ''}"
     .list-group
       - @locations.each do |loc|
+        a.haryali_location location_id="#{loc.id}" href="#!"
+          | X 
         a.list-group-item.list-group-item-action.flex-column.align-items-start href="locations/#{loc.id}"          
           = loc.address
 
           .d-flex.w-100.justify-content-between
             h5.mb-1  
               | Progress #{loc.current} / #{loc.target}
-            
-          /p.mb-1 =loc.current
-         
-      
-
-
-
-   
-  
-
-      /- @locations.each do |loc|
-        li
-          a href="locations/#{loc.id}"
-            = loc['address']
-          .progress 
-            .progress-bar [ style=("width: #{ (loc['current'].to_f / loc['target']) * 100 }%") ]
-          | Progress: #{loc['current']}/#{loc['target']} Trees planted 
+    = f.input :location_id, as: :hidden
 
 .form-group.form-quantity
   = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1, discount: f.object.discount, price: f.object.plant.try(:price).to_f, class: "form-width" }

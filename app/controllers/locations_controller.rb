@@ -6,6 +6,6 @@ class LocationsController < ApplicationController
 
   private
   def set_location
-    @location = Location.find(params[:id])
+    @location = Location.find_by_id(params[:id])
   end
 end

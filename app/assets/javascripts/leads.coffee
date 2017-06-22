@@ -14,30 +14,7 @@ class App.Leads extends App.Base
     return
 
   new: =>
-    counter = -1
-    code = ""
-
-    $("#lead_coupon_code").bind 'input', ->
-      if ($(this).val().length > 1)
-        if ($(this).val() != code)
-          $(".status").hide()
-          code = $(this).val()
-          counter++ 
-          setTimeout ( ->
-            counter-- 
-            if (counter < 0)
-              $.get "/coupons/" + code, (data)->
-                if(data.error)
-                  $(".status").html("Invalid code")
-                else
-                  $(".status").html("Verified")
-                $(".status").show()
-          ), 1000
-        else
-          $(".status").show()
-      else
-        $(".status").hide()
-      return
+    @couponVerify = new Utility.VerifyCoupon($("#lead_coupon_code"))
 
     $(document).on "change",".switch_location",->
       type = $(this).val()
@@ -61,6 +38,12 @@ class App.Leads extends App.Base
       
       id = $(this).attr("tree_id")
       $("#lead_plant_id").val(id)
+
+    $(".haryali_location").click -> 
+      $(".haryali_location").removeClass("selected_tree")
+      $(this).addClass("selected_tree")
+      id = $(this).attr("location_id")
+      $("#lead_location_id").val(id)
 
     $.validator.addMethod 'intlphone', ((value) ->
       value.match /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/
