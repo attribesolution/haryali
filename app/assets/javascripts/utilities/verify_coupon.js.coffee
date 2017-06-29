@@ -20,8 +20,10 @@ class Utility.VerifyCoupon
               $.get "/coupons/" + code, (data)->
                 if(data.error)
                   $(".status").html("Invalid code")
+                  $("#lead_coupon_id").val("")
                 else
                   $(".status").html("Verified")
+                  $("#lead_coupon_id").val(data.coupon.id)
                 $(".status").show()
           ), 1000
         else

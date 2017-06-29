@@ -45,7 +45,7 @@ class App.Leads extends App.Base
       id = $(this).attr("location_id")
       $("#lead_location_id").val(id)
 
-    $.validator.addMethod 'intlphone', ((value) ->
+    $.validator.addMethod 'pkphone', ((value) ->
       value.match /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/
     ), 'Please enter a valid phone number'
     
@@ -55,7 +55,7 @@ class App.Leads extends App.Base
           required: true
         'lead[contact]':
           required: true
-          intlphone: true
+          pkphone: true
           minlength: 11
           maxlength: 14
         'lead[email]':

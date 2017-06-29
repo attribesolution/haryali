@@ -11,7 +11,7 @@ class App.Locations extends App.Base
     return
 
   show: =>
-    new (google.maps.Map)($('#map'),
+    new google.maps.Map($('#map'),
       zoom: 17
       center:
         lat: 24
