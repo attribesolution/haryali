@@ -23,3 +23,6 @@ br
             .progress.bar-size
               .progress-bar.color role="progressbar" style="width:#{100*@location.current/@location.target}%"
                span.sr-only #{100*@location.current/@location.target}% Complete
+input.lat value=@location.lat type='hidden'
+input.lng value=@location.lng type='hidden'
+.map style=("width: 100%; height: 200px;") 
