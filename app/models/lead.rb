@@ -10,6 +10,7 @@ class Lead < ApplicationRecord
   validates :quantity, :payment_type,:location, presence: true, if: :step2?
   validates :quantity, numericality: true, if: :step2?
 
+  before_create :verify_coupon
   after_create :deactivate_coupon
   
   attr_accessor :coupon_code
@@ -42,5 +43,12 @@ class Lead < ApplicationRecord
     def deactivate_coupon
       return true if self.coupon.nil?
       self.coupon.de_activate
+    end
+
+    def verify_coupon
+      coupon = Coupon.find_by_id(self.coupon_id)
+      unless coupon[:is_active]
+        self.coupon = nil
+      end
     end
 end
