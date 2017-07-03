@@ -6,6 +6,6 @@ class LocationsController < ApplicationController
 
   private
   def set_location
-    @location = Location.find_by_id(params[:id])
+    @location = HaryaliLocation.find_by_id(params[:id])
   end
 end

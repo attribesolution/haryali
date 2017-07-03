@@ -10,7 +10,8 @@ class Lead < ApplicationRecord
   validates :quantity, :payment_type,:location, presence: true, if: :step2?
   validates :quantity, numericality: true, if: :step2?
 
-  after_create :deactivate_coupon
+  before_create :verify_coupon
+  after_create :deactivate_coupon, :update_location_progress
   
   attr_accessor :coupon_code
   attr_accessor :location_type
@@ -42,5 +43,24 @@ class Lead < ApplicationRecord
     def deactivate_coupon
       return true if self.coupon.nil?
       self.coupon.de_activate
+    end
+
+    def verify_coupon
+      coupon = Coupon.find_by_id(self.coupon_id)
+      if coupon.nil? 
+        return 
+      end
+      unless coupon[:is_active]
+        self.coupon = nil
+      end
+    end
+
+    def update_location_progress
+      location = Location.find_by_id(self.location_id)
+      location[:current] += 1
+      if location[:current] == location[:target]
+        location[:is_active] = false
+      end
+      location.save
     end
 end

@@ -6,7 +6,7 @@ html
       = content_for?(:title) ? yield(:title) : 'Haryali'
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Haryali'}"
     == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
-    script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API_KEY']}&v=3.exp&libraries=places" type="text/javascript"
+    script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API_KEY']}&v=3&libraries=places" type="text/javascript"
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
   body
@@ -59,7 +59,7 @@ html
               nav.menu-container
                 ul#menu.sm.me-menu
                   li.active
-                    a href="#"  Home
+                    a href="/"  Home
                   li
                     a href="#"  Services
                   li
@@ -75,13 +75,13 @@ html
           .centered-inner-container
             h1.page-title Own a Tree
             hr.separator.small-separator/
-            .heading-caption We are Expert In All Aspect of Garden and Landscape Design
+            .heading-caption We are Experts In All Aspects of Garden and Landscape Design
       .breadcrumb-container
         .container
           .row
             .col-md-12
               nav.breadcrumb
-                a.breadcrumb-item href="#"  Home
+                a.breadcrumb-item href="/"  Home
                 span.breadcrumb-item.active Own a Tree
       == render 'layouts/messages'
 
@@ -98,12 +98,12 @@ html
               a href="/" 
                 = image_tag "logo.png", alt: "Footer Logo"
                 
-            p Haryali.pk is a social cause initiative by a an Organization called ‘Umeed-e-Sahar’. Haryali.pk aspires to initiate a community drive that plants trees and flowers to bring a green change in Pakistan.
+            p Haryali.pk is a social cause initiated by an Organization called ‘Umeed-e-Sahar’. Haryali.pk aspires to initiate a community drive that plants trees and flowers to bring a green change in Pakistan.
           .col-md-3.col-lg-2
             h5.footer-title Quick Links
             ul.me-list
               li
-                a href="#"  Home
+                a href="/"  Home
               li
                 a href="#"  Services
               li
@@ -115,21 +115,21 @@ html
           .col-md-4.col-lg-2
             h5.footer-title Contact Us
             p
-              strong General Contact :
+              strong General Contact:
               br/
               a.text-color href="mailto:info@haryali.pk"  info@haryali.pk
               br/
-              strong Information :
+              strong Information:
               br/
               a.text-color href="mailto:info@haryali.pk"  info@haryali.pk
           .col-md-12.col-lg-5
-            | \&nbsp;
+            | &nbsp;
       .footer-bottom
         .container
           .row
             .col-md-12.text-center
               .copyright.pull-left
-                | \&copy; All rights reserved 2017,
+                | &copy; All rights reserved 2017, 
                 strong Haryali.pk
               ul.footer-social.social-icon.pull-right
                 li

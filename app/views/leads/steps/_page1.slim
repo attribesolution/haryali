@@ -11,8 +11,8 @@ br
 
 .row
   - Plant.all.each do |p|
-    .col-sm-4
-      a.lnk_tree tree_id="#{p.id}" href="#!"
+    a.col-sm-4.lnk_tree tree_id="#{p.id}" href="#!"
+      div
         img.img-responsive2 alt="#{p.name}" src="/assets/#{p.image}" /
       p 
         strong = p.name
