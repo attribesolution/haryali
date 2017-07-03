@@ -79,6 +79,8 @@ class App.Leads extends App.Base
 
     ## ######## Select a tree
     $(".lnk_tree").click ->
+      if $(".lnk_tree").hasClass('disabled') 
+        return 
       $(".lnk_tree").removeClass("selected_tree")
       $(this).addClass("selected_tree")
       

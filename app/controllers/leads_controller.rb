@@ -13,7 +13,7 @@ class LeadsController < ApplicationController
   def create
     @wizard = ModelWizard.new(Lead, session, params, lead_params).continue
     @lead = @wizard.object
-    @locations = HaryaliLocation.select(:id, :address, :current, :target)
+    @locations = HaryaliLocation.select(:id, :address, :current, :target).where(is_active: :true)
     if @wizard.save
       redirect_to @lead
     else
