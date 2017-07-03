@@ -13,7 +13,7 @@ br
   - Plant.all.each do |p|
     a.col-sm-4.lnk_tree tree_id="#{p.id}" href="#!"
       div
-        img.img-responsive2 alt="#{p.name}" src="/assets/#{p.image}" /
+        img.img-responsive2 alt="#{p.name}" src="#{asset_path(p.image)}"
       p 
         strong = p.name
         br
