@@ -1,43 +1,48 @@
-.container
-  ._center
-    = image_tag "check.png", class: "img-responsive"
-    / img.img-responsive alt="logo" src="/assets/check.png" / 
-  h1.t1 Thank you!
-  p.t3 Your submission is received and we will contact you soon.
-    
-  table.table.table-striped
-    tbody
-      tr
-        td 
-          strong Name:
-        td = @lead.name
-      tr    
-        td 
-          strong Contact:
-        td = @lead.contact
-      tr   
-        td 
-          strong Email:
-        td = @lead.email
-      tr
-        td 
-          strong Plant:
-        td = @lead.plant.name
+- unless @lead.nil?
+  .container
+    ._center
+      = image_tag "check.png", class: "img-responsive"
+      / img.img-responsive alt="logo" src="/assets/check.png" / 
+    h1.t1 Thank you!
+    p.t3 Your submission is received and we will contact you soon.
+      
+    table.table.table-striped
+      tbody
+        tr
+          td 
+            strong Name:
+          td = @lead.name
+        tr    
+          td 
+            strong Contact:
+          td = @lead.contact
+        tr   
+          td 
+            strong Email:
+          td = @lead.email
+        tr
+          td 
+            strong Plant:
+          td = @lead.plant.name
 
-      tr  
-        td 
-          strong Location:
-        td = @lead.location.try(:address)
+        tr  
+          td 
+            strong Location:
+          td = @lead.location.try(:address)
 
-      tr  
-        td 
-          strong Quantity:
-        td = @lead.quantity.to_s
-      tr
-        td 
-          strong Price:
-        td = total_price(@lead)
-      tr
-        td 
-          strong Payment Type:
-        td = @lead.payment_type.humanize
+        tr  
+          td 
+            strong Quantity:
+          td = @lead.quantity.to_s
+        tr
+          td 
+            strong Price:
+          td = total_price(@lead)
+        tr
+          td 
+            strong Payment Type:
+          td = @lead.payment_type.humanize
+- else 
+  h1.t1 No Submission found 
+  br
+  = link_to "Back", :back, class:"btn btn-success btn-lg pull-right"
