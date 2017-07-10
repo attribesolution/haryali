@@ -33,6 +33,10 @@ class App.Leads extends App.Base
         disableDoubleClickZoom: false
         streetViewControl: false)
       window.geocoder = new google.maps.Geocoder 
+      # if page loads into haryali location 
+      if $('.active')[2].firstChild.nodeValue.split(' ')[0] == 'Haryali'
+        $('.status').html("Please select a location")
+        $('.status').show()
       
       window.map.addListener 'click', (e) ->
         geocoder.geocode { 'location': e.latLng }, (results, status) ->
@@ -55,6 +59,8 @@ class App.Leads extends App.Base
                 else
                   window.message.setContent "plant here" 
                 window.message.open window.map, window.marker 
+                $("autocomplete_address").valid()
+                $("autocomplete_address").focus()
             else
               window.alert 'No results found'
           else
@@ -62,10 +68,31 @@ class App.Leads extends App.Base
           return
         return
 
+    window.onload = ->
+      if $('.active').length > 2 
+        if $("#autocomplete_address").val().length == 0
+          $("#autocomplete_address").focus()
+      else 
+        if $("#lead_name").val().length == 0
+          $("#lead_name").focus()
+        code = $("#lead_coupon_code").val()
+        if code.length > 1 
+          $.get "/coupons/" + code, (data)->
+            if(data.error)
+              $(".status").html("Invalid code")
+              $("#lead_coupon_id").val("")
+              $($(".lnk_tree")[1]).removeClass('disabled')
+              $($(".lnk_tree")[2]).removeClass('disabled')
+              $(".status").show()
+        $("#lead_plant_id").val($(".selected_tree").attr("tree_id"))
+      return
+
     $(document).on "change",".switch_location",->
       type = $(this).val()
       $(".location_section").hide()
       $(".location_section[type=#{type}]").show()
+      if type == 'DesiredLocation'
+        google.maps.event.trigger(window.map, "resize");
 
     $(document).on "change","#lead_quantity", ->
       quantity = parseInt($(this).val())
@@ -73,6 +100,8 @@ class App.Leads extends App.Base
       discount = parseFloat($(this).attr("discount"))
       total_price = calculateTotalPrice(quantity,price,discount)
       $(".total_price").text("Rs. #{(total_price).toFixed(2)}")
+      if isNaN(quantity)
+        $(this).valid()
 
     calculateTotalPrice = (quantity,price,discount) ->
       return (quantity*price) - discount
@@ -92,6 +121,7 @@ class App.Leads extends App.Base
       $(this).addClass("selected_location")
       id = $(this).attr("location_id")
       $("#lead_location_id").val(id)
+      $('.status').hide()
 
     $.validator.addMethod 'pkphone', ((value) ->
       value.match /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/
@@ -107,6 +137,8 @@ class App.Leads extends App.Base
           minlength: 11
           maxlength: 14
         'lead[email]':
+          required: true
+        'lead[quantity]':
           required: true
 
     return

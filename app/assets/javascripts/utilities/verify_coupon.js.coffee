@@ -7,6 +7,7 @@ class Utility.VerifyCoupon
   verify: ($element) =>
     counter = -1
     code = ""
+    coupon = ""
 
     $element.bind 'input', ->
       if ($(this).val().length > 1)
@@ -24,8 +25,9 @@ class Utility.VerifyCoupon
                   $($(".lnk_tree")[1]).removeClass('disabled')
                   $($(".lnk_tree")[2]).removeClass('disabled')
                 else
+                  coupon = data.coupon.id
                   $(".status").html("Verified")
-                  $("#lead_coupon_id").val(data.coupon.id)
+                  $("#lead_coupon_id").val(coupon)
 
                   $(".lnk_tree").removeClass('selected_tree')
                   $($(".lnk_tree")[0]).addClass('selected_tree')
@@ -45,8 +47,10 @@ class Utility.VerifyCoupon
             $("#lead_plant_id").val(id)
             $($(".lnk_tree")[1]).addClass('disabled')
             $($(".lnk_tree")[2]).addClass('disabled')
+            $("#lead_coupon_id").val(coupon)
       else
         $(".status").hide()
         $($(".lnk_tree")[1]).removeClass('disabled')
         $($(".lnk_tree")[2]).removeClass('disabled')
+        $("#lead_coupon_id").val("")
       return
