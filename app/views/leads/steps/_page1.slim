@@ -11,7 +11,7 @@ br
 
 .row
   - Plant.all.each do |p|
-    a.col-sm-4.lnk_tree tree_id="#{p.id}" href="#!"
+    a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" class="#{ 'selected_tree' if p.id == 1 }"
       div
         / img.img-responsive2 alt="#{p.name}" src="#{asset_path(p.image)}"
         = image_tag p.image, class: "img-responsive2"
@@ -23,6 +23,7 @@ br
         | Rs. #{p.price}
 
   = f.input :plant_id, as: :hidden
+  .status_tree
 
 .row
   .col-sm-6

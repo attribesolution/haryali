@@ -29,6 +29,7 @@ br
           a href="locations/#{loc.id}"
             | More... 
     = f.input :location_id, as: :hidden
+    .status
 
 .form-group.form-quantity
   = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1, discount: f.object.discount, price: f.object.plant.try(:price).to_f, class: "form-width" }
