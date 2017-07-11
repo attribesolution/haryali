@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resources :coupons, only: [:show]
 
-  resources :locations, only: [:show]
+  resources :locations, only: [:show, :new, :create]
+
+  resources :plants, only: [:show, :new, :create]
 end
