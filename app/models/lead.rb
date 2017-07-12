@@ -34,7 +34,14 @@ class Lead < ApplicationRecord
   private
     def check_location_type
       return true if self.step1?
-      return self.location_id?
+      if self.location_id?
+        if self.location_type == "DesiredLocation"
+          return false
+        else
+          return true
+        end
+      end
+      return false
     end
 
     def deactivate_coupon
