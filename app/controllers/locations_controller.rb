@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :set_location, only: [:show]
 
   def show

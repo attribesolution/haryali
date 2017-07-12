@@ -1,4 +1,5 @@
 class PlantsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :show]
   before_action :set_plant, only: [:show, :edit, :update]
 
   # GET /plants/1 
