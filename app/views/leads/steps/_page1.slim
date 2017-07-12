@@ -4,16 +4,15 @@ br
     = f.input :name, label: false, placeholder: "Your full name", class: "form-control"
 .form-group
   .field
-    = f.input :contact, label: false, placeholder: "Your contact number", class: "form-control"
+    = f.input :contact, label: false, placeholder: "03123456789", class: "form-control"
 .form-group
   .field
-    = f.input :email, label: false, placeholder: "Your email address", class: "form-control"
+    = f.input :email, label: false, placeholder: "example@email.com", class: "form-control"
 
 .row
   - Plant.all.each do |p|
     a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" class="#{ 'selected_tree' if p.id == 1 }"
       div
-        / img.img-responsive2 alt="#{p.name}" src="#{asset_path(p.image)}"
         = image_tag p.image, class: "img-responsive2"
       p 
         strong = p.name

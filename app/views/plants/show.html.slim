@@ -1,0 +1,29 @@
+- unless @plant.nil?
+  h1.h1-align
+    strong #{@plant.name}
+  br
+  .table-align
+    table.table.table-striped
+        tbody
+          tr
+            td 
+              strong Name:
+            td = @plant.name 
+          tr    
+            td 
+              strong Detail:
+            td = @plant.detail
+          tr   
+            td 
+              strong Price:
+            td = @plant.price 
+          tr   
+            td 
+              strong Image:
+            td = image_tag @plant.image, class: "img-responsive2"
+- else 
+  h1.t1 No Plant found 
+br
+- unless @plant.nil?
+  = link_to "Edit", edit_plant_path, class:"btn btn-success btn-lg pull-left"
+= link_to "Home", '/', class:"btn btn-success btn-lg pull-right"
