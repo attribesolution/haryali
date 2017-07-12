@@ -348,8 +348,15 @@ border-color: #888C89;
  }
 
  .status {
-  color: red;
+  color: #8ac53a;
  }
 a.disabled { 
   color:gray; 
+}
+a.lnk_tree p{
+  color: black;
+}
+.button-center {
+margin-left: 37%;
+background-color: #8ac53a;
 }
