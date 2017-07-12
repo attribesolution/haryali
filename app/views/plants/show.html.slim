@@ -24,4 +24,6 @@
 - else 
   h1.t1 No Plant found 
 br
+- unless @plant.nil?
+  = link_to "Edit", edit_plant_path, class:"btn btn-success btn-lg pull-left"
 = link_to "Home", '/', class:"btn btn-success btn-lg pull-right"

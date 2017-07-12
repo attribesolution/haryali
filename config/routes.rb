@@ -9,5 +9,5 @@ Rails.application.routes.draw do
 
   resources :locations, only: [:show, :new, :create]
 
-  resources :plants, only: [:show, :new, :create]
+  resources :plants, only: [:show, :new, :create, :edit, :update]
 end

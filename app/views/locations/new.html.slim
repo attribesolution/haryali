@@ -1,14 +1,3 @@
 h1.t1 New Haryali Location 
-.row
-  = simple_form_for(@location, html: { class: 'form-horizontal' }) do |f|
-    = f.hidden_field :type, value: "HaryaliLocation"
-    = f.hidden_field :lat
-    = f.hidden_field :lng
-    .form-group
-      = f.input :address, label: false, placeholder: "Enter address", input_html: { id: "autocomplete_address", class: "form-control" }
-    .map style=("width: 135%; height: 200px;") 
-    br
-    .form-group
-      = f.input :target, label: false, placeholder: "Number of trees to plant", class: "form-control"
-    .form-group
-      = f.submit "Save", class: "btn btn-basic pull-right btn-gray"
+
+= render 'form'
