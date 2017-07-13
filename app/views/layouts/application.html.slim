@@ -46,8 +46,12 @@ html
                       i.fa.fa-instagram aria-hidden="true" 
                   - if current_user
                     li
-                      = link_to destroy_user_session_path , method: :delete do
+                      = link_to destroy_user_session_path, method: :delete do
                         i.fa.fa-sign-out
+                  - else 
+                    li
+                      = link_to new_user_session_path do
+                        i.fa.fa-sign-in
       /! header-top end here
       .header-main
         .container

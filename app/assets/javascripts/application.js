@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/bootstrap-tooltip
 //= require jquery.validate
 //= require gmaps/google
 //= require tether

@@ -38,7 +38,7 @@ br
 
 /br
 /h3.font-weight-bold Payment Methods
-hr
 /.form-group.mainselection
 /  = f.select(:payment_type, Lead.payment_types.keys.map {|pt| [pt.titleize, pt]})
 = f.hidden_field :payment_type, value: "cash_on_delivery"
+hr

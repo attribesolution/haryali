@@ -14,7 +14,11 @@ class App.Leads extends App.Base
     return
 
   new: =>
-    @couponVerify = new Utility.VerifyCoupon($("#lead_coupon_code"))
+    if $('#lead_coupon_code')
+      @couponVerify = new Utility.VerifyCoupon($("#lead_coupon_code"))
+      $('.verified').hide()
+      $('.invalid').hide()
+      $('.status').hide()
 
     if $('.active').length > 2
       coordinates = 
