@@ -77,18 +77,13 @@ width:120%;
   width: 100.5%;
   margin-left: -1%;
 }
-// .list-group-item.active {
-//   background-color : #8ac53a;
-// }
-// .list-group-item {
-//   width: 130%;
-// } 
+
 .has-error .help-block{
   color: red;
   text-decoration: italic;
 } 
 .btn-position {
-  margin-right:-14%;
+  margin-right:-1%;
 }
 .color-active {
   background-color: #60CD71    ;  
@@ -108,16 +103,13 @@ width:120%;
 ._small {
   margin-left:-4%;
 }
-._medium {
-
-}
 ._large {
   margin-right:10%;
 } 
 .total_price {
   float: left;
   margin-left: 70%;
-  margin-top: -10%;
+  margin-top: -11%;
 }
 .form-quantity {
   margin-left: 16%;
@@ -153,7 +145,6 @@ width:120%;
     float:left;
     width:28%;
     padding:5px;
-
 }
 .img-tree {
   height:10%;
@@ -211,9 +202,12 @@ h3 {
   border-width: 5px;
   height:140%;
 }
+.coupon-info {
+  margin-left: -80%;
+}
 .btn-position-next {
-  margin-top: -18%;
-  margin-right:-1%;
+  margin-top: -33%;
+  margin-right:4%;
  }
 .mainselection select {
    border: 0;
@@ -229,12 +223,12 @@ h3 {
 }
 .mainselection {
    overflow:hidden;
-   width:350px;
+   width:380px;
    -moz-border-radius: 9px 9px 9px 9px;
    -webkit-border-radius: 9px 9px 9px 9px;
    border-radius: 9px 9px 9px 9px;
    box-shadow: 1px 1px 11px #330033;
-   margin-left: 20%;
+   margin-left: 16%;
    background-color: #D8DFD9; 
    background: #D8DFD9   url("http://i62.tinypic.com/15xvbd5.png") no-repeat scroll 319px center;
 }
@@ -323,6 +317,9 @@ border-color: #888C89;
 }
 .color-btn {
   background-color: #888C89 
+}
+.btn-position-back {
+  margin-left: 17%;
 }
  .table.table-striped {
    width:100%;
