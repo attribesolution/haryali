@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620064832) do
+ActiveRecord::Schema.define(version: 20170713085519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 20170620064832) do
     t.string "image"
   end
 
+  create_table "timeline_events", force: :cascade do |t|
+    t.string "title"
+    t.string "caption"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "location_id"
+    t.index ["location_id"], name: "index_timeline_events_on_location_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -94,4 +104,5 @@ ActiveRecord::Schema.define(version: 20170620064832) do
   end
 
   add_foreign_key "leads", "plants"
+  add_foreign_key "timeline_events", "locations"
 end

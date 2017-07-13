@@ -39,6 +39,7 @@ gem 'pg'
 gem 'slim-rails'
 gem 'therubyracer', :platform=>:ruby
 gem 'rails_script', '~> 2.0'
+gem 'cocoon'
 gem "figaro"
 gem 'gmaps4rails'
 source 'https://rails-assets.org' do
