@@ -38,12 +38,16 @@ html
                   li
                     a.twitter-color href="https://twitter.com/HaryaliPk" 
                       i.fa.fa-twitter aria-hidden="true" 
-                  li
+                  /li
                     a.google-color href="javascript:void(0)" 
                       i.fa.fa-google-plus aria-hidden="true" 
-                  li
+                  /li
                     a.instagram-color href="javascript:void(0)" 
                       i.fa.fa-instagram aria-hidden="true" 
+                  - if current_user
+                    li
+                      = link_to destroy_user_session_path , method: :delete do
+                        i.fa.fa-sign-out
       /! header-top end here
       .header-main
         .container
@@ -138,16 +142,16 @@ html
                 li
                   a.twitter-color href="https://twitter.com/HaryaliPk" 
                     i.fa.fa-twitter
-                li
+                /li
                   a.google-color href="javascript:void(0)" 
                     i.fa.fa-google-plus
-                li
+                /li
                   a.dribbble-color href="javascript:void(0)" 
                     i.fa.fa-dribbble
-                li
+                /li
                   a.linkedin-color href="javascript:void(0)" 
                     i.fa.fa-linkedin
-                li
+                /li
                   a.instagram-color href="javascript:void(0)" 
                     i.fa.fa-instagram
 
