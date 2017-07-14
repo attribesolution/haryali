@@ -15,21 +15,14 @@ br
   = location_form.hidden_field :lng, id: "location_lng"
   .form-group.location_section type="DesiredLocation" style="#{ hide_desired_location ? 'display:none;' : '' }"
     = location_form.input :address, label: false, placeholder: "Enter address", input_html: { id: "autocomplete_address", class: "form-control form-width" }
-<<<<<<< HEAD
+
     .map style=("width: 62%; height: 250px;") 
   .form-group.location_section type="HaryaliLocation" style="#{!hide_desired_location ? 'display:none;' : ''}"
     .list-group
       - @locations.each do |loc|
         div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
           = loc.address
-=======
-    .map style=("width: 100%; height: 200px;") 
-.form-group.location_section type="HaryaliLocation" style="#{ !hide_desired_location ? 'display:none;' : '' }"
-  .list-group
-    - @locations.each do |loc|
-      div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
-        = loc.address
->>>>>>> a2e65718fd1f58dd337755c83ebe01da76f025d0
+
 
         .d-flex.w-100.justify-content-between
           h5.mb-1  
