@@ -34,8 +34,12 @@ class Lead < ApplicationRecord
   private
     def check_location_type
       return true if self.step1?
-      if self.location_type == "HaryaliLocation"
-        return true
+      if self.location_id?
+        if self.location_type == "DesiredLocation"
+          return false
+        else
+          return true
+        end
       end
       return false
     end
@@ -55,10 +59,10 @@ class Lead < ApplicationRecord
       end
     end
 
-    def update_location_progress
+    def update_location_progress 
       location = Location.find_by_id(self.location_id)
-      location[:current] += 1
-      if location[:current] == location[:target]
+      location[:current] += self.quantity
+      if location[:current] >= location[:target]
         location[:is_active] = false
       end
       location.save
