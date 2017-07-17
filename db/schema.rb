@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170713085519) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "current", default: 0, null: false
-    t.integer "target", default: 1, null: false
+    t.integer "target", default: 0, null: false
     t.boolean "is_active", default: true
   end
 
