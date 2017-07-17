@@ -1,6 +1,6 @@
 class LocationsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  before_action :set_location, only: [:show, :edit]
+  before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_location, only: [:show]
 
   def show
   end
@@ -16,9 +16,6 @@ class LocationsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   private
