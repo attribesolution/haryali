@@ -3,7 +3,6 @@
 = render "leads/steps/page#{f.object.current_step + 1}", f: f
 
 .field
-  
   = link_to "Back", 'javascript:history.back();', class: "btn btn-basic pull-left color-btn btn-position-back" unless f.object.first_step?
 
   - if f.object.last_step?

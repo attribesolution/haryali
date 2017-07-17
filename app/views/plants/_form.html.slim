@@ -7,7 +7,7 @@
     .form-group
       = f.input :price, label: false, input_html: { class: "form-control", min: 1, placeholder: "Enter Plant price" }
     .form-group
-      = f.file_field :image, id: 'plant-image'
+      = f.file_field :image, id: 'plant-image', accept: '.png,.jpeg,.jpg'
       br
       img#img_prev alt="plant image" height="300" src="#{f.object.image}" width="300"
 

@@ -16,8 +16,14 @@ $ ->
     location = place.geometry.location
     
     # fill lat lng 
-    $("#location_lat").val(location.lat())
-    $("#location_lng").val(location.lng())
+    if $('#location_lat').length < 1
+      $("#haryali_location_lat").val(location.lat())
+      $("#haryali_location_lng").val(location.lng())
+      message = "click on the map to change location" 
+    else
+      $("#location_lat").val(location.lat())
+      $("#location_lng").val(location.lng())
+      message = "click on the map to change planting location" 
     if window.marker == undefined
       window.marker = new google.maps.Marker(
         position: location
@@ -27,9 +33,9 @@ $ ->
     window.map.panTo location 
     
     if window.message == undefined
-      window.message = new google.maps.InfoWindow content: "click on the map to change planting location" 
+      window.message = new google.maps.InfoWindow content: message
     else 
-      window.message.setContent "click on the map to change planting location"
+      window.message.setContent message
     window.message.open window.map, window.marker 
 
   if $("#autocomplete_address").length > 0

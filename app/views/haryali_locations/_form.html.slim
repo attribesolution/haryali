@@ -7,9 +7,8 @@
       = f.input :address, label: false, placeholder: "Enter address", input_html: { id: "autocomplete_address", class: "form-control" }
     .map style=("width: 135%; height: 200px;") 
     br
-    - if f.object.current?
-      .form-group
-        = f.input :current, label:false, placeholder: "Number of trees planted", class: "form-control"
+    .form-group
+      = f.input :current, label:false, placeholder: "Number of trees planted", class: "form-control"
     .form-group
       = f.input :target, label: false, placeholder: "Number of trees to plant", class: "form-control"
     .form-group

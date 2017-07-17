@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :set_location, only: [:show]
 
   def show
@@ -24,6 +24,6 @@ class LocationsController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:type, :lat, :lng, :address, :target)
+      params.require(:location).permit(:type, :lat, :lng, :address, :target, timeline_events_attributes: [:id, :title, :caption, :image, :_destroy])
     end
 end
