@@ -15,6 +15,7 @@ class LeadsController < ApplicationController
     @lead = @wizard.object
     @locations = HaryaliLocation.select(:id, :address, :current, :target).where(is_active: :true).order(:created_at)
     if @wizard.save
+      UserMailer.welcome_email(@lead).deliver
       redirect_to @lead
     else
       render :new
