@@ -16,8 +16,12 @@ $ ->
     location = place.geometry.location
     
     # fill lat lng 
-    $("#location_lat").val(location.lat())
-    $("#location_lng").val(location.lng())
+    if $('#location_lat').length < 1
+      $("#haryali_location_lat").val(location.lat())
+      $("#haryali_location_lng").val(location.lng())
+    else
+      $("#location_lat").val(location.lat())
+      $("#location_lng").val(location.lng())
     if window.marker == undefined
       window.marker = new google.maps.Marker(
         position: location
