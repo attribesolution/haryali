@@ -289,3 +289,9 @@ a.lnk_tree p{
 margin-left: 42%;
 background-color: #8ac53a;
 }
+.input-group-addon.verified {
+  color: #8ac53a;
+}
+.input-group-addon.invalid {
+  color: red;
+}
