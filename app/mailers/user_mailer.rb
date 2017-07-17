@@ -5,6 +5,6 @@ class UserMailer < ApplicationMailer
   def welcome_email(lead)
     @lead = lead
     @url  = "http://haryali.pk"
-    mail(:to => @lead.email, :subject => "Account Successfully Created")
+    mail(:to => @lead.email, :subject => "Haryali.pk - Plant Owning Request")
   end
 end
