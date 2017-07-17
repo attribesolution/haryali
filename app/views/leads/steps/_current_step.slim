@@ -3,8 +3,9 @@
 = render "leads/steps/page#{f.object.current_step + 1}", f: f
 
 .field
-  = link_to "Back", 'javascript:history.back();', class: "btn btn-basic pull-left color-btn" unless f.object.first_step?
+  = link_to "Back", 'javascript:history.back();', class: "btn btn-basic pull-left color-btn btn-position-back" unless f.object.first_step?
+
   - if f.object.last_step?
-    = f.submit "Plant", class: "btn color pull-right btn-position"
+    = f.submit "Plant", class: "btn color pull-right btn-position-plant"
   - else
     = f.submit "Next", class: "btn btn-basic pull-right btn-gray btn-position-next"
