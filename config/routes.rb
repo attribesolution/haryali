@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   resources :locations, only: [:show, :new, :create]
 
+  resources :haryali_locations, only: [:edit, :update]
+
   resources :plants, only: [:show, :new, :create, :edit, :update]
 end

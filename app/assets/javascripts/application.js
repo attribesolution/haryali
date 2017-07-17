@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/bootstrap-tooltip
 //= require jquery.validate
 //= require gmaps/google
 //= require tether
 //= require bootstrap-sprockets
 //= require rails_script
+//= require cocoon
 //= require_tree .

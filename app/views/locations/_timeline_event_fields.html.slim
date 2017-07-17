@@ -1,0 +1,11 @@
+.nested-fields
+	.row
+	  = f.input :title
+	  = f.input :caption
+	  /= f.input :image
+	  .form-group
+	    = f.file_field :image, id: 'event-image', accept: '.png,.jpeg,.jpg'
+	    br
+	    img#img_prev alt="event image" height="300" src="#{f.object.image}" width="300"
+  	= link_to_remove_association "X", f, class: "btn btn-danger"
+	hr

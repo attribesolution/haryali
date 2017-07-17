@@ -27,7 +27,22 @@
   input.lat value=@location.lat type='hidden'
   input.lng value=@location.lng type='hidden'
   .map style=("width: 100%; height: 200px;") 
+
+  - if @location.timeline_events
+    br
+    h1.h1-align
+      strong Timeline
+  - @location.timeline_events.each do |event|
+    hr
+    .row
+      .row
+        | #{event.title}
+      .row
+        | #{event.caption}
+        = image_tag event.image, alt:"#{event.image}", class: "img-responsive2"
 - else 
   h1.t1 No Location found 
 br
+- if current_user
+  = link_to "Edit", edit_haryali_location_path, class:"btn btn-success btn-lg pull-left"
 = link_to "Back", 'javascript:history.back();', class:"btn btn-success btn-lg pull-right"
