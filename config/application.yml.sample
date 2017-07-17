@@ -3,9 +3,9 @@ development:
   GMAIL_PASSWORD: gmail_password
   DOMAIN_NAME: domain_name
   SECRET_KEY_BASE: secret_key_base
-  GOOGLE_MAP_API_KEY: AIzaSyA8M0rF7XioefB2vr4Z0d8Ft_Gn7IrTLoc
-  ADMIN_EMAIL: admin@haryali.pk
-  ADMIN_PASSWORD: "321321321"
+  GOOGLE_MAP_API_KEY: google_api_key
+  ADMIN_EMAIL: admin_email
+  ADMIN_PASSWORD: admin_password
 
 test:
   GMAIL_USERNAME: gmail_email
@@ -20,6 +20,6 @@ production:
   SECRET_KEY_BASE: secret_key_base
   RAILS_SERVE_STATIC_FILES: "true"
   RAILS_LOG_TO_STDOUT: "true"
-  GOOGLE_MAP_API_KEY: AIzaSyA8M0rF7XioefB2vr4Z0d8Ft_Gn7IrTLoc
-  ADMIN_EMAIL: admin@haryali.pk
-  ADMIN_PASSWORD: "321321321"
+  GOOGLE_MAP_API_KEY: google_api_key
+  ADMIN_EMAIL: admin_email
+  ADMIN_PASSWORD: admin_password
