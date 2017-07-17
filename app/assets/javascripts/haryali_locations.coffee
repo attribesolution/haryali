@@ -73,4 +73,25 @@ class App.HaryaliLocations extends App.Base
           required: true
         'haryali_location[target]':
           required: true
+
+    window.onload = ->
+      # validate all existing event fields 
+      events = document.getElementsByClassName "nested-fields"
+      i = 0
+      while i < events.length
+        $(events[i].firstChild.firstChild.firstChild.nextSibling).rules 'add', required: true
+        $(events[i].firstChild.firstChild.nextSibling.firstChild.nextSibling).rules 'add', required: true
+        i++
+      # link add event button to validate new event fields on create 
+      $('#add_event')[0].onclick = validateEvent 
+      return
+
+    validateEvent = ->
+      temp = @parentNode
+      setTimeout (->
+        $(temp.previousSibling.firstChild.firstChild.firstChild.nextSibling).rules 'add', required: true
+        $(temp.previousSibling.firstChild.firstChild.nextSibling.firstChild.nextSibling).rules 'add', required: true
+        return
+      ), 100
+      return
     return

@@ -86,6 +86,20 @@ class App.Locations extends App.Base
           required: true
         'location[target]':
           required: true
+    
+    window.onload = ->
+      # link add event button to validate new event fields on create 
+      $('#add_event')[0].onclick = validateEvent 
+      return
+
+    validateEvent = ->
+      temp = @parentNode
+      setTimeout (->
+        $(temp.previousSibling.firstChild.firstChild.firstChild.nextSibling).rules 'add', required: true
+        $(temp.previousSibling.firstChild.firstChild.nextSibling.firstChild.nextSibling).rules 'add', required: true
+        return
+      ), 100
+      return
     return
 
   edit: =>
