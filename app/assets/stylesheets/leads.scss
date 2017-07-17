@@ -36,33 +36,16 @@ label[for=lead_plant_id_12] {
 -webkit-align-self: center; /* Safari 7.0+ */
     align-self: center;
 }
-.form-group {
-  width:135%;
-}
 
 
-.form-control {
-  width: 70%;
 
-}
-.form-width {
-width:120%;
-}
+
 
 .color {
   background-color: #8ac53a;
 }
 
-.row {
-  width: 90%;
-}
-
-.right {
-  float: left;
-  padding-right: 5px;
-  padding-left: 5px;
-  
-} 
+ 
 .side {
   margin-top: -12.5%;
   margin-right: 5%
@@ -82,8 +65,8 @@ width:120%;
   color: red;
   text-decoration: italic;
 } 
-.btn-position {
-  margin-right:-1%;
+.btn-position-plant {
+  margin-right:2%;
 }
 .color-active {
   background-color: #60CD71    ;  
@@ -100,23 +83,18 @@ width:120%;
 .simple_form {
   margin-left:4%;
 }
-._small {
-  margin-left:-4%;
-}
-._large {
-  margin-right:10%;
-} 
+
 .total_price {
   float: left;
-  margin-left: 70%;
-  margin-top: -11%;
+  margin-left: 60%;
+  margin-top: -12%;
 }
 .form-quantity {
   margin-left: 16%;
-  width:90%;
+  width:100%;
 }
 .location_section {
-  width:140%;
+  width:105%;
   margin-left: 15%;
 }
 
@@ -124,45 +102,13 @@ width:120%;
   width:100%;
   margin-left:15%;
 }
-.caption-3 {
-  float: left;
-  margin-right: 2%;
-}
-
-.caption-2 {
-  float: left;
-  margin-right: 2%;
-  margin-top: -5%;
-}
-
-.parent {
-    margin-bottom: 10px;
-    padding: 2px;
-    color: #0A416B;
-   
-}
-.left, .center, .right{
-    float:left;
-    width:28%;
-    padding:5px;
-}
-.img-tree {
-  height:10%;
-  width: 35%;
-
-}
 .list-group {
   width: 62%;
 }
 .form-horizontal{
   width:70%;
 }
-h1 {
-  color: #8ac53a;
-  margin-left:25%;
-  text-shadow: 2px 2px #D3D3D3;
-  font-weight: bold;
-}
+
 h3 {
   margin-left: 27%;
 }
@@ -179,15 +125,18 @@ h3 {
  
 }
 .form-width {
-  width: 46%;
+  width: 50%;
+}
+.btn-group {
+  cursor: hand;
 }
 
-.row {
- margin-left: 10%;
+.form-align {
+ margin-left:50%;
 }
 .input-lg{
-  width: 180%;
-  margin-left:-50%;
+  width: 120%;
+  margin-left:-2;
 }
 .selected_tree {
   background-color: #E5E9E6  ;
@@ -202,14 +151,25 @@ h3 {
   border-width: 5px;
   height:140%;
 }
-
 .coupon-info {
-  margin-left: -80%;
+  margin-left: 4%;
+  width:130%;
 }
 .btn-position-next {
-  margin-top: -33%;
-  margin-right:4%;
+  margin-top: -18.5%;
+  margin-right:2%;
  }
+.form-side {
+  margin-left: 41%;
+
+} 
+.thankyoupage-align {
+  margin-left:30%;
+  width: 44%;
+}
+.field-width {
+  width:83%;
+}
 .mainselection select {
    border: 0;
    color: black;
@@ -243,20 +203,7 @@ h3 {
   font-weight: 10%;
   color: black;
 }
-.col-sm-6 {
-  width: 80%;
-  
-  margin-left: 10%;
-  height: 70%;
-}
-.col-sm-6 p{
-  margin-left: 20%;
-  color: gray;
-  text-align: left;
-}
-.col-sm-6 strong {
-  padding-right:20%;
-}
+
 .simple_form {
   margin-left:-5%;
 }
@@ -275,23 +222,7 @@ h3 {
 width: 10%;
  
 }
-.col-sm-4 {
- padding-right: 2%;
-  padding-right: 2%; 
 
-}
-.col-sm-4 p{
-  text-align: center;
-  padding-right: 8%;
-  padding-right: 8%;
-}
-.col-md-6 li{
-background-color:#f1f1f1;
-width: 135%;
-color:black;
-border-style:solid;
-border-color: #888C89;
-}
 .col-md-6.progress-bar {
   background-color: #8ac53a;
 
@@ -308,10 +239,7 @@ border-color: #888C89;
   margin-left: 38%;
   padding-bottom:3%;
 }
-.container {
-  width: 65%;
-  margin-left: 15%;
-}
+
 .color-active {
   background-color: #60CD71    ;  
   background-color: #BCC2BD      ;
@@ -320,7 +248,7 @@ border-color: #888C89;
   background-color: #888C89 
 }
 .btn-position-back {
-  margin-left: 17%;
+  margin-left: 50%;
 }
  .table.table-striped {
    width:100%;
@@ -336,10 +264,11 @@ border-color: #888C89;
 }
 .h1-green {
    color: #8ac53a;
- margin-left:29%;
-  margin-left:26%;
+ margin-left:36%;
+ 
    text-shadow: 2px 2px #D3D3D3;
    font-weight: bold;
+   font-size: 40px;
 }
 .error {
   color: red;
@@ -355,6 +284,6 @@ a.lnk_tree p{
   color: black;
 }
 .button-center {
-margin-left: 37%;
+margin-left: 42%;
 background-color: #8ac53a;
 }
