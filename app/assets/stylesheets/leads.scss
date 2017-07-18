@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.form-control {
+  max-width: 100%;
+}
+
 .parent {
   display: block;
 margin: 0px;
@@ -135,8 +139,9 @@ h3 {
  margin-left:50%;
 }
 .input-lg{
-  width: 120%;
+  width: 140%;
   margin-left:-2;
+  
 }
 .selected_tree {
   background-color: #E5E9E6  ;
@@ -156,7 +161,7 @@ h3 {
   width:130%;
 }
 .btn-position-next {
-  margin-top: -6.5%;
+  margin-top: -15.5%;
   margin-right:2%;
  }
 .form-side {
@@ -233,6 +238,7 @@ width: 10%;
 }
 .h1-align {
   margin-left:-30%;
+  max-width:100%;
 }
 ._center {
   width:120%;
@@ -267,7 +273,7 @@ width: 10%;
 .h1-green {
    color: #8ac53a;
  margin-left:36%;
- 
+ max-width:100%;
    text-shadow: 2px 2px #D3D3D3;
    font-weight: bold;
    font-size: 40px;
