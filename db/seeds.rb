@@ -9,7 +9,7 @@
 
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
-CreatePlantsService.new.call
-puts 'ADDED PLANTS'
-CreateLocationsService.new.call
-puts "ADDED HARYALI LOCATIONS"
+# CreatePlantsService.new.call
+# puts 'ADDED PLANTS'
+# CreateLocationsService.new.call
+# puts "ADDED HARYALI LOCATIONS"
