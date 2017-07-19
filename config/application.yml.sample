@@ -6,12 +6,18 @@ development:
   GOOGLE_MAP_API_KEY: google_api_key
   ADMIN_EMAIL: admin_email
   ADMIN_PASSWORD: admin_password
+  AWS_ACCESS_KEY: aws_access_key
+  AWS_SECRET_KEY: aws_secret_key
+  AWS_BUCKET_NAME: development_bucket_name
 
 test:
   GMAIL_USERNAME: gmail_email
   GMAIL_PASSWORD: gmail_password
   DOMAIN_NAME: domain_name
   SECRET_KEY_BASE: secret_key_base
+  AWS_ACCESS_KEY: aws_access_key
+  AWS_SECRET_KEY: aws_secret_key
+  AWS_BUCKET_NAME: testing_bucket_name
 
 production:
   GMAIL_USERNAME: gmail_email
@@ -23,3 +29,6 @@ production:
   GOOGLE_MAP_API_KEY: google_api_key
   ADMIN_EMAIL: admin_email
   ADMIN_PASSWORD: admin_password
+  AWS_ACCESS_KEY: aws_access_key
+  AWS_SECRET_KEY: aws_secret_key
+  AWS_BUCKET_NAME: production_bucket_name

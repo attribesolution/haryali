@@ -14,10 +14,14 @@ class PlantsController < ApplicationController
   # POST /plants 
   def create
   	@plant = Plant.new(plant_params)
-    if @plant.save
-      redirect_to action: "show", id: @plant.id
-    else
+    if validate_image_size(@plant.image)
       render :new
+    else
+      if @plant.save
+        redirect_to action: "show", id: @plant.id
+      else
+        render :new
+      end
     end
   end
 
@@ -27,10 +31,14 @@ class PlantsController < ApplicationController
 
   # PATCH/PUT /plants/1 
   def update
-    if @plant.update(plant_params)
-      redirect_to action: "show", id: @plant.id
-    else
+    if validate_image_size(plant_params[:image])
       render :new
+    else
+      if @plant.update(plant_params)
+        redirect_to action: "show", id: @plant.id
+      else
+        render :new
+      end
     end
   end
 
@@ -41,5 +49,18 @@ class PlantsController < ApplicationController
 
     def plant_params
       params.require(:plant).permit(:name, :detail, :price, :image)
+    end
+    
+    def validate_image_size (image)
+      if image.nil?
+        return false
+      else
+        if image.size > 0.5.megabytes
+          flash.now[:error] = "Image size should be less than 500KB" 
+          return true
+        else
+          return false
+        end
+      end
     end
 end
