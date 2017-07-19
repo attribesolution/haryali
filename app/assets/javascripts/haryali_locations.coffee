@@ -34,6 +34,7 @@ class App.HaryaliLocations extends App.Base
       streetViewControl: false)
     window.marker = new google.maps.Marker(
         position: coordinates
+        icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
         map: window.map)
     window.message = new google.maps.InfoWindow content: "click on the map to change location" 
     window.message.open window.map, window.marker 
