@@ -26,6 +26,7 @@ class App.Locations extends App.Base
         streetViewControl: false)
       new google.maps.Marker(
         position: coordinates
+        icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
         map: map)
     return
 

@@ -54,6 +54,7 @@ class App.Leads extends App.Base
                 if window.marker == undefined
                   window.marker = new google.maps.Marker(
                     position: e.latLng
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
                     map: window.map)
                 else
                   window.marker.setPosition e.latLng 
