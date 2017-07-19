@@ -43,14 +43,11 @@ class App.Locations extends App.Base
 
       
     modal = document.getElementById('myModal')
-    img = document.getElementById('myImg')
     modalImg = document.getElementById('img01')
-    captionText = document.getElementById('caption')
 
-    img.onclick = ->
+    $('.img1_image').click ->
       modal.style.display = 'block'
       modalImg.src = @src
-      captionText.innerHTML = @alt
       return
 
     span = document.getElementsByClassName('close')[0]
