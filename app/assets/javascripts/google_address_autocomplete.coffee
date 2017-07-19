@@ -27,6 +27,7 @@ $ ->
     if window.marker == undefined
       window.marker = new google.maps.Marker(
         position: location
+        icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
         map: window.map)
     else
       window.marker.setPosition location
