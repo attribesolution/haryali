@@ -1,139 +1,55 @@
 - unless @location.nil?
-  h1.h1-align
+  h1.h1-align.location-heading
     strong #{@location.address.split(',')[0]}
   br
   .table-align
     table.table.table-striped
-        tbody
-          tr
-            td 
-              strong Address:
-            td = @location.address 
-          tr    
-            td 
-              strong Total Plants Required:
-            td = @location.target
-          tr   
-            td 
-              strong Total Plants Planted:
-            td = @location.current 
-          tr   
-            td 
-              strong Progress Bar:
-            td 
-              .progress.bar-size
-                .progress-bar.color role="progressbar" style="width:#{100*@location.current/@location.target}%"
-                 span.sr-only #{100*@location.current/@location.target}% Complete
+      tbody
+        tr
+          td 
+            strong Address:
+          td = @location.address 
+        tr    
+          td 
+            strong Total Plants Required:
+          td = @location.target
+        tr   
+          td 
+            strong Total Plants Planted:
+          td = @location.current 
+        tr   
+          td 
+            strong Progress Bar:
+          td 
+            .progress.bar-size
+              .progress-bar.color role="progressbar" style="width:#{100*@location.current/@location.target}%"
+               span.sr-only #{100*@location.current/@location.target}% Complete
   input.lat value=@location.lat type='hidden'
   input.lng value=@location.lng type='hidden'
-  .map style=("width: 100%; height: 200px;") 
-
-  - if @location.timeline_events
-    br
-    h1.h1-align
-      strong Timeline
-  - @location.timeline_events.each do |event|
-    hr
-    
-      .row
-        | #{event.title}
-      .row
-        | #{event.caption}
-        = image_tag event.image, alt:"#{event.image}", class: "img-responsive2"
+  .map.map-align style=("width: 50%; height: 200px;") 
+  br
+    section#cd-timeline.cd-container.body-1
+      - if @location.timeline_events
+        - @location.timeline_events.each do |event|
+          .cd-timeline-block
+            .start
+              | #{event.created_at.strftime("%Y")}
+            br
+            .cd-timeline-img.cd-picture
+              img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
+            .cd-timeline-content
+              .head-green
+                h2.heading-timeline.h2_1 #{event.title}
+              p A Hara Bhara Pakistan is everybody’s responsibility! Help us in our Green Revolution as we forge ahead to change our barren landscapes to lush green fields.
+              img#myImg.img1_image alt="Location Image" height="200" src="#{event.image}" width="300"
+              #myModal.modal
+                span.close &times;
+                img#img01.modal-content.img1
+              span.cd-date #{event.created_at.strftime("%B %Y")}
 - else 
   h1.t1 No Location found 
 br
-- if current_user
+- if current_user && @location
   = link_to "Edit", edit_haryali_location_path, class:"btn btn-success btn-lg pull-left"
 = link_to "Back", 'javascript:history.back();', class:"btn btn-success btn-lg pull-right"
 
-- unless @location.nil?
-  br
-    section#cd-timeline.cd-container.body-1
-      .cd-timeline-block
-        .start
-          | 2014
-        .cd-timeline-img.cd-picture
-          img.img1 alt="Picture" src="/assets/cd-icon-picture.svg" /
-        /! cd-timeline-img
-        .cd-timeline-content
-          .head-green
-            h2.heading-timeline.h2_1 Title of section 1
-          p A Hara Bhara Pakistan is everybody’s responsibility! Help us in our Green Revolution as we forge ahead to change our barren landscapes to lush green fields.
-          img#myImg.img1 alt="Trolltunga, Norway" height="200" src="/assets/barren-land.jpg" width="500" /
-          /! The Modal
-          #myModal.modal
-            span.close &times;
-            img#img01.modal-content.img1/
-            #caption
-          span.cd-date Jan 14
-        /! cd-timeline-content
-      /! cd-timeline-block
-      .cd-timeline-block
-        / .cd-timeline-img.cd-movie
-        /   img.img1 alt="Movie" src="/assets/cd-icon-movie.svg" /
-        /! cd-timeline-img
-        .cd-timeline-img.cd-picture
-          img.img1 alt="Picture" src="/assets/cd-icon-picture.svg" /
-        /! cd-timeline-img
-        .cd-timeline-content
-          .head-green
-            h2.heading-timeline.h2_1 Title of section 2
-          p A Hara Bhara Pakistan is everybody’s responsibility! Help us in our Green Revolution as we forge ahead to change our barren landscapes to lush green fields.
-          img#myImg.img1 alt="Trolltunga, Norway" height="200" src="/assets/barren-land.jpg" width="500" /
-          /! The Modal
-          #myModal.modal
-            span.close &times;
-            img#img02.modal-content.img1/
-            #caption
-          span.cd-date Jan 18
-        /! cd-timeline-content
-      /! cd-timeline-block
-      .cd-timeline-block
-        / .cd-timeline-img.cd-movie
-        /   img.img1 alt="Movie" src="/assets/cd-icon-movie.svg" /
-        /! cd-timeline-img
-        .cd-timeline-img.cd-picture
-          img.img1 alt="Picture" src="/assets/cd-icon-picture.svg" /
-        /! cd-timeline-img
-        .cd-timeline-content
-          .head-green
-            h2.heading-timeline.h2_1 Title of section 3
-          p A Hara Bhara Pakistan is everybody’s responsibility! Help us in our Green Revolution as we forge ahead to change our barren landscapes to lush green fields.
-          img#myImg.img1 alt="Trolltunga, Norway" height="200" src="/assets/barren-land.jpg" width="500" /
-          /! The Modal
-          #myModal.modal
-            span.close &times;
-            img#img01.modal-content.img1/
-            #caption
-          span.cd-date Jan 24
-        /! cd-timeline-content
-      /! cd-timeline-block
-      .cd-timeline-block
-        / .cd-timeline-img.cd-movie
-        /   img.img1 alt="Movie" src="/assets/cd-icon-movie.svg" /
-        /! cd-timeline-img
-        .cd-timeline-img.cd-picture
-          img.img1 alt="Picture" src="/assets/cd-icon-picture.svg" /
-        /! cd-timeline-img
-        .cd-timeline-content
-          .head-green
-            h2.heading-timeline.h2_1 Title of section 4
-          p A Hara Bhara Pakistan is everybody’s responsibility! Help us in our Green Revolution as we forge ahead to change our barren landscapes to lush green fields.
-          img#myImg.img1 alt="Trolltunga, Norway" height="200" src="/assets/barren-land.jpg" width="500" /
-          /! The Modal
-          #myModal.modal
-            span.close &times;
-            img#img01.modal-content.img1/
-            #caption
-          span.cd-date Feb 14
-/ head
-/   meta charset="UTF-8" /
-/   meta content="width=device-width, initial-scale=1" name="viewport" /
-/   link href="css/style.css" rel="stylesheet" /
-/   /! Resource style
-/   title Timeline
-    /! cd-timeline-content
-  /! cd-timeline-block
-/! cd-timeline
-/ script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" 
