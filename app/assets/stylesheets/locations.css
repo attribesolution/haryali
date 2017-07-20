@@ -16,7 +16,7 @@ html * {
 
 .body-1 {
   font-size: 80%;
-  font-family: "Times New Roman", serif;
+  font-family: 'Open Sans', sans-serif;
   color: #7f8c97;
   background-color: #e9f0f5;
 }
@@ -39,6 +39,8 @@ html * {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    height: 150px;
+    width: 100;
 }
 
 
@@ -63,16 +65,16 @@ html * {
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    width: 60%;
+    max-width: 500px;
 }
 
 /* Caption of Modal Image */
 #caption {
     margin: auto;
     display: block;
-    width: 80%;
-    max-width: 700px;
+    width: 60%;
+    max-width: 500px;
     text-align: center;
     color: #ccc;
     padding: 10px 0;
