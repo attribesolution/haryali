@@ -2,9 +2,11 @@ class HaryaliLocationsController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update]
 	before_action :set_location, only: [:edit, :update]
 
+  # GET /haryali_locations/1/edit 
   def edit
   end
 
+  # POST /haryali_locations/1 
   def update
     if @location.update(location_params)
       redirect_to location_url
