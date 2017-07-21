@@ -13,15 +13,20 @@ class PlantsController < ApplicationController
 
   # POST /plants 
   def create
-  	@plant = Plant.new(plant_params)
-    if validate_image_size(@plant.image)
-      render :new
-    else
-      if @plant.save
-        redirect_to action: "show", id: @plant.id
-      else
+    begin
+    	@plant = Plant.new(plant_params)
+      if validate_image_size(@plant.image)
         render :new
+      else
+        if @plant.save
+          redirect_to action: "show", id: @plant.id
+        else
+          render :new
+        end
       end
+    rescue Exception => e
+      puts "====================== Exception ======================"
+      puts e.message
     end
   end
 
