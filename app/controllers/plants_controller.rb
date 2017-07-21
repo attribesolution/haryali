@@ -15,10 +15,14 @@ class PlantsController < ApplicationController
   def create
     begin
     	@plant = Plant.new(plant_params)
-      if @plant.save
-        redirect_to action: "show", id: @plant.id
-      else
+      if validate_image_size(@plant.image)
         render :new
+      else
+        if @plant.save
+          redirect_to action: "show", id: @plant.id
+        else
+          render :new
+        end
       end
     rescue Exception => e
       puts "====================== Exception ======================"
