@@ -25,8 +25,8 @@ class PlantsController < ApplicationController
         end
       end
     rescue Exception => e
-      puts "====================== Exception ======================"
-      puts e.message
+      Rails.logger.debug("====================== Exception ======================")
+      Rails.logger.debug(e.message)
     end
   end
 
