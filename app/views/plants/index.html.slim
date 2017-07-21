@@ -1,0 +1,25 @@
+h1 All Plants 
+
+.table-responsive
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th Name 
+        th Detail 
+        th Price 
+        th Action 
+    tbody
+      - @plants.each do |plant|
+        tr
+          td = plant.name.capitalize 
+          td = plant.detail.capitalize 
+          td = plant.price 
+          td 
+            = link_to 'Show', plant, class: "btn-sm btn-primary"
+            '
+            = link_to 'Edit', edit_plant_path(plant), class: "btn-sm btn-success"
+            '
+            /= link_to 'Delete', plant, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn-sm btn-danger"
+
+= link_to 'New Plant', new_plant_path, class: "btn btn-success"
+hr

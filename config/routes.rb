@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   resources :coupons, only: [:show]
 
-  resources :locations, only: [:show, :new, :create]
+  resources :locations, only: [:show, :new, :create, :index]
 
   resources :haryali_locations, only: [:edit, :update]
 
-  resources :plants, only: [:show, :new, :create, :edit, :update]
+  resources :plants, only: [:show, :new, :create, :edit, :update, :index]
 end

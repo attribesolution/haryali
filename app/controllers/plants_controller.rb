@@ -1,6 +1,6 @@
 class PlantsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :show]
-  before_action :set_plant, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :show, :index, :destroy]
+  before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   # GET /plants/1 
   def show
@@ -40,6 +40,21 @@ class PlantsController < ApplicationController
         render :new
       end
     end
+  end
+
+  # GET /plants
+  def index
+    @plants = Plant.all
+  end
+
+  # DELETE /plants/1
+  def destroy
+    redirect_to plants_url
+    # @doctor.destroy
+    # respond_to do |format|
+    #   format.html { redirect_to doctors_url, notice: 'Doctor was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
   private
