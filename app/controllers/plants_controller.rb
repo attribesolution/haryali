@@ -18,7 +18,7 @@ class PlantsController < ApplicationController
       if validate_image_size(@plant.image)
         render :new
       else
-        if @plant.save
+        if @plant.save!
           redirect_to action: "show", id: @plant.id
         else
           render :new
