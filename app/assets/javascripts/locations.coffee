@@ -63,7 +63,7 @@ class App.Locations extends App.Base
       lng: parseFloat($('.lng').val()) 
     unless isNaN(coordinates['lat'])
       map = new google.maps.Map($('.map')[0],
-        zoom: 15
+        zoom: 17
         center: coordinates
         mapTypeId: 'terrain'
         draggable: false
