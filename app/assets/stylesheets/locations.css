@@ -18,9 +18,11 @@ html * {
   font-size: 55%;
   font-family: 'Open Sans', sans-serif;
   color: #7f8c97;
-  
-  
-
+  background-color: #f5f5f5;
+}
+.heading-timeline{
+ 
+ font-size: 100%;
 }
  .start {
     font-size: 30px;
@@ -254,6 +256,8 @@ Main components
 }
 .cd-timeline-img.cd-picture {
   background: #75ce66;
+  max-width: 100%;
+  max-height: 100%;
 }
 .cd-timeline-img.cd-movie {
   background: #c03b44;
