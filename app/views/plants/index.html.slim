@@ -7,6 +7,7 @@ h1 All Plants
         th Name 
         th Detail 
         th Price 
+        th Availability
         th Action 
     tbody
       - @plants.each do |plant|
@@ -14,6 +15,7 @@ h1 All Plants
           td = plant.name.capitalize 
           td = plant.detail.capitalize 
           td = plant.price 
+          td = plant.is_available.capitalize 
           td 
             = link_to 'Show', plant, class: "btn-sm btn-primary"
             '

@@ -68,7 +68,7 @@ class PlantsController < ApplicationController
     end
 
     def plant_params
-      params.require(:plant).permit(:name, :detail, :price, :image)
+      params.require(:plant).permit(:name, :detail, :price, :image, :is_available)
     end
     
     def validate_image_size (image)
