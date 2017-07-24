@@ -13,6 +13,105 @@ html * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+@media only screen and (min-device-width : 320px) and (max-device-width :520px) {
+  
+.h1-green{
+text-align:center ;
+margin: 0%;
+padding: 0%
+  }
+.h1 {
+  margin:0%;
+
+}
+.form-control{
+  height: 0%;
+  margin: 0 auto%;
+
+
+  }
+.pull-right {
+  float: none;
+  }
+.btn-position-next {
+  margin: 0%;
+
+  }
+.form-align {
+  margin: 0 auto%;
+  max-width: 100%;
+  } 
+.simple_form{
+  margin:-25%;
+  width: auto;
+}
+._center{
+  margin:0%;
+}
+.input-lg{
+max-width: 100%;
+  margin-left:0%;
+  
+}
+.form-horizontal{
+  max-width:100%;
+}
+.field-width{
+  width: auto;
+}
+
+}
+
+@media only screen and (min-device-width 980px) and (max-device-width :1280px) {
+  
+.h1-green{
+text-align:center ;
+margin: 0%;
+padding: 0%
+  }
+.h1 {
+  margin:0%;
+
+}
+.form-control{
+  height: 0%;
+  margin: 0 auto%;
+ width: 100%;
+
+  }
+.pull-right {
+  float: none;
+  }
+.btn-position-next {
+  margin: 0%;
+
+  }
+
+.form-align {
+  margin: none;
+  max-width: 100%;
+  } 
+.simple_form{
+  margin:30;
+  width: 100%;
+}
+._center{
+  margin:0%;
+}
+.input-lg{
+max-width: 100%;
+  margin:0%;
+  
+}
+.form-horizontal{
+  max-width:100%;
+}
+.field-width{
+  width: 100%;
+}
+
+}
+
 
 .body-1 {
   font-size: 55%;
