@@ -86,11 +86,11 @@ class App.Leads extends App.Base
         if code.length > 1 
           $.get "/coupons/" + code, (data)->
             if(data.error)
-              $(".status").html("Invalid code")
+              $(".status").html("Invalid")
               $("#lead_coupon_id").val("")
               $($(".lnk_tree")[1]).removeClass('disabled')
               $($(".lnk_tree")[2]).removeClass('disabled')
-              $(".status").show()
+              $('.invalid').show()
         $("#lead_plant_id").val($(".selected_tree").attr("tree_id"))
       return
 
@@ -144,6 +144,8 @@ class App.Leads extends App.Base
           minlength: 11
           maxlength: 14
         'lead[email]':
+          required: true
+        'lead[address]':
           required: true
         'lead[quantity]':
           required: true
