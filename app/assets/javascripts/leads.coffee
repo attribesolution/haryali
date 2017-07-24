@@ -78,6 +78,8 @@ class App.Leads extends App.Base
         if $("#autocomplete_address").val().length == 0
           $("#autocomplete_address").focus()
       else 
+        if $('.lnk_tree').length > 0
+          $($('.lnk_tree')[0]).addClass('selected_tree')
         if $("#lead_name").val().length == 0
           $("#lead_name").focus()
         code = $("#lead_coupon_code").val()
