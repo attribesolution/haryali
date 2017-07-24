@@ -54,12 +54,9 @@ class PlantsController < ApplicationController
 
   # DELETE /plants/1
   def destroy
-    redirect_to plants_url
-    # @doctor.destroy
-    # respond_to do |format|
-    #   format.html { redirect_to doctors_url, notice: 'Doctor was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
+    if @plant.destroy
+      redirect_to plants_url, notice: 'Plant was deleted successfully'
+    end
   end
 
   private
@@ -68,7 +65,7 @@ class PlantsController < ApplicationController
     end
 
     def plant_params
-      params.require(:plant).permit(:name, :detail, :price, :image)
+      params.require(:plant).permit(:name, :detail, :price, :image, :is_available)
     end
     
     def validate_image_size (image)

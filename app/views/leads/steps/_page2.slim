@@ -1,24 +1,24 @@
 .form-align.form-side
-  - hide_desired_location = f.object.location_type == "HaryaliLocation"
+  - hide_desired_location = true
   .form-group
   br
     .btn-group data-toggle="buttons"
-      = f.label :location_type, class: "btn btn-gray  #{ 'active' if f.object.location_type != "HaryaliLocation" }" do |a|
+      = f.label :location_type, class: "btn color-active #{ hide_desired_location ? 'active' : '' }" do |a|
+        | Haryali Location
+        = f.radio_button :location_type, "HaryaliLocation", class: 'form-control switch_location'
+      = f.label :location_type, class: "btn btn-gray  #{ !hide_desired_location ? 'active' : '' }" do |a|
         | Desired Location
         = f.radio_button :location_type, "DesiredLocation", class: 'form-control switch_location'
 
-      = f.label :location_type, class: "btn color-active #{ 'active' if f.object.location_type == "HaryaliLocation" }" do |a|
-        | Haryali Location
-        = f.radio_button :location_type, "HaryaliLocation", class: 'form-control switch_location'
-
   = f.fields_for :location_attributes do |location_form|
-    .form-group.location_section.field-width type="DesiredLocation" style="#{hide_desired_location ? 'display:none;' : ''}"
-      = location_form.hidden_field :type, value: "DesiredLocation"
-      = location_form.hidden_field :lat, id: "location_lat"
-      = location_form.hidden_field :lng, id: "location_lng"
+    = location_form.hidden_field :type, value: "HaryaliLocation"
+    = location_form.hidden_field :lat, id: "location_lat"
+    = location_form.hidden_field :lng, id: "location_lng"
+    .form-group.location_section.field-width type="DesiredLocation" style="#{ hide_desired_location ? 'display:none;' : '' }"
       = location_form.input :address, label: false, placeholder: "Enter address", input_html: { id: "autocomplete_address", class: "form-control " }
       .map style=("width: 100%; height: 250px;") 
-    .form-group.location_section type="HaryaliLocation" style="#{!hide_desired_location ? 'display:none;' : ''}"
+    .form-group.location_section type="HaryaliLocation" style="#{ !hide_desired_location ? 'display:none;' : '' }"
+      .status
       .list-group
         - @locations.each do |loc|
           div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
@@ -29,16 +29,10 @@
                 | Progress #{loc.current} / #{loc.target}
             a href="locations/#{loc.id}"
               | More... 
-      = f.input :location_id, as: :hidden
-      .status
+    = f.input :location_id, as: :hidden
 
   .form-group.form-quantity
     = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1, discount: f.object.discount, price: f.object.plant.try(:price).to_f, class: "form-width" }
     span.total_price.font-weight-bold Rs. #{ f.object.total_price(f.object.quantity || 1) }
 
-/br
-/h3.font-weight-bold Payment Methods
-/.form-group.mainselection
-/  = f.select(:payment_type, Lead.payment_types.keys.map {|pt| [pt.titleize, pt]})
 = f.hidden_field :payment_type, value: "cash_on_delivery"
-

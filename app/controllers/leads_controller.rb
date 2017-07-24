@@ -4,6 +4,7 @@ class LeadsController < ApplicationController
   def new
     @wizard = ModelWizard.new(Lead, session, params).start
     @lead = @wizard.object
+    @plants = Plant.where(is_available: true).order(:id)
   end
 
   # def edit

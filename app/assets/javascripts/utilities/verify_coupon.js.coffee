@@ -22,14 +22,14 @@ class Utility.VerifyCoupon
             if (counter < 0)
               $.get "/coupons/" + code, (data)->
                 if(data.error)
-                  #$(".status").html("i.fa.fa-twitter")
+                  $(".status").html("Invalid")
                   $('.invalid').show()
                   $("#lead_coupon_id").val("")
                   $($(".lnk_tree")[1]).removeClass('disabled')
                   $($(".lnk_tree")[2]).removeClass('disabled')
                 else
                   coupon = data.coupon.id
-                  #$(".status").html("Verified")
+                  $(".status").html("Verified")
                   $('.verified').show()
                   $("#lead_coupon_id").val(coupon)
 
