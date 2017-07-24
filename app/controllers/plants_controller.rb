@@ -54,12 +54,9 @@ class PlantsController < ApplicationController
 
   # DELETE /plants/1
   def destroy
-    redirect_to plants_url
-    # @doctor.destroy
-    # respond_to do |format|
-    #   format.html { redirect_to doctors_url, notice: 'Doctor was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
+    if @plant.destroy
+      redirect_to plants_url, notice: 'Plant was deleted successfully'
+    end
   end
 
   private

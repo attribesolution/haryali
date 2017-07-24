@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :haryali_locations, only: [:edit, :update]
 
-  resources :plants, only: [:show, :new, :create, :edit, :update, :index]
+  resources :plants, only: [:show, :new, :create, :edit, :update, :index, :destroy]
 end
