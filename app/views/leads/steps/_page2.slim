@@ -28,7 +28,7 @@
               h5.mb-1 
                 | Progress : #{loc.current} / #{loc.target}
             .progress.bar-size
-              .progress-bar.color role="progressbar" style="width:#{100*loc.current/loc.target}%"
+              .progress-bar.color role="progressbar" style="width:#{percentage(loc).ceil}%"
             a href="locations/#{loc.id}"
               | More... 
     = f.input :location_id, as: :hidden
