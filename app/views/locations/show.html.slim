@@ -23,7 +23,6 @@
           td 
             .progress.bar-size
               .progress-bar.color role="progressbar" style="width:#{percentage(@location).ceil}%"
-            span #{percentage(@location).ceil}% Complete
   input.lat value=@location.lat type='hidden'
   input.lng value=@location.lng type='hidden'
   .map.map-align style=("width: 50%; height: 200px;") 
