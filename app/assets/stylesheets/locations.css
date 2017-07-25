@@ -27,7 +27,7 @@ padding: 0%;
 
 .form-control{
   height: 0%;
-  margin: 0 auto%;
+  margin: 0 auto;
   }
 
 .pull-right {
@@ -38,7 +38,7 @@ padding: 0%;
   }
 
 .form-align {
-  margin: 0 auto%;
+  margin: 0 auto;
   max-width: 100%;
   text-align: center;
   } 
@@ -114,7 +114,7 @@ padding: 0%
 }
 .form-control{
   height: 0%;
-  margin: 0 auto%;
+  margin: 0 auto;
  width: 100%;
 
   }
