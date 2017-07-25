@@ -12,19 +12,26 @@ br
 
 
   .row
-    - @plants.each do |p|
-      a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" data-toggle="tooltip" title="#{p.detail}"
-        div
-          = image_tag p.image, class: "img-responsive2"
-        p 
-          strong = p.name
-          br
-          | Rs. #{p.price}
+    .container
+      .row.row-centered
+        - @plants.each do |p|
+          a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" data-toggle="tooltip" title="#{p.detail}"
+            div
+              = image_tag p.image, class: "img-responsive2"
+            p 
+              strong = p.name
+              br
+              | Rs. #{p.price}
 
     = f.input :plant_id, as: :hidden
     .status_tree
-
-
+     br
+      .note
+        p
+          strong Note:
+          |  Plants available
+          strong  a) Gulmohar a) Neem
+                   
   .row
      .col-sm-6
        .input-group.input-lg
