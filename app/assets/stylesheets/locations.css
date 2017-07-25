@@ -18,29 +18,31 @@ html * {
 .h1-green{
 text-align:center ;
 margin: 0%;
-padding: 0%
+padding: 0%;
   }
+
 .h1 {
   margin:0%;
-
 }
+
 .form-control{
   height: 0%;
   margin: 0 auto%;
-
-
   }
+
 .pull-right {
   float: none;
   }
 .btn-position-next {
   margin: 0%;
-
   }
+
 .form-align {
   margin: 0 auto%;
   max-width: 100%;
+  text-align: center;
   } 
+  
 .simple_form{
   margin:-25%;
   width: auto;
@@ -99,7 +101,7 @@ max-width: 100%;
 }
 
 
-/*@media only screen and (min-device-width: 980px) and (max-device-width :1280px) {
+@media only screen and (min-device-width: 240px) and (max-device-width :319px) {
   
 .h1-green{
 text-align:center ;
@@ -164,7 +166,7 @@ max-width: 100%;
   font-size: 12px;
  }
 }
-*/
+
 
 
 .body-1 {
