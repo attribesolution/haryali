@@ -12,8 +12,8 @@ br
 
 
   .row
-    - Plant.all.each do |p|
-      a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" class="#{ 'selected_tree' if p.id == 1 } "data-toggle="tooltip" title="#{p.detail}"
+    - @plants.each do |p|
+      a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" data-toggle="tooltip" title="#{p.detail}"
         div
           = image_tag p.image, class: "img-responsive2"
         p 
