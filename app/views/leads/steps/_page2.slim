@@ -26,7 +26,7 @@
 
             .d-flex.w-100.justify-content-between
               h5.mb-1 
-                | Progress :
+                | Progress : #{loc.current} / #{loc.target}
             .progress.bar-size
               .progress-bar.color role="progressbar" style="width:#{100*loc.current/loc.target}%"
             a href="locations/#{loc.id}"

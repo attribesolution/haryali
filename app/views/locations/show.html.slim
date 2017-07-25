@@ -23,13 +23,13 @@
           td 
             .progress.bar-size
               .progress-bar.color role="progressbar" style="width:#{100*@location.current/@location.target}%"
-               span.sr-only #{100*@location.current/@location.target}% Complete
+            span #{percentage(@location).ceil}% Complete
   input.lat value=@location.lat type='hidden'
   input.lng value=@location.lng type='hidden'
   .map.map-align style=("width: 50%; height: 200px;") 
   br
-    section#cd-timeline.cd-container.body-1
-      - if @location.timeline_events
+    - if @location.timeline_events.any?
+      section#cd-timeline.cd-container.body-1
         - @location.timeline_events.each do |event|
           .cd-timeline-block
             

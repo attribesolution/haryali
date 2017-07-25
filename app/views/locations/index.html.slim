@@ -14,7 +14,7 @@ h1 All Locations
           td  
             .progress.bar-size
               .progress-bar.color role="progressbar" style="width:#{100*location.current/location.target}%"
-            | #{100*location.current/location.target}% Complete
+            | #{percentage(location).ceil}% Complete
           td 
             = link_to 'Show', location_path(location), class: "btn-sm btn-primary"
             '
