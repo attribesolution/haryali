@@ -13,7 +13,7 @@ h1 All Locations
           td = location.address 
           td  
             .progress.bar-size
-              .progress-bar.color role="progressbar" style="width:#{percentage(@location).ceil}%"
+              .progress-bar.color role="progressbar" style="width:#{percentage(location).ceil}%"
             | #{percentage(location).ceil}% Complete
           td 
             = link_to 'Show', location_path(location), class: "btn-sm btn-primary"
