@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* Smartphones (portrait and landscape) ----------- */
+
 @media only screen and (min-device-width : 320px) and (max-device-width :520px) {
   
 .h1-green{
@@ -15,9 +16,7 @@ padding: 0%
 .form-control{
   height: 0%;
   }
-.form-horizontal{
-width: 80%
-}
+
 .pull-right {
   float: none;
   }
@@ -25,12 +24,11 @@ width: 80%
   margin: 0%;
 
   }
-.form-align {
+.form-control{
+  width: auto;
   margin: 0%;
-  } 
-.simple_form{
-  margin:0%;
 }
+
 ._center{
   margin:0%;
 }
@@ -113,9 +111,6 @@ label[for=lead_plant_id_12] {
   border-color: #B3F1BC  ;
   border-style: solid;
 }
-.simple_form {
-  margin-left:4%;
-}
 
 .total_price {
   float: left;
@@ -139,7 +134,7 @@ label[for=lead_plant_id_12] {
   width: 62%;
 }
 .form-horizontal{
-  width:70%;
+  width:65%;
 }
 
 h3 {
@@ -153,10 +148,7 @@ h3 {
   margin-top:-1%;
 }
 
-.form-drop {
- margin-left: 30%;
- 
-}
+
 .form-width {
   width: 50%;
 }
@@ -165,7 +157,7 @@ h3 {
 }
 
 .form-align {
- margin-left:50%;
+ margin-left:36%;
 }
 .input-lg{
   width: 140%;
@@ -181,7 +173,7 @@ h3 {
   background-color: #E5E9E6  ;
   border-color: #B3F1BC  ;
   border-style: solid;
-  width: 10px;
+  width: auto;
 }
 .selected_location {
   background-color: #E5E9E6;
@@ -197,11 +189,13 @@ h3 {
   font-size:11px;
 }
 .btn-position-next {
-  margin-top: -11.8%;
-  margin-right:2%;
+  margin-top: -12.6%;
+  margin-left:80%;
+  max-width: 100%;
  }
 .form-side {
-  margin-left: 41%;
+  margin-left: 45%;
+  width: 60%;
 
 } 
 .thankyou-form {
@@ -251,7 +245,7 @@ h3 {
 }
 
 .simple_form {
-  margin-left:-5%;
+  margin-left:-2%;
 }
 .table-align {
   margin-left:-30%;
@@ -296,7 +290,7 @@ width: 10%;
   background-color: #888C89 
 }
 .btn-position-back {
-  margin-left: 50%;
+  margin-left: 46%;
 }
  .table.table-striped {
    width:50%;
@@ -319,6 +313,10 @@ width: 10%;
    font-size: 40px;
    font-weight: lighter;
  }
+ .trees-align{
+  width: 90%;
+  margin-left:5%;
+ }
 .map-align {
   margin-left:50%;
   margin-top:-20.7%;
@@ -333,6 +331,7 @@ width: 10%;
 }
 .error {
   color: red;
+  font-size:12px;
  }
 
  .status {

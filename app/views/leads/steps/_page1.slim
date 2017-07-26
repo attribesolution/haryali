@@ -1,5 +1,5 @@
 br
-.form-align.form1-align
+.form-side
   .form-group
     .field
       = f.input :name, label: false, placeholder: "Your full name", class: "form-control"
@@ -13,7 +13,7 @@ br
 
   .row
     .container
-      .row.row-centered
+      .trees-align.row.row-centered
         - @plants.each do |p|
           a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" data-toggle="tooltip" title="#{p.detail}"
             div

@@ -1,8 +1,8 @@
-.form-align.form-side
+.form-align
   - hide_desired_location = true
   .form-group
   br
-    .btn-group data-toggle="buttons"
+    .toggle-responsive.btn-group data-toggle="buttons"
       = f.label :location_type, class: "btn color-active #{ hide_desired_location ? 'active' : '' }" do |a|
         | Haryali Location
         = f.radio_button :location_type, "HaryaliLocation", class: 'form-control switch_location'

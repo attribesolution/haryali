@@ -3,6 +3,7 @@
 Primary style
 
 -------------------------------- */
+
 html * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -13,7 +14,7 @@ html * {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-@media only screen and (min-device-width : 320px) and (max-device-width :600px) {
+@media only screen and (min-device-width : 320px) and (max-device-width :480px) {
   
 .h1-green{
 text-align:center ;
@@ -23,30 +24,43 @@ padding: 0%;
 
 .h1 {
   margin:0%;
+  text-align:center;
 }
 
 .form-control{
   height: 0%;
   margin: 0 auto;
+  max-width: 100%;
   }
-
+.simple_form{
+  max-width: 100%;
+  margin: 0;
+}
 .pull-right {
   float: none;
   }
 .btn-position-next {
-  margin: 0%;
-  }
-
-.form-align {
-  margin: 0 auto;
-  max-width: 100%;
-  text-align: center;
-  } 
-  
-.simple_form{
-  margin:-25%;
-  width: auto;
+  vertical-align: center;
+  margin-top: 3%;
 }
+.toggle-responsive{
+  width:3%;
+}
+.haryali-location {
+  width: 40%;
+  margin-left: 8%;
+}
+.form-align {
+    width: 50%;
+  text-align: center;
+
+  margin-left: 1%;
+    } 
+.form-horizontal {
+ width: 100%;
+ 
+}
+
 ._center{
   margin:0%;
 }
@@ -55,9 +69,7 @@ max-width: 100%;
   margin-left:0%;
   
 }
-.form-horizontal{
-  max-width:100%;
-}
+
 .field-width{
   width: auto;
 }
@@ -66,20 +78,20 @@ max-width: 100%;
  font-size: 12px;
  margin-right: -20%;
  width: 100%;
- 
  } 
  .btn-position-plant {
-  width: 22%;
+  margin-left: -15%;
   text-align: center;
   font-size: 12px;
+  margin-top: 15%;
  }
  .btn-position-back{
-   width: 22%;
+    margin-right: -10%;
    text-align: center;
   font-size: 12px;
  }
- .btn-group {
-  width: 5%;
+ .pull-left{
+  float: none;
  }
  .cd-timeline-content {
  margin-top: 15%;
@@ -97,6 +109,8 @@ max-width: 100%;
  }
  .btn-lg {
   margin-right:15%;
+ }
+ .form-side{ margin-left:23%
  }
 }
 
@@ -118,17 +132,19 @@ padding: 0%
  width: 100%;
 
   }
+.form-side {
+width: 100%;
+}
 .pull-right {
   float: none;
   }
 .btn-position-next {
-  margin: 0%;
-
-  }
+  vertical-align: center;
+  margin-top: 3%;
+}
 
 .form-align {
-  margin: none;
-  max-width: 100%;
+   max-width: 100%;
   } 
 .simple_form{
   margin:30;
@@ -156,12 +172,12 @@ max-width: 100%;
  
  } 
  .btn-position-plant {
-  width: 22%;
+  
   text-align: center;
   font-size: 12px;
  }
  .btn-position-back{
-   width: 22%;
+  
    text-align: center;
   font-size: 12px;
  }
@@ -182,7 +198,7 @@ max-width: 100%;
  .start {
     font-size: 30px;
     position: absolute;
-    top: -59+px;
+    top: -59px;
     left: -35px;
     margin-left:585px
 
