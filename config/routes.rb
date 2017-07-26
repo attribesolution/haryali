@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   devise_for :users, skip: [:registrations]
   
-  resources :leads, only: [:new, :create, :show]
+  resources :leads, only: [:new, :create, :show, :index]
 
   resources :coupons, only: [:show]
 
@@ -11,5 +11,5 @@ Rails.application.routes.draw do
 
   resources :haryali_locations, only: [:edit, :update]
 
-  resources :plants, only: [:show, :new, :create, :edit, :update, :index, :destroy]
+  resources :plants
 end
