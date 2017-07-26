@@ -19,7 +19,7 @@
     = f.fields_for :timeline_events do |timeline_events|
       = render 'timeline_event_fields', f: timeline_events
     .links
-      = link_to_add_association 'Add Event', f, :timeline_events, class: "btn btn-primary", id: "add_event"
+      = link_to_add_association 'Add Event', f, :timeline_events, class: "btn btn-primary disabled", id: "add_event"
 
     .form-group
       = f.submit "Save", class: "btn btn-basic pull-right btn-gray"
