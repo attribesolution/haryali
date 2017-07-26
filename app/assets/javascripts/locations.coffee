@@ -79,6 +79,14 @@ class App.Locations extends App.Base
     return
 
   new: =>
+    readURL = (input) ->
+      if input.files and input.files[0]
+        reader = new FileReader
+        reader.onload = (e) ->
+          $(input.nextSibling.nextSibling).attr 'src', e.target.result
+          return
+        reader.readAsDataURL input.files[0]
+
     coordinates = 
       lat: parseFloat($('#location_lat').val()) 
       lng: parseFloat($('#location_lng').val()) 
@@ -139,18 +147,30 @@ class App.Locations extends App.Base
     
     window.onload = ->
       # link add event button to validate new event fields on create 
+      $('#add_event').removeClass 'disabled'
       $('#add_event')[0].onclick = validateEvent 
       return
 
+    count = 0
     validateEvent = ->
       temp = @parentNode
       setTimeout (->
         $(temp.previousSibling.firstChild.firstChild.firstChild.nextSibling).rules 'add', required: true
         $(temp.previousSibling.firstChild.firstChild.nextSibling.firstChild.nextSibling).rules 'add', required: true
+        
+        $('#event-image')[0].id = "event-image" + count
+        $('#img_prev')[0].id = "img_prev" + count
+        $('#event-image' + count).change ->
+          this.nextSibling.nextSibling.style.visibility = 'visible'
+          readURL this
+        count++
+
         return
       ), 100
-      return
     return
 
   edit: =>
+    window.onload = ->
+      $('#add_event').removeClass 'disabled'
+      return
     return
