@@ -76,6 +76,16 @@ html
                     a href="http://haryali.pk/blog"  Blog
                   li
                     a href="http://haryali.pk/contact-us"  Contact Us
+                  - if current_user
+                    li
+                      a href=leads_path
+                        | Leads 
+                    li
+                      a href=plants_path
+                        | Plants 
+                    li
+                      a href=locations_path
+                        | Locations 
     #page-header.content-contrast
       .page-title-container
         .background-overlay

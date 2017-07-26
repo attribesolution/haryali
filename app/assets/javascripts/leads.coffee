@@ -115,6 +115,7 @@ class App.Leads extends App.Base
       type = $(this).val()
       $(".location_section").hide()
       $(".location_section[type=#{type}]").show()
+      $("#lead_location_attributes_type").val(type)
       if type == 'DesiredLocation'
         google.maps.event.trigger(window.map, "resize");
         coordinates = 
