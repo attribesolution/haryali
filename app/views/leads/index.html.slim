@@ -1,0 +1,33 @@
+h1 All Leads 
+
+.table-responsive
+  table.table.table-striped.table-hover
+    thead
+      tr
+        th Name 
+        th Contact 
+        th Email 
+        th Plant 
+        th Quantity 
+        th Payment  
+        th Location 
+        th Coupon 
+        th Action 
+    tbody
+      - @leads.each do |lead|
+        tr
+          td = lead.name.capitalize 
+          td = lead.contact 
+          td = lead.email 
+          td
+            a href=plant_path(lead.plant)
+              = lead.plant.name
+          td = lead.quantity 
+          td = lead.payment_type.humanize 
+          td 
+            a href=location_path(lead.location) data-toggle="tooltip" title="#{lead.location.address}"
+              = lead.location.address.split(',')[0] 
+          td = !lead.coupon_id.nil? 
+          td 
+            = link_to 'Show', lead_path(lead), class: "btn-sm btn-primary"
+hr

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   devise_for :users, skip: [:registrations]
   
-  resources :leads, only: [:new, :create, :show]
+  resources :leads, only: [:new, :create, :show, :index]
 
   resources :coupons, only: [:show]
 
