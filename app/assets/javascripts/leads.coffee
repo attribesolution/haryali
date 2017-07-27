@@ -77,6 +77,23 @@ class App.Leads extends App.Base
       if $('.active').length > 2 
         if $("#autocomplete_address").val().length == 0
           $("#autocomplete_address").focus()
+        else 
+          coordinates = 
+            lat: parseFloat($('#location_lat').val()) 
+            lng: parseFloat($('#location_lng').val()) 
+          unless isNaN(coordinates.lat)
+            if window.marker == undefined
+              window.marker = new google.maps.Marker(
+                position: coordinates
+                icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
+                map: window.map)
+            else
+              window.marker.setPosition e.latLng 
+            if window.message == undefined
+              window.message = new google.maps.InfoWindow content: "plant here" 
+            else
+              window.message.setContent "plant here" 
+            window.message.open window.map, window.marker 
       else 
         if $('.lnk_tree').length > 0
           $($('.lnk_tree')[0]).addClass('selected_tree')
@@ -98,8 +115,16 @@ class App.Leads extends App.Base
       type = $(this).val()
       $(".location_section").hide()
       $(".location_section[type=#{type}]").show()
+      $("#lead_location_attributes_type").val(type)
       if type == 'DesiredLocation'
         google.maps.event.trigger(window.map, "resize");
+        coordinates = 
+          lat: parseFloat($('#location_lat').val()) 
+          lng: parseFloat($('#location_lng').val()) 
+        if isNaN(coordinates.lat)
+          coordinates.lat = 24.8615
+          coordinates.lng = 67.0099
+        window.map.panTo coordinates
 
     $(document).on "change","#lead_quantity", ->
       quantity = parseInt($(this).val())

@@ -1,5 +1,6 @@
 class LeadsController < ApplicationController
-  before_action :load_lead
+  before_action :authenticate_user!, only: [:index]
+  before_action :load_lead, only: [:show]
 
   def new
     @wizard = ModelWizard.new(Lead, session, params).start
@@ -31,6 +32,10 @@ class LeadsController < ApplicationController
   #     render :edit
   #   end
   # end
+
+  def index
+    @leads = Lead.all.order(created_at: :desc)
+  end
 
 private
 

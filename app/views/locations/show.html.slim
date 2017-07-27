@@ -49,7 +49,6 @@
 - else 
   h1.t1 No Location found 
 br
-- if current_user && @location
+- if current_user && @location && @location.type == "HaryaliLocation"
   = link_to "Edit", edit_haryali_location_path, class:"btn btn-success btn-lg pull-left"
 = link_to "Back", 'javascript:history.back();', class:"btn btn-success btn-lg pull-right"
-
