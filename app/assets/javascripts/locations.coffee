@@ -126,8 +126,6 @@ class App.Locations extends App.Base
               else
                 window.message.setContent "plant here" 
               window.message.open window.map, window.marker 
-              $("autocomplete_address").valid()
-              $("autocomplete_address").focus()
           else
             window.alert 'No results found'
         else

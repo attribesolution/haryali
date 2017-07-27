@@ -64,8 +64,6 @@ class App.Leads extends App.Base
                 else
                   window.message.setContent "plant here" 
                 window.message.open window.map, window.marker 
-                $("autocomplete_address").valid()
-                $("autocomplete_address").focus()
             else
               window.alert 'No results found'
           else
@@ -90,9 +88,9 @@ class App.Leads extends App.Base
             else
               window.marker.setPosition e.latLng 
             if window.message == undefined
-              window.message = new google.maps.InfoWindow content: "plant here" 
+              window.message = new google.maps.InfoWindow content: "click on the map to change planting location" 
             else
-              window.message.setContent "plant here" 
+              window.message.setContent "click on the map to change planting location" 
             window.message.open window.map, window.marker 
       else 
         if $('.lnk_tree').length > 0
