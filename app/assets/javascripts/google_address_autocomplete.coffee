@@ -21,7 +21,7 @@ $ ->
       $("#haryali_location_lng").val(location.lng())
       message = "click on the map to change location" 
     else
-      $("#location_lat").val(location.lat())
+      $("#location_lat").val(location.lat()).trigger('change')
       $("#location_lng").val(location.lng())
       message = "click on the map to change planting location" 
     if window.marker == undefined
