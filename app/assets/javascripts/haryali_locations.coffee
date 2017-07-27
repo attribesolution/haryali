@@ -75,6 +75,15 @@ class App.HaryaliLocations extends App.Base
         'haryali_location[target]':
           required: true
 
+    readURL = (input) ->
+      if input.files and input.files[0]
+        reader = new FileReader
+        reader.onload = (e) ->
+          $(input.nextSibling.nextSibling).attr 'src', e.target.result
+          return
+        reader.readAsDataURL input.files[0]
+
+    count = 0
     window.onload = ->
       # validate all existing event fields 
       events = document.getElementsByClassName "nested-fields"
@@ -83,7 +92,14 @@ class App.HaryaliLocations extends App.Base
         $(events[i].firstChild.firstChild.firstChild.nextSibling).rules 'add', required: true
         $(events[i].firstChild.firstChild.nextSibling.firstChild.nextSibling).rules 'add', required: true
         i++
+        $('#event-image')[0].id = "event-image" + count
+        $('#img_prev')[0].id = "img_prev" + count
+        $('#event-image' + count).change ->
+          this.nextSibling.nextSibling.style.visibility = 'visible'
+          readURL this
+        count++
       # link add event button to validate new event fields on create 
+      $('#add_event').removeClass 'disabled'
       $('#add_event')[0].onclick = validateEvent 
       return
 
@@ -92,6 +108,13 @@ class App.HaryaliLocations extends App.Base
       setTimeout (->
         $(temp.previousSibling.firstChild.firstChild.firstChild.nextSibling).rules 'add', required: true
         $(temp.previousSibling.firstChild.firstChild.nextSibling.firstChild.nextSibling).rules 'add', required: true
+        
+        $('#event-image')[0].id = "event-image" + count
+        $('#img_prev')[0].id = "img_prev" + count
+        $('#event-image' + count).change ->
+          this.nextSibling.nextSibling.style.visibility = 'visible'
+          readURL this
+        count++
         return
       ), 100
       return

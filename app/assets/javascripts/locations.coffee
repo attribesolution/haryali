@@ -170,7 +170,4 @@ class App.Locations extends App.Base
     return
 
   edit: =>
-    window.onload = ->
-      $('#add_event').removeClass 'disabled'
-      return
     return
