@@ -24,6 +24,9 @@ class App.Plants extends App.Base
           required: true
         'plant[image]':
           required: true
+      messages:
+        'plant[image]':
+          required: ""
     
     readURL = (input) ->
       if input.files and input.files[0]
