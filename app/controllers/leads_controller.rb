@@ -15,7 +15,7 @@ class LeadsController < ApplicationController
   def create
     @wizard = ModelWizard.new(Lead, session, params, lead_params).continue
     @lead = @wizard.object
-    @locations = HaryaliLocation.select(:id, :address, :current, :target).where(is_active: :true).order(:created_at)
+    @locations = HaryaliLocation.select(:id, :address, :current, :target, :optional_address).where(is_active: :true).order(:created_at)
     if @wizard.save
       UserMailer.welcome_email(@lead).deliver
       redirect_to @lead

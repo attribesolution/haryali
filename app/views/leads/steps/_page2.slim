@@ -22,7 +22,10 @@
       .list-group
         - @locations.each do |loc|
           div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
-            = loc.address
+            - if loc.optional_address
+              = loc.optional_address + ',' + loc.address
+            - else
+              = loc.address
 
             .d-flex.w-100.justify-content-between
               h5.mb-1 

@@ -8,7 +8,10 @@
         tr
           td 
             strong Address:
-          td = @location.address 
+          - if @location.optional_address
+            td = @location.optional_address + ',' + @location.address
+          - else
+            td = @location.address
         tr    
           td 
             strong Total Plants Required:

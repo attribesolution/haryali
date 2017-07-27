@@ -21,6 +21,6 @@ class HaryaliLocationsController < ApplicationController
     end
 
     def location_params
-      params.require(:haryali_location).permit(:type, :lat, :lng, :address, :target, timeline_events_attributes: [:id, :title, :caption, :image, :_destroy])
+      params.require(:haryali_location).permit(:type, :lat, :lng, :address, :optional_address, :target, timeline_events_attributes: [:id, :title, :caption, :image, :_destroy])
     end
 end

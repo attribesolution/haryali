@@ -10,7 +10,10 @@ h1 All Locations
     tbody
       - @locations.each do |location|
         tr
-          td = location.address 
+          - if location.optional_address
+            td = location.optional_address + ',' + location.address
+          - else
+            td = location.address
           td  
             .progress.bar-size
               .progress-bar.color role="progressbar" style="width:#{percentage(location).ceil}%"
