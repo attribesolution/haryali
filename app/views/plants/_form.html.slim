@@ -11,7 +11,7 @@
     .form-group
       = f.file_field :image, id: 'plant-image', accept: '.png,.jpeg,.jpg'
       br
-      img#img_prev alt="plant image" height="300" src="#{f.object.image}" width="300"
+      img#img_prev alt="plant image" height="300" src="#{f.object.image}" width="300" style=("visibility: #{ f.object.image.blank? ? 'hidden' : 'visible' };")
 
     .form-actions
       = f.submit "Save", class: "btn btn-basic pull-right btn-gray"

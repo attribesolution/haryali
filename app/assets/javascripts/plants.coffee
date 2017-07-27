@@ -24,6 +24,9 @@ class App.Plants extends App.Base
           required: true
         'plant[image]':
           required: true
+      messages:
+        'plant[image]':
+          required: ""
     
     readURL = (input) ->
       if input.files and input.files[0]
@@ -34,8 +37,14 @@ class App.Plants extends App.Base
         reader.readAsDataURL input.files[0]
 
     $('#plant-image').change ->
-      $('#img_prev').removeClass 'hidden'
-      readURL this
+      if this.files and this.files[0].size > 1000000
+        window.alert "This file exceeds the maximum allowed file size (5 MB)"
+        $(this).val('')
+        $('#img_prev').attr 'src', ""
+        $('#img_prev')[0].style.visibility = 'hidden'
+      else
+        $('#img_prev')[0].style.visibility = 'visible'
+        readURL this
     return
 
   edit: =>
@@ -48,7 +57,13 @@ class App.Plants extends App.Base
         reader.readAsDataURL input.files[0]
 
     $('#plant-image').change ->
-      $('#img_prev').removeClass 'hidden'
-      readURL this
+      if this.files and this.files[0].size > 1000000
+        window.alert "This file exceeds the maximum allowed file size (5 MB)"
+        $(this).val('')
+        $('#img_prev').attr 'src', ""
+        $('#img_prev')[0].style.visibility = 'hidden'
+      else
+        $('#img_prev')[0].style.visibility = 'visible'
+        readURL this
 
     return
