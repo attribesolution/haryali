@@ -1,5 +1,5 @@
 class LeadsController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:index, :update_status]
   before_action :load_lead, only: [:show]
 
   def new
@@ -35,6 +35,11 @@ class LeadsController < ApplicationController
 
   def index
     @leads = Lead.all.order(created_at: :desc)
+  end
+
+  def update_status
+    lead = Lead.find(params[:id])
+    lead.update_column(:status, params[:status])
   end
 
 private
