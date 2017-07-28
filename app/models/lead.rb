@@ -5,6 +5,7 @@ class Lead < ApplicationRecord
   accepts_nested_attributes_for :location, reject_if: :check_location_type, allow_destroy: true
 
   enum payment_type: [:cash_on_delivery, :direct_wire_transfer]
+  enum status_type: [:placed, :confirmed, :paid, :planted]
 
   validates :name, :contact, :plant, presence: true, if: :step1?
   validates :quantity, :payment_type,:location, presence: true, if: :step2?

@@ -8,6 +8,17 @@ class App.Leads extends App.Base
     return
 
   index: =>
+    count = 0
+    while $('#status').length == 1
+      $('#status')[0].id = "status"+count
+      $('#status' + count).change ->
+        $.ajax
+          url: '/leads/update_status'
+          type: 'put'
+          data: 
+            'id': $(this).attr 'name'
+            'status': this.options[this.selectedIndex].text
+      count++
     return
 
   show: =>
