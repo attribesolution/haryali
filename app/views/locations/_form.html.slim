@@ -17,8 +17,8 @@
     .form-group
       = f.input :is_active, class: "form-control"
     hr
-    #timeline_events
-    = f.fields_for :timeline_events do |timeline_events|
+    /#timeline_events
+    /= f.fields_for :timeline_events do |timeline_events|
       = render 'timeline_event_fields', f: timeline_events
     /.links
       = link_to_add_association 'Add Event', f, :timeline_events, class: "btn btn-primary disabled", id: "add_event"
