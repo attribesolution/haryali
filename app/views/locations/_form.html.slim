@@ -5,7 +5,7 @@
     = f.hidden_field :lng
     .form-group
       = f.input :address, label: false, placeholder: "Enter address", input_html: { id: "autocomplete_address", class: "form-control" }
-    .map style=("width: 135%; height: 200px;") 
+    .map style=("width: 100%; height: 200px;") 
     br
     - if f.object.current?
       .form-group
@@ -20,8 +20,9 @@
     #timeline_events
     = f.fields_for :timeline_events do |timeline_events|
       = render 'timeline_event_fields', f: timeline_events
-    .links
+    /.links
       = link_to_add_association 'Add Event', f, :timeline_events, class: "btn btn-primary disabled", id: "add_event"
 
     .form-group
-      = f.submit "Save", class: "btn btn-basic pull-right btn-gray"
+      = link_to 'Cancel', locations_path, class: "btn btn-danger pull-left"
+      = f.submit "Save", class: "btn btn-basic pull-left btn-gray"
