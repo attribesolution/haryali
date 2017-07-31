@@ -93,7 +93,7 @@ class App.Locations extends App.Base
     
     eventHandler = ->
       validateEvent()
-      #enableSave()
+      enableSave()
       return
 
     count = 0
@@ -205,8 +205,8 @@ class App.Locations extends App.Base
     
     window.onload = ->
       # link add event button to validate new event fields on create 
-      $('#add_event').removeClass 'disabled'
-      $('#add_event')[0].onclick = validateEvent 
+      #$('#add_event').removeClass 'disabled'
+      #$('#add_event')[0].onclick = validateEvent 
       return
 
     count = 0
