@@ -1,4 +1,38 @@
 br
+/.container
+  .row.bs-wizard style="border-bottom:0;" 
+    .col-xs-3.bs-wizard-step.complete
+      .text-center.bs-wizard-stepnum Step 1
+      .progress
+        .progress-bar
+      a.bs-wizard-dot href="#" 
+      .bs-wizard-info.text-center Lorem ipsum dolor sit amet.
+    .col-xs-3.bs-wizard-step.complete
+      /! complete
+      .text-center.bs-wizard-stepnum Step 2
+      .progress
+        .progress-bar
+      a.bs-wizard-dot href="#" 
+      .bs-wizard-info.text-center
+
+  /  .col-xs-3.bs-wizard-step.active
+      /! complete
+      .text-center.bs-wizard-stepnum Step 3
+      .progress
+        .progress-bar
+      a.bs-wizard-dot href="#" 
+      .bs-wizard-info.text-center
+
+   / .col-xs-3.bs-wizard-step.disabled
+      /! active
+      .text-center.bs-wizard-stepnum Step 4
+      .progress
+        .progress-bar
+      a.bs-wizard-dot href="#" 
+      .bs-wizard-info.text-center 
+
+
+
 .form-side
   .form-group
     .field

@@ -43,17 +43,30 @@ padding: 0%;
   vertical-align: center;
   margin-top: 3%;
 }
+.btn-gray {
+  width: 85%;
+  max-width: 100%;
+  text-align: left;
+  font-size: 10px;
+}
+.color-active {
+  width: 85%;
+  max-width: 100%;
+  text-align: left;
+  font-size: 10px;
+  text-align: left;
+}
 .toggle-responsive{
-  width:3%;
+ max-width: 100%;
 }
 .haryali-location {
-  width: 40%;
-  margin-left: 8%;
+  width: 150px;
+  margin-right: 8%;
+  max-width: 100%;
 }
 .form-align {
     width: 50%;
   text-align: center;
-
   margin-left: 1%;
     } 
 .form-horizontal {
@@ -74,8 +87,8 @@ max-width: 100%;
   width: auto;
 }
 .font-weight-bold{
- margin-top: -20%;
- font-size: 12px;
+ margin-top: -29%;
+ font-size: 14px;
  margin-right: -20%;
  width: 100%;
  } 
@@ -83,12 +96,13 @@ max-width: 100%;
   margin-left: -15%;
   text-align: center;
   font-size: 12px;
-  margin-top: 15%;
+ 
  }
  .btn-position-back{
-    margin-right: -10%;
+    margin: 0;
    text-align: center;
   font-size: 12px;
+  margin-left: 8%;
  }
  .pull-left{
   float: none;
@@ -105,12 +119,16 @@ max-width: 100%;
  .map-align {
   margin-top: 4%;
   margin-left: 4%;
-  width: 90%;
+  width: 140%;
  }
  .btn-lg {
   margin-right:15%;
  }
- .form-side{ margin-left:23%
+ .form-side{ 
+  margin-left:23%
+ }
+ .table-align {
+margin-left: -20%;
  }
 }
 
