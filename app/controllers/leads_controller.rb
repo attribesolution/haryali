@@ -1,5 +1,5 @@
 class LeadsController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:index, :update_status]
   before_action :load_lead, only: [:show]
 
   def new
@@ -15,7 +15,7 @@ class LeadsController < ApplicationController
   def create
     @wizard = ModelWizard.new(Lead, session, params, lead_params).continue
     @lead = @wizard.object
-    @locations = HaryaliLocation.select(:id, :address, :current, :target).where(is_active: :true).order(:created_at)
+    @locations = HaryaliLocation.select(:id, :address, :current, :target, :optional_address).where(is_active: :true).order(:created_at)
     if @wizard.save
       UserMailer.welcome_email(@lead).deliver
       redirect_to @lead
@@ -35,6 +35,11 @@ class LeadsController < ApplicationController
 
   def index
     @leads = Lead.all.order(created_at: :desc)
+  end
+
+  def update_status
+    lead = Lead.find(params[:id])
+    lead.update_column(:status, params[:status])
   end
 
 private

@@ -8,6 +8,17 @@ class App.Leads extends App.Base
     return
 
   index: =>
+    count = 0
+    while $('#status').length == 1
+      $('#status')[0].id = "status"+count
+      $('#status' + count).change ->
+        $.ajax
+          url: '/leads/update_status'
+          type: 'put'
+          data: 
+            'id': $(this).attr 'name'
+            'status': this.options[this.selectedIndex].text
+      count++
     return
 
   show: =>
@@ -21,6 +32,11 @@ class App.Leads extends App.Base
       $('.status').hide()
 
     if $('.active').length > 2
+      if $('#location_lat').val() == ""
+        $('#location_lat').change ->
+          $('#leads_submit')[0].removeAttribute 'disabled'
+      else
+        $('#leads_submit')[0].removeAttribute 'disabled'
       coordinates = 
         lat: parseFloat($('#location_lat').val()) 
         lng: parseFloat($('#location_lng').val()) 
@@ -48,7 +64,7 @@ class App.Leads extends App.Base
             if results[1]
               # if click within Pakistan 
               if results[1].formatted_address.split(' ').slice(-1)[0] == 'Pakistan'
-                $("#location_lat").val(e.latLng.lat())
+                $("#location_lat").val(e.latLng.lat()).trigger('change')
                 $("#location_lng").val(e.latLng.lng())
                 $("#autocomplete_address").val(results[1].formatted_address)
                 if window.marker == undefined
@@ -64,8 +80,6 @@ class App.Leads extends App.Base
                 else
                   window.message.setContent "plant here" 
                 window.message.open window.map, window.marker 
-                $("autocomplete_address").valid()
-                $("autocomplete_address").focus()
             else
               window.alert 'No results found'
           else
@@ -90,9 +104,9 @@ class App.Leads extends App.Base
             else
               window.marker.setPosition e.latLng 
             if window.message == undefined
-              window.message = new google.maps.InfoWindow content: "plant here" 
+              window.message = new google.maps.InfoWindow content: "click on the map to change planting location" 
             else
-              window.message.setContent "plant here" 
+              window.message.setContent "click on the map to change planting location" 
             window.message.open window.map, window.marker 
       else 
         if $('.lnk_tree').length > 0
@@ -125,6 +139,11 @@ class App.Leads extends App.Base
           coordinates.lat = 24.8615
           coordinates.lng = 67.0099
         window.map.panTo coordinates
+        if window.marker == undefined
+          $('#leads_submit')[0].setAttribute 'disabled', 'disabled'
+      else
+        if $('.selected_location').length > 0
+          $('#leads_submit')[0].removeAttribute 'disabled'
 
     $(document).on "change","#lead_quantity", ->
       quantity = parseInt($(this).val())
@@ -154,6 +173,7 @@ class App.Leads extends App.Base
       id = $(this).attr("location_id")
       $("#lead_location_id").val(id)
       $('.status').hide()
+      $('#leads_submit')[0].removeAttribute 'disabled'
 
     $.validator.addMethod 'pkphone', ((value) ->
       value.match /^((\+92)|(0092))-{0,1}\d{3}-{0,1}\d{7}$|^\d{11}$|^\d{4}-\d{7}$/

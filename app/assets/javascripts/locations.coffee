@@ -126,8 +126,6 @@ class App.Locations extends App.Base
               else
                 window.message.setContent "plant here" 
               window.message.open window.map, window.marker 
-              $("autocomplete_address").valid()
-              $("autocomplete_address").focus()
           else
             window.alert 'No results found'
         else
@@ -161,8 +159,14 @@ class App.Locations extends App.Base
         $('#event-image')[0].id = "event-image" + count
         $('#img_prev')[0].id = "img_prev" + count
         $('#event-image' + count).change ->
-          this.nextSibling.nextSibling.style.visibility = 'visible'
-          readURL this
+          if this.files and this.files[0].size > 5000000
+            window.alert "This file exceeds the maximum allowed file size (5 MB)"
+            $(this).val('')
+            $(this.nextSibling.nextSibling).attr 'src', ""
+            this.nextSibling.nextSibling.style.visibility = 'hidden'
+          else
+            this.nextSibling.nextSibling.style.visibility = 'visible'
+            readURL this
         count++
 
         return
@@ -170,7 +174,4 @@ class App.Locations extends App.Base
     return
 
   edit: =>
-    window.onload = ->
-      $('#add_event').removeClass 'disabled'
-      return
     return

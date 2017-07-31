@@ -1,7 +1,7 @@
 h1 All Locations 
 
-.table-responsive
-  table.table.table-striped.table-hover
+- unless @locations.nil?
+  table.table.table-hover.table-hover
     thead
       tr
         th Address 
@@ -10,7 +10,10 @@ h1 All Locations
     tbody
       - @locations.each do |location|
         tr
-          td = location.address 
+          - if location.optional_address
+            td = location.optional_address + ',' + location.address
+          - else
+            td = location.address
           td  
             .progress.bar-size
               .progress-bar.color role="progressbar" style="width:#{percentage(location).ceil}%"
@@ -20,6 +23,7 @@ h1 All Locations
             = link_to 'Edit', edit_haryali_location_path(location), class: "btn-sm btn-success"
             '
             /= link_to 'Delete', location, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn-sm btn-danger"
-
+- else 
+  h3 No Locations found 
 = link_to 'New Location', new_location_path, class: "btn btn-success"
 hr

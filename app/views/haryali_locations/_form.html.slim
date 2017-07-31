@@ -8,6 +8,8 @@
     .map style=("width: 135%; height: 200px;") 
     br
     .form-group
+      = f.input :optional_address, label:false, placeholder: "Optional Address", class: "form-control"
+    .form-group
       = f.input :current, label:false, placeholder: "Number of trees planted", class: "form-control"
     .form-group
       = f.input :target, label: false, placeholder: "Number of trees to plant", class: "form-control"
@@ -18,7 +20,7 @@
     = f.fields_for :timeline_events do |timeline_events|
       = render 'timeline_event_fields', f: timeline_events
     .links
-      = link_to_add_association 'Add Event', f, :timeline_events, class: "btn btn-primary", id: "add_event"
+      = link_to_add_association 'Add Event', f, :timeline_events, class: "btn btn-primary disabled", id: "add_event"
 
     .form-group
       = f.submit "Save", class: "btn btn-basic pull-right btn-gray"
