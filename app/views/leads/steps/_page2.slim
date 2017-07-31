@@ -1,4 +1,5 @@
-.form-align
+.section.align-middle.vertical-center.col-sm-8 
+  
   - hide_desired_location = true
   .form-group
   br
@@ -21,10 +22,10 @@
       .status
       .list-group
         - @locations.each do |loc|
-/          .progress.progress-style
+          .progress.progress-style
             .progress-bar   aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" role="progressbar" style=("width: 40%; ")  25% 
 
-          /div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
+          div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
             = loc.address
           div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
             - if loc.optional_address
@@ -32,12 +33,12 @@
             - else
               = loc.address
 
-           / .d-flex.w-100.justify-content-between
+            .d-flex.w-100.justify-content-between
               h5.mb-1 
                 | Progress : #{loc.current} / #{loc.target}
-           / .progress.bar-size
+            .progress.bar-size
               .progress-bar.color role="progressbar" style="width:#{percentage(loc).ceil}%"
-           / a href="locations/#{loc.id}"
+            a href="locations/#{loc.id}"
               | More... 
     = f.input :location_id, as: :hidden
 
