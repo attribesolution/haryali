@@ -13,7 +13,6 @@ h1 All Leads
         th Location 
         th Coupon 
         th Status
-        th Action 
     tbody
       - @leads.each do |lead|
         tr
@@ -30,7 +29,6 @@ h1 All Leads
               = lead.location.address.split(',')[0] 
           td = (!lead.coupon_id.nil?).to_s.capitalize 
           td = select_tag "status", options_for_select(Lead.status_types, Lead.status_types[lead.status]), name: lead.id
-          td = link_to 'Show', lead_path(lead), class: "btn-sm btn-primary"
 - else 
   h3 No Submissions Recieved 
 hr
