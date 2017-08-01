@@ -3,13 +3,13 @@ h1 All Leads
 - unless @leads
   ul.nav.nav-tabs role="tablist"
     li.nav-item
-      a.nav-link.active data-toggle="tab" href="#placed" role="tab" Placed
+      a.nav-link.active data-toggle="tab" href="#placed" role="tab" Placed (#{@leads_placed.size})
     li.nav-item
-      a.nav-link data-toggle="tab" href="#confirmed" role="tab" Confirmed
+      a.nav-link data-toggle="tab" href="#confirmed" role="tab" Confirmed (#{@leads_confirmed.size})
     li.nav-item
-      a.nav-link data-toggle="tab" href="#paid" role="tab" Paid
+      a.nav-link data-toggle="tab" href="#paid" role="tab" Paid (#{@leads_paid.size})
     li.nav-item
-      a.nav-link data-toggle="tab" href="#planted" role="tab" Planted
+      a.nav-link data-toggle="tab" href="#planted" role="tab" Planted (#{@leads_planted.size})
   .tab-content
     #placed.tab-pane.active role="tabpanel"
       = render partial: 'table', locals: { leads: @leads_placed, update: false }
