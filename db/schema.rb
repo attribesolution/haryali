@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170728065929) do
+ActiveRecord::Schema.define(version: 20170801111758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20170728065929) do
     t.datetime "updated_at", null: false
     t.integer "location_id"
     t.integer "coupon_id"
-    t.string "status", default: "placed", null: false
+    t.string "status", default: "Placed", null: false
     t.index ["plant_id"], name: "index_leads_on_plant_id"
   end
 
@@ -69,6 +69,16 @@ ActiveRecord::Schema.define(version: 20170728065929) do
     t.datetime "updated_at", null: false
     t.bigint "location_id"
     t.index ["location_id"], name: "index_timeline_events_on_location_id"
+  end
+
+  create_table "updates", force: :cascade do |t|
+    t.bigint "lead_id"
+    t.string "title"
+    t.string "description"
+    t.string "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lead_id"], name: "index_updates_on_lead_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -108,4 +118,5 @@ ActiveRecord::Schema.define(version: 20170728065929) do
 
   add_foreign_key "leads", "plants"
   add_foreign_key "timeline_events", "locations"
+  add_foreign_key "updates", "leads"
 end

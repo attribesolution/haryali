@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :haryali_locations, only: [:edit, :update]
 
   resources :plants
+
+  resources :updates, only: [:new, :create]
 end

@@ -1,5 +1,5 @@
 window.App ||= {}
-class App.Plants extends App.Base
+class App.Updates extends App.Base
 
   beforeAction: (action) =>
     return
@@ -14,18 +14,16 @@ class App.Plants extends App.Base
     return
 
   new: =>
-    $('#new_plant').validate 
+    $('#new_update').validate 
       rules: 
-        'plant[name]':
+        'update[title]':
           required: true
-        'plant[detail]':
+        'update[description]':
           required: true
-        'plant[price]':
-          required: true
-        'plant[image]':
+        'update[image]':
           required: true
       messages:
-        'plant[image]':
+        'update[image]':
           required: ""
     
     readURL = (input) ->
@@ -36,7 +34,7 @@ class App.Plants extends App.Base
           return
         reader.readAsDataURL input.files[0]
 
-    $('#plant-image').change ->
+    $('#update-image').change ->
       if this.files and this.files[0].size > 5000000
         window.alert "This file exceeds the maximum allowed file size (5 MB)"
         $(this).val('')
@@ -48,22 +46,4 @@ class App.Plants extends App.Base
     return
 
   edit: =>
-    readURL = (input) ->
-      if input.files and input.files[0]
-        reader = new FileReader
-        reader.onload = (e) ->
-          $('#img_prev').attr 'src', e.target.result
-          return
-        reader.readAsDataURL input.files[0]
-
-    $('#plant-image').change ->
-      if this.files and this.files[0].size > 1000000
-        window.alert "This file exceeds the maximum allowed file size (5 MB)"
-        $(this).val('')
-        $('#img_prev').attr 'src', ""
-        $('#img_prev')[0].style.visibility = 'hidden'
-      else
-        $('#img_prev')[0].style.visibility = 'visible'
-        readURL this
-
     return

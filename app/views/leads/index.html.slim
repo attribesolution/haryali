@@ -1,11 +1,9 @@
 h1 All Leads 
 
-- unless @leads.nil?
+- unless @leads
   ul.nav.nav-tabs role="tablist"
     li.nav-item
-      a.nav-link.active data-toggle="tab" href="#all" role="tab" All
-    li.nav-item
-      a.nav-link data-toggle="tab" href="#placed" role="tab" Placed
+      a.nav-link.active data-toggle="tab" href="#placed" role="tab" Placed
     li.nav-item
       a.nav-link data-toggle="tab" href="#confirmed" role="tab" Confirmed
     li.nav-item
@@ -13,15 +11,13 @@ h1 All Leads
     li.nav-item
       a.nav-link data-toggle="tab" href="#planted" role="tab" Planted
   .tab-content
-    #all.tab-pane.active role="tabpanel"
-      = render partial: 'table', locals: { leads: @leads }
-    #placed.tab-pane role="tabpanel"
-      = render partial: 'table', locals: { leads: @leads_placed }
+    #placed.tab-pane.active role="tabpanel"
+      = render partial: 'table', locals: { leads: @leads_placed, update: false }
     #confirmed.tab-pane role="tabpanel"
-      = render partial: 'table', locals: { leads: @leads_confirmed }
+      = render partial: 'table', locals: { leads: @leads_confirmed, update: false }
     #paid.tab-pane role="tabpanel"
-      = render partial: 'table', locals: { leads: @leads_paid }
+      = render partial: 'table', locals: { leads: @leads_paid, update: false }
     #planted.tab-pane role="tabpanel"
-      = render partial: 'table', locals: { leads: @leads_planted }
+      = render partial: 'table', locals: { leads: @leads_planted, update: true }
 - else 
   h3 No Submissions Recieved 
