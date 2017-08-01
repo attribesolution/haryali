@@ -6,7 +6,7 @@ class Lead < ApplicationRecord
   has_many :updates, dependent: :destroy 
 
   enum payment_type: [:cash_on_delivery, :direct_wire_transfer]
-  enum status_type: [:placed, :confirmed, :paid, :planted]
+  enum status_type: [:Placed, :Confirmed, :Paid, :Planted]
 
   validates :name, :contact, :plant, presence: true, if: :step1?
   validates :quantity, :payment_type,:location, presence: true, if: :step2?
