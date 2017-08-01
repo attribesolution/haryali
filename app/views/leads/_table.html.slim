@@ -10,6 +10,7 @@ table.table.table-hover.table-responsive
       th Location 
       th Coupon 
       th Status
+      th Action
   tbody
     - leads.each do |lead|
       tr
@@ -26,3 +27,4 @@ table.table.table-hover.table-responsive
             = lead.location.address.split(',')[0] 
         td = (!lead.coupon_id.nil?).to_s.capitalize 
         td = select_tag "status", options_for_select(Lead.status_types, Lead.status_types[lead.status]), name: lead.id
+        td = link_to 'Delete', lead, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn-sm btn-danger"
