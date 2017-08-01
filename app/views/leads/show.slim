@@ -49,11 +49,23 @@
             td = @lead.status.capitalize
   - if current_user and @lead.updates.any?
     h1.t1 Updates 
-    - @lead.updates.each do |update|
-      = update.title
-      '
-      = update.description
-      hr
+    section#cd-timeline.cd-container.body-1
+      - @lead.updates.each do |update|
+        .cd-timeline-block
+          br
+          .cd-timeline-img.cd-picture
+            img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
+          .cd-timeline-content
+            .inner-body
+              .head-green
+                h2.heading-timeline.h2_1 #{update.title}
+              p #{update.description}
+              hr 
+              img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
+              #myModal.modal
+                span.close &times;
+                img#img01.modal-content.img1
+              span.cd-date #{update.created_at.strftime("%B %Y")}
 - else 
   h1.t1 No Submission found 
   br
