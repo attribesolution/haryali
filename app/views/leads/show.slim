@@ -47,6 +47,13 @@
             td 
               strong Status:
             td = @lead.status.capitalize
+  - if current_user and @lead.updates.any?
+    h1.t1 Updates 
+    - @lead.updates.each do |update|
+      = update.title
+      '
+      = update.description
+      hr
 - else 
   h1.t1 No Submission found 
   br

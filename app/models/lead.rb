@@ -3,6 +3,7 @@ class Lead < ApplicationRecord
   belongs_to :location, optional: true
   belongs_to :coupon, optional: true
   accepts_nested_attributes_for :location, reject_if: :check_location_type, allow_destroy: true
+  has_many :updates, dependent: :destroy 
 
   enum payment_type: [:cash_on_delivery, :direct_wire_transfer]
   enum status_type: [:placed, :confirmed, :paid, :planted]

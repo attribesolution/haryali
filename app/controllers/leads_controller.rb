@@ -34,7 +34,11 @@ class LeadsController < ApplicationController
   # end
 
   def index
-    @leads = Lead.all.order(created_at: :desc)
+    if Lead.all.size > 0
+      @lead = true
+    else
+      @lead = false
+    end
     @leads_placed = Lead.where(status: :placed).order(created_at: :desc)
     @leads_confirmed = Lead.where(status: :confirmed).order(created_at: :desc)
     @leads_paid = Lead.where(status: :paid).order(created_at: :desc)

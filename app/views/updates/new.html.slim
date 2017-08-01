@@ -1,0 +1,17 @@
+h1.t1 New Update 
+
+.row
+  = simple_form_for(@update, html: { class: 'form-horizontal' }) do |f|
+    = f.hidden_field :lead_id, value: @lead_id
+    .form-group
+      = f.input :title, label: false, placeholder: "Enter Title", class: "form-control"
+    .form-group
+      = f.input :description, label:false, placeholder: "Enter Description", class: "form-control"
+    .form-group
+      = f.file_field :image, id: 'update-image', accept: '.png,.jpeg,.jpg'
+      br
+      img#img_prev alt="update image" height="300" width="300" style=("visibility: hidden;")
+    hr
+    .form-group
+      = link_to 'Cancel', leads_path, class: "btn btn-danger pull-left"
+      = f.submit "Save", class: "btn btn-basic pull-left btn-gray"
