@@ -1,49 +1,52 @@
-.section.align-middle.vertical-center.col-sm-8 
-  
-  - hide_desired_location = true
-  .form-group
-  br
-    .toggle-responsive.btn-group data-toggle="buttons"
-      = f.label :location_type, class: "btn color-active #{ hide_desired_location ? 'active' : '' }" do |a|
-        | Haryali Location
-        = f.radio_button :location_type, "HaryaliLocation", class: 'form-control switch_location'
-      = f.label :location_type, class: "btn btn-gray  #{ !hide_desired_location ? 'active' : '' }" do |a|
-        | Desired Location
-        = f.radio_button :location_type, "DesiredLocation", class: 'form-control switch_location'
+br
+.form-side.col-lg-12  
+  .section.align-middle.vertical-center      
+        .container style="margin: 0 auto;"
 
-  = f.fields_for :location_attributes do |location_form|
-    = location_form.hidden_field :type, value: "HaryaliLocation"
-    = location_form.hidden_field :lat, id: "location_lat"
-    = location_form.hidden_field :lng, id: "location_lng"
-    .form-group.location_section.field-width type="DesiredLocation" style="#{ hide_desired_location ? 'display:none;' : '' }"
-      = location_form.input :address, label: false, placeholder: "Enter address", input_html: { id: "autocomplete_address", class: "form-control " }
-      .map style=("width: 100%; height: 250px;") 
-    .form-group.location_section type="HaryaliLocation" style="width:185%; margin:0%; #{ !hide_desired_location ? 'display:none;' : '' }"
-      .status
-      .list-group
-        - @locations.each do |loc|
-          .progress.progress-style
-            .progress-bar   aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" role="progressbar" style=("width: 40%; ")  25% 
+          - hide_desired_location = true
+          .form-group
+          br
+            .toggle-responsive.btn-group data-toggle="buttons"
+              = f.label :location_type, class: "btn color-active #{ hide_desired_location ? 'active' : '' }" do |a|
+                | Haryali Location
+                = f.radio_button :location_type, "HaryaliLocation", class: 'form-control switch_location'
+              = f.label :location_type, class: "btn btn-gray  #{ !hide_desired_location ? 'active' : '' }" do |a|
+                | Desired Location
+                = f.radio_button :location_type, "DesiredLocation", class: 'form-control switch_location'
 
-          div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
-            = loc.address
-          div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
-            - if loc.optional_address
-              = loc.optional_address + ',' + loc.address
-            - else
-              = loc.address
+          = f.fields_for :location_attributes do |location_form|
+            = location_form.hidden_field :type, value: "HaryaliLocation"
+            = location_form.hidden_field :lat, id: "location_lat"
+            = location_form.hidden_field :lng, id: "location_lng"
+            .form-group.location_section type="DesiredLocation" style="#{ hide_desired_location ? 'display:none;' : '' }"
+              = location_form.input :address, label: false, placeholder: "Enter address", input_html: { id: "autocomplete_address", class: "form-control " }
+              .map style=("width: 100%; height: 250px;") 
+            .form-group.location_section type="HaryaliLocation" style="width:185%; margin:0%; #{ !hide_desired_location ? 'display:none;' : '' }"
+              .status
+              .list-group
+                /- @locations.each do |loc|
+                  .progress.progress-style
+                    .progress-bar   aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" role="progressbar" style=("width: 40%; ")  25% 
 
-            .d-flex.w-100.justify-content-between
-              h5.mb-1 
-                | Progress : #{loc.current} / #{loc.target}
-            .progress.bar-size
-              .progress-bar.color role="progressbar" style="width:#{percentage(loc).ceil}%"
-            a href="locations/#{loc.id}"
-              | More... 
-    = f.input :location_id, as: :hidden
+                  div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
+                    = loc.address
+                  div.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
+                    - if loc.optional_address
+                      = loc.optional_address + ',' + loc.address
+                    - else
+                      = loc.address
 
-  .form-group.form-quantity
-    = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1, discount: f.object.discount, price: f.object.plant.try(:price).to_f, class: "form-width" }
-    span.total_price.font-weight-bold Rs. #{ f.object.total_price(f.object.quantity || 1) }
+                    .d-flex.w-100.justify-content-between
+                      h5.mb-1 
+                        | Progress : #{loc.current} / #{loc.target}
+                    .progress.bar-size
+                      .progress-bar.color role="progressbar" style="width:#{percentage(loc).ceil}%"
+                    a href="locations/#{loc.id}"
+                      | More... 
+            = f.input :location_id, as: :hidden
 
-= f.hidden_field :payment_type, value: "cash_on_delivery"
+          .form-group.form-quantity
+            = f.input :quantity, input_html: { min: 1, value: f.object.quantity || 1, discount: f.object.discount, price: f.object.plant.try(:price).to_f, class: "form-width" }
+            span.total_price.font-weight-bold Rs. #{ f.object.total_price(f.object.quantity || 1) }
+
+        = f.hidden_field :payment_type, value: "cash_on_delivery"
