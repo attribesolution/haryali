@@ -30,6 +30,10 @@ html
                   a href="mailto:info@haryali.pk" 
                     i.fa.fa-envelope aria-hidden="true" 
                     | Email: info@haryali.pk
+                - if current_user
+                  li
+                    i.fa.fa-user-circle-o aria-hidden="true" 
+                    | Logged In: #{current_user.email}
               .pull-right
                 ul.header-social.social-icon
                   li

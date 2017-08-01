@@ -76,6 +76,66 @@ class App.Locations extends App.Base
         position: coordinates
         icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
         map: map)
+
+    readURL = (input) ->
+      if input.files and input.files[0]
+        reader = new FileReader
+        reader.onload = (e) ->
+          $(input.nextSibling.nextSibling).attr 'src', e.target.result
+          return
+        reader.readAsDataURL input.files[0]
+
+    window.onload = ->
+      # link add event button to validate new event fields on create 
+      $('#add_event').removeClass 'disabled'
+      $('#add_event')[0].onclick = eventHandler
+      return
+    
+    eventHandler = ->
+      validateEvent()
+      enableSave()
+      return
+
+    count = 0
+    validateEvent = ->
+      setTimeout (->
+        events = document.getElementsByClassName "remove_event"
+        temp = events[0].previousSibling.previousSibling.firstChild
+        #$(temp.firstChild.nextSibling).rules 'add', required: true
+        #$(temp.nextSibling.firstChild.nextSibling).rules 'add', required: true
+        
+        $('#event-image')[0].id = "event-image" + count
+        $('#img_prev')[0].id = "img_prev" + count
+        $('#event-image' + count).change ->
+          if this.files and this.files[0].size > 5000000
+            window.alert "This file exceeds the maximum allowed file size (5 MB)"
+            $(this).val('')
+            $(this.nextSibling.nextSibling).attr 'src', ""
+            this.nextSibling.nextSibling.style.visibility = 'hidden'
+          else
+            this.nextSibling.nextSibling.style.visibility = 'visible'
+            readURL this
+        count++
+        return
+      ), 100
+      return
+
+    enableSave = ->
+      $("#save").removeAttr "disabled"
+      setTimeout (->
+        events = document.getElementsByClassName "remove_event"
+        events[0].onclick = tryDisableSave 
+        $(events[0]).removeClass "remove_event"
+      ), 100
+      return
+
+    tryDisableSave = ->
+      events = document.getElementsByClassName "remove_fields"
+      setTimeout (->
+        if events.length == 0 
+          $("#save").attr "disabled", "disabled"
+      ), 100
+      return
     return
 
   new: =>
@@ -145,8 +205,8 @@ class App.Locations extends App.Base
     
     window.onload = ->
       # link add event button to validate new event fields on create 
-      $('#add_event').removeClass 'disabled'
-      $('#add_event')[0].onclick = validateEvent 
+      #$('#add_event').removeClass 'disabled'
+      #$('#add_event')[0].onclick = validateEvent 
       return
 
     count = 0

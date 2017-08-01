@@ -1,5 +1,5 @@
-h1 All Locations 
-
+h1.pull-left All Locations 
+= link_to 'New Location', new_location_path, class: "btn btn-success btn-sm pull-right"
 - unless @locations.nil?
   table.table.table-hover.table-hover
     thead
@@ -25,5 +25,4 @@ h1 All Locations
             /= link_to 'Delete', location, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn-sm btn-danger"
 - else 
   h3 No Locations found 
-= link_to 'New Location', new_location_path, class: "btn btn-success"
 hr
