@@ -35,6 +35,10 @@ class LeadsController < ApplicationController
 
   def index
     @leads = Lead.all.order(created_at: :desc)
+    @leads_placed = Lead.where(status: :placed).order(created_at: :desc)
+    @leads_confirmed = Lead.where(status: :confirmed).order(created_at: :desc)
+    @leads_paid = Lead.where(status: :paid).order(created_at: :desc)
+    @leads_planted = Lead.where(status: :planted).order(created_at: :desc)
   end
 
   def update_status
