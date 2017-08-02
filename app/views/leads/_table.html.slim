@@ -6,7 +6,7 @@ table.table.table-hover.table-responsive
       th Email 
       th Plant 
       th Quantity 
-      th Payment  
+      /th Payment  
       th Location 
       th Coupon 
       th Status
@@ -21,7 +21,7 @@ table.table.table-hover.table-responsive
           a href=plant_path(lead.plant)
             = lead.plant.name
         td = lead.quantity 
-        td = lead.payment_type.humanize 
+        /td = lead.payment_type.humanize 
         td 
           a href=location_path(lead.location) data-toggle="tooltip" title="#{lead.location.address}"
             = lead.location.address.split(',')[0] 
