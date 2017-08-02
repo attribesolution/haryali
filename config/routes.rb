@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   devise_for :users, skip: [:registrations]
   
-  resources :leads, only: [:new, :create, :show, :index] do
+  resources :leads, only: [:new, :create, :show, :index, :destroy] do
     collection do
       put :update_status
     end
@@ -16,4 +16,6 @@ Rails.application.routes.draw do
   resources :haryali_locations, only: [:edit, :update]
 
   resources :plants
+
+  resources :updates, only: [:new, :create]
 end

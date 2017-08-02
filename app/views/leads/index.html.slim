@@ -1,34 +1,23 @@
 h1 All Leads 
 
-- unless @leads.nil?
-  table.table.table-hover.table-responsive
-    thead
-      tr
-        th Name 
-        th Contact 
-        th Email 
-        th Plant 
-        th Quantity 
-        th Payment  
-        th Location 
-        th Coupon 
-        th Status
-    tbody
-      - @leads.each do |lead|
-        tr
-          td = lead.name.capitalize 
-          td = lead.contact 
-          td = lead.email 
-          td
-            a href=plant_path(lead.plant)
-              = lead.plant.name
-          td = lead.quantity 
-          td = lead.payment_type.humanize 
-          td 
-            a href=location_path(lead.location) data-toggle="tooltip" title="#{lead.location.address}"
-              = lead.location.address.split(',')[0] 
-          td = (!lead.coupon_id.nil?).to_s.capitalize 
-          td = select_tag "status", options_for_select(Lead.status_types, Lead.status_types[lead.status]), name: lead.id
+- unless @leads
+  ul.nav.nav-tabs role="tablist"
+    li.nav-item
+      a.nav-link.active data-toggle="tab" href="#placed" role="tab" Placed (#{@leads_placed.size})
+    li.nav-item
+      a.nav-link data-toggle="tab" href="#confirmed" role="tab" Confirmed (#{@leads_confirmed.size})
+    li.nav-item
+      a.nav-link data-toggle="tab" href="#paid" role="tab" Paid (#{@leads_paid.size})
+    li.nav-item
+      a.nav-link data-toggle="tab" href="#planted" role="tab" Planted (#{@leads_planted.size})
+  .tab-content
+    #placed.tab-pane.active role="tabpanel"
+      = render partial: 'table', locals: { leads: @leads_placed, update: false }
+    #confirmed.tab-pane role="tabpanel"
+      = render partial: 'table', locals: { leads: @leads_confirmed, update: false }
+    #paid.tab-pane role="tabpanel"
+      = render partial: 'table', locals: { leads: @leads_paid, update: false }
+    #planted.tab-pane role="tabpanel"
+      = render partial: 'table', locals: { leads: @leads_planted, update: true }
 - else 
   h3 No Submissions Recieved 
-hr

@@ -17,7 +17,7 @@ class App.Leads extends App.Base
           type: 'put'
           data: 
             'id': $(this).attr 'name'
-            'status': this.options[this.selectedIndex].text
+            'status': this.options[this.selectedIndex].text 
       count++
     return
 

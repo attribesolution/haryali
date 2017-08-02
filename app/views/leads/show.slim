@@ -1,10 +1,14 @@
 - unless @lead.nil?
-  .container.thankyoupage-align
-    ._center
-      = image_tag "check.png", class: "img-responsive"
-      / img.img-responsive alt="logo" src="/assets/check.png" / 
-    h1.t1 Thank you!
-    p.t3 Your submission is received and we will contact you soon.
+  - unless current_user
+    .container.thankyoupage-align
+      ._center
+        = image_tag "check.png", class: "img-responsive"
+        / img.img-responsive alt="logo" src="/assets/check.png" / 
+      h1.t1 Thank you!
+      p.t3 Your submission is received and we will contact you soon.
+  - else
+    .container.thankyoupage-align
+      h1.t1 Lead #{@lead.id}
   .thankyou-form    
     table.table.table-striped
       tbody
@@ -47,6 +51,26 @@
             td 
               strong Status:
             td = @lead.status.capitalize
+  - if current_user and @lead.updates.any?
+    .container.thankyoupage-align
+      h1.t1 Updates 
+    section#cd-timeline.cd-container.body-1
+      - @lead.updates.each do |update|
+        .cd-timeline-block
+          br
+          .cd-timeline-img.cd-picture
+            img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
+          .cd-timeline-content
+            .inner-body
+              .head-green
+                h2.heading-timeline.h2_1 #{update.title}
+              p #{update.description}
+              hr 
+              img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
+              #myModal.modal
+                span.close &times;
+                img#img01.modal-content.img1
+              span.cd-date #{update.created_at.strftime("%B %Y")}
 - else 
   h1.t1 No Submission found 
   br

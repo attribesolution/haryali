@@ -1,6 +1,6 @@
 class LeadsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :update_status]
-  before_action :load_lead, only: [:show]
+  before_action :authenticate_user!, only: [:index, :update_status, :destroy]
+  before_action :load_lead, only: [:show, :destroy]
 
   def new
     @wizard = ModelWizard.new(Lead, session, params).start
@@ -34,12 +34,27 @@ class LeadsController < ApplicationController
   # end
 
   def index
-    @leads = Lead.all.order(created_at: :desc)
+    if Lead.all.size > 0
+      @lead = true
+    else
+      @lead = false
+    end
+    @leads_placed = Lead.where(status: :Placed).order(created_at: :desc)
+    @leads_confirmed = Lead.where(status: :Confirmed).order(created_at: :desc)
+    @leads_paid = Lead.where(status: :Paid).order(created_at: :desc)
+    @leads_planted = Lead.where(status: :Planted).order(created_at: :desc)
   end
 
   def update_status
     lead = Lead.find(params[:id])
     lead.update_column(:status, params[:status])
+  end
+
+  # DELETE /leads/1
+  def destroy
+    if @lead.destroy
+      redirect_to leads_url, notice: 'Lead was deleted successfully'
+    end
   end
 
 private
