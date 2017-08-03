@@ -8,7 +8,7 @@
         tr
           td 
             strong Address:
-          - if @location.optional_address
+          - if @location.optional_address?
             td = @location.optional_address + ',' + @location.address
           - else
             td = @location.address

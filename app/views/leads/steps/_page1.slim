@@ -1,79 +1,64 @@
-
 br
 .form-side.col-lg-12 
-
   .section.align-middle.vertical-center      
-          .h4 style="color:#8ac53a; font-weight:bold;" A Resolution for a Green Revolution
-          p Let us be our own superheroes by standing up against global warming, one plant at a time. Fill out your basic details and leave the rest on us!
-          
-          .information-div
-            h4 Your Information
-            hr
-              .form-group 
-                .field
-                  = f.input :name, label: false, placeholder: "Your full name", class: "form-control"
+    .h4 style="color:#8ac53a; font-weight:bold;" A Resolution for a Green Revolution
+    p Let us be our own superheroes by standing up against global warming, one plant at a time. Fill out your basic details and leave the rest on us!
+    .information-div
+      h4 Your Information
+      hr
+        .form-group 
+          .field
+            = f.input :name, label: false, placeholder: "Your full name", class: "form-control"
+        .form-group
+          .field
+            = f.input :contact, label: false, placeholder: "03123456789", class: "form-control"
+        .form-group
+          .field
+            = f.input :email, label: false, placeholder: "example@email.com", class: "form-control"
+    .tree-selection
+      h4 Select a Tree
+      hr
+        .row.col-sm-12 style="padding-left:5px;padding-right:5px;"
+          - @plants.each do |p|
+              a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" data-toggle="tooltip" title="#{p.detail}"
+                div
+                  = image_tag p.image, class: "img-responsive2"
+                p 
+                  strong = p.name
+                  br
+                  | Rs. #{p.price}
+          = f.input :plant_id, as: :hidden
+          .status_tree
+      .div-donation 
+        .checkbox
+          label
+            input type="checkbox" value="" id="check_dedicate"
+            |  Dedicate my donation in honor or in memory of someone.  
+          .in-memory-donation.form-group.col-sm-12 id="form_dedicate"
+            /.radio-inline.control-label Type
+            label style="padding : 5px;"
+              input name="optradio" type="radio" 
+              |   In honour of
+            label
+              input name="optradio" type="radio" 
+              |   In memory of
+            .field
               .form-group
-                .field
-                  = f.input :contact, label: false, placeholder: "03123456789", class: "form-control"
-              .form-group
-                .field
-                  = f.input :email, label: false, placeholder: "example@email.com", class: "form-control"
-        
-          .tree-selection
-          
-            h4 Select a Tree
-            hr
-            
-              .row.col-sm-12 style="padding-left:5px;padding-right:5px;"
-                
-                - @plants.each do |p|
-                    a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" data-toggle="tooltip" title="#{p.detail}"
-                      div
-                        = image_tag p.image, class: "img-responsive2"
-                      p 
-                        strong = p.name
-                        br
-                        | Rs. #{p.price}
-
-                = f.input :plant_id, as: :hidden
-                .status_tree
-             
-          
-            .div-donation 
-              .checkbox
-
-                label
-                  input type="checkbox" value="" 
-                  |  Dedicate my donation in honor or in memory of someone.  
-                      
-                .in-memory-donation.form-group.col-sm-12 
-                  .radio-inline.control-label Type
-                  label style="padding : 5px;"
-                    input name="optradio" type="radio" 
-                    |   In honour of
-                  label
-                    input name="optradio" type="radio" 
-                    |   In memory of
-             
-                  .field
-                   .form-group
-                      label for="name" Hounouree's Name
-                      input#name.form-control type="name"     
-                        
-            .row.col-sm-10
-            h4 style="font-size:14px;" Enter a Coupon Code to get a free plant. (If Any)
-            hr
-            .col-sm-8.coupon-info
-              .input-group.input-lg
-                = f.hidden_field :coupon_id  
-                = f.input :coupon_code, label: false, wrapper: false, placeholder: "Enter coupon code", class: "form-control"
-                span.input-group-addon.verified
-                  i.fa.fa-check-circle
-                span.input-group-addon.invalid
-                  i.fa.fa-close
-                   
-            .status
-                
-            hr       
-       
-            input.btn.btn-basic.btn-position-next data-disable-with="Next" name="commit" type="submit" value="Next" 
+                label for="name" Honouree's Name
+                input#name.form-control type="name"
+                br
+      .row.col-sm-10
+      br
+      h4 style="font-size:14px;" Enter a Coupon Code to get a free plant. (If Any)
+      hr
+      .col-sm-8.coupon-info
+        .input-group.input-lg
+          = f.hidden_field :coupon_id  
+          = f.input :coupon_code, label: false, wrapper: false, placeholder: "Enter coupon code", class: "form-control"
+          span.input-group-addon.verified
+            i.fa.fa-check-circle
+          span.input-group-addon.invalid
+            i.fa.fa-close
+      .status
+      hr       
+      input.btn.btn-basic.btn-position-next data-disable-with="Next" name="commit" type="submit" value="Next" 

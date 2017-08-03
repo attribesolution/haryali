@@ -25,6 +25,15 @@ class App.Leads extends App.Base
     return
 
   new: =>
+    if $('#check_dedicate')
+      $('#form_dedicate').hide()
+      $('#check_dedicate').change ->
+        if this.checked
+          $('#form_dedicate').show()
+        else
+          $('#form_dedicate').hide()
+        return
+
     if $('#lead_coupon_code')
       @couponVerify = new Utility.VerifyCoupon($("#lead_coupon_code"))
       $('.verified').hide()
