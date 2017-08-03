@@ -766,19 +766,19 @@ h6 {
    -------------------------------------------------------------------------- */
 
 #header {
-    position: absolute;
+   /* position: absolute;
     top: 0;
     left: 0;
-    right: 0;
+    right: 0;*/
     background: none;
     height: 136px;
     z-index: 9999999;
 }
 .header-top {
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 1);
 }
 .header-main {
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, .8);
 }
 .header-info {
     margin: 0;

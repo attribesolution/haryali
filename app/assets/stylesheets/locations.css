@@ -39,11 +39,11 @@ padding: 0%;
 .pull-right {
   float: none;
   }
-.btn-position-next {
+/*.btn-position-next {
   vertical-align: center;
   margin-left:45%;
   margin-top: -25%;
-}
+}*/
 .btn-gray {
   width: 85%;
   max-width: 100%;
@@ -157,10 +157,6 @@ width: 100%;
 .pull-right {
   float: none;
   }
-.btn-position-next {
-  vertical-align: center;
-  margin-top: 3%;
-}
 
 .form-align {
    max-width: 100%;
