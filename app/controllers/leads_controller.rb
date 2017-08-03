@@ -52,7 +52,10 @@ class LeadsController < ApplicationController
 
   # DELETE /leads/1
   def destroy
+    coupon = @lead.coupon
     if @lead.destroy
+      coupon.is_active = true
+      coupon.save
       redirect_to leads_url, notice: 'Lead was deleted successfully'
     end
   end

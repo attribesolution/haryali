@@ -1,4 +1,5 @@
 class CouponsController < ApplicationController
+  before_action :authenticate_user!, only: [:index]
 
   def show
     code = params[:id]    
@@ -15,5 +16,9 @@ class CouponsController < ApplicationController
       format.html
     end
 
+  end
+
+  def index
+    @coupons = Coupon.all
   end
 end
