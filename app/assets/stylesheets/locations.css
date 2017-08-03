@@ -40,10 +40,9 @@ padding: 0%;
   float: none;
   }
 /*.btn-position-next {
-  vertical-align: center;
-  margin-left:45%;
-  margin-top: -25%;
-}*/
+  margin: 0%;
+  width: auto;
+}*/     
 .btn-gray {
   width: 85%;
   max-width: 100%;

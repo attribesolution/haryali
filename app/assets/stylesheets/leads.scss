@@ -49,28 +49,7 @@ overflow-y: hidden;
 overflow-x:auto;
 
 }
-label[for=lead_plant_id_10] {
-  text-align:center;
-  margin-left:-13%;
-  padding-bottom:10%;
-}
 
-
-label[for=lead_plant_id_11] {
-  float: left;
-  margin-left:36%;
-  margin-top: -54%;
-}
-
-label[for=lead_plant_id_12] {
-  float: left;
-  margin-left:70%;
-  margin-top: -54%;
-  height:100%;
-  width: 70%;
--webkit-align-self: center; 
-    align-self: center;
-}
 .color {
   background-color: #8ac53a;
 }
@@ -117,6 +96,8 @@ label[for=lead_plant_id_12] {
   margin: 15px 0 0; 
   padding:20px; 
   border-radius: 5px;
+  margin-bottom:5%;
+  display: block;
   }
 .total_price {
   float: left;
@@ -147,14 +128,14 @@ label[for=lead_plant_id_12] {
 h3 {
   margin-left: 27%;
 }
-.radio-inline {
+/*.radio-inline {
   width: 3%;
   align-content: center;
 }
 .radio_buttons {
   margin-top:-1%;
 }
-
+*/
 
 .form-width {
   width: 50%;
