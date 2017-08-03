@@ -35,17 +35,15 @@ br
             input type="checkbox" value="" id="check_dedicate"
             |  Dedicate my donation in honor or in memory of someone.  
           .in-memory-donation.form-group.col-sm-12 id="form_dedicate"
-            /.radio-inline.control-label Type
-            label style="padding : 5px;"
-              input name="optradio" type="radio" 
-              |   In honour of
-            label
-              input name="optradio" type="radio" 
-              |   In memory of
+            br
+            = f.radio_button :dedicate_type, "honor"
+            = f.label :dedicate_type, "In honor of"
+            = f.radio_button :dedicate_type, "memory"
+            = f.label :dedicate_type, "In memory of"
             .field
               .form-group
-                label for="name" Honouree's Name
-                input#name.form-control type="name"
+                = f.label :dedicate_name, "Honoree's Name"
+                = f.input :dedicate_name, label: false, wrapper: false, placeholder: "Enter Name", class: "form-control"
                 br
       .row.col-sm-10
       br
