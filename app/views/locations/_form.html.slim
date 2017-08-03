@@ -4,14 +4,14 @@
     = f.hidden_field :lat
     = f.hidden_field :lng
     .form-group
+      = f.input :optional_address, label:false, placeholder: "Location Name (Optional)", class: "form-control"
+    .form-group
       = f.input :address, label: false, placeholder: "Enter address", input_html: { id: "autocomplete_address", class: "form-control" }
     .map style=("width: 100%; height: 200px;") 
     br
     - if f.object.current?
       .form-group
         = f.input :current, label:false, placeholder: "Number of trees planted", class: "form-control"
-    .form-group
-      = f.input :optional_address, label:false, placeholder: "Optional Address", class: "form-control"
     .form-group
       = f.input :target, label: false, placeholder: "Number of trees to plant", class: "form-control"
     .form-group

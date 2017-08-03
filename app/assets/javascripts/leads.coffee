@@ -31,6 +31,9 @@ class App.Leads extends App.Base
         if this.checked
           $('#form_dedicate').show()
         else
+          $('#lead_dedicate_name').val('')
+          $('#lead_dedicate_type_honor')[0].checked = false
+          $('#lead_dedicate_type_memory')[0].checked = false
           $('#form_dedicate').hide()
         return
 

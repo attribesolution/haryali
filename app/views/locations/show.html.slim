@@ -1,6 +1,9 @@
 - unless @location.nil?
   h1.h1-align.location-heading
-    strong #{@location.address.split(',')[0]}
+    - if @location.try(:optional_address)
+      strong #{@location.optional_address}
+    - else
+      strong #{@location.address.split(',')[0]}
   br
   .table-align
     table.table.table-striped
@@ -8,8 +11,8 @@
         tr
           td 
             strong Address:
-          - if @location.optional_address?
-            td = @location.optional_address + ',' + @location.address
+          - if @location.try(:optional_address)
+            td = @location.optional_address + ', ' + @location.address
           - else
             td = @location.address
         tr    

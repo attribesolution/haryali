@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :coupons, only: [:show]
+  resources :coupons, only: [:show, :index]
 
   resources :locations, only: [:show, :new, :create, :index]
 

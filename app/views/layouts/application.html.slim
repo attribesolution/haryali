@@ -3,12 +3,13 @@ html
   head
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title
-      = content_for?(:title) ? yield(:title) : 'Haryali'
+      = content_for?(:title) ? yield(:title) : 'Haryali • Hara Bhara Pakistan'
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Haryali'}"
     == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API_KEY']}&v=3&libraries=places" type="text/javascript"
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
+    == favicon_link_tag '/favicon.ico'
   body
     / header
     /   == render 'layouts/navigation'
@@ -90,6 +91,9 @@ html
                     li
                       a href=locations_path
                         | Locations 
+                    li
+                      a href=coupons_path
+                        | Coupons 
     #page-header.content-contrast
       .breadcrumb-container
         .container
