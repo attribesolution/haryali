@@ -9,7 +9,7 @@
 /* [medium screen] */
 @media screen and (max-width: 768px) { 
    .header-logo { padding: 15px 0; }
-   .header-logo img { display: none; }
+   /*.header-logo img { display: none; }*/
    .header-logo .logo-responsive { display: block; }
    .menu-trigger { display: block; }
    .additional-menu { display: block; margin: 0; padding: 0; width: 100%; }

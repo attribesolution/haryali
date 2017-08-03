@@ -11,11 +11,16 @@ html, body {
 
 .form-side {
   max-width: 100%;
-  margin:none;
-  width:75%;
+  margin:0px auto!important;
+  width:80%;
 }
-
-
+.vertical-center {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+.section {
+    padding: 40px 0;
+}
 .h1-green{
 text-align:center ;
 margin: 0%;
@@ -89,7 +94,7 @@ label[for=lead_plant_id_12] {
   text-decoration: italic;
 } 
 .btn-position-plant {
-  margin-right:-30%;
+ 
   width: 40%;
 }
 .color-active {
@@ -104,7 +109,15 @@ label[for=lead_plant_id_12] {
   border-color: #B3F1BC  ;
   border-style: solid;
 }
-
+.in-memory-donation{
+  background-color: #f1f1f1;
+}
+.div-donation{
+  border: 1px solid #e8e8e8; 
+  margin: 15px 0 0; 
+  padding:20px; 
+  border-radius: 5px;
+  }
 .total_price {
   float: left;
   margin-left: 60%;
@@ -119,10 +132,10 @@ label[for=lead_plant_id_12] {
   width:105%;
   margin-left: 15%;
 }
-.btn-toggle {
+/*.btn {
   width:100%;
 }
-
+*/
 
 .list-group {
   width: 62%;
@@ -182,6 +195,13 @@ h3 {
   width: 30%;
   height:10%;
 }
+/*.btn-position-next {
+  //margin-top: -17.6%;
+  margin-left:35%;
+  max-width: 100%;
+  background-color: #8ac53a;
+  
+} */
 .form-side {
   margin-left: 25%;
 } 
@@ -271,7 +291,7 @@ width: 10%;
   background-color: #888C89 
 }
 .btn-position-back {
-  margin-left: 40%;
+ 
   width: 30%;
 }
  .table.table-striped {
