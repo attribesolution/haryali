@@ -1,5 +1,9 @@
 br
 .form-side.col-lg-12 
+  /h2 style="color:grey; text-align:center; font-weight:bold;"
+            strong PLANT HOPE!
+  /p style="color:grey; text-align:center;" The best time to plant a tree was 20 years ago. The second best time is now.
+
   .section.align-middle.vertical-center      
     .h4 style="color:#8ac53a; font-weight:bold;" A Resolution for a Green Revolution
     p Let us be our own superheroes by standing up against global warming, one plant at a time. Fill out your basic details and leave the rest on us!
@@ -18,7 +22,7 @@ br
     .tree-selection
       h4 Select a Tree
       hr
-        .row.col-sm-12 style="padding-left:5px;padding-right:5px;"
+        .row.col-sm-12 
           - @plants.each do |p|
               a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" data-toggle="tooltip" title="#{p.detail}"
                 div
@@ -48,7 +52,7 @@ br
       .row.col-sm-10
       br
       h4 style="font-size:14px;" Enter a Coupon Code to get a free plant. (If Any)
-      hr
+      
       .col-sm-8.coupon-info
         .input-group.input-lg
           = f.hidden_field :coupon_id  
@@ -58,5 +62,5 @@ br
           span.input-group-addon.invalid
             i.fa.fa-close
       .status
-      hr       
+             
       input.btn.btn-basic.btn-position-next data-disable-with="Next" name="commit" type="submit" value="Next" 

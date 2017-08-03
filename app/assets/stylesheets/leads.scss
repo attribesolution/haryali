@@ -49,28 +49,7 @@ overflow-y: hidden;
 overflow-x:auto;
 
 }
-label[for=lead_plant_id_10] {
-  text-align:center;
-  margin-left:-13%;
-  padding-bottom:10%;
-}
 
-
-label[for=lead_plant_id_11] {
-  float: left;
-  margin-left:36%;
-  margin-top: -54%;
-}
-
-label[for=lead_plant_id_12] {
-  float: left;
-  margin-left:70%;
-  margin-top: -54%;
-  height:100%;
-  width: 70%;
--webkit-align-self: center; 
-    align-self: center;
-}
 .color {
   background-color: #8ac53a;
 }
@@ -117,6 +96,8 @@ label[for=lead_plant_id_12] {
   margin: 15px 0 0; 
   padding:20px; 
   border-radius: 5px;
+  margin-bottom:5%;
+  display: block;
   }
 .total_price {
   float: left;
@@ -147,22 +128,22 @@ label[for=lead_plant_id_12] {
 h3 {
   margin-left: 27%;
 }
-.radio-inline {
+/*.radio-inline {
   width: 3%;
   align-content: center;
 }
 .radio_buttons {
   margin-top:-1%;
 }
-
+*/
 
 .form-width {
   width: 50%;
 }
 
 .input-lg{
-  width: 140%;
-  margin-left:-2;
+  width: 100%;
+  margin-left:-4%;
   
 }
 .note{
@@ -186,13 +167,15 @@ h3 {
 }
 .coupon-info {
   font-size:11px;
+  width:100%;
+  margin-bottom:40px;
 }
 .btn-position-next {
   //margin-top: -17.6%;
   margin-left:35%;
   max-width: 100%;
   background-color: #8ac53a;
-  width: 30%;
+  width: 40%;
   height:10%;
 }
 /*.btn-position-next {
@@ -204,6 +187,7 @@ h3 {
 } */
 .form-side {
   margin-left: 25%;
+  margin-top: -5%;
 } 
 .thankyou-form {
   width:80%;
@@ -256,9 +240,7 @@ h3 {
 .img-responsive2{
  
   height: 108px;
-  margin-right: 40%;
-  padding-right: 5%;
-  padding-right: 5%;
+  margin: 0 auto;
 
 }
 .img-responsive {
@@ -344,6 +326,10 @@ a.disabled {
 .lnk_tree{
   width: 70
 }
+.lnk_tree img{
+  margin: 0 auto;
+  display: block;
+}
 a.lnk_tree p{
   color: black;
 }
@@ -391,28 +377,6 @@ background-color: #8ac53a;
   padding-left:20px;
  } 
 
- .bs-wizard {margin-top: 40px;}
-
-/*Form Wizard*/
-.bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
-.bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
-.bs-wizard > .bs-wizard-step + .bs-wizard-step {}
-.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
-.bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999; font-size: 14px;}
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #ADFF2F; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;} 
-.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #8ac53a; border-radius: 50px; position: absolute; top: 8px; left: 8px; } 
-.bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
-.bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #8ac53a;}
-.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
-.bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
-.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
-.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
-.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #f5f5f5;}
-.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
-.bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
-.bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
-.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
-/*END Form Wizard*/
 
 .toggle-btn{
  left: 50%;
@@ -421,118 +385,25 @@ background-color: #8ac53a;
   margin-left: -3%;
 }
 
-/*$empty: #aaa;
-$fill: #fcb034;
-$fillBG: #0087B3;
-$bodyBG: #051B23;
-
-
-
-.icon {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  fill: none;
+.tree-selection{
+  padding-left:10px;
+  padding-right: 10px;
+  vertical-align: middle;
 }
-
-.hidden {
-  display: none;
-}
-
-.progress {
-  display: flex;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  margin: 0 0 0 10%;
-  margin-top:-64%;
-}
-.step {
-  flex-grow: 1;
-  position: relative;
-}
-
-.step-progress {
-  width: 100%;
-  height: 0.25em;
-  background: $fill;
-}
-.icon-wrapper {
+.tree-selection p{
+  padding-left:20px;
+  padding-right: 20px;
   text-align: center;
-  display: inline-block;
 }
 
-.step.done .step-progress:after {
-  position: absolute;
-  content: '';
-  height: 0.25em;
-  width: 0;
-  background-color: $fillBG;
-  animation: growLine 1s linear forwards;
-}
+.progress-bar {
+    background-color: #8ac53a ;
 
-.icon-checkmark {
-  position: absolute;
-  top: -0.55em;
-  left: -0.125em;
-  border: 0.125em solid $fill;
-  background: $bodyBG;
-  width: 1em;
-  height: 1em;
-  border-radius: 50%;
-  padding: 0.125em;
-  border-radius: 50%;
-  transition: all 0.25s linear;
+  
 }
-.step.done .icon-checkmark {
-  background: $fillBG;
-  border-color: $fillBG;
+.progress-bar.progress-bar-striped.progress-bar-animated {height: 60px; width:20% !important; } // we increased it so the text is visible or change font size
+.progress-bar.progress-bar-striped.progress-bar-animated .sr-only { position: relative; 
 }
-
-.icon-checkmark .path1 {
-  stroke: $empty; 
-  stroke-width: 4;
-  stroke-linecap: square;
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  fill: empty;
+.align-middle{
+  margin-top: -5%;
 }
-.step.done .icon-checkmark .path1 {
-  animation: dash 5s linear forwards;
-  stroke: $fill;
-}
-
-.step-text {
-  position: relative;
-  margin-left: -50%;
-  letter-spacing: 1px;
-  font-weight: bold;
-  color: $empty;
-  margin-top: 0;
-  opacity: 0;
-}
-.step.done .step-text {
-  color: $fillBG;
-  animation: dropText 0.5s linear forwards;
-}
-
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes growLine {
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes dropText {
-  to {
-    padding-top: 1em;
-    opacity: 1;
-  }
-} */
