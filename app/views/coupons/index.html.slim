@@ -1,0 +1,14 @@
+h1.pull-left All Coupons 
+- unless @coupons.nil?
+  table.table.table-hover.table-hover
+    thead
+      tr
+        th Code 
+        th Status 
+    tbody
+      - @coupons.each do |coupon|
+        tr
+          td = coupon.code
+          td = coupon.is_active ? 'Available' : 'Used'
+- else 
+  h3 No Coupons Found 

@@ -39,23 +39,21 @@ br
             input type="checkbox" value="" id="check_dedicate"
             |  Dedicate my donation in honor or in memory of someone.  
           .in-memory-donation.form-group.col-sm-12 id="form_dedicate"
-            /.radio-inline.control-label Type
-            label style="padding : 5px;"
-              input name="optradio" type="radio" 
-              |   In honour of
-            label
-              input name="optradio" type="radio" 
-              |   In memory of
+            br
+            = f.radio_button :dedicate_type, "honor"
+            = f.label :dedicate_type, "In honor of"
+            = f.radio_button :dedicate_type, "memory"
+            = f.label :dedicate_type, "In memory of"
             .field
               .form-group
-                label for="name" Honouree's Name
-                input#name.form-control type="name"
+                = f.label :dedicate_name, "Honoree's Name"
+                = f.input :dedicate_name, label: false, wrapper: false, placeholder: "Enter Name", class: "form-control"
                 br
       .row.col-sm-10
       br
       h4 style="font-size:14px;" Enter a Coupon Code to get a free plant. (If Any)
       
-      .col-sm-8.coupon-info
+      .col-sm-12.coupon-info
         .input-group.input-lg
           = f.hidden_field :coupon_id  
           = f.input :coupon_code, label: false, wrapper: false, placeholder: "Enter coupon code", class: "form-control"
@@ -64,5 +62,4 @@ br
           span.input-group-addon.invalid
             i.fa.fa-close
       .status
-             
       input.btn.btn-basic.btn-position-next data-disable-with="Next" name="commit" type="submit" value="Next" 

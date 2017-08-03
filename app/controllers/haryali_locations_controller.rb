@@ -9,6 +9,9 @@ class HaryaliLocationsController < ApplicationController
   # POST /haryali_locations/1 
   def update
     if @location.update(location_params)
+      if @location.optional_address == ""
+        @location.update_attribute(:optional_address, nil)
+      end
       redirect_to location_url
     else
       redirect_to new_location_url

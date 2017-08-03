@@ -10,8 +10,8 @@ h1.pull-left All Locations
     tbody
       - @locations.each do |location|
         tr
-          - if location.optional_address
-            td = location.optional_address + ',' + location.address
+          - if location.try(:optional_address)
+            td = location.optional_address + ', ' + location.address
           - else
             td = location.address
           td  

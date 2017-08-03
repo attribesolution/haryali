@@ -28,12 +28,14 @@
           td 
             strong Plant:
           td = @lead.plant.name
-
         tr  
           td 
             strong Location:
-          td = @lead.location.try(:address)
-
+          td 
+            - if @lead.location.try(:optional_address)
+              = @lead.location.optional_address + ', ' + @lead.location.address
+            - else
+              = @lead.location.address
         tr  
           td 
             strong Quantity:
