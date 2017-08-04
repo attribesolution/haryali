@@ -19,6 +19,12 @@ class CouponsController < ApplicationController
   end
 
   def index
-    @coupons = Coupon.all
+    if Coupon.all.size > 0
+      @coupon = true
+    else
+      @coupon = false
+    end
+    @coupons_available = Coupon.where(is_active: :true).order(created_at: :desc)
+    @coupons_used = Coupon.where(is_active: :false).order(created_at: :desc)
   end
 end

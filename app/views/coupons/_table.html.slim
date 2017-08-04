@@ -1,0 +1,14 @@
+table.table.table-hover.table-hover
+  thead
+    tr
+      th Code 
+      th Status 
+  tbody
+    - coupons.each do |coupon|
+      tr
+        td = coupon.code
+        td 
+        	- if coupon.is_active
+        		i.fa.fa-check-circle
+      		- else
+      			i.fa.fa-close

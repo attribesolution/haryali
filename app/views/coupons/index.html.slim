@@ -1,14 +1,16 @@
 h1.pull-left All Coupons 
-- unless @coupons.nil?
-  table.table.table-hover.table-hover
-    thead
-      tr
-        th Code 
-        th Status 
-    tbody
-      - @coupons.each do |coupon|
-        tr
-          td = coupon.code
-          td = coupon.is_active ? 'Available' : 'Used'
+br
+br
+- unless @coupons
+  ul.nav.nav-tabs role="tablist"
+    li.nav-item
+      a.nav-link.active data-toggle="tab" href="#available" role="tab" Available (#{@coupons_available.size})
+    li.nav-item
+      a.nav-link data-toggle="tab" href="#used" role="tab" Used (#{@coupons_used.size})
+  .tab-content
+    #available.tab-pane.active role="tabpanel"
+      = render partial: 'table', locals: { coupons: @coupons_available }
+    #used.tab-pane role="tabpanel"
+      = render partial: 'table', locals: { coupons: @coupons_used }
 - else 
   h3 No Coupons Found 
