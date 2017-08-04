@@ -17,6 +17,7 @@ html, body {
 .vertical-center {
     padding-left: 20px;
     padding-right: 20px;
+    
   }
 .section {
     padding: 40px 0;
@@ -75,10 +76,13 @@ overflow-x:auto;
 .btn-position-plant {
  
   width: 40%;
+  margin-right: 2%;
 }
 .color-active {
-  background-color: #60CD71    ;  
+  background-color: #60CD71;
+
 }
+
 .table.table-striped {
   width:60%;
   margin-left: 10%;
@@ -104,10 +108,12 @@ overflow-x:auto;
   margin-left: 60%;
   margin-top: -9%;
   font-size:25px;
+
 }
 .form-quantity {
   margin-left: 16%;
   width:100%;
+  margin-bottom:10%;
 }
 .location_section {
   width:105%;
@@ -143,7 +149,7 @@ h3 {
 
 .input-lg{
   width: 100%;
-  margin-left:-4%;
+  margin-left:-2.5%;
   
 }
 .note{
@@ -270,11 +276,13 @@ width: 10%;
        ;
 }
 .color-btn {
-  background-color: #888C89 
+  background-color: #888C89; 
 }
+
 .btn-position-back {
  
   width: 30%;
+  margin-left:3.5%;
 }
  .table.table-striped {
    width:50%;
@@ -343,6 +351,16 @@ background-color: #8ac53a;
 .input-group-addon.invalid {
   color: red;
 }
+.location-selection {
+  padding-left:30px;
+   padding-right:30px;
+   margin: 0 auto;
+    max-width:100%;
+    border: 1px solid #8ac53a;
+    padding-top: 60px;
+    vertical-align:center;
+}
+
 .vertical-align {
   min-height: 100%;  
   min-height: 100vh; 
@@ -356,8 +374,9 @@ background-color: #8ac53a;
    margin: 0 auto;
     max-width:100%;
     border: 1px solid #8ac53a;
-    margin-top:5px;
+    padding-top: 0px;
     vertical-align:center;
+
 }
 .vertical-center:before {    
   content: " ";
@@ -368,7 +387,6 @@ background-color: #8ac53a;
 
 .vertical-center > .container {
   max-width: 100%;
-
   display: inline-block;
   vertical-align: middle;  
 }
@@ -378,17 +396,16 @@ background-color: #8ac53a;
  } 
 
 
-.toggle-btn{
- left: 50%;
-}
 .form-position {
-  margin-left: -3%;
+  margin-left: -0.5%;
+  width:100%;
 }
 
 .tree-selection{
-  padding-left:10px;
-  padding-right: 10px;
+  padding-left:5px;
+  padding-right: 5px;
   vertical-align: middle;
+
 }
 .tree-selection p{
   padding-left:20px;
@@ -396,14 +413,68 @@ background-color: #8ac53a;
   text-align: center;
 }
 
+
 .progress-bar {
     background-color: #8ac53a ;
-
   
 }
-.progress-bar.progress-bar-striped.progress-bar-animated {height: 60px; width:20% !important; } // we increased it so the text is visible or change font size
-.progress-bar.progress-bar-striped.progress-bar-animated .sr-only { position: relative; 
+.progress-bar.progress-bar-striped.progress-bar-animated {height: 60px; } // we increased it so the text is visible or change font size
+
+.progress {
+  width:54%;
+  border: 1px solid #8ac53a;
 }
-.align-middle{
-  margin-top: -5%;
+.progress-bar span {
+   position: relative;
+    top: 0;
+    z-index: 2;
+    //color: black; // You might need to change it
+    text-align: center;
+   
+  text-align:center;
+  width:100%;
+}
+
+
+.wrapper {
+  width: 100px;
+  border: 0px solid #ccc;
+  margin: 0px auto;
+  padding: 30px;
+}
+.progress-top {
+  border: 1px solid gray;
+  margin-left:46%;
+  text-align: center;
+  width: 8%;
+  font-weight:bold;
+
+}
+.align-right{
+  
+   
+    position: relative;
+    width:40%;
+    border: 1px solid #8ac53a;
+    padding-left:10px;
+    padding-right:10px;
+}
+.plant-info {
+ 
+  width:30%;
+    
+    padding-left:10px;
+    padding-right:10px;
+    margin-top: -1.4%;
+    margin-right:-58%;
+    font-size: 12px;
+}
+.content-1 {
+ width:30%;
+   
+    padding-left:10px;
+    padding-right:10px;
+    margin-top: 50%;
+    margin-right:-58%;
+    font-size: 12px;
 }
