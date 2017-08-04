@@ -16,6 +16,6 @@ module LeadsHelper
   end
 
   def percentage loc
-    per = 100*loc.current.to_f/loc.target.to_f    
+    per = 100*loc.current.to_f/loc.target.to_f
   end
 end
