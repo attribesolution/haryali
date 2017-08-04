@@ -11,9 +11,8 @@ class Coupon < ApplicationRecord
     self.update(is_active: false)
   end
 
-  private
-    def generate_code
-      key = Digest::MD5.hexdigest(Time.now.to_s + rand(100000).to_s)[0..5]
-      self.code = "Haryali-#{key}"
-    end
+  def generate_code
+    key = Digest::MD5.hexdigest(Time.now.to_s + rand(100000).to_s)[0..5]
+    self.code = "Haryali-#{key}"
+  end
 end

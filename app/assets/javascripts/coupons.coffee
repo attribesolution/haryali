@@ -10,6 +10,18 @@ class App.Coupons extends App.Base
 
 
   index: =>
+    $('#generate_coupons').click ->
+      unless isNaN(parseInt($('#quantity').val()))
+        this.disabled = true
+        this.innerHTML = 'Generating... (Please Wait)'
+        $.ajax
+          url: '/coupons/generate_coupons'
+          type: 'put'
+          async: false
+          data: 
+            'quantity': $('#quantity').val()
+        location.reload()
+      return
     return
 
 

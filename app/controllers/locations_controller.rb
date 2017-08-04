@@ -15,6 +15,9 @@ class LocationsController < ApplicationController
   def create
   	@location = Location.new(location_params)
     if @location.save
+      if @location.optional_address == ""
+        @location.update_attribute(:optional_address, nil)
+      end
       redirect_to action: "show", id: @location.id
     else
       render :new
