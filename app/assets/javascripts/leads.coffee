@@ -180,7 +180,7 @@ class App.Leads extends App.Base
       $("#lead_plant_id").val(id)
 
     $(".haryali_location").click -> 
-      $(".haryali_location").removeClass("selected_location")
+      $(".selected_location").removeClass("selected_location")
       $(this).addClass("selected_location")
       id = $(this).attr("location_id")
       $("#lead_location_id").val(id)

@@ -164,12 +164,11 @@ h3 {
   width: auto;
 }
 .selected_location {
-  background-color: #E5E9E6;
-  border-color: #8ac53a;
+  //background-color: #E5E9E6;
+  //border-color: #8ac53a;
   border-style: solid;
-  border-width: 2px;
-  height:140%;
-
+  border-width: 3px;
+  //height:140%;
 }
 .coupon-info {
   font-size:11px;
@@ -345,10 +344,10 @@ a.lnk_tree p{
 margin-left: 45%;
 background-color: #8ac53a;
 }
-.input-group-addon.verified {
+.verified {
   color: #8ac53a;
 }
-.input-group-addon.invalid {
+.invalid {
   color: red;
 }
 .location-selection {
@@ -422,16 +421,19 @@ background-color: #8ac53a;
 
 .progress {
   width:54%;
-  border: 1px solid #8ac53a;
+  //border: 1px solid #8ac53a;
+  position: relative; 
 }
-.progress-bar span {
-   position: relative;
-    top: 0;
-    z-index: 2;
-    //color: black; // You might need to change it
-    text-align: center;
+.progress span {
+   position: absolute;
+   display: block;
+   margin-top:7%;
+    //top: 0;
+    //z-index: 2;
+    color: black; // You might need to change it
+    //text-align: center;
    
-  text-align:center;
+  //text-align:center;
   width:100%;
 }
 

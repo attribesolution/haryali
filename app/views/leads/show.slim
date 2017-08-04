@@ -36,6 +36,11 @@
               = @lead.location.optional_address + ', ' + @lead.location.address
             - else
               = @lead.location.address
+        - if @lead.dedicate_name and @lead.dedicate_type
+          tr  
+            td 
+              strong Dedicated in #{@lead.dedicate_type.capitalize} of:
+            td = @lead.dedicate_name
         tr  
           td 
             strong Quantity:
