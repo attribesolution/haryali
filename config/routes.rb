@@ -9,7 +9,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :coupons, only: [:show, :index]
+  resources :coupons, only: [:show, :index] do
+    collection do
+      put :generate_coupons
+    end
+  end
 
   resources :locations, only: [:show, :new, :create, :index]
 

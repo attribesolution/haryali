@@ -1,7 +1,7 @@
 h1.pull-left All Coupons 
 br
 br
-- unless @coupons
+- if @coupons
   ul.nav.nav-tabs role="tablist"
     li.nav-item
       a.nav-link.active data-toggle="tab" href="#available" role="tab" Available (#{@coupons_available.size})
@@ -14,3 +14,9 @@ br
       = render partial: 'table', locals: { coupons: @coupons_used }
 - else 
   h3 No Coupons Found 
+hr
+h1.pull-left Generate New Coupons 
+.input-group
+  input#quantity type="number" min=1 placeholder="Enter Number of Coupons" class="form-control"
+  span
+    button#generate_coupons class="btn btn-info" Generate Coupons

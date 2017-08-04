@@ -1,5 +1,5 @@
 class CouponsController < ApplicationController
-  before_action :authenticate_user!, only: [:index]
+  before_action :authenticate_user!, only: [:index, :generate_coupons]
 
   def show
     code = params[:id]    
@@ -20,11 +20,30 @@ class CouponsController < ApplicationController
 
   def index
     if Coupon.all.size > 0
-      @coupon = true
+      @coupons = true
     else
-      @coupon = false
+      @coupons = false
     end
     @coupons_available = Coupon.where(is_active: :true).order(created_at: :desc)
     @coupons_used = Coupon.where(is_active: :false).order(created_at: :desc)
+  end
+
+  def generate_coupons
+    count = params[:quantity].to_i
+    loop do 
+      tries = 5
+      coupon = Coupon.new
+      loop do
+        coupon.generate_code
+        result = Coupon.find_by_code(coupon.code)
+        tries = tries - 1
+        break if result.nil? || tries == 0
+      end
+      if tries > 0
+        coupon.save
+      end
+      count = count - 1
+      break if count == 0
+    end
   end
 end
