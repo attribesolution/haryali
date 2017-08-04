@@ -1,9 +1,44 @@
 br
-.form-side.col-lg-12 
-  /h2 style="color:grey; text-align:center; font-weight:bold;"
-            strong PLANT HOPE!
-  /p style="color:grey; text-align:center;" The best time to plant a tree was 20 years ago. The second best time is now.
+  .plant-info.pull-right 
+    h5 
+      strong Want to know about your plants?
+    .plant_choices
+      .plant-1
+        h6 style="color: green;" ▼  Gulmohar 
+        .gulmohar-plant
+          p 
+          span style="color: green;"
+            strong Neem Tree 
+          | or 
+          span style="color: green;"
+            strong Azadirachta indica 
+          p is grown in tropical and semi-tropical regions. Its main uses are: 
+          ul
+            li As vegetables.
+            li In traditional medicines.
+            li Key ingredient in non-pesticidal management.
+            li For polymeric resins.
+            li Potent ingredient for a mixture of wall plaster. 
 
+         
+      .plant-2
+        h6 style="color: green;" ▼  Neem Tree
+        .neem-tree
+          p 
+          span style="color: green;"
+            strong Gulmohar  
+          | or 
+          span style="color: green;"
+            strong Delonix regiai   
+          p is a species of flowering plant in the bean family. It is noted for its fern-like leaves and flamboyant display of flowers. Its medicinal properties include:
+          ul
+            li anti-diabetic activity
+            li anti-bacterial activity
+            li anti-diarrheal property
+            li anti-microbial activity
+            li anti-inflammatory activity. 
+
+.form-side.col-lg-12 
   .section.align-middle.vertical-center      
     .h4 style="color:#8ac53a; font-weight:bold;" A Resolution for a Green Revolution
     p Let us be our own superheroes by standing up against global warming, one plant at a time. Fill out your basic details and leave the rest on us!
@@ -41,13 +76,12 @@ br
           .in-memory-donation.form-group.col-sm-12 id="form_dedicate"
             br
             = f.radio_button :dedicate_type, "honor"
-            = f.label :dedicate_type, "In honor of"
+            = f.label :dedicate_type, " In honor of"
             = f.radio_button :dedicate_type, "memory"
-            = f.label :dedicate_type, "In memory of"
+            = f.label :dedicate_type, " In memory of"
             .field
               .form-group
-                = f.label :dedicate_name, "Honoree's Name"
-                = f.input :dedicate_name, label: false, wrapper: false, placeholder: "Enter Name", class: "form-control"
+                = f.input :dedicate_name, label: false, wrapper: false, placeholder: "Hounouree's Name", class: "form-control"
                 br
       .row.col-sm-10
       br
@@ -63,3 +97,6 @@ br
             i.fa.fa-close
       .status
       input.btn.btn-basic.btn-position-next data-disable-with="Next" name="commit" type="submit" value="Next" 
+
+
+

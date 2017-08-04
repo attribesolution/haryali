@@ -149,7 +149,7 @@ h3 {
 
 .input-lg{
   width: 100%;
-  margin-left:-4%;
+  margin-left:-2.5%;
   
 }
 .note{
@@ -351,6 +351,7 @@ background-color: #8ac53a;
 .input-group-addon.invalid {
   color: red;
 }
+
 .vertical-align {
   min-height: 100%;  
   min-height: 100vh; 
@@ -364,7 +365,7 @@ background-color: #8ac53a;
    margin: 0 auto;
     max-width:100%;
     border: 1px solid #8ac53a;
-    margin-top:5px;
+    padding-top: 0px;
     vertical-align:center;
 
 }
@@ -392,8 +393,8 @@ background-color: #8ac53a;
 }
 
 .tree-selection{
-  padding-left:10px;
-  padding-right: 10px;
+  padding-left:5px;
+  padding-right: 5px;
   vertical-align: middle;
 
 }
@@ -425,13 +426,7 @@ background-color: #8ac53a;
   width:100%;
 }
 
-.align-middle{
-  margin-top: -5%;
-}
-.align-middle.container{
-margin-top:-15%;
 
-}
 .wrapper {
   width: 100px;
   border: 0px solid #ccc;
@@ -445,4 +440,32 @@ margin-top:-15%;
   width: 8%;
   font-weight:bold;
 
+}
+.align-right{
+  
+   
+    position: relative;
+    width:40%;
+    border: 1px solid #8ac53a;
+    padding-left:10px;
+    padding-right:10px;
+}
+.plant-info {
+ 
+  width:30%;
+    
+    padding-left:10px;
+    padding-right:10px;
+    margin-top: -1.4%;
+    margin-right:-58%;
+    font-size: 12px;
+}
+.content-1 {
+ width:30%;
+   
+    padding-left:10px;
+    padding-right:10px;
+    margin-top: 50%;
+    margin-right:-58%;
+    font-size: 12px;
 }
