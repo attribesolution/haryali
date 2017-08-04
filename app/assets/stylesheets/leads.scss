@@ -282,7 +282,7 @@ width: 10%;
 .btn-position-back {
  
   width: 30%;
-  margin-left:3%;
+  margin-left:3.5%;
 }
  .table.table-striped {
    width:50%;
@@ -350,6 +350,15 @@ background-color: #8ac53a;
 }
 .input-group-addon.invalid {
   color: red;
+}
+.location-selection {
+  padding-left:30px;
+   padding-right:30px;
+   margin: 0 auto;
+    max-width:100%;
+    border: 1px solid #8ac53a;
+    padding-top: 60px;
+    vertical-align:center;
 }
 
 .vertical-align {

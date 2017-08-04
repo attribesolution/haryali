@@ -1,6 +1,6 @@
 br
 .form-side.col-sm-12  
-  .section.align-middle.vertical-center      
+  .section.align-middle.location-selection      
     .container style="margin: 0 auto; margin-top:-5%;"
       - hide_desired_location = true
       .form-group
@@ -57,7 +57,7 @@ br
 
 
 
-          .list-group
+          /.list-group
             - @locations.each do |loc|
               div.col-sm-10.haryali_location.list-group-item.list-group-item-action.flex-column.align-items-start location_id="#{loc.id}"
                 - if loc.optional_address?
