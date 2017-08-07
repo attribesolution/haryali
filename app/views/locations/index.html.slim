@@ -15,7 +15,7 @@ h1.pull-left All Locations
           - else
             td = location.address
           td  
-            .progress.bar-size
+            .progress.bar-size style="width:100%;"
               .progress-bar.color role="progressbar" style="width:#{percentage(location).ceil}%"
           td 
             = link_to 'Show', location_path(location), class: "btn-sm btn-primary"
