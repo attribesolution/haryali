@@ -1,5 +1,27 @@
+.checkout-progress
+  ul.progress-bar
+    li.checkout-step1
+      span.triangle2
+      a href="javascript:void(0)" 
+        em> 1
+        | Choose a plant
+      span.triangle
+    li.checkout-step2
+      span.triangle2
+      a href="javascript:void(0)" 
+        em> 2
+        | Choose a location
+      span.triangle
+    li.checkout-step3
+      span.triangle2
+      a href="javascript:void(0)" 
+        em> 3
+        | Done
+      span.triangle
+
 - unless @lead.nil?
   - unless current_user
+ 
     .container.thankyoupage-align
       ._center
         = image_tag "check.png", class: "img-responsive"
@@ -8,76 +30,78 @@
       p.t3 Your submission is received and we will contact you soon.
   - else
     .container.thankyoupage-align
-      h1.t1 Lead #{@lead.id}
-  .thankyou-form    
-    table.table.table-striped
-      tbody
-        tr
-          td 
-            strong Name:
-          td = @lead.name
-        tr    
-          td 
-            strong Contact:
-          td = @lead.contact
-        tr   
-          td 
-            strong Email:
-          td = @lead.email
-        tr
-          td 
-            strong Plant:
-          td = @lead.plant.name
-        tr  
-          td 
-            strong Location:
-          td 
-            - if @lead.location.try(:optional_address)
-              = @lead.location.optional_address + ', ' + @lead.location.address
-            - else
-              = @lead.location.address
-        - if @lead.dedicate_name and @lead.dedicate_type
-          tr  
-            td 
-              strong Dedicated in #{@lead.dedicate_type.capitalize} of:
-            td = @lead.dedicate_name
-        tr  
-          td 
-            strong Quantity:
-          td = @lead.quantity.to_s
-        tr
-          td 
-            strong Price:
-          td = total_price(@lead)
-        tr
-          td 
-            strong Payment Type:
-          td = @lead.payment_type.humanize
-        - if current_user
+      ._center
+        = image_tag "check.png", class: "img-responsive"
+      h1.t1 Thank you!  
+    .thankyou-form    
+      table.table.table-striped
+        tbody
           tr
             td 
-              strong Status:
-            td = @lead.status.capitalize
-  - if current_user and @lead.updates.any?
-    .container.thankyoupage-align
-      h1.t1 Updates 
-    section#cd-timeline.cd-container.body-1
-      - @lead.updates.each do |update|
-        .cd-timeline-block
-          br
-          .cd-timeline-img.cd-picture
-            img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
-          .cd-timeline-content
-            .inner-body
-              .head-green
-                h2.heading-timeline.h2_1 #{update.title}
-              p #{update.description}
-              hr 
-              img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
-              #myModal.modal
-                span.close &times;
-                img#img01.modal-content.img1
-              span.cd-date #{update.created_at.strftime("%B %Y")}
+              strong Name:
+            td = @lead.name
+          tr    
+            td 
+              strong Contact:
+            td = @lead.contact
+          tr   
+            td 
+              strong Email:
+            td = @lead.email
+          tr
+            td 
+              strong Plant:
+            td = @lead.plant.name
+          tr  
+            td 
+              strong Location:
+            td 
+              - if @lead.location.try(:optional_address)
+                = @lead.location.optional_address + ', ' + @lead.location.address
+              - else
+                = @lead.location.address
+          - if @lead.dedicate_name and @lead.dedicate_type
+            tr  
+              td 
+                strong Dedicated in #{@lead.dedicate_type.capitalize} of:
+              td = @lead.dedicate_name
+          tr  
+            td 
+              strong Quantity:
+            td = @lead.quantity.to_s
+          tr
+            td 
+              strong Price:
+            td = total_price(@lead)
+          tr
+            td 
+              strong Payment Type:
+            td = @lead.payment_type.humanize
+          - if current_user
+            tr
+              td 
+                strong Status:
+              td = @lead.status.capitalize
+    - if current_user and @lead.updates.any?
+      .container.thankyoupage-align
+        h1.t1 Updates 
+      section#cd-timeline.cd-container.body-1
+        - @lead.updates.each do |update|
+          .cd-timeline-block
+            br
+            .cd-timeline-img.cd-picture
+              img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
+            .cd-timeline-content
+              .inner-body
+                .head-green
+                  h2.heading-timeline.h2_1 #{update.title}
+                p #{update.description}
+                hr 
+                img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
+                #myModal.modal
+                  span.close &times;
+                  img#img01.modal-content.img1
+                span.cd-date #{update.created_at.strftime("%B %Y")}
 - else 
   h1.t1 No Submission found 
   br
