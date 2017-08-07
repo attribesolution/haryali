@@ -11,9 +11,8 @@ class UserMailer < ApplicationMailer
 
   def update_email(lead)
     @lead = lead
-    @url  = "http://haryali.pk"
+    @url  = lead_url(lead)
     mail(to: lead.email, 
-    	subject: "Haryali.pk - Plant Status Update",
-    	bcc: ["anjiya.molwani@gmail.com", "kashif.y.saeed@gmail.com"])
+    	subject: "Haryali.pk - Plant Status Update")
   end
 end
