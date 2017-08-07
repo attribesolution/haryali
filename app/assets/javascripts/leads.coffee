@@ -101,6 +101,8 @@ class App.Leads extends App.Base
 
     window.onload = ->
       if $('.active').length > 2 
+        $('.checkout-step1').addClass('visited-step')
+        $('.checkout-step2').addClass('current-step')
         if $("#autocomplete_address").val().length == 0
           $("#autocomplete_address").focus()
         else 
@@ -121,6 +123,7 @@ class App.Leads extends App.Base
               window.message.setContent "click on the map to change planting location" 
             window.message.open window.map, window.marker 
       else 
+        $('.checkout-step1').addClass('current-step')
         if $('.lnk_tree').length > 0
           $($('.lnk_tree')[0]).addClass('selected_tree')
         if $("#lead_name").val().length == 0
