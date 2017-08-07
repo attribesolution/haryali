@@ -48,8 +48,8 @@ class LeadsController < ApplicationController
   def update_status
     lead = Lead.find(params[:id])
     if lead.update_column(:status, params[:status])
-      if params[:status] == 'Placed'
-        # UserMailer.update_email(lead).deliver
+      if params[:status] == 'Planted'
+        UserMailer.update_email(lead).deliver
       end
     end
   end
