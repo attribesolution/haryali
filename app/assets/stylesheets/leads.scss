@@ -118,6 +118,7 @@ overflow-x:auto;
 .location_section {
   width:105%;
   margin-left: 15%;
+  margin-top:10%;
 }
 /*.btn {
   width:100%;
@@ -199,7 +200,7 @@ h3 {
   margin-left:5%;
 }
 .thankyoupage-align {
-  margin-left:30%;
+  margin-left:35%;
   width: 44%;
 }
 .mainselection select {
@@ -354,10 +355,11 @@ background-color: #8ac53a;
   padding-left:30px;
    padding-right:30px;
    margin: 0 auto;
-    max-width:100%;
+   max-width:100%;
     border: 1px solid #8ac53a;
-    padding-top: 60px;
+    padding-top: 70px;
     vertical-align:center;
+   
 }
 
 .vertical-align {
@@ -473,10 +475,103 @@ background-color: #8ac53a;
 }
 .content-1 {
  width:30%;
-   
-    padding-left:10px;
+   padding-left:10px;
     padding-right:10px;
     margin-top: 50%;
     margin-right:-58%;
     font-size: 12px;
+}
+
+.checkout-progress {
+  clear: both;
+  width: 800px;
+  margin: 20px auto;
+  margin-right:6%;
+  margin-bottom: 5%;
+
+  
+  .progress-bar {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: transparent;
+    
+    li {
+      position: relative;
+      float: left;
+      background: #eee;
+      border-left: 1px solid #fff;
+      margin-right: 10px;
+      
+        .triangle, .triangle2 {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: -10px;
+          height: 0;
+          width: 0;
+          border-top: 15px solid transparent;
+          border-left: 10px solid #eee;
+          border-bottom: 15px solid transparent;
+          z-index: 1;
+        }  
+      
+        .triangle2 {
+          border-left-color: white;
+          left: 0;
+        }
+      
+      &:first-child {
+        border: 0;
+      }
+      
+      &.current-step {
+        background: #8ac53a;
+        
+        .triangle {
+          border-left: 10px solid green;
+        }
+        
+        a {
+          color: white;
+          
+          .step-number {
+            border-color: white;
+          }
+        }
+      }
+      
+      &.visited-step {
+        background: #bbb;
+        
+        .triangle {
+          border-left: 10px solid #bbb;
+        }        
+      }
+      
+      a {
+        letter-spacing: 1px;
+        display: block;
+        line-height: 30px;
+        padding: 0 20px 0 30px;  
+        color: green;
+        text-decoration: none;
+        cursor: default;
+        
+        em {
+          display: inline-block;
+          border-radius: 50%;
+          background: none;
+          width: 18px;
+          height: 18px;
+          line-height: 18px;
+          text-align: center;
+          margin-right: 14px;
+          border: 1px solid #999;
+          font-size: 13px;
+          font-style: normal;
+        }
+      }
+    }
+  }
 }
