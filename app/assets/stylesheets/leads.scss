@@ -82,7 +82,9 @@ overflow-x:auto;
   background-color: #60CD71;
 
 }
-
+.btn-toggle{
+  cursor: hand;
+}
 .table.table-striped {
   width:60%;
   margin-left: 10%;
@@ -165,10 +167,10 @@ h3 {
   width: auto;
 }
 .selected_location {
-  //background-color: #E5E9E6;
-  //border-color: #8ac53a;
+ // background-color: #E5E9E6;
+  border-color: green;
   border-style: solid;
-  border-width: 3px;
+  border-width: 2px;
   //height:140%;
 }
 .coupon-info {
@@ -228,7 +230,9 @@ h3 {
 }
 .t1{
   text-decoration: bold;
-  margin-left:17%;
+  margin-left:15%;
+  color:#8ac53a;
+  font-weight: bold;
 }
 .t3{
   margin-left: 3%;
@@ -267,7 +271,7 @@ width: 10%;
 }
 ._center {
   width:120%;
-  margin-left: 38%;
+  margin-left: 35%;
   padding-bottom:3%;
 }
 
