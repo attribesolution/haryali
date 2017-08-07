@@ -1,0 +1,11 @@
+<h1>Dear user, <%= @lead.name %></h1>
+<p>
+  On <strong><%= @lead.created_at.strftime("%d-%m-%Y") %></strong>, you requested the plantation of <strong><%= @lead.quantity %> "<%= @lead.plant.name %>"</strong> at <strong><%= @lead.location.address %></strong>.<br/>
+</p>
+<p>
+  This email is to inform you that the plant(s) have been planted.<br/>
+</p>
+<p>
+  To view updates on your plant, follow this link: <%= @url %>.
+</p>
+<p>Thank you for using Haryali and have a great day!</p>

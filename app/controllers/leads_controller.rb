@@ -47,7 +47,11 @@ class LeadsController < ApplicationController
 
   def update_status
     lead = Lead.find(params[:id])
-    lead.update_column(:status, params[:status])
+    if lead.update_column(:status, params[:status])
+      if params[:status] == 'Planted'
+        UserMailer.update_email(lead).deliver
+      end
+    end
   end
 
   # DELETE /leads/1
