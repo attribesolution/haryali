@@ -1,27 +1,27 @@
-.checkout-progress
-  ul.progress-bar
-    li.checkout-step1.visited-step
-      span.triangle2
-      a href="javascript:void(0)" 
-        em> 1
-        | Choose a plant
-      span.triangle
-    li.checkout-step2.visited-step
-      span.triangle2
-      a href="javascript:void(0)" 
-        em> 2
-        | Choose a location
-      span.triangle
-    li.checkout-step3.current-step
-      span.triangle2
-      a href="javascript:void(0)" 
-        em> 3
-        | Done
-      span.triangle
-
 - unless @lead.nil?
   - unless current_user
  
+    .checkout-progress
+      ul.progress-bar
+        li.checkout-step1.visited-step
+          span.triangle2
+          a href="javascript:void(0)" 
+            em> 1
+            | Choose a plant
+          span.triangle
+        li.checkout-step2.visited-step
+          span.triangle2
+          a href="javascript:void(0)" 
+            em> 2
+            | Choose a location
+          span.triangle
+        li.checkout-step3.current-step
+          span.triangle2
+          a href="javascript:void(0)" 
+            em> 3
+            | Done
+          span.triangle
+
     .container.thankyoupage-align
       ._center
         = image_tag "check.png", class: "img-responsive"
