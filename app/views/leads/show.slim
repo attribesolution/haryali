@@ -1,23 +1,4 @@
-.checkout-progress
-  ul.progress-bar
-    li.checkout-step1
-      span.triangle2
-      a href="javascript:void(0)" 
-        em> 1
-        | Choose a plant
-      span.triangle
-    li.checkout-step2
-      span.triangle2
-      a href="javascript:void(0)" 
-        em> 2
-        | Choose a location
-      span.triangle
-    li.checkout-step3
-      span.triangle2
-      a href="javascript:void(0)" 
-        em> 3
-        | Done
-      span.triangle
+
 
 - unless @lead.nil?
   - unless current_user
@@ -32,7 +13,8 @@
     .container.thankyoupage-align
       ._center
         = image_tag "check.png", class: "img-responsive"
-      h1.t1 Thank you!  
+      h1.t1 Thank you!
+      p.t3 Your submission is received and we will contact you soon.  
     .thankyou-form    
       table.table.table-striped
         tbody
