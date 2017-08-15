@@ -26,7 +26,7 @@ class LocationsController < ApplicationController
 
   # GET /locations 
   def index
-    @locations = HaryaliLocation.all
+    @locations = HaryaliLocation.all.order(:created_at)
   end
 
   private
