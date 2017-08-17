@@ -29,9 +29,13 @@
           td 
             .progress.bar-size style="width:100%;"
               .progress-bar.color role="progressbar" style="width:#{percentage(@location).ceil}%"
-  input.lat value=@location.lat type='hidden'
-  input.lng value=@location.lng type='hidden'
-  .map.map-align style=("width: 50%; height: 200px;") 
+  input.lat#location_lat value=@location.lat type='hidden'
+  input.lng#location_lng value=@location.lng type='hidden'
+  .map.map-align style=("width: 50%; height: 200px; margin-bottom:15px;") 
+  .input-group
+    input#current_location placeholder="Enter Your Address" class="form-control"
+    span
+      button#get_directions class="btn btn-info" disabled="" Get Directions
   br
     - if @location.timeline_events.any?
       section#cd-timeline.cd-container.body-1
