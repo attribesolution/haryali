@@ -81,7 +81,7 @@ html
                     a href="http://haryali.pk/blog"  Blog
                   li
                     a href="http://haryali.pk/contact-us"  Contact Us
-                  - if current_user
+                  - if current_user && current_user.role == 'admin'
                     li
                       a href=leads_path
                         | Leads 

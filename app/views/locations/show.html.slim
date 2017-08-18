@@ -57,7 +57,7 @@
                   img#img01.modal-content.img1
                 span.cd-date #{event.created_at.strftime("%B %Y")}
 
-    - if current_user && @location && @location.type == "HaryaliLocation"
+    - if current_user && current_user.role == 'admin' && @location && @location.type == "HaryaliLocation"
       br
       = simple_form_for(@location, html: { class: 'form-horizontal' }) do |f|
         #timeline_events
@@ -67,7 +67,7 @@
 
 - else 
   h1.t1 No Location found 
-- if current_user && @location && @location.type == "HaryaliLocation"
+- if current_user && current_user.role == 'admin' && @location && @location.type == "HaryaliLocation"
   hr
   = link_to "Edit", edit_haryali_location_path, class:"btn btn-success btn-lg pull-left"
 = link_to "Back", 'javascript:history.back();', class:"btn btn-success btn-lg pull-right"

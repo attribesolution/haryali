@@ -1,5 +1,6 @@
 class LeadsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :update_status, :destroy]
+  before_action :user_admin, only: [:index, :update_status, :destroy]
   before_action :load_lead, only: [:show, :destroy]
 
   def new
@@ -17,7 +18,14 @@ class LeadsController < ApplicationController
     @lead = @wizard.object
     @locations = HaryaliLocation.select(:id, :address, :current, :target, :optional_address).where(is_active: :true).order(:created_at)
     if @wizard.save
-      UserMailer.welcome_email(@lead).deliver
+      if User.where(email: @lead.email).count == 0
+        user = User.new(email: @lead.email, password: 'password', password_confirmation: 'password', role: 0)
+        user.skip_confirmation!
+        user.save
+        UserMailer.welcome_email(@lead).deliver
+      else
+        UserMailer.welcome_email_user(@lead).deliver
+      end
       redirect_to @lead
     else
       render :new
@@ -88,5 +96,11 @@ private
       :dedicate_name,
       location_attributes: [:address,:lat,:lng,:type]
     )
+  end
+  
+  def user_admin
+    unless current_user && current_user.role == 'admin'
+      redirect_to root_path
+    end
   end
 end
