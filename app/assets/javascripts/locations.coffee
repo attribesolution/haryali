@@ -103,13 +103,14 @@ class App.Locations extends App.Base
 
     calculateRoute = ->
       request = 
-        origin: 
+        origin: $('#current_location').val()
+        destination: 
           lat: parseFloat($('#location_lat').val()) 
           lng: parseFloat($('#location_lng').val()) 
-        destination: $('#current_location').val()
         travelMode: 'DRIVING'
       directionsService.route request, (result, status) ->
         if status == 'OK'
+          console.log result
           directionsDisplay.setDirections result
       $('#get_directions')[0].innerHTML = 'Get Directions'
       $('#get_directions')[0].disabled = false

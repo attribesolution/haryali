@@ -1,5 +1,5 @@
-h1 All Plants 
-
+h1.pull-left All Plants 
+= link_to 'New Plant', new_plant_path, class: "btn btn-success btn-sm pull-right"
 table.table.table-hover.table-hover
   thead
     tr
@@ -21,6 +21,4 @@ table.table.table-hover.table-hover
           = link_to 'Edit', edit_plant_path(plant), class: "btn-sm btn-success"
           '
           /= link_to 'Delete', plant, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn-sm btn-danger"
-
-= link_to 'New Plant', new_plant_path, class: "btn btn-success"
 hr

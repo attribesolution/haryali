@@ -12,6 +12,13 @@ class HaryaliLocationsController < ApplicationController
       if @location.optional_address == ""
         @location.update_attribute(:optional_address, nil)
       end
+      if @location.target <= @location.current
+        @location.update_attribute(:is_active, false)
+      else
+        if @location.is_active == false
+          @location.update_attribute(:is_active, true)
+        end
+      end
       redirect_to location_url
     else
       redirect_to new_location_url
