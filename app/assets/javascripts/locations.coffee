@@ -108,9 +108,9 @@ class App.Locations extends App.Base
           lat: parseFloat($('#location_lat').val()) 
           lng: parseFloat($('#location_lng').val()) 
         travelMode: 'DRIVING'
+        region: 'PK'
       directionsService.route request, (result, status) ->
         if status == 'OK'
-          console.log result
           directionsDisplay.setDirections result
       $('#get_directions')[0].innerHTML = 'Get Directions'
       $('#get_directions')[0].disabled = false
