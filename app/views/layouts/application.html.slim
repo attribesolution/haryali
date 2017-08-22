@@ -73,12 +73,11 @@ html
                 ul#menu.sm.me-menu
                   li.active
                     a href="http://haryali.pk"  Home
-                  /li
-                    a href="http://haryali.pk#services"  Services
-                  /li
-                    a href="javascript:void(0)"  Gallery
+                                 
+
                   li
                     a href="http://haryali.pk/blog"  Blog
+
                   li
                     a href="http://haryali.pk/contact-us"  Contact Us
                   - if current_user
@@ -86,14 +85,36 @@ html
                       a href=leads_path
                         | Leads 
                     li
-                      a href=plants_path
+                       a href=plants_path
                         | Plants 
                     li
                       a href=locations_path
                         | Locations 
                     li
                       a href=coupons_path
-                        | Coupons 
+                        | Coupons
+
+                  li
+                    a href="" Haryali Locations
+
+                  li.dropdown                 
+                    a.dropdown-toggle data-toggle="dropdown" href="http://haryali.pk#services" 
+                      | Your Plants
+                      span.glyphicon.glyphicon-log-in
+                    .dropdown-menu style="width: 240px;"
+                      form#formLogin.form.container-fuid
+                        .form-group style="font-size:11px;" 
+                         
+                          input#lgFormGroupInput.form-control.form-control-lg style="width:210px;"placeholder="Enter your Email" type="email" /
+
+                        button#btnLogin.btn.btn-block.btn-sm style=("background-color: #8ac53a; color:white; width:210px;") type="button"  Locations
+                      /.container-fluid
+                        br/
+                        a.small href="#"  Forgot Email?
+                  li
+                    a href="http://haryali.pk/contact-us"
+                      .sticky-top.nav-btn 
+                        button.btn.btn-success.color-green.btn-sm type="button" Donate a Tree
     #page-header.content-contrast
       .breadcrumb-container
         .container
@@ -101,7 +122,7 @@ html
             .col-md-12
               nav.breadcrumb
                 a.breadcrumb-item href="http://haryali.pk"  Home
-                span.breadcrumb-item.active Own a Tree
+                span.breadcrumb-item.active Plant a Tree
       == render 'layouts/messages'
 
     section.section
