@@ -77,9 +77,9 @@ br
             |  Dedicate my donation in honor or in memory of someone.  
           .in-memory-donation.form-group.col-sm-12 id="form_dedicate"
             br
-            = f.radio_button :dedicate_type, "honor"
-            = f.label :dedicate_type, " In honor of"
-            = f.radio_button :dedicate_type, "memory"
+            = f.radio_button :dedicate_type, "honor", style:"margin-right: 5px;"
+            = f.label :dedicate_type, " In honor of", style:"margin-right: 35px;"
+            = f.radio_button :dedicate_type, "memory", style:"margin-right: 5px;"
             = f.label :dedicate_type, " In memory of"
             .field
               .form-group

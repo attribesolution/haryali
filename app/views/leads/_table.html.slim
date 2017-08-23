@@ -4,6 +4,7 @@ table.table.table-hover.table-responsive
       th Name 
       th Contact 
       th Email 
+      th Dedicate 
       th Plant 
       th Quantity 
       /th Payment  
@@ -17,6 +18,11 @@ table.table.table-hover.table-responsive
         td = lead.name.capitalize 
         td = lead.contact 
         td = lead.email 
+        td 
+          - if lead.dedicate_type
+            | In #{lead.dedicate_type.capitalize} of #{lead.dedicate_name.capitalize}
+          - else
+            | -
         td
           a href=plant_path(lead.plant)
             = lead.plant.name

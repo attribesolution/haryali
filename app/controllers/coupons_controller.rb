@@ -1,5 +1,6 @@
 class CouponsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :generate_coupons]
+  before_action :user_admin, only: [:index, :generate_coupons]
 
   def show
     code = params[:id]    
@@ -46,4 +47,11 @@ class CouponsController < ApplicationController
       break if count == 0
     end
   end
+
+  private
+    def user_admin
+      unless current_user && current_user.role == 'admin'
+        redirect_to root_path
+      end
+    end
 end

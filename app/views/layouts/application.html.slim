@@ -73,27 +73,45 @@ html
                 ul#menu.sm.me-menu
                   li.active
                     a href="http://haryali.pk"  Home
-                  /li
-                    a href="http://haryali.pk#services"  Services
-                  /li
-                    a href="javascript:void(0)"  Gallery
                   li
                     a href="http://haryali.pk/blog"  Blog
                   li
                     a href="http://haryali.pk/contact-us"  Contact Us
-                  - if current_user
+                  - if current_user && current_user.role == 'admin'
                     li
                       a href=leads_path
                         | Leads 
                     li
-                      a href=plants_path
+                       a href=plants_path
                         | Plants 
                     li
                       a href=locations_path
                         | Locations 
                     li
                       a href=coupons_path
-                        | Coupons 
+                        | Coupons
+                  - else 
+                    li
+                      a href=haryali_locations_path Haryali Locations
+                    - if current_user && current_user.role == "user"
+                      li
+                        a href=visitors_path
+                          | My Plants
+                    - else 
+                      li.dropdown
+                        a.dropdown-toggle data-toggle="dropdown" href="javascript:void(0)"
+                          | Your Plants
+                          span.glyphicon.glyphicon-log-in
+                        .dropdown-menu style="width: 240px;"
+                          = form_tag session_path(:user), class: 'form' do
+                            .form-group style="font-size:11px;" 
+                              = text_field_tag 'user[email]', '', class: 'form-control form-control-lg', type: 'email', placeholder: 'Enter your Email', style: 'width:210px;'
+                              = password_field_tag 'user[password]', 'password', hidden: true
+                            button.btn.btn-block.btn-sm style='background-color: #8ac53a; color:white; width:210px;' Sign In
+                    li
+                      a href=new_lead_path
+                        .sticky-top.nav-btn 
+                          button.btn.btn-success.color-green.btn-sm type="button" Own a Tree
     #page-header.content-contrast
       .breadcrumb-container
         .container
@@ -101,7 +119,7 @@ html
             .col-md-12
               nav.breadcrumb
                 a.breadcrumb-item href="http://haryali.pk"  Home
-                span.breadcrumb-item.active Own a Tree
+                span.breadcrumb-item.active Plant a Tree
       == render 'layouts/messages'
 
     section.section

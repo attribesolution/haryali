@@ -63,19 +63,15 @@ class App.Locations extends App.Base
       lat: parseFloat($('.lat').val()) 
       lng: parseFloat($('.lng').val()) 
     unless isNaN(coordinates['lat'])
-      map = new google.maps.Map($('.map')[0],
-        zoom: 10
+      window.map = new google.maps.Map($('.map')[0],
+        zoom: 15
         center: coordinates
         mapTypeId: 'terrain'
-        draggable: false
-        zoomControl: false
-        scrollwheel: false
-        disableDoubleClickZoom: true
         streetViewControl: false)
-      new google.maps.Marker(
+      window.marker = new google.maps.Marker(
         position: coordinates
         icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
-        map: map)
+        map: window.map)
 
     readURL = (input) ->
       if input.files and input.files[0]
@@ -86,11 +82,41 @@ class App.Locations extends App.Base
         reader.readAsDataURL input.files[0]
 
     window.onload = ->
-      # link add event button to validate new event fields on create 
-      $('#add_event').removeClass 'disabled'
-      $('#add_event')[0].onclick = eventHandler
+      if $('#add_event').length > 0
+        # link add event button to validate new event fields on create 
+        $('#add_event').removeClass 'disabled'
+        $('#add_event')[0].onclick = eventHandler
+
+      new (google.maps.places.Autocomplete)(document.getElementById('current_location'), componentRestrictions: {country: "pk"}, types: [ 'establishment','geocode' ])
+      window.directionsDisplay = new google.maps.DirectionsRenderer();
+      window.directionsService = new google.maps.DirectionsService();
+      window.directionsDisplay.setMap(window.map);
+      $('#get_directions')[0].disabled = false
       return
-    
+
+    $('#get_directions').click ->
+      unless $('#current_location').val() == "" || window.directionsService == undefined
+        this.disabled = true
+        this.innerHTML = 'Calculating... (Please Wait)'
+        calculateRoute() 
+      return
+
+    calculateRoute = ->
+      request = 
+        origin: $('#current_location').val()
+        destination: 
+          lat: parseFloat($('#location_lat').val()) 
+          lng: parseFloat($('#location_lng').val()) 
+        travelMode: 'DRIVING'
+        region: 'PK'
+      directionsService.route request, (result, status) ->
+        if status == 'OK'
+          directionsDisplay.setDirections result
+          window.marker.setMap null
+      $('#get_directions')[0].innerHTML = 'Get Directions'
+      $('#get_directions')[0].disabled = false
+      return
+
     eventHandler = ->
       validateEvent()
       enableSave()
@@ -100,7 +126,7 @@ class App.Locations extends App.Base
     validateEvent = ->
       setTimeout (->
         events = document.getElementsByClassName "remove_event"
-        temp = events[0].previousSibling.previousSibling.firstChild
+        #temp = events[0].previousSibling.previousSibling.firstChild
         #$(temp.firstChild.nextSibling).rules 'add', required: true
         #$(temp.nextSibling.firstChild.nextSibling).rules 'add', required: true
         

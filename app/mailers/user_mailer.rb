@@ -6,7 +6,15 @@ class UserMailer < ApplicationMailer
     @url  = "http://haryali.pk"
     mail(to: @lead.email, 
     	subject: "Haryali.pk - Plant Owning Request",
-    	bcc: ["anjiya.molwani@gmail.com", "kashif.y.saeed@gmail.com"])
+    	bcc: ["kashif.y.saeed@gmail.com"])
+  end
+
+  def welcome_email_user(lead)
+    @lead = lead
+    @url  = "http://haryali.pk"
+    mail(to: @lead.email, 
+      subject: "Haryali.pk - Plant Owning Request",
+      bcc: ["kashif.y.saeed@gmail.com"])
   end
 
   def update_email(lead)

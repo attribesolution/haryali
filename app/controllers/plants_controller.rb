@@ -1,5 +1,6 @@
 class PlantsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :show, :index, :destroy]
+  before_action :authenticate_user!
+  before_action :user_admin
   before_action :set_plant, only: [:show, :edit, :update, :destroy]
 
   # GET /plants/1 
@@ -78,6 +79,12 @@ class PlantsController < ApplicationController
         else
           return false
         end
+      end
+    end
+
+    def user_admin
+      unless current_user && current_user.role == 'admin'
+        redirect_to root_path
       end
     end
 end

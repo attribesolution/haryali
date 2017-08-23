@@ -29,9 +29,13 @@
           td 
             .progress.bar-size style="width:100%;"
               .progress-bar.color role="progressbar" style="width:#{percentage(@location).ceil}%"
-  input.lat value=@location.lat type='hidden'
-  input.lng value=@location.lng type='hidden'
-  .map.map-align style=("width: 50%; height: 200px;") 
+  input.lat#location_lat value=@location.lat type='hidden'
+  input.lng#location_lng value=@location.lng type='hidden'
+  .map.map-align style=("width: 50%; height: 200px; margin-bottom:15px;") 
+  .input-group
+    input#current_location placeholder="Enter Your Address" class="form-control"
+    span
+      button#get_directions class="btn btn-info" disabled="" Get Directions
   br
     - if @location.timeline_events.any?
       section#cd-timeline.cd-container.body-1
@@ -53,7 +57,7 @@
                   img#img01.modal-content.img1
                 span.cd-date #{event.created_at.strftime("%B %Y")}
 
-    - if current_user && @location && @location.type == "HaryaliLocation"
+    - if current_user && current_user.role == 'admin' && @location && @location.type == "HaryaliLocation"
       br
       = simple_form_for(@location, html: { class: 'form-horizontal' }) do |f|
         #timeline_events
@@ -63,7 +67,7 @@
 
 - else 
   h1.t1 No Location found 
-- if current_user && @location && @location.type == "HaryaliLocation"
+- if current_user && current_user.role == 'admin' && @location && @location.type == "HaryaliLocation"
   hr
   = link_to "Edit", edit_haryali_location_path, class:"btn btn-success btn-lg pull-left"
 = link_to "Back", 'javascript:history.back();', class:"btn btn-success btn-lg pull-right"
