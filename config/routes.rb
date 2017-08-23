@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root to: 'visitors#index'
+  root to: 'haryali_locations#index'
   
-  devise_for :users, skip: [:registrations]
+  devise_for :users, skip: [:registrations], :controllers => {sessions: 'sessions'}
   
   resources :leads, only: [:new, :create, :show, :index, :destroy] do
     collection do
@@ -17,9 +17,11 @@ Rails.application.routes.draw do
 
   resources :locations, only: [:show, :new, :create, :index]
 
-  resources :haryali_locations, only: [:edit, :update]
+  resources :haryali_locations, only: [:edit, :update, :index]
 
   resources :plants
 
   resources :updates, only: [:new, :create]
+
+  resources :visitors, only: [:index]
 end

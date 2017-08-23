@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   	if current_user.role == 'admin'
   		leads_path
 		else 
-			root_path
+			visitors_path
   	end
   end
 end

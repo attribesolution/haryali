@@ -73,11 +73,8 @@ html
                 ul#menu.sm.me-menu
                   li.active
                     a href="http://haryali.pk"  Home
-                                 
-
                   li
                     a href="http://haryali.pk/blog"  Blog
-
                   li
                     a href="http://haryali.pk/contact-us"  Contact Us
                   - if current_user && current_user.role == 'admin'
@@ -93,28 +90,28 @@ html
                     li
                       a href=coupons_path
                         | Coupons
-
-                  li
-                    a href="" Haryali Locations
-
-                  li.dropdown                 
-                    a.dropdown-toggle data-toggle="dropdown" href="http://haryali.pk#services" 
-                      | Your Plants
-                      span.glyphicon.glyphicon-log-in
-                    .dropdown-menu style="width: 240px;"
-                      form#formLogin.form.container-fuid
-                        .form-group style="font-size:11px;" 
-                         
-                          input#lgFormGroupInput.form-control.form-control-lg style="width:210px;"placeholder="Enter your Email" type="email" /
-
-                        button#btnLogin.btn.btn-block.btn-sm style=("background-color: #8ac53a; color:white; width:210px;") type="button"  Locations
-                      /.container-fluid
-                        br/
-                        a.small href="#"  Forgot Email?
-                  li
-                    a href="http://haryali.pk/contact-us"
-                      .sticky-top.nav-btn 
-                        button.btn.btn-success.color-green.btn-sm type="button" Donate a Tree
+                  - else 
+                    li
+                      a href=haryali_locations_path Haryali Locations
+                    - if current_user && current_user.role == "user"
+                      li
+                        a href=visitors_path
+                          | My Plants
+                    - else 
+                      li.dropdown
+                        a.dropdown-toggle data-toggle="dropdown" href="javascript:void(0)"
+                          | Your Plants
+                          span.glyphicon.glyphicon-log-in
+                        .dropdown-menu style="width: 240px;"
+                          = form_tag session_path(:user), class: 'form' do
+                            .form-group style="font-size:11px;" 
+                              = text_field_tag 'user[email]', '', class: 'form-control form-control-lg', type: 'email', placeholder: 'Enter your Email', style: 'width:210px;'
+                              = password_field_tag 'user[password]', 'password', hidden: true
+                            button.btn.btn-block.btn-sm style='background-color: #8ac53a; color:white; width:210px;' Sign In
+                    li
+                      a href=new_lead_path
+                        .sticky-top.nav-btn 
+                          button.btn.btn-success.color-green.btn-sm type="button" Own a Tree
     #page-header.content-contrast
       .breadcrumb-container
         .container

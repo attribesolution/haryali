@@ -68,7 +68,7 @@ class App.Locations extends App.Base
         center: coordinates
         mapTypeId: 'terrain'
         streetViewControl: false)
-      new google.maps.Marker(
+      window.marker = new google.maps.Marker(
         position: coordinates
         icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
         map: window.map)
@@ -112,6 +112,7 @@ class App.Locations extends App.Base
       directionsService.route request, (result, status) ->
         if status == 'OK'
           directionsDisplay.setDirections result
+          window.marker.setMap null
       $('#get_directions')[0].innerHTML = 'Get Directions'
       $('#get_directions')[0].disabled = false
       return
@@ -125,7 +126,7 @@ class App.Locations extends App.Base
     validateEvent = ->
       setTimeout (->
         events = document.getElementsByClassName "remove_event"
-        temp = events[0].previousSibling.previousSibling.firstChild
+        #temp = events[0].previousSibling.previousSibling.firstChild
         #$(temp.firstChild.nextSibling).rules 'add', required: true
         #$(temp.nextSibling.firstChild.nextSibling).rules 'add', required: true
         

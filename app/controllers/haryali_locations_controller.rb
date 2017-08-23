@@ -26,6 +26,11 @@ class HaryaliLocationsController < ApplicationController
     end
   end
 
+  # GET /haryali_locations/
+  def index
+    @locations = HaryaliLocation.all.order(:created_at)
+  end
+
   private 
     def set_location
       @location = HaryaliLocation.find_by_id(params[:id])
