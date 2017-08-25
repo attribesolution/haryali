@@ -37,12 +37,23 @@ html
                     | Logged In: #{current_user.email}
               .pull-right
                 ul.header-social.social-icon
+                  - if current_user && current_user.role == "admin"
+                    li.dropdown
+                      a.instagram-color data-toggle="dropdown" href="javascript:void(0)" 
+                        i.fa.fa-bell
+                          span style="font-size:14px;" 162
+                      ul.dropdown-menu.dropdown-messages style="background:lightgray;"
+                        li
+                          .dropdown-messages-box
+                            a href="javascript:void(0)"
+                              i.fa.fa-envelope
+                              | Some notification received
                   li
                     a.facebook-color href="https://www.facebook.com/haryalipk/" 
                       i.fa.fa-facebook aria-hidden="true" 
                   li
                     a.twitter-color href="https://twitter.com/HaryaliPk" 
-                      i.fa.fa-twitter aria-hidden="true" 
+                      i.fa.fa-twitter aria-hidden="true"
                   /li
                     a.google-color href="javascript:void(0)" 
                       i.fa.fa-google-plus aria-hidden="true" 

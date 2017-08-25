@@ -42,7 +42,7 @@ class LeadsController < ApplicationController
   # end
 
   def index
-    if Lead.all.size > 0
+    if Lead.count > 0
       @leads = true
     else
       @leads = false
@@ -56,8 +56,13 @@ class LeadsController < ApplicationController
   def update_status
     lead = Lead.find(params[:id])
     if lead.update_column(:status, params[:status])
-      if params[:status] == 'Planted'
-        UserMailer.update_email(lead).deliver
+      puts case params[:status]
+      when 'Confirmed'
+        UserMailer.notify_email_confirmed(lead).deliver
+      when 'Paid'
+        UserMailer.notify_email_paid(lead).deliver
+      when 'Planted'
+        UserMailer.notify_email_planted(lead).deliver
       end
     end
   end

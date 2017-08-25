@@ -12,6 +12,7 @@ class UpdatesController < ApplicationController
   def create
     @update = Update.new(update_params)
     if @update.save!
+      UserMailer.update_email(@update.lead).deliver
       redirect_to lead_path(@update.lead_id)
     else
       render :new
