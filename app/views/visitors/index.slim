@@ -1,74 +1,27 @@
-
+h1 Your Plants 
+- if @leads
   .container-fluid.body-leads
     .row.no-gutter.popup-gallery
-      .col-lg-6.col-sm-6
-        a.portfolio-box href="/assets/tree-large.png" 
-          img.img-fluid.float-left.img-leads alt="" src="/assets/tree-large.png" 
-          .leads-p
-            p
-            br
-            
-            
-            | Posted On:
-            br
-            | Type:
-            br
-            | Paid:
-            br
-            | In memory of:
-            br
-            | Location:
-            br
-            | Status:
-
-          .portfolio-box-caption
-            .portfolio-box-caption-content
-              .project-category.text-faded
-                .project-name
-                  | More Details
-
-
-      .col-lg-6.col-sm-6.pull-right
-        a.portfolio-box href="/assets/tree-large.png" 
-          img.img-fluid.float-left alt="" src="/assets/tree-large.png" 
-          .leads-p
-            p
-            br
-            
-            | Posted On:
-            br
-            | Type:
-            br
-            | Paid:
-            br
-            | In memory of:
-            br
-            | Location:
-            br
-            | Status:
-
-          .portfolio-box-caption
-            .portfolio-box-caption-content
-              .project-category.text-faded
-                .project-name
-                  | More Details
-
-  /.col-lg-4.col-sm-6.pull-right
-    a.portfolio-box href="img/portfolio/fullsize/1.jpg" 
-      img.img-fluid.float-left alt="" src="img/portfolio/fullsize/1.jpg" 
-    p
-    p
-      br
-      br
-      | Posted On:
-      | Type:
-      | Paid:
-      | In memory of:
-      | Location:
-      | Status:
-    .portfolio-box-caption
-      .portfolio-box-caption-content
-        .project-name
-          | More Details
-
-
+      - @leads.each do |lead| 
+        .col-lg-6.col-sm-6
+          a.portfolio-box href=visitor_path(lead) 
+            = image_tag lead.plant.image, class: "img-fluid float-left img-leads"
+            .leads-p
+              p
+              br
+              | Posted On: #{lead.created_at}
+              br
+              | Type: #{lead.plant.name.capitalize}
+              br
+              | Paid: #{lead.status == 'Paid' ? 'Yes' : 'No'}
+              br
+              | In memory of: #{lead.dedicate_type ? lead.dedicate_name.capitalize : '-'}
+              br
+              | Location: #{lead.location.address}
+              br
+              | Status: #{lead.status}
+            .portfolio-box-caption
+              .portfolio-box-caption-content
+                .project-category.text-faded
+                  .project-name
+                    | More Details

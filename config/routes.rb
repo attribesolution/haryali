@@ -23,5 +23,5 @@ Rails.application.routes.draw do
 
   resources :updates, only: [:new, :create]
 
-  resources :visitors, only: [:index]
+  resources :visitors, only: [:index, :show]
 end
