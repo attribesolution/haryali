@@ -3,7 +3,7 @@ class VisitorsController < ApplicationController
 
 	def index
 		if (current_user)
-			@leads = Lead.find_by_email(current_user.email)
+			@leads = Lead.where(email: current_user.email)
 		end
 	end
 end
