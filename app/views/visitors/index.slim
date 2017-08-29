@@ -9,7 +9,7 @@ h1 Your Plants
             .leads-p
               p
               br
-              | Posted On: #{lead.created_at}
+              | Posted On: #{lead.created_at.strftime("%Y-%m-%d")}
               br
               | Type: #{lead.plant.name.capitalize}
               br

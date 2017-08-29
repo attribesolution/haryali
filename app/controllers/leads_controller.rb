@@ -70,6 +70,7 @@ class LeadsController < ApplicationController
   # DELETE /leads/1
   def destroy
     coupon = @lead.coupon
+    user = @lead.email
     if @lead.destroy
       coupon.is_active = true
       coupon.save
