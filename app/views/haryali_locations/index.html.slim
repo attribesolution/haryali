@@ -1,2 +1,70 @@
-| app > views > haryali > index.html.slim
 /= @locations
+.section-list
+  .lists-style onload="initializeMap()" 
+    .map style=("width:100%; height:700px;")
+    /.container
+      /div
+        #map-canvas
+      /.geo-location-wrapper
+        span.btn-geo-location
+          i.fa.fa-map-marker
+      /span.text
+        | "Find My Position"
+    .location-list
+      ul.ul-lists
+        .lists-head
+          li.li-lists.lists-head style=("background-color:#f1f1f1; color:#000; text-align:center; font-size:13px;") 
+            h2 Haryali Locations
+        .lists
+          li.li-lists
+            img src="http://lorempixum.com/100/100/nature/1" 
+            .h3-lists Ghoura Ground
+            p.p-lists Sector 15-A/3, Karachi, Sindh, Pakistan
+        .lists
+          li.li-lists
+            img src="http://lorempixum.com/100/100/nature/1" 
+            .h3-lists Ume Kulsoom Park
+            p.p-lists Sector 15-A/4, Karachi, Sindh, Pakistan
+        .lists
+          li.li-lists
+            img src="http://lorempixum.com/100/100/nature/3" 
+            .h3-lists PTCL Office
+            p.p-lists Block-B, North Nazimabad, Karachi, Sindh, Pakistan
+        .lists
+          li.li-lists
+            img src="http://lorempixum.com/100/100/nature/4" 
+            .h3-lists Asghar Shaheed Park
+            p.p-lists Lorem ipsum dolor sit amet...
+        .lists
+          li.li-lists
+            img src="http://lorempixum.com/100/100/nature/2" 
+            .h3-lists Green Belt
+            p.p-lists Block J, North Nazimabad, Karachi, Sindh, Pakistan
+        .lists
+          li.li-lists
+            img src="http://lorempixum.com/100/100/nature/2" 
+            .h3-lists Gul-e-Lala Park
+            p.p-lists Sector 11-A, Karachi, Pakistan
+        .lists
+          li.li-lists
+            img src="http://lorempixum.com/100/100/nature/2" 
+            .h3-lists Quaid Park
+            p.p-lists Sector 5-A/3, Karachi, Pakistan
+        .lists
+          li.li-lists
+            img src="http://lorempixum.com/100/100/nature/2" 
+            .h3-lists Green Belt
+            p.p-lists Block F, North Nazimabad, Karachi, Sindh, Pakistan
+
+  /script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" 
+  /javascript:
+    | function initializeMap() {
+      | console.log('initialize');
+      | var myOptions = {
+        | center: new google.maps.LatLng(-34.397, 150.644),
+        | zoom: 8,
+        | mapTypeId: google.maps.MapTypeId.ROADMAP
+      | };
+      | var map = new google.maps.Map(document.getElementById("map-canvas"),
+      | myOptions);
+  | }
