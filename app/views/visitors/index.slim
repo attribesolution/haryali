@@ -23,7 +23,7 @@ h1 My Plants
               br
               strong #{lead.status} On:
               |  #{lead.updated_at.strftime("%d %B, %Y")}
-              - if lead.status == 'Planted'
+              - if lead.status == 'Paid' || lead.status == 'Planted'
                 br
                 strong Paid: 
                 |  Rs. #{lead.quantity * lead.plant.price}
