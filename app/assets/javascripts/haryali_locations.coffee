@@ -8,6 +8,26 @@ class App.HaryaliLocations extends App.Base
     return
 
   index: =>
+    initializeMap = ->
+      console.log 'initialize'
+      myOptions = 
+        center: new (google.maps.LatLng)(-34.397, 150.644)
+        zoom: 8
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      map = new (google.maps.Map)(document.getElementById('map-canvas'), myOptions)
+      return
+    coordinates = 
+      lat: 24.8615 
+      lng: 67.0099
+    window.map = new google.maps.Map($('.map')[0],
+      zoom: 15
+      center: coordinates
+      mapTypeId: 'terrain'
+      draggable: true
+      zoomControl: false
+      scrollwheel: true
+      disableDoubleClickZoom: false
+      streetViewControl: false)
     return
 
   show: =>
