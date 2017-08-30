@@ -1,19 +1,32 @@
-.section-list
-  .lists-style
-    .map style=("width:100%; height:#{@height}px;")
-    .location-list
-      ul.ul-lists
-        .lists-head
-          li.li-lists.lists-head style=("background-color:#f1f1f1; color:#000; text-align:center; font-size:13px;") 
-            h2 Haryali Locations
-        br
-        - @locations.each do |location|
-          .lists
-            li.li-lists#location lat=location.lat lng=location.lng
-              /img src="http://lorempixum.com/100/100/nature/1" 
-              - if location.try(:optional_address)
-                .h3-lists #{location.optional_address}
-              - else
-                .h3-lists #{location.address.split(',')[0]}
-              p.p-lists #{location.address}
-          br
+#wrapper
+  /! Sidebar
+  #sidebar-wrapper
+    ul.sidebar-nav
+      li.sidebar-brand
+        h5 style=("margin-top:15px; color:#8ac53a; font-weight:bold;") 
+          | Haryali Locations
+      li
+        a href="#"  Ghoura Ground
+      li
+        a href="#"  Ume Kulsoom Park
+      li
+        a href="#"  PTCL Office
+      li
+        a href="#"  Asghar Shaheed Park
+      li
+        a href="#"  Green Belt
+      li
+        a href="#"  Gul-e-Lala Park
+      li
+        a href="#"  Green Belt
+  /! /#sidebar-wrapper
+  /! Page Content
+  #page-content-wrapper
+    .container-fluid
+      #map-canvas
+    .geo-location-wrapper
+      span.btn-geo-location
+        i.fa.fa-map-marker
+   
+/! /#page-content-wrapper
+/! /#wrapper
