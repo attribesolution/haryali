@@ -29,6 +29,12 @@ class HaryaliLocationsController < ApplicationController
   # GET /haryali_locations/
   def index
     @locations = HaryaliLocation.all.order(:created_at)
+    @height = 700
+    count = @locations.size
+    if count > 7
+      count = count - 7
+      @height = @height + (count * 85)
+    end
   end
 
   private 

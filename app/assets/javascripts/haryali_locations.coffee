@@ -28,6 +28,27 @@ class App.HaryaliLocations extends App.Base
       scrollwheel: true
       disableDoubleClickZoom: false
       streetViewControl: false)
+
+    count = 0
+    window.onload = ->
+      while $('#location')[0] != undefined
+        $('#location')[0].id = 'location' + count
+        $('#location' + count)[0].onclick = ZoomLocation
+        coordinates = 
+          lat: parseFloat($('#location' + count).attr 'lat')
+          lng: parseFloat($('#location' + count).attr 'lng')
+        new google.maps.Marker(
+          position: coordinates
+          icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
+          map: window.map)
+        count++
+
+    ZoomLocation = ->
+      coordinates = 
+        lat: parseFloat($(this).attr 'lat')
+        lng: parseFloat($(this).attr 'lng')
+      window.map.panTo coordinates
+      window.map.setZoom 17
     return
 
   show: =>
