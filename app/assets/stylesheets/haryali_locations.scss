@@ -1,0 +1,75 @@
+.section-list {
+    width: 1280px !important;
+    margin-left: -86px;
+    margin-top: -100px;
+   
+    
+}
+.lists-style {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+    overflow-x:hidden;
+}
+.container, .container > div, .container > div #map-canvas {
+    height: inherit;
+}
+ 
+ 
+.lists {
+  margin: 8px;
+}
+ 
+.ul-lists {
+  list-style-type: none;
+ 
+}
+ 
+.h3-lists {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif ;
+  text-align: center;
+  margin-top: -7%;
+}
+ 
+.li-lists li img {
+  float: left;
+  margin: 0 15px 0 0;
+}
+ 
+.p-lists {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+  text-align: center;
+}
+ 
+.li-lists {
+    padding: 0;
+    background-color: #8ac53a ;
+    color: white ;
+    height: 60px;
+    font-size: 12px;
+    margin: 0%;
+}
+ 
+.li-lists:hover {
+  background: #eee;
+  cursor: pointer;
+  color: #8ac53a !important;
+  ;
+}
+.location-list {
+    position: absolute;
+    top: -65px;
+    left: 1px;
+    width: 340px;
+    /* height: 300px; */
+    z-index: 2000;
+}
+
+.lists-head {
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0;
+
+}
