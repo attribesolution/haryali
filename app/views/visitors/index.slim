@@ -1,21 +1,25 @@
-h1 Your Plants 
+h1 My Plants 
 - if @leads
   .container-fluid.body-leads
     .row.no-gutter.popup-gallery
       - @leads.each do |lead| 
         .col-lg-6.col-sm-6
           a.portfolio-box href=visitor_path(lead) 
-            = image_tag lead.plant.image, class: "img-fluid float-left img-leads"
+            - if lead.updates.size > 0
+              = image_tag lead.updates.order(created_at: :DESC).first.image, class: "img-fluid float-left img-leads", style:"max-width:50%;"
+            - else
+              = image_tag lead.plant.image, class: "img-fluid float-left img-leads", style:"max-width:50%;"
             .leads-p
               p
               br
               | Posted On: #{lead.created_at.strftime("%Y-%m-%d")}
               br
-              | Type: #{lead.plant.name.capitalize}
+              | Plant Type: #{lead.plant.name.capitalize}
               br
               | Paid: #{lead.status == 'Paid' ? 'Yes' : 'No'}
-              br
-              | In memory of: #{lead.dedicate_type ? lead.dedicate_name.capitalize : '-'}
+              - if lead.dedicate_name and lead.dedicate_type
+                br
+                | In #{lead.dedicate_type.capitalize} of: #{lead.dedicate_name.capitalize}
               br
               | Location: #{lead.location.address}
               br
