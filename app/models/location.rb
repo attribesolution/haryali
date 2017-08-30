@@ -5,4 +5,6 @@ class Location < ApplicationRecord
   accepts_nested_attributes_for :timeline_events, reject_if: :all_blank, allow_destroy: true
 
   validates :address, :lat,:lng, presence: true
+
+  mount_uploader :image, ImageUploader
 end

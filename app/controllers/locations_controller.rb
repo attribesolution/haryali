@@ -36,7 +36,7 @@ class LocationsController < ApplicationController
     end
 
     def location_params
-      params.require(:location).permit(:type, :lat, :lng, :address, :optional_address, :target, timeline_events_attributes: [:id, :title, :caption, :image, :_destroy])
+      params.require(:location).permit(:type, :lat, :lng, :address, :optional_address, :target, :image, timeline_events_attributes: [:id, :title, :caption, :image, :_destroy])
     end
 
     def user_admin

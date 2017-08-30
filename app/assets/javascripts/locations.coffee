@@ -169,7 +169,7 @@ class App.Locations extends App.Base
       if input.files and input.files[0]
         reader = new FileReader
         reader.onload = (e) ->
-          $(input.nextSibling.nextSibling).attr 'src', e.target.result
+          $('#img_prev').attr 'src', e.target.result
           return
         reader.readAsDataURL input.files[0]
 
@@ -233,6 +233,15 @@ class App.Locations extends App.Base
       # link add event button to validate new event fields on create 
       #$('#add_event').removeClass 'disabled'
       #$('#add_event')[0].onclick = validateEvent 
+      $('#location-image').change ->
+        if this.files and this.files[0].size > 5000000
+          window.alert "This file exceeds the maximum allowed file size (5 MB)"
+          $(this).val('')
+          $('#img_prev').attr 'src', ""
+          $('#img_prev')[0].style.visibility = 'hidden'
+        else
+          $('#img_prev')[0].style.visibility = 'visible'
+          readURL this
       return
 
     count = 0

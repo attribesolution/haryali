@@ -97,8 +97,22 @@ class App.HaryaliLocations extends App.Base
           readURL this
         count++
       # link add event button to validate new event fields on create 
-      $('#add_event').removeClass 'disabled'
-      $('#add_event')[0].onclick = validateEvent 
+      #$('#add_event').removeClass 'disabled'
+      #$('#add_event')[0].onclick = validateEvent 
+      $('#location-image').change ->
+        if this.files and this.files[0].size > 5000000
+          window.alert "This file exceeds the maximum allowed file size (5 MB)"
+          $(this).val('')
+          $('#img_prev0').attr 'src', ""
+          $('#img_prev0')[0].style.visibility = 'hidden'
+        else
+          $('#img_prev0')[0].style.visibility = 'visible'
+          if this.files and this.files[0]
+            reader = new FileReader
+            reader.onload = (e) ->
+              $('#img_prev0').attr 'src', e.target.result
+              return
+            reader.readAsDataURL this.files[0]
       return
 
     validateEvent = ->
