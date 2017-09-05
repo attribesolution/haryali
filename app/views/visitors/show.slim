@@ -1,2 +1,63 @@
-/= @lead
-| app > views > visitors > show.slim
+- unless @lead.nil?
+  h1.h1-align.location-heading
+    strong #{@lead.created_at.strftime("%d %B, %Y")}
+  br
+  .table-align
+    table.table.table-striped
+      tbody
+        tr
+          td 
+            strong Plant:
+          td = @lead.plant.name
+        tr  
+          td 
+            strong Location:
+          td 
+            - if @lead.location.try(:optional_address)
+              = @lead.location.optional_address + ', ' + @lead.location.address
+            - else
+              = @lead.location.address
+        - if @lead.dedicate_name and @lead.dedicate_type
+          tr  
+            td 
+              strong Dedicated in #{@lead.dedicate_type.capitalize} of:
+            td = @lead.dedicate_name
+        tr  
+          td 
+            strong Quantity:
+          td = @lead.quantity.to_s
+        tr
+          td 
+            strong Price:
+          td = total_price(@lead)
+        tr
+          td 
+            strong Status:
+          td = @lead.status.capitalize
+    = image_tag @lead.plant.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-45%;"
+    br
+    br
+  - if @lead.updates.any?
+    .container.thankyoupage-align
+      h1.t1 Updates 
+    section#cd-timeline.cd-container.body-1
+      - @lead.updates.each do |update|
+        .cd-timeline-block
+          br
+          .cd-timeline-img.cd-picture
+            img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
+          .cd-timeline-content
+            .inner-body
+              .head-green
+                h2.heading-timeline.h2_1 #{update.title}
+              p #{update.description}
+              hr 
+              img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
+              #myModal.modal
+                span.close &times;
+                img#img01.modal-content.img1
+              span.cd-date #{update.created_at.strftime("%B %Y")}
+- else 
+  h1.t1 No Submission found 
+br
+= link_to "Back", :back, class:"btn btn-success btn-lg pull-left"

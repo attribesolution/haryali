@@ -1,25 +1,42 @@
-h1 Your Plants 
+h1 My Plants 
 - if @leads
   .container-fluid.body-leads
     .row.no-gutter.popup-gallery
       - @leads.each do |lead| 
         .col-lg-6.col-sm-6
           a.portfolio-box href=visitor_path(lead) 
-            = image_tag lead.plant.image, class: "img-fluid float-left img-leads"
+            - if lead.updates.size > 0
+              = image_tag lead.updates.order(created_at: :DESC).first.image, class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
+            - else
+              = image_tag lead.plant.image, class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
             .leads-p
               p
+              - if lead.status != 'Planted'
+                br
+                strong Awating: 
+                - if lead.status == 'Placed'
+                  |  Confirmation 
+                - if lead.status == 'Confirmed'
+                  |  Payment 
+                - if lead.status == 'Paid'
+                  |  Plantation 
               br
-              | Posted On: #{lead.created_at.strftime("%Y-%m-%d")}
+              strong #{lead.status} On:
+              |  #{lead.updated_at.strftime("%d %B, %Y")}
+              - if lead.status == 'Paid' || lead.status == 'Planted'
+                br
+                strong Paid: 
+                |  Rs. #{lead.quantity * lead.plant.price}
               br
-              | Type: #{lead.plant.name.capitalize}
+              strong Plant: 
+              |  #{lead.plant.name.capitalize}
+              - if lead.dedicate_name and lead.dedicate_type
+                br
+                strong In #{lead.dedicate_type.capitalize} of: 
+                |  #{lead.dedicate_name.capitalize}
               br
-              | Paid: #{lead.status == 'Paid' ? 'Yes' : 'No'}
-              br
-              | In memory of: #{lead.dedicate_type ? lead.dedicate_name.capitalize : '-'}
-              br
-              | Location: #{lead.location.address}
-              br
-              | Status: #{lead.status}
+              strong Location: 
+              |  #{lead.location.address}
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded

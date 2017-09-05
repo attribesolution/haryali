@@ -19,5 +19,3 @@ module LeadsHelper
     per = 100*loc.current.to_f/loc.target.to_f
   end
 end
-
-
