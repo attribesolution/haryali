@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   resources :updates, only: [:new, :create]
 
   resources :visitors, only: [:index, :show]
+
+  resources :haryali_yaad, only: [:index]
 end
