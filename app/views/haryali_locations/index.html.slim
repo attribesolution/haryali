@@ -3,21 +3,7 @@
     ul.sidebar-nav
       li.sidebar-brand
         | Haryali Locations
-      li
-        a href="#"  Ghoura Ground
-      li
-        a href="#"  Ume Kulsoom Park
-      li
-        a href="#"  PTCL Office
-      li
-        a href="#"  Asghar Shaheed Park
-      li
-        a href="#"  Green Belt
-      li
-        a href="#"  Gul-e-Lala Park
-      li
-        a href="#"  Green Belt
-      /- @locations.each do |location|
+      - @locations.each do |location|
         li#location lat=location.lat lng=location.lng
           - if location.try(:optional_address)
             a href="javascript:void(0)" #{location.optional_address.truncate(25)}
