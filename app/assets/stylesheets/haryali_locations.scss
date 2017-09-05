@@ -45,10 +45,10 @@
 /* Sidebar Styles */
 
 .sidebar-nav {
-    position: fixed;
+    //position: fixed;
     top: 0;
-    width: 250px;
-    margin: 6px;
+    //width: 20%;
+    //margin: 6px;
     padding: 0;
     list-style: none;
     display: block;
@@ -82,8 +82,10 @@
 
 .sidebar-nav > .sidebar-brand {
     height: 65px;
-    font-size: 18px;
-    line-height: 60px;
+    font-size: 21px;
+    line-height: 66px;
+    color:white;
+    font-weight:bold; 
 }
 
 .sidebar-nav > .sidebar-brand a {
