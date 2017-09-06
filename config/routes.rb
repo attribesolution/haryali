@@ -25,5 +25,9 @@ Rails.application.routes.draw do
 
   resources :visitors, only: [:index, :show]
 
-  resources :haryali_yaads, only: [:index]
+  resources :haryali_yaads, only: [:index] do
+    collection do
+      put :submit_form
+    end
+  end
 end

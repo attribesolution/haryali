@@ -1,5 +1,5 @@
 class Lead < ApplicationRecord
-  belongs_to :plant
+  belongs_to :plant, optional: true
   belongs_to :location, optional: true
   belongs_to :coupon, optional: true
   accepts_nested_attributes_for :location, reject_if: :check_location_type, allow_destroy: true
@@ -8,9 +8,9 @@ class Lead < ApplicationRecord
   enum payment_type: [:cash_on_delivery, :direct_wire_transfer]
   enum status_type: [:Placed, :Confirmed, :Paid, :Planted]
 
-  validates :name, :contact, :plant, presence: true, if: :step1?
-  validates :quantity, :payment_type,:location, presence: true, if: :step2?
-  validates :quantity, numericality: true, if: :step2?
+  validates :name, :contact, presence: true, if: :step1?
+  # validates :quantity, :payment_type,:location, presence: true, if: :step2?
+  # validates :quantity, numericality: true, if: :step2?
 
   before_create :verify_coupon
   after_create :deactivate_coupon, :update_location_progress
@@ -62,11 +62,13 @@ class Lead < ApplicationRecord
     end
 
     def update_location_progress 
-      location = Location.find_by_id(self.location_id)
-      location[:current] += self.quantity
-      if location[:current] >= location[:target]
-        location[:is_active] = false
+      if self.location_id?
+        location = Location.find_by_id(self.location_id)
+        location[:current] += self.quantity
+        if location[:current] >= location[:target]
+          location[:is_active] = false
+        end
+        location.save
       end
-      location.save
     end
 end
