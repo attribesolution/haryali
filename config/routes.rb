@@ -25,5 +25,5 @@ Rails.application.routes.draw do
 
   resources :visitors, only: [:index, :show]
 
-  resources :haryali_yaad, only: [:index]
+  resources :haryali_yaads, only: [:index]
 end
