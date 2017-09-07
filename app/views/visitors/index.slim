@@ -8,7 +8,10 @@ h1 My Plants
             - if lead.updates.size > 0
               = image_tag lead.updates.order(created_at: :DESC).first.image, class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
             - else
-              = image_tag lead.plant.image, class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
+              - if lead.plant_id
+                = image_tag lead.plant.image, class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
+              - else
+                | default_image
             .leads-p
               p
               - if lead.status != 'Planted'
@@ -27,16 +30,18 @@ h1 My Plants
                 br
                 strong Paid: 
                 |  Rs. #{lead.quantity * lead.plant.price}
-              br
-              strong Plant: 
-              |  #{lead.plant.name.capitalize}
+              - if lead.plant_id
+                br
+                strong Plant: 
+                  |  #{lead.plant.name.capitalize}
               - if lead.dedicate_name and lead.dedicate_type
                 br
                 strong In #{lead.dedicate_type.capitalize} of: 
                 |  #{lead.dedicate_name.capitalize}
-              br
-              strong Location: 
-              |  #{lead.location.address}
+              - if lead.location_id
+                br
+                strong Location: 
+                  |  #{lead.location.address}
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded

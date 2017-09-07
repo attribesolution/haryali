@@ -30,4 +30,6 @@ Rails.application.routes.draw do
       put :submit_form
     end
   end
+
+  get 'yaad' => "haryali_yaads#index"
 end

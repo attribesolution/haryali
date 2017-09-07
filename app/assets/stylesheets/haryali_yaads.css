@@ -27,15 +27,13 @@
   color: #2f1f1e;
   letter-spacing: 0.061em;
   margin-top: 60px;
-  /*margin-bottom: 20px;*/
+  margin-bottom: 20px;
 }
 .yaad-form h2.success {
   color: #356e64;
   margin-top: -40px;
   margin-bottom: 0px;
   padding: 0;
-  /*margin-bottom: -150px;*/
-  background: white;
   padding: 5px;
 }
 .yaad-form p.success-dialog {
@@ -45,7 +43,6 @@
   text-align: center;
   line-height: 1.8em;
   text-transform: uppercase;
-  background: white;
   padding: 10px;
 }
 .yaad-form p.success-dialog a {
@@ -61,7 +58,7 @@
   width: 100%;
   background: #fff;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 5%;
   box-shadow: none;
   appearance: none;
   border: none;
@@ -101,6 +98,7 @@
   color: #fff;
   width: 101%;
   transition: 0.8s all ease;
+  margin-bottom: 10%
 }
 .yaad-form .submit:hover {
   background:green;
@@ -154,4 +152,8 @@
   z-index: -5;
   margin-top: -45px;
   margin-left: 25%;
+}
+
+.yaad-form .form-group {
+  margin: 0px;
 }

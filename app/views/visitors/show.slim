@@ -5,36 +5,42 @@
   .table-align
     table.table.table-striped
       tbody
-        tr
-          td 
-            strong Plant:
-          td = @lead.plant.name
-        tr  
-          td 
-            strong Location:
-          td 
-            - if @lead.location.try(:optional_address)
-              = @lead.location.optional_address + ', ' + @lead.location.address
-            - else
-              = @lead.location.address
+        - if @lead.plant_id
+          tr
+            td 
+              strong Plant:
+            td = @lead.plant.name
+        - if @lead.location_id
+          tr  
+            td 
+              strong Location:
+            td 
+              - if @lead.location.try(:optional_address)
+                = @lead.location.optional_address + ', ' + @lead.location.address
+              - else
+                = @lead.location.address
         - if @lead.dedicate_name and @lead.dedicate_type
           tr  
             td 
               strong Dedicated in #{@lead.dedicate_type.capitalize} of:
-            td = @lead.dedicate_name
-        tr  
-          td 
-            strong Quantity:
-          td = @lead.quantity.to_s
-        tr
-          td 
-            strong Price:
-          td = total_price(@lead)
+            td = @lead.dedicate_name.capitalize
+        - if @lead.quantity
+          tr  
+            td 
+              strong Quantity:
+            td = @lead.quantity.to_s
+          tr
+            td 
+              strong Price:
+            td = total_price(@lead)
         tr
           td 
             strong Status:
           td = @lead.status.capitalize
-    = image_tag @lead.plant.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-45%;"
+    - if @lead.plant_id
+      = image_tag @lead.plant.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-45%;"
+    - else
+      | default image
     br
     br
   - if @lead.updates.any?
