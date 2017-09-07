@@ -40,7 +40,7 @@
     - if @lead.plant_id
       = image_tag @lead.plant.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-45%;"
     - else
-      | default image
+      = image_tag 'tree-large.png', style:"max-height:400px; float:right; margin-right:-35%; margin-top:-20%;"
     br
     br
   - if @lead.updates.any?

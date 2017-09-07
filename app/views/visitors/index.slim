@@ -11,7 +11,7 @@ h1 My Plants
               - if lead.plant_id
                 = image_tag lead.plant.image, class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
               - else
-                | default_image
+                = image_tag 'tree-large.png', class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
             .leads-p
               p
               - if lead.status != 'Planted'
