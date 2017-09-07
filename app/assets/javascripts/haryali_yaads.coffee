@@ -79,8 +79,6 @@ class App.HaryaliYaads extends App.Base
             scaleX: 0
             rotation: 180
           }, 'flip+=2'
-          count = count + 0.5
-          value = 'flip+='+count
           tl.to loader2, 0.5, {
             opacity: 1
             transformOrigin: '50% 50%'
@@ -88,6 +86,7 @@ class App.HaryaliYaads extends App.Base
             rotation: 180
           }, 'flip+=2.5'
           icon_loading = setInterval(SpinLoader, 1000)
+          loader[0].style.visibility = 'hidden'
           $.ajax
             url: '/haryali_yaads/submit_form'
             type: 'put'
@@ -98,20 +97,14 @@ class App.HaryaliYaads extends App.Base
               'memory': $('#lead_dedicate_name').val()
             async: false
             success: (data) ->
+              clearInterval(icon_loading)
               TriggerAnimations()
               return
             error: (err) ->
               clearInterval(icon_loading)
-              value = 'flip+='+count
-              tl.to loader2, 0.5, {
-                opacity: 1
-                transformOrigin: '50% 50%'
-                scaleX: 0
-                rotation: 180
-              }, value
               # Unhide 'Donate' Button 
 
-      count = 2
+      count = 1.8
       SpinLoader = ->
         value = 'flip+='+count
         tl.to loader2, 0.5, {
@@ -129,6 +122,9 @@ class App.HaryaliYaads extends App.Base
           rotation: 180
         }, value
         count = count + 0.5
+        #value = 'flip+='+count
+        #tl.to loader2, 0.1, { opacity: 0 }, value
+        #count = count + 0.5
 
       TriggerAnimations = ->
         tl.add 'success'
@@ -161,6 +157,7 @@ class App.HaryaliYaads extends App.Base
           transformOrigin: '50% 50%'
         }, 'success'
         tl.to form, 0.5, { css: backgroundColor: '#7aada5' }, 'success'
+        loader2[0].style.visibility = 'hidden'
         return
       return
 
