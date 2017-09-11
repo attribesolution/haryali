@@ -32,4 +32,10 @@ Rails.application.routes.draw do
   end
 
   get 'yaad' => "haryali_yaads#index"
+
+  namespace :haryali_location_api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :haryali_locations, only: [:index, :show]
+    end
+  end
 end
