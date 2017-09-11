@@ -169,8 +169,10 @@ class App.HaryaliYaads extends App.Base
       rules: 
         'lead[name]':
           required: true
+          maxlength: 50
         'lead[dedicate_name]':
           required: true
+          maxlength: 50
         'lead[contact]':
           required: true
           pkphone: true
@@ -178,6 +180,7 @@ class App.HaryaliYaads extends App.Base
           maxlength: 14
         'lead[email]':
           required: true
+          maxlength: 50
     return
 
   show: =>
