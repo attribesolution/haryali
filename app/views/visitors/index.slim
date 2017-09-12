@@ -33,7 +33,7 @@ h1 My Plants
               - if lead.plant_id
                 br
                 strong Plant: 
-                  |  #{lead.plant.name.capitalize}
+                |  #{lead.plant.name.capitalize}
               - if lead.dedicate_name and lead.dedicate_type
                 br
                 strong In #{lead.dedicate_type.capitalize} of: 
@@ -41,7 +41,7 @@ h1 My Plants
               - if lead.location_id
                 br
                 strong Location: 
-                  |  #{lead.location.address}
+                |  #{lead.location.address}
             .portfolio-box-caption
               .portfolio-box-caption-content
                 .project-category.text-faded

@@ -14,8 +14,6 @@ json.data do
     json.target location.target
     json.is_active location.is_active
     
-    # if location.timeline_events?
-    #   json.timeline_events location.timeline_events.order(created_at: :DESC)
-    # end
+    json.timeline_events location.timeline_events.order(created_at: :DESC)
   end
 end
