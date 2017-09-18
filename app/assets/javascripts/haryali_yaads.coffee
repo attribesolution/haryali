@@ -36,6 +36,13 @@ class App.HaryaliYaads extends App.Base
         circP
       ], opacity: 0
       TweenMax.set $('.success, .success-dialog'), opacity: 0
+      $('#lead_dedicate_name').change ->
+        if $('#lead_dedicate_name').val().length == 0
+          $('#name_plaque')[0].innerText = '"Some Name"'
+        else
+          $('#name_plaque')[0].innerText = '"'+$('#lead_dedicate_name').val()+'"'
+        return
+
       $('.submit').on 'click', (e) ->
         e.preventDefault
         # Run Validation 
