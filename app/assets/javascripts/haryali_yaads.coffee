@@ -20,6 +20,7 @@ class App.HaryaliYaads extends App.Base
         loader2
       ]
       circP = $('.circle-paper')
+      loader[0].style.visibility = 'hidden'
       TweenMax.set sub,
         opacity: 0.7
         rotationY: 90

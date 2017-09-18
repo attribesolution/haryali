@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-	def notifications_update_now
+  def notifications_update_now
     leads = Lead.where(status: :Planted)
     three_months_ago = DateTime.now - 90.days
     count = 0
