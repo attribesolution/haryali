@@ -20,7 +20,6 @@ class App.HaryaliYaads extends App.Base
         loader2
       ]
       circP = $('.circle-paper')
-      loader[0].style.visibility = 'hidden'
       TweenMax.set sub,
         opacity: 0.7
         rotationY: 90
@@ -36,9 +35,11 @@ class App.HaryaliYaads extends App.Base
         circP
       ], opacity: 0
       TweenMax.set $('.success, .success-dialog'), opacity: 0
+      if $('#lead_dedicate_name').val().length != 0
+        $('#name_plaque')[0].innerText = '"'+$('#lead_dedicate_name').val()+'"'
       $('#lead_dedicate_name').change ->
         if $('#lead_dedicate_name').val().length == 0
-          $('#name_plaque')[0].innerText = '"Some Name"'
+          $('#name_plaque')[0].innerText = '"Sadia Anwar"'
         else
           $('#name_plaque')[0].innerText = '"'+$('#lead_dedicate_name').val()+'"'
         return
@@ -103,13 +104,12 @@ class App.HaryaliYaads extends App.Base
               'email': $('#lead_email').val()
               'phone': $('#lead_contact').val()
               'memory': $('#lead_dedicate_name').val()
-            async: false
             success: (data) ->
               clearInterval(icon_loading)
               TriggerAnimations()
               return
             error: (err) ->
-              clearInterval(icon_loading)
+              #clearInterval(icon_loading)
               # Unhide 'Donate' Button 
 
       count = 1.8
@@ -130,9 +130,6 @@ class App.HaryaliYaads extends App.Base
           rotation: 180
         }, value
         count = count + 0.5
-        #value = 'flip+='+count
-        #tl.to loader2, 0.1, { opacity: 0 }, value
-        #count = count + 0.5
 
       TriggerAnimations = ->
         tl.add 'success'
