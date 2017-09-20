@@ -24,16 +24,26 @@ table.table.table-hover.table-responsive
           - else
             | -
         td
-          a href=plant_path(lead.plant)
-            = lead.plant.name
-        td = lead.quantity 
+          - if lead.plant_id
+            a href=plant_path(lead.plant)
+              = lead.plant.name
+          - else
+            | - 
+        td 
+          - if lead.quantity
+            = lead.quantity 
+          - else 
+            | -
         /td = lead.payment_type.humanize 
         td 
-          a href=location_path(lead.location) data-toggle="tooltip" title="#{lead.location.try(:optional_address) ? lead.location.optional_address+', ' : ''}#{lead.location.address}"
-            - if lead.location.try(:optional_address)
-              = lead.location.optional_address
-            - else
-              = lead.location.address.split(',')[0] 
+          - if lead.location_id
+            a href=location_path(lead.location) data-toggle="tooltip" title="#{lead.location.try(:optional_address) ? lead.location.optional_address+', ' : ''}#{lead.location.address}"
+              - if lead.location.try(:optional_address)
+                = lead.location.optional_address
+              - else
+                = lead.location.address.split(',')[0] 
+          - else
+            | -
         td = (!lead.coupon_id.nil?).to_s.capitalize 
         td = select_tag "status", options_for_select(Lead.status_types, Lead.status_types[lead.status]), name: lead.id
         td 

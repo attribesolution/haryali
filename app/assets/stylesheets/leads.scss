@@ -335,6 +335,7 @@ background-color: #8ac53a;
 .error {
   color: red;
   font-size:12px;
+  line-height: 0.5;
  }
 
  .status {
@@ -582,4 +583,11 @@ background-color: #8ac53a;
       }
     }
   }
+}
+
+/*hr form */
+
+.form-hr {
+  border-color: #8ac53a;
+
 }

@@ -25,5 +25,17 @@ Rails.application.routes.draw do
 
   resources :visitors, only: [:index, :show]
 
-  resources :haryali_yaads, only: [:index]
+  resources :haryali_yaads, only: [:index] do
+    collection do
+      put :submit_form
+    end
+  end
+
+  get 'yaad' => "haryali_yaads#index"
+
+  namespace :haryali_location_api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :haryali_locations, only: [:index, :show]
+    end
+  end
 end
