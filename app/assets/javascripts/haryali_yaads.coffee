@@ -37,11 +37,11 @@ class App.HaryaliYaads extends App.Base
       TweenMax.set $('.success, .success-dialog'), opacity: 0
       if $('#lead_dedicate_name').val().length != 0
         $('#name_plaque')[0].innerText = '"'+$('#lead_dedicate_name').val()+'"'
-      $('#lead_dedicate_name').change ->
-        if $('#lead_dedicate_name').val().length == 0
-          $('#name_plaque')[0].innerText = '"Sadia Anwar"'
-        else
+      $('#lead_dedicate_name').bind 'input', ->
+        if ($(this).val().length > 0)
           $('#name_plaque')[0].innerText = '"'+$('#lead_dedicate_name').val()+'"'
+        else
+          $('#name_plaque')[0].innerText = '"Sadia Anwar"'
         return
 
       $('.submit').on 'click', (e) ->
