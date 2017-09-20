@@ -46,7 +46,7 @@ br
     p Let us be our own superheroes by standing up against global warming, one plant at a time. Fill out your basic details and leave the rest on us!
     .information-div
       h4 Your Information
-      hr
+      hr.form-hr
         .form-group 
           .field
             = f.input :name, label: false, placeholder: "Your full name", class: "form-control"
@@ -58,7 +58,7 @@ br
             = f.input :email, label: false, placeholder: "example@email.com", class: "form-control"
     .tree-selection
       h4 Select a Tree
-      hr
+      hr.form-hr
         .row.col-sm-12 
           - @plants.each do |p|
               a.col-sm-4.lnk_tree tree_id="#{p.id}" href="javascript:void(0)" data-toggle="tooltip" title="#{p.detail}"
