@@ -41,7 +41,7 @@ class App.HaryaliYaads extends App.Base
         if ($(this).val().length > 0)
           $('#name_plaque')[0].innerText = '"'+$('#lead_dedicate_name').val()+'"'
         else
-          $('#name_plaque')[0].innerText = '"Sadia Anwar"'
+          $('#name_plaque')[0].innerText = '"  "'
         return
 
       $('.submit').on 'click', (e) ->
@@ -174,10 +174,10 @@ class App.HaryaliYaads extends App.Base
       rules: 
         'lead[name]':
           required: true
-          maxlength: 50
+          maxlength: 20
         'lead[dedicate_name]':
           required: true
-          maxlength: 50
+          maxlength: 15
         'lead[contact]':
           required: true
           pkphone: true

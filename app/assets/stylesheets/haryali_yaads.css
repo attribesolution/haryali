@@ -260,5 +260,10 @@
 /* Name Plaque */
 #name_plaque {
   color: #2f1902 ;
+  font-family: "Latin Modern Mono";
+}
+  @font-face {
+  font-family: "Latin Modern Mono";
+  src:url(/assets/fonts/lmmono10-regular.otf) format("truetype");
 }
 
