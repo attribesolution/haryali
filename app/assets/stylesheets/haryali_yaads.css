@@ -267,3 +267,29 @@
   src:url(/assets/fonts/lmmono10-regular.otf) format("truetype");
 }
 
+@media screen and (max-width: 520px) and (min-width: 320px)
+{
+   body {
+    background-size: 100% 100%;
+  }
+    .banner {
+    padding-left: 81%;
+    padding-right: 81%;
+    }
+   .yaad-form form {
+    background: #faf5f3;
+    width: 70%;
+    margin-top: 12%;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 10;
+    padding: 27% 5% 10% 5%;
+    left: 14%;
+    margin-left: 0;
+    opacity: 0.85;
+    }
+    .haryali-text {
+          font-size: 33px;
+
+    }
+}
