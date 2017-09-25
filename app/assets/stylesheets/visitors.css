@@ -9,7 +9,7 @@ background-image: url(/assets/bg-plants.jpg);
     background-repeat:   no-repeat;
     background-position: center center;
     object-fit: fill;
-    padding-top: 10%;
+   
 }
 
 .banner-plants {
@@ -51,9 +51,9 @@ background-image: url(/assets/bg-plants.jpg);
     color: #fff;
 }
 .more-detais-btn {
-    height: 35px;
+    height: 44px;
     width: 171px;
-    margin-left: 23%;
+    margin-left: 26%;
     text-align: center;
     margin-top: -10%;
 }
@@ -65,19 +65,19 @@ background-image: url(/assets/bg-plants.jpg);
     padding-right: 5%;
     width: 873px;
     height: 35%;
-    padding-top: 50%;
-    margin-top: 19%;
+    padding-top: 23%;
+    margin-top: 12%;
 }
 .img-plant img {
     width: 172px;
     height: 172px;
-    padding: 10px 10px 10px 10px;
-    margin: 0 auto;
+    padding: 0px 0px 0px 5px;
+    margin-left: 2%;
 }
 
 .my-plant-info {
     float: left;
-    margin-left: 23%;
+    margin-left: 26%;
     width: 100%;
     margin-top: -150px;
 }
@@ -138,7 +138,7 @@ background-image: url(/assets/bg-plants.jpg);
 .div-header {
     float: right;
     padding: 0;
-    margin-top: -6%;
+    margin-top: -3%;
     margin-right: 2%;
 }
 .my-plant-info table {
