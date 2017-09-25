@@ -1,49 +1,67 @@
-h1 My Plants 
-- if @leads
-  .container-fluid.body-leads
-    .row.no-gutter.popup-gallery
-      - @leads.each do |lead| 
-        .col-lg-6.col-sm-6
-          a.portfolio-box href=visitor_path(lead) 
-            - if lead.updates.size > 0
-              = image_tag lead.updates.order(created_at: :DESC).first.image, class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
-            - else
-              - if lead.plant_id
-                = image_tag lead.plant.image, class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
-              - else
-                = image_tag 'tree-large.png', class: "img-fluid float-left img-leads", style:"max-width:50%; margin-right:5%;"
-            .leads-p
-              p
-              - if lead.status != 'Planted'
-                br
-                strong Awating: 
-                - if lead.status == 'Placed'
-                  |  Confirmation 
-                - if lead.status == 'Confirmed'
-                  |  Payment 
-                - if lead.status == 'Paid'
-                  |  Plantation 
-              br
-              strong #{lead.status} On:
-              |  #{lead.updated_at.strftime("%d %B, %Y")}
-              - if lead.status == 'Paid' || lead.status == 'Planted'
-                br
-                strong Paid: 
-                |  Rs. #{lead.quantity * lead.plant.price}
-              - if lead.plant_id
-                br
-                strong Plant: 
-                |  #{lead.plant.name.capitalize}
-              - if lead.dedicate_name and lead.dedicate_type
-                br
-                strong In #{lead.dedicate_type.capitalize} of: 
-                |  #{lead.dedicate_name.capitalize}
-              - if lead.location_id
-                br
-                strong Location: 
-                |  #{lead.location.address}
-            .portfolio-box-caption
-              .portfolio-box-caption-content
-                .project-category.text-faded
-                  .project-name
-                    | More Details
+body.my-plants-body
+  .banner-plants
+    h1.my-plants-text AISHA ANWAR
+    p.my-plants-p You have donated only 2 plants so far, donate more for the sake of charity.
+    button.rounded.plants-btn-color.my-plants-btn.btn type="button"  Donate More!
+    .my-plants
+      .div-header
+        p Updated 3 days ago
+      .img-plant
+        img src="/assets/11.jpg" /
+      aside
+        .my-plant-info
+          table
+            tr
+              th.in-memory-head colspan="2"  In Memory Of "Sadia Anwar"
+            tr
+              td Plants:
+              td Neem Tree
+            tr
+              td Paid:
+              td Yes
+            tr
+              td Status:
+              td Confirmed
+      .price-plant
+        h3
+          | Rupees
+        p 500/-
+      .location-plant.pull-right
+        img src="assets/icon2.png" style=("width: 45px; height: 50px; margin-top: -30px; margin-left: 34px") /
+        p Ghoura Ground
+      .more-details
+        button.rounded.plants-btn-color.btn.more-detais-btn type="button"  More Details
+      .div-footer
+        .created-on.pull-right
+          p Created On: 6-Aug-2017
+    .my-plants
+      .div-header
+        p Updated 3 days ago
+      .img-plant
+        img src="assets/11.jpg" /
+      aside
+        .my-plant-info
+          table
+            tr
+              th.in-memory-head colspan="2"  In Memory Of "Sadia Anwar"
+            tr
+              td Plants:
+              td Neem Tree
+            tr
+              td Paid:
+              td Yes
+            tr
+              td Status:
+              td Confirmed
+      .location-plant.pull-right
+        img src="assets/icon2.png" style=("width: 45px; height: 50px; margin-top: -30px; margin-left: 34px") /
+        p Ghoura Ground
+      .price-plant
+        h3
+          | Rupees
+        p 500/-
+      .more-details
+        button.rounded.plants-btn-color.btn.more-detais-btn type="button"  More Details
+      .div-footer
+        .created-on.pull-right
+          p Created On: 6-Aug-2017
