@@ -1,5 +1,52 @@
 body.my-plants-body
   .banner-plants
+    h1.my-plants-text #{current_user.name ? current_user.name.capitalize : current_user.email.capitalize}
+    p.my-plants-p You have donated only #{pluralize(@leads.size, 'plant')} so far, donate more for the sake of charity.
+    a.rounded.plants-btn-color.my-plants-btn.btn href=yaad_path  Donate More!
+    - @leads.each do |lead|
+      .my-plants
+        .div-header
+          p Updated #{time_ago_in_words(lead.created_at)} ago
+        .img-plant
+          - unless lead.plant.nil?
+            img src=lead.plant.image
+          - else
+            img src="/assets/11.jpg"
+        aside
+          .my-plant-info
+            table
+              tr
+                th.in-memory-head colspan="2"  In Memory Of "#{lead.dedicate_name}"
+              tr
+                td Plants:
+                - unless lead.plant.nil?
+                  td #{lead.plant.name}
+                - else
+                  td Neem Tree
+              tr
+                td Paid:
+                td #{lead.status == 'Paid' ? 'Yes' : 'No'}
+              tr
+                td Status:
+                td #{lead.status}
+        .location-plant.pull-right
+          img src="assets/icon2.png" style=("width: 45px; height: 50px; margin-top: -30px; margin-left: 34px") 
+          - unless lead.location.nil?
+            p #{lead.location.address.split(',')[0].truncate(15)}
+          - else 
+            p Ghoura Ground
+        .price-plant
+          h3
+            | Rupees
+          p 500/-
+        .more-details
+          a.rounded.plants-btn-color.btn.more-detais-btn href=lead_path(lead)  More Details
+        .div-footer
+          .created-on.pull-right
+            p Created On: #{lead.created_at.strftime("%-d-%b-%Y")}
+
+/body.my-plants-body
+  .banner-plants
     h1.my-plants-text AISHA ANWAR
     p.my-plants-p You have donated only 2 plants so far, donate more for the sake of charity.
     button.rounded.plants-btn-color.my-plants-btn.btn type="button"  Donate More!

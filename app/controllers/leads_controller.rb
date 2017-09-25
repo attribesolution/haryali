@@ -19,7 +19,7 @@ class LeadsController < ApplicationController
     @locations = HaryaliLocation.select(:id, :address, :current, :target, :optional_address).where(is_active: :true).order(:created_at)
     if @wizard.save
       if User.where(email: @lead.email).count == 0
-        user = User.new(email: @lead.email, password: 'password', password_confirmation: 'password', role: 0)
+        user = User.new(email: @lead.email, password: 'password', password_confirmation: 'password', role: 0, name: @lead.name)
         user.skip_confirmation!
         user.save
         UserMailer.welcome_email(@lead).deliver
