@@ -5,12 +5,12 @@
   .table-align
     table.table.table-striped
       tbody
-        - if @lead.plant_id
+        - unless @lead.plant.nil?
           tr
             td 
               strong Plant:
             td = @lead.plant.name
-        - if @lead.location_id
+        - unless @lead.location.nil?
           tr  
             td 
               strong Location:
@@ -37,10 +37,10 @@
           td 
             strong Status:
           td = @lead.status.capitalize
-    - if @lead.plant_id
+    - unless @lead.plant.nil?
       = image_tag @lead.plant.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-45%;"
     - else
-      = image_tag 'tree-large.png', style:"max-height:400px; float:right; margin-right:-35%; margin-top:-20%;"
+      = image_tag '11.jpg', style:"max-height:400px; float:right; margin-right:-35%; margin-top:-20%;"
     br
     br
   - if @lead.updates.any?
