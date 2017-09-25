@@ -73,7 +73,7 @@
   position: relative;
   z-index: 10;
   padding: 10% 5% 4% 5%;
-  /* left: 50%; */
+   left:4%; 
   margin-left: 0;
   opacity: 0.85;
 }
@@ -284,7 +284,7 @@
     position: relative;
     z-index: 10;
     padding: 27% 5% 10% 5%;
-    left: 14%;
+    left: 14%;ra
     margin-left: 0;
     opacity: 0.85;
     }
