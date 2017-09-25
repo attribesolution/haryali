@@ -9,6 +9,7 @@ background-image: url(/assets/bg-plants.jpg);
     background-repeat:   no-repeat;
     background-position: center center;
     object-fit: fill;
+    padding-top: 10%;
 }
 
 .banner-plants {
