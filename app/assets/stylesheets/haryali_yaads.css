@@ -1,15 +1,17 @@
 .yaad{
   /*margin: 0;*/
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: right;
+ 
   /*object-fit: fill;*/
   background-image: url(/assets/bg1.jpg);
   background-attachment: scroll;
   padding-bottom: 120px;
   margin-bottom: -80px;
-  margin-left: -10%;
-  margin-right: -10%;
+  margin-left: -20%;
+   margin-right: -20%;
+  background-position: center center;
+   
  
 }
 .banner {
@@ -66,16 +68,16 @@
 
 
 .yaad-form form {
-  background: #faf5f3;
-  width: 31%;
-  margin-top: 15%;
-  margin-bottom: 50px;
-  position: relative;
-  z-index: 10;
-  padding: 10% 5% 4% 5%;
-   left:4%; 
-  margin-left: 0;
-  opacity: 0.85;
+    background: #faf5f3;
+    width: 24%;
+    margin-top: 15%;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 10;
+    padding: 10% 2% 4% 2%;
+    left: 6%;
+    margin-left: 0;
+    opacity: 0.85;
 }
 .yaad-form form h2 {
   text-transform: uppercase;
@@ -204,13 +206,12 @@
   margin-top: -45px;
   margin-left: 114px;
 }
+
 .name-plaque {
-  float: right;
-  margin-top: -22.7%;
-  padding-left: 37%;
-  /*margin-top: -28%;*/
-  /*padding-left: 20%;*/
-  width: 100%;
+    float: right;
+    margin-top: -20.7%;
+    padding-left: 52%;
+    width: 100%;
 }
 .name-text {
   text-transform: capitalize;
@@ -272,22 +273,30 @@
    body {
     background-size: 100% 100%;
   }
-    .banner {
-    padding-left: 81%;
-    padding-right: 81%;
-    }
+  .banner {
+    font-size: 16px;
+    background-color: rgba(255,255,255,0.8);
+    position: relative;
+    text-align: center;
+    margin-top: -100px;
+    padding-top: 5%;
+    padding-bottom: 2%;
+    margin-left: -63%;
+    margin-right: -47%;
+    padding-left: 78%;
+   
+}
    .yaad-form form {
     background: #faf5f3;
-    width: 70%;
+    width: 65%;
     margin-top: 12%;
     margin-bottom: 50px;
     position: relative;
     z-index: 10;
     padding: 27% 5% 10% 5%;
-    left: 14%;ra
-    margin-left: 0;
+    left: 17%;
     opacity: 0.85;
-    }
+}
     .haryali-text {
           font-size: 33px;
 
