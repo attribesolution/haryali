@@ -43,6 +43,7 @@ gem 'rails_script', '~> 2.0'
 gem 'cocoon'
 gem "figaro"
 gem 'gmaps4rails'
+gem 'greensock-rails', '~> 1.19'
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end

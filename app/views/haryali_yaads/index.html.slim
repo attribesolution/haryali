@@ -1,0 +1,37 @@
+.yaad
+  .banner
+    h2.haryali-text.h1 HARYALI YAAD
+    p.haryali-p A tree planted in someone’s memory is a living tribute that benefits present and future generations.
+    button.btn.btn-yaad type="button"  For Rs. 500/- only.
+  .yaad-form 
+    = simple_form_for(@lead, html: { class: 'sub-form' }) do |f|
+       .input-contain
+        .circle.circle-quill
+          svg.quill enable-background=("new 0 0 25.167 25.167") height="25.167px" viewbox=("0 0 25.167 25.167") width="25.167px" x="0px" xml:space="preserve" y="0px" 
+            path d="M0,25C3.125,15.625,11.304,0,25,0c-6.421,5.151-9.375,17.188-14.062,17.188s-4.688,0-4.688,0L1.562,25H0z" fill="#77a43e" /
+        .circle.circle-paper
+          svg.paper enable-background=("new 0 0 25.125 25.125") height="25.1" viewbox=("0 0 25.1 25.1") width="25.1" x="0" xml:space="preserve" y="0" 
+            path d=("M24 2.1C23.5 2.3 1.2 10.2 0.8 10.3c-0.4 0.1-0.5 0.5 0 0.6 0.5 0.2 5 2 5 2H5.8l3 1.2c0 0 14.2-10.4 14.4-10.6 0.2-0.1 0.4 0.1 0.3 0.3 -0.1 0.2-10.3 11.2-10.3 11.2 0 0 0 0 0 0l-0.6 0.7 0.8 0.4c0 0 6.1 3.3 6.5 3.5 0.4 0.2 0.9 0 1-0.4 0.1-0.6 3.7-16.1 3.8-16.4C24.7 2.3 24.4 2 24 2.1zM8.7 21.2c0 0.3 0.2 0.4 0.4 0.2 0.3-0.3 3.7-3.4 3.7-3.4l-4.2-2.2V21.2z") fill="#b1dbd3" /
+        h2.info.yaad-form Plant a tree in the name of your loved one's.
+        h2.success.yaad-form Success!
+        = f.input :name, label:false, placeholder: "First Name", maxlength: 20
+        = f.input :dedicate_name, label:false, placeholder: "In Memory Of", maxlength: 15
+        = f.input :contact, label:false, placeholder: "Phone", maxlength: 14
+        = f.input :email, label:false, placeholder: "Email", maxlength: 50
+        .allsub
+          .yaad-form.submit.rounded Donate Now!
+          .submit-under
+        svg.loader enable-background=("new 0 0 55 55") height="55px" viewbox=("0 0 55 55") width="55px" x="0px" xml:space="preserve" y="0px" 
+          circle cx="27.583" cy="27.334" fill="none" r="26.583" stroke="#B29EAC" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" 
+        svg.loader2 enable-background=("new 0 0 55 55") height="55px" viewbox=("0 0 55 55") width="55px" x="0px" xml:space="preserve" y="0px" 
+          circle cx="27.583" cy="27.334" fill="none" r="26.583" stroke="#B29EAC" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" 
+        p.success-dialog.yaad-form
+          | We’ll be in touch shortly.
+          br
+          | In the meantime,
+          br
+          | check out our
+          br
+          a href="javascript:void(0)"  weekly offerings.
+  .name-plaque
+    .name-text#name_plaque "  "

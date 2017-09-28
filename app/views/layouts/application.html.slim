@@ -37,12 +37,38 @@ html
                     | Logged In: #{current_user.email}
               .pull-right
                 ul.header-social.social-icon
+                  - if current_user && current_user.role == "admin"
+                    li.dropdown
+                      a.instagram-color data-toggle="dropdown" href="javascript:void(0)" style="margin-right:10px; width:100%;"
+                        i.fa.fa-bell
+                          span style="font-size:13px;" #{notifications_total > 0 ? notifications_total : ''}
+                      ul.dropdown-menu style="background:#2d2d2d; font-size:1rem; padding-top:0px; padding-bottom:0px; border:none; left:-300px; width:340px;"
+                        - if notifications_total > 0
+                          - if notifications_update_reminder > 0
+                            li style="background:black; text-align:left; padding-left:10px; padding-top:5px; padding-bottom:5px; margin-bottom:1px; width:100%"
+                              a href="javascript:void(0)" style="font-size:13px; display:inline; text-decoration:none; color:white; line-height:0px;"
+                                i.fa.fa-circle style="color:green; padding-right:5px;"
+                                | #{notifications_update_reminder > 1 ? 'Updates' : 'Update'} due in a week or less for #{notifications_update_reminder} #{notifications_update_reminder > 1 ? 'Plants' : 'Plant'}
+                          - if notifications_update_now > 0
+                            li style="background:black; text-align:left; padding-left:10px; padding-top:5px; padding-bottom:5px; margin-bottom:1px; width:100%"
+                              a href="javascript:void(0)" style="font-size:13px; display:inline; text-decoration:none; color:white; line-height:0px;"
+                                i.fa.fa-clock-o style="color:yellow; padding-right:5px;"
+                                | There #{notifications_update_now > 1 ? 'are '+notifications_update_now.to_s+' Plants that need' : 'is 1 Plant that needs'} to be Updated 
+                          - if notifications_plant_now > 0
+                            li style="background:black; text-align:left; padding-left:10px; padding-top:5px; padding-bottom:5px; margin-bottom:1px; width:100%"
+                              a href="javascript:void(0)" style="font-size:13px; display:inline; text-decoration:none; color:white; line-height:0px;"
+                                i.fa.fa-exclamation-circle style="color:red; padding-right:5px;"
+                                | #{notifications_plant_now} Paid #{notifications_plant_now > 1 ? "Plants haven't been Planted" : "Plant hasn't been Planted"} yet 
+                        - else
+                          li style="background:black; text-align:left; padding-left:10px; padding-top:5px; padding-bottom:5px; width:100%"
+                            div style="font-size:13px; display:inline; color:grey;"
+                              | No Notifications 
                   li
                     a.facebook-color href="https://www.facebook.com/haryalipk/" 
                       i.fa.fa-facebook aria-hidden="true" 
                   li
                     a.twitter-color href="https://twitter.com/HaryaliPk" 
-                      i.fa.fa-twitter aria-hidden="true" 
+                      i.fa.fa-twitter aria-hidden="true"
                   /li
                     a.google-color href="javascript:void(0)" 
                       i.fa.fa-google-plus aria-hidden="true" 
@@ -77,6 +103,9 @@ html
                     a href="http://haryali.pk/blog"  Blog
                   li
                     a href="http://haryali.pk/contact-us"  Contact Us
+
+                  
+
                   - if current_user && current_user.role == 'admin'
                     li
                       a href=leads_path
@@ -113,14 +142,7 @@ html
                         .sticky-top.nav-btn 
                           button.btn.btn-success.color-green.btn-sm type="button" Own a Tree
     #page-header.content-contrast
-      .breadcrumb-container
-        .container
-          .row
-            .col-md-12
-              nav.breadcrumb
-                a.breadcrumb-item href="http://haryali.pk"  Home
-                span.breadcrumb-item.active Plant a Tree
-      == render 'layouts/messages'
+      
 
     section.section
       .container

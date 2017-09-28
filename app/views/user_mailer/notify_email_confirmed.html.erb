@@ -1,0 +1,11 @@
+<h1>Dear Haryali user, <%= @lead.name %></h1>
+<p>
+  On <strong><%= @lead.created_at.strftime("%d-%m-%Y") %></strong>, you requested the plantation of <strong><%= @lead.quantity %> "<%= @lead.plant.name %>"</strong> at <strong><%= @lead.location.address %></strong>.<br/>
+</p>
+<p>
+  This email is to inform you that your request has been confirmed.<br/>
+</p>
+<p>Thank you for using Haryali and have a great day!</p>
+<%# haryali logo %>
+<%# haryali contact info %>
+<%# this is an auto generated email? %>

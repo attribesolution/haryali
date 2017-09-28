@@ -1,2 +1,13 @@
-| app > views > haryali > index.html.slim
-/= @locations
+.row
+  .col-md-3 style=("padding:0px;")
+    ul.sidebar-nav
+      li.sidebar-brand
+        | Haryali Locations
+      - @locations.each do |location|
+        li#location lat=location.lat lng=location.lng
+          - if location.try(:optional_address)
+            a href="javascript:void(0)" #{location.optional_address.truncate(25)}
+          - else
+            a href="javascript:void(0)" #{location.address.split(',')[0].truncate(25)}
+  .col-md-9 style=("padding:0px;")
+    .map style=("width:100%; height:97.5%;")

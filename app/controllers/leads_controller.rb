@@ -19,7 +19,7 @@ class LeadsController < ApplicationController
     @locations = HaryaliLocation.select(:id, :address, :current, :target, :optional_address).where(is_active: :true).order(:created_at)
     if @wizard.save
       if User.where(email: @lead.email).count == 0
-        user = User.new(email: @lead.email, password: 'password', password_confirmation: 'password', role: 0)
+        user = User.new(email: @lead.email, password: 'password', password_confirmation: 'password', role: 0, name: @lead.name)
         user.skip_confirmation!
         user.save
         UserMailer.welcome_email(@lead).deliver
@@ -42,7 +42,7 @@ class LeadsController < ApplicationController
   # end
 
   def index
-    if Lead.all.size > 0
+    if Lead.count > 0
       @leads = true
     else
       @leads = false
@@ -56,8 +56,13 @@ class LeadsController < ApplicationController
   def update_status
     lead = Lead.find(params[:id])
     if lead.update_column(:status, params[:status])
-      if params[:status] == 'Planted'
-        UserMailer.update_email(lead).deliver
+      puts case params[:status]
+      when 'Confirmed'
+        UserMailer.notify_email_confirmed(lead).deliver
+      when 'Paid'
+        UserMailer.notify_email_paid(lead).deliver
+      when 'Planted'
+        UserMailer.notify_email_planted(lead).deliver
       end
     end
   end
@@ -65,6 +70,7 @@ class LeadsController < ApplicationController
   # DELETE /leads/1
   def destroy
     coupon = @lead.coupon
+    user = @lead.email
     if @lead.destroy
       coupon.is_active = true
       coupon.save

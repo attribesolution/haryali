@@ -19,4 +19,6 @@
 //= require bootstrap-sprockets
 //= require rails_script
 //= require cocoon
+//= require greensock/TimelineLite
+//= require greensock/TweenMax
 //= require_tree .

@@ -43,7 +43,7 @@ class App.Leads extends App.Base
       $('.invalid').hide()
       $('.status').hide()
 
-    if $('.active').length > 2
+    if $('.active').length > 1
       if $('#location_lat').val() == ""
         $('#location_lat').change ->
           $('#leads_submit')[0].removeAttribute 'disabled'
@@ -66,7 +66,7 @@ class App.Leads extends App.Base
         streetViewControl: false)
       window.geocoder = new google.maps.Geocoder 
       # if page loads into haryali location 
-      if $('.active')[2].firstChild.nodeValue.split(' ')[0] == 'Haryali'
+      if $('.active')[1].firstChild.nodeValue.split(' ')[0] == 'Haryali'
         $('.status').html("Please select a location")
         $('.status').show()
       
@@ -100,7 +100,7 @@ class App.Leads extends App.Base
         return
 
     window.onload = ->
-      if $('.active').length > 2 
+      if $('.active').length > 1 
         $('.checkout-step1').addClass('visited-step')
         $('.checkout-step2').addClass('current-step')
         if $("#autocomplete_address").val().length == 0
