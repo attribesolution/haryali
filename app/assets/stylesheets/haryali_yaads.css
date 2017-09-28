@@ -36,7 +36,7 @@
   min-width: 100%;
   max-width: 100%;
   width: inherit;
-  color: 77a43e;
+  color: #77a43e;
   font-weight: bold;
 }
 .haryali-text {
@@ -76,7 +76,7 @@
     z-index: 10;
     padding: 10% 2% 4% 2%;
     left: 12%;
-    margin-left: 0;
+    margin-left: 0px;
     opacity: 0.85;
 }
 .yaad-form form h2 {
