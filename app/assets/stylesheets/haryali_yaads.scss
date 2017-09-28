@@ -1,22 +1,20 @@
-.yaad{
+.yaad {
   /*margin: 0;*/
   background-size: 100% 100%;
   background-repeat: no-repeat;
- 
   /*object-fit: fill;*/
-  background-image: url(/assets/bg1.jpg);
+  background-image: image-url("bg1.jpg");
   background-attachment: scroll;
   padding-bottom: 120px;
   margin-bottom: -80px;
   margin-left: -20%;
-   margin-right: -20%;
+  margin-right: -20%;
   background-position: center center;
-   
- 
 }
+
 .banner {
   font-size: 16px;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255, 255, 255, 0.8);
   position: relative;
   text-align: center;
   margin-top: -100px;
@@ -27,7 +25,8 @@
   padding-left: 65%;
   padding-right: 65%;
 }
-.banner-text h2{
+
+.banner-text h2 {
   font-size: 40px;
   margin: 0 auto;
   width: 100%;
@@ -39,6 +38,7 @@
   color: #77a43e;
   font-weight: bold;
 }
+
 .haryali-text {
   color: #77a43e;
   font-weight: bold;
@@ -47,6 +47,7 @@
   /*margin-left: 460px;*/
   font-size: 35;
 }
+
 .haryali-p {
   font-size: 15px;
   color: #000000;
@@ -54,11 +55,13 @@
   /*width: 550px;*/
   /*margin-left: 330px;*/
 }
-.price-text{
+
+.price-text {
   color: 242328;
   width: 5%;
 }
-.btn-yaad{
+
+.btn-yaad {
   background: gray;
   color: #f1f1f1;
   margin-bottom: 0;
@@ -66,106 +69,103 @@
 
 /*Form */
 
-
 .yaad-form form {
-    background: #faf5f3;
-    width: 24%;
-    margin-top: 15%;
-    margin-bottom: 50px;
+  background: #faf5f3;
+  width: 24%;
+  margin-top: 15%;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 10;
+  padding: 10% 2% 4% 2%;
+  left: 12%;
+  margin-left: 0px;
+  opacity: 0.85;
+  h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 16px;
+    color: #2f1f1e;
+    letter-spacing: 0.061em;
+    margin-top: -5%;
+    margin-bottom: 5%;
+    width: 100%;
+    &.success {
+      color: #356e64;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+    }
+  }
+  p.success-dialog {
+    margin-top: -150px;
+    color: #356e64;
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 1.8em;
+    text-transform: uppercase;
+    a {
+      color: #9d775f;
+      text-decoration: none;
+      transition: 0.8s all ease;
+      &:hover {
+        color: #c08159;
+        transition: 0.4s all ease;
+      }
+    }
+  }
+  input {
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    box-shadow: none;
+    appearance: none;
+    border: 1px solid #77a43e;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 11px;
     position: relative;
-    z-index: 10;
-    padding: 10% 2% 4% 2%;
-    left: 12%;
-    margin-left: 0px;
-    opacity: 0.85;
-}
-.yaad-form form h2 {
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 16px;
-  color: #2f1f1e;
-  letter-spacing: 0.061em;
-  margin-top: -5%;
-  margin-bottom: 5%;
-  width: 100%;
-
-}
-.yaad-form form h2.success {
-  color: #356e64;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-}
-.yaad-form form p.success-dialog {
-  margin-top: -150px;
-  color: #356e64;
-  letter-spacing: 0.02em;
-  text-align: center;
-  line-height: 1.8em;
-  text-transform: uppercase;
-}
-.yaad-form form p.success-dialog a {
-  color: #9d775f;
-  text-decoration: none;
-  transition: 0.8s all ease;
-}
-.yaad-form form p.success-dialog a:hover {
-  color: #c08159;
-  transition: 0.4s all ease;
+    z-index: 500;
+    letter-spacing: 0.06em;
+    &:focus {
+      border: 1px solid #77a43e;
+      outline: none;
+      appearance: none;
+    }
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
+  }
+  .submit {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+    z-index: 200;
+    letter-spacing: 0.06em;
+    text-align: center;
+    cursor: pointer;
+    background: #87ba45;
+    color: #fff;
+    width: 101%;
+    transition: 0.8s all ease;
+    &:hover {
+      background: green;
+      transform: translateY(1px);
+      transition: 0.4s all ease;
+    }
+  }
 }
 
-.yaad-form form input {
-  width: 100%;
-  background: #fff;
-  text-align: center;
-  margin-bottom: 10px;
-  box-shadow: none;
-  appearance: none;
-  border: 1px solid #77a43e;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  text-transform: uppercase;
-  font-size: 11px;
-  position: relative;
-  z-index: 500;
-  letter-spacing: 0.06em;
-
-}
-.yaad-form form input:focus {
-  border: 1px solid #77a43e;
-  outline: none;
-  appearance: none;
-}
-.yaad-form form input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
-}
-.yaad-form form .submit {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border: none;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: bold;
-  position: relative;
-  z-index: 200;
-  letter-spacing: 0.06em;
-  text-align: center;
-  cursor: pointer;
-  background: #87ba45;
-  color: #fff;
-  width: 101%;
-  transition: 0.8s all ease;
-}
-.yaad-form form .submit:hover {
-  background: green;
-  transform: translateY(1px);
-  transition: 0.4s all ease;
-}
 #firstname {
   margin-top: 20px;
 }
-.circle {
 
+.circle {
   padding: 15px;
   height: 55px;
   width: 55px;
@@ -178,19 +178,22 @@
   clear: both;
   opacity: 0.8;
 }
+
 .circle-quill {
   border: 1px solid #77a43e;
   background: #fff;
-
 }
+
 .circle-paper {
   border: 1px solid #9ac0ba;
   background: #5d978e;
   padding-left: 12px;
 }
+
 .submit-under, .loader, .loader2, .circle-paper, p.success-dialog, h2.success {
   visibility: hidden;
 }
+
 .submit-under {
   background: #8c6e7a;
   width: 291px;
@@ -200,6 +203,7 @@
   position: absolute;
   z-index: -1;
 }
+
 .loader, .loader2 {
   position: absolute;
   z-index: -5;
@@ -208,11 +212,12 @@
 }
 
 .name-plaque {
-    float: right;
-    margin-top: -20.7%;
-    padding-left: 52%;
-    width: 100%;
+  float: right;
+  margin-top: -20.7%;
+  padding-left: 52%;
+  width: 100%;
 }
+
 .name-text {
   text-transform: capitalize;
   font-size: 25px;
@@ -224,12 +229,11 @@
 
 /* Form end */
 
-@media(max-width: 600px) and (min-width: 400px)
- {
+@media (max-width: 600px) and (min-width: 400px) {
   body {
     background-size: 100% 100%;
   }
-  .haryali-text{
+  .haryali-text {
     font-size: 28px;
     text-align: center;
   }
@@ -240,7 +244,7 @@
   }
 }
 
-@media(max-width: 800px) and (min-width: 610px) {
+@media (max-width: 800px) and (min-width: 610px) {
   body {
     background-size: 100% 100%;
   }
@@ -251,31 +255,31 @@
   .haryali-p {
     font-size: 20px;
     text-align: center;
-   
   }
 }
-
 
 /*Form End*/
 
 /* Name Plaque */
+
 #name_plaque {
-  color: #2f1902 ;
+  color: #2f1902;
   font-family: "Latin Modern Mono";
-}
-  @font-face {
-  font-family: "Latin Modern Mono";
-  src:url(/assets/fonts/lmmono10-regular.otf) format("truetype");
 }
 
-@media screen and (max-width: 520px) and (min-width: 320px)
-{
-   body {
+@font-face {
+  font-family: "Latin Modern Mono";
+  src: url(/assets/fonts/lmmono10-regular.otf) format("truetype");
+}
+
+
+@media screen and (max-width: 520px) and (min-width: 320px) {
+  body {
     background-size: 100% 100%;
   }
   .banner {
     font-size: 16px;
-    background-color: rgba(255,255,255,0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     position: relative;
     text-align: center;
     margin-top: -100px;
@@ -284,9 +288,8 @@
     margin-left: -63%;
     margin-right: -47%;
     padding-left: 78%;
-   
-}
-   .yaad-form form {
+  }
+  .yaad-form form {
     background: #faf5f3;
     width: 65%;
     margin-top: 12%;
@@ -296,9 +299,8 @@
     padding: 27% 5% 10% 5%;
     left: 17%;
     opacity: 0.85;
-}
-    .haryali-text {
-          font-size: 33px;
-
-    }
+  }
+  .haryali-text {
+    font-size: 33px;
+  }
 }
