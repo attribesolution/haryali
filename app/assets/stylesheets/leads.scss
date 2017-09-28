@@ -3,37 +3,99 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* Smartphones (portrait and landscape) ----------- */
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-@media only screen and (min-device-width : 320px) and (max-device-width :520px) {
 
-.form-side {
-  max-width: 100%;
-  margin:0px auto!important;
-  width:80%;
-}
-.vertical-center {
-    padding-left: 20px;
-    padding-right: 20px;
+@media only screen and (min-device-width : 320px) and (max-device-width :600px) {
+
     
-  }
-.section {
-    padding: 40px 0;
-}
-.h1-green{
-text-align:center ;
-margin: 0%;
-padding: 0%
+.form-side {
+    margin-left: 3% !important;
+    width: 38% !important;
+    margin-top: -5%;
 }
 
-.h1 {
-  margin:0%;
-  }
+.btn-position-next {
+    margin-left: 21% !important;
+    max-width: 100%;
+    background-color: #8ac53a;
+    width: 60% !important;
+    height: 10%;
+}
 
-._center{
-  margin:0%;
+.vertical-center p{
+    font-size: 12px;
+     margin-left:-10px;
+}
+.input-lg {
+    max-width: 170px;
+    margin-left: -12px;
+}
+.font-weight-bold {
+    margin-top: -29%;
+    font-size: 14px;
+    margin-left: 86% !important;
+    width: 100%;
+}
+ .h4 {
+    font-size: 15px;
+    text-align: center;
+    margin-left: -12px;
+    padding-right: 1px;
+    margin-top: -6%;
+}
+ .information-div h4 {
+ font-size: 14px;
+ }
+ .tree-selection h4 {
+ font-size: 14px;
+
+ }
+ .checkbox label {
+ font-size: 13px;
+ }
+.total_price {
+    float: left;
+    margin-left: 98% !important;
+    margin-top: -29% !important;
+    font-size: 17px !important;
+}
+.div-donation {
+    border: 1px solid #e8e8e8;
+    margin: 15px 0 0;
+    padding: 8px !important;
+    border-radius: 5px;
+    margin-bottom: 5%;
+    display: block;
+}
+.form-side {
+    margin-left: 2% !important;
+    width: 42%;
+    
+}
+.toggle-responsive {
+    margin-top: -20% !important;
+    margin-left: -55% !important;
+    width: 116% !important;
+    text-align: center;
+}
+.btn-position-back {
+   
+    text-align: center;
+    font-size: 12px;
+    margin-left: 6% !important;
+    width: 40% !important;
+    font-size: 17px;
+}
+.form-quantity {
+    margin-left: -20% !important;
+    width: 80% !important;
+    margin-bottom: 10%;
+}
+.form-quantity label {
+
+  margin-left:23%;
+  }
+.total_price {
+  margin-left: 10%;
 }
 
 }
