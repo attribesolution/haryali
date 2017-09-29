@@ -9,6 +9,20 @@ class App.HaryaliYaads extends App.Base
 
   index: =>
     $(document).ready ->
+    
+    
+
+      
+      text_max = 15
+      $('#textarea_feedback').html text_max + ' characters remaining'
+      $('#lead_dedicate_name').keyup ->
+        text_length = $('#lead_dedicate_name').val().length
+        text_remaining = text_max - text_length
+        if text_remaining >= 0
+          $('#textarea_feedback').html text_remaining + ' characters remaining'
+        return
+        return
+      
       tl = new TimelineLite
       form = $('.sub-form')
       sub = $('.submit-under')
@@ -43,6 +57,12 @@ class App.HaryaliYaads extends App.Base
         else
           $('#name_plaque')[0].innerText = ''
         return
+
+
+
+
+
+      
 
       $('.submit').on 'click', (e) ->
         e.preventDefault
@@ -196,3 +216,6 @@ class App.HaryaliYaads extends App.Base
 
   edit: =>
     return
+
+
+  
