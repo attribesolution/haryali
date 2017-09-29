@@ -1,6 +1,6 @@
 .row
   .col-md-3 style=("padding:0px;")
-    ul.sidebar-nav
+    ul#sidebar.sidebar-nav
       li.sidebar-brand
         | Haryali Locations
       - @locations.each do |location|
@@ -10,4 +10,6 @@
           - else
             a href="javascript:void(0)" #{location.address.split(',')[0].truncate(25)}
   .col-md-9 style=("padding:0px;")
-    .map style=("width:100%; height:97.5%;")
+    .map style=("width:118%; height:1px; overflow: hidden; margin-left: -9%; margin-right: 4%; margin-top: -10%; ")
+
+ 

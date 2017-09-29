@@ -25,6 +25,9 @@ a:hover {
 .section {
     padding: 80px 0;
 }
+.row, section {
+    margin-right: 0px !important;
+}
 .section.border-section {
     border-top: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;

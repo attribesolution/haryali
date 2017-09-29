@@ -1,29 +1,29 @@
 .yaad {
-  /*margin: 0;*/
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  /*object-fit: fill;*/
-  background-image: image-url("bg1.jpg");
-  background-attachment: scroll;
-  padding-bottom: 120px;
-  margin-bottom: -80px;
-  margin-left: -20%;
-  margin-right: -20%;
-  background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(/assets/bg1-0e4a2c9bea1b47cf839b321ad3db20f8159515a938b528e9e3d74462814068cf.jpg);
+    background-attachment: scroll;
+    padding-bottom: 120px;
+    margin-bottom: -80px;
+    margin-left: -19%;
+    margin-right: -9.5%;
+    background-position: center center;
+    width: 128.1.2% !important;
 }
 
 .banner {
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  position: relative;
-  text-align: center;
-  margin-top: -100px;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  margin-left: -70%;
-  margin-right: -70%;
-  padding-left: 65%;
-  padding-right: 65%;
+    font-size: 16px;
+    background-color: rgba(255,255,255,0.8);
+    position: relative;
+    text-align: center;
+    margin-top: -100px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: -56%;
+    padding-left: 42%;
+    overflow-x: hidden;
+    width: 156.1%;
+    overflow-y: hidden;
 }
 
 .banner-text h2 {
@@ -40,20 +40,19 @@
 }
 
 .haryali-text {
-  color: #77a43e;
-  font-weight: bold;
-  width: 100%;
-  /*vertical-align: middle;*/
-  /*margin-left: 460px;*/
-  font-size: 35;
+    color: #77a43e;
+    font-weight: bold;
+    width: 100%;
+    margin-left: 9%;
+    font-size: 35px;
 }
 
 .haryali-p {
-  font-size: 15px;
-  color: #000000;
-  text-align: center;
-  /*width: 550px;*/
-  /*margin-left: 330px;*/
+    font-size: 15px;
+    color: #000000;
+    text-align: center;
+    width: 550px;
+    margin-left: 42%;
 }
 
 .price-text {
@@ -62,9 +61,10 @@
 }
 
 .btn-yaad {
-  background: gray;
-  color: #f1f1f1;
-  margin-bottom: 0;
+    background: gray ;
+    color: #f1f1f1;
+    margin-bottom: 0;
+    margin-left: 18%;
 }
 
 /*Form */
@@ -77,9 +77,11 @@
   position: relative;
   z-index: 10;
   padding: 10% 2% 4% 2%;
-  left: 12%;
+  left: 15%;
+  line-height:0px;
   margin-left: 0px;
   opacity: 0.85;
+  line-height: 0px;
   h2 {
     text-transform: uppercase;
     text-align: center;
@@ -213,18 +215,32 @@
 
 .name-plaque {
   float: right;
-  margin-top: -20.7%;
+  margin-top: -22.7%;
   padding-left: 52%;
   width: 100%;
 }
 
 .name-text {
-  text-transform: capitalize;
-  font-size: 25px;
-  font-weight: bold;
-  /*color: #fff;*/
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    color: #2b1503;
+    margin-top: -2%;
+}
+
+#textarea_feedback {
+  color: #77a43e;
+  font-size: 14px;
   text-align: center;
-  color: #2b1503;
+  font-weight: 600;
+  display: none;
+}
+
+.section {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 /* Form end */
@@ -301,6 +317,24 @@
     opacity: 0.85;
   }
   .haryali-text {
-    font-size: 33px;
+    font-size: 32px !important;
+    margin-left: -8% !important;
+  }
+ .haryali-p {
+    font-size: 12px;
+    color: #000000;
+    text-align: center;
+    margin-left: -6%;
+    padding: 5px;
+    width: 322px;
+}
+  .btn-yaad {
+    background: gray;
+    color: #f1f1f1;
+    margin-bottom: 0;
+    margin-left: -12%;
+  }
+  #header {
+    height: 96px;
   }
 }
