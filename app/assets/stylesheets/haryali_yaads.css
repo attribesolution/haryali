@@ -294,7 +294,7 @@
     opacity: 0.85;
 }
     .haryali-text {
-          font-size: 33px;
+          font-size: 33px !important;
 
     }
 }
