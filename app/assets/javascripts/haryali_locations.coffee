@@ -31,6 +31,9 @@ class App.HaryaliLocations extends App.Base
 
     count = 0
     window.onload = ->
+      #$('#sidebar')[0].clientHeight
+      console.log $('.map')[0].style.height
+      $('.map')[0].style.height = $('#sidebar')[0].clientHeight+'px'
       while $('#location')[0] != undefined
         $('#location')[0].id = 'location' + count
         $('#location' + count)[0].onclick = ZoomLocation

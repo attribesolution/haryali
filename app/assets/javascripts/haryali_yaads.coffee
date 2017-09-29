@@ -9,10 +9,6 @@ class App.HaryaliYaads extends App.Base
 
   index: =>
     $(document).ready ->
-    
-    
-
-      
       text_max = 15
       $('#textarea_feedback').html text_max + ' characters remaining'
       $('#lead_dedicate_name').keyup ->
@@ -21,8 +17,6 @@ class App.HaryaliYaads extends App.Base
         if text_remaining >= 0
           $('#textarea_feedback').html text_remaining + ' characters remaining'
         return
-        return
-      
       tl = new TimelineLite
       form = $('.sub-form')
       sub = $('.submit-under')
@@ -51,18 +45,15 @@ class App.HaryaliYaads extends App.Base
       TweenMax.set $('.success, .success-dialog'), opacity: 0
       if $('#lead_dedicate_name').val().length != 0
         $('#name_plaque')[0].innerText = '"'+$('#lead_dedicate_name').val()+'"'
+        $('#textarea_feedback')[0].style.display = "block"
       $('#lead_dedicate_name').bind 'input', ->
         if ($(this).val().length > 0)
           $('#name_plaque')[0].innerText = '"'+$('#lead_dedicate_name').val()+'"'
+          $('#textarea_feedback')[0].style.display = "block"
         else
           $('#name_plaque')[0].innerText = ''
+          $('#textarea_feedback')[0].style.display = "none"
         return
-
-
-
-
-
-      
 
       $('.submit').on 'click', (e) ->
         e.preventDefault

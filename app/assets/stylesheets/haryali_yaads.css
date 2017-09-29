@@ -6,7 +6,7 @@
     padding-bottom: 120px;
     margin-bottom: -80px;
     margin-left: -19%;
-    margin-right: -19%;
+    margin-right: -18.7%;
     background-position: center center;
 }
 .banner {
@@ -36,7 +36,7 @@
     font-weight: bold;
     width: 100%;
     margin-left: -7px;
-    font-size: 35;
+    font-size: 35px;
 }
 .haryali-p {
     font-size: 15px;
@@ -205,18 +205,25 @@
     width: 100%;
 }
 .name-text {
-  text-transform: capitalize;
-  font-size: 25px;
-  font-weight: bold;
-  /*color: #fff;*/
-  text-align: center;
-  color: #2b1503;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    color: #2b1503;
+    margin-top: 2%;
+
 }
 #textarea_feedback {
   color: #77a43e;
   font-size: 14px;
   text-align: center;
   font-weight: 600;
+  display: none;
+}
+.section{
+  margin-left: 0px;
+  margin-right: 0px;
 }
 /* Form end */
 
@@ -295,6 +302,26 @@
 }
     .haryali-text {
           font-size: 33px !important;
+          margin-left: -22% !important;
 
     }
+    .haryali-p {
+    font-size: 12px;
+    color: #000000;
+    text-align: center;
+    margin-left: -2%;
+    padding: 5px;
+    width: 329px;
+}
+.btn-yaad {
+    background: gray;
+    color: #f1f1f1;
+    margin-bottom: 0;
+    margin-left: -45%;
+}
+#header {
+
+  height: 96px;
+
+}
 }
