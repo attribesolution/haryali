@@ -184,7 +184,21 @@ html
               br/
               a.text-color href="mailto:info@haryali.pk"  info@haryali.pk
           .col-md-12.col-lg-5
-            | &nbsp;
+            div
+              h5.footer-title Subscribe For Our Newsletter
+              div
+                form.es_widget_form data-es_form_id="es_widget_form" 
+                  .es_lablebox
+                    label.es_widget_form_email Email *
+                  .es_textbox
+                    input#es_txt_email.es_textbox_class maxlength="225" name="es_txt_email" onkeypress=("if(event.keyCode==13) es_submit_page(event),'http://haryali.pk'") type="text" value="" /
+                  .es_button
+                    input#es_txt_button.es_textbox_button.es_submit_button name="es_txt_button" onclick=("return es_submit_page(event),'http://haryali.pk'") type="button" value="Subscribe" /
+                  #es_widget_msg.es_msg
+                    span#es_msg
+                  input#es_txt_name name="es_txt_name" type="hidden" value="" /
+                  input#es_txt_group name="es_txt_group" type="hidden" value="" /
+
       .footer-bottom
         .container
           .row
@@ -213,4 +227,4 @@ html
                     i.fa.fa-instagram
 
 
-    = include_rails_script
+= include_rails_script

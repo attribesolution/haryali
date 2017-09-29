@@ -8,22 +8,22 @@
     margin-left: -19%;
     margin-right: -9.5%;
     background-position: center center;
-    width: 139% !important;
+    width: 128.1.2% !important;
 }
 
 .banner {
-  font-size: 16px;
-  background-color: rgba(255, 255, 255, 0.8);
-  position: relative;
-  text-align: center;
-  margin-top: -100px;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  margin-left: -56%;
-  padding-left: 42%;
-  overflow-x: hidden;
-  width: 156.1%;
-  overflow-y: hidden;
+    font-size: 16px;
+    background-color: rgba(255,255,255,0.8);
+    position: relative;
+    text-align: center;
+    margin-top: -100px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-left: -56%;
+    padding-left: 42%;
+    overflow-x: hidden;
+    width: 156.1%;
+    overflow-y: hidden;
 }
 
 .banner-text h2 {
@@ -40,19 +40,19 @@
 }
 
 .haryali-text {
-  color: #77a43e;
-  font-weight: bold;
-  width: 100%;
-  margin-left: 10%;
-  font-size: 35px;
+    color: #77a43e;
+    font-weight: bold;
+    width: 100%;
+    margin-left: 9%;
+    font-size: 35px;
 }
 
 .haryali-p {
-  font-size: 15px;
-  color: #000000;
-  text-align: center;
-  width: 550px;
-  margin-left: 43%;
+    font-size: 15px;
+    color: #000000;
+    text-align: center;
+    width: 550px;
+    margin-left: 42%;
 }
 
 .price-text {
@@ -61,10 +61,10 @@
 }
 
 .btn-yaad {
-  background: gray;
-  color: #f1f1f1;
-  margin-bottom: 0;
-  margin-left: 23%;
+    background: gray ;
+    color: #f1f1f1;
+    margin-bottom: 0;
+    margin-left: 18%;
 }
 
 /*Form */
@@ -78,8 +78,10 @@
   z-index: 10;
   padding: 10% 2% 4% 2%;
   left: 15%;
+  line-height:0px;
   margin-left: 0px;
   opacity: 0.85;
+  line-height: 0px;
   h2 {
     text-transform: uppercase;
     text-align: center;
@@ -219,13 +221,13 @@
 }
 
 .name-text {
-  text-transform: capitalize;
-  font-size: 25px;
-  font-weight: bold;
-  color: #fff;
-  text-align: center;
-  color: #2b1503;
-  margin-top: 2%;
+    text-transform: capitalize;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    color: #2b1503;
+    margin-top: -2%;
 }
 
 #textarea_feedback {
@@ -316,21 +318,21 @@
   }
   .haryali-text {
     font-size: 32px !important;
-    margin-left: -11% !important;
+    margin-left: -8% !important;
   }
-  .haryali-p {
+ .haryali-p {
     font-size: 12px;
     color: #000000;
     text-align: center;
-    margin-left: -11%;
+    margin-left: -6%;
     padding: 5px;
     width: 322px;
-  }
+}
   .btn-yaad {
     background: gray;
     color: #f1f1f1;
     margin-bottom: 0;
-    margin-left: -16%;
+    margin-left: -12%;
   }
   #header {
     height: 96px;

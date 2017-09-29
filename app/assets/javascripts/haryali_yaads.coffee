@@ -9,13 +9,13 @@ class App.HaryaliYaads extends App.Base
 
   index: =>
     $(document).ready ->
-      text_max = 15
-      $('#textarea_feedback').html text_max + ' characters remaining'
+      text_max = 14
+      $('#textarea_feedback').html '(' + text_max + ' /' +' 14)'
       $('#lead_dedicate_name').keyup ->
         text_length = $('#lead_dedicate_name').val().length
         text_remaining = text_max - text_length
         if text_remaining >= 0
-          $('#textarea_feedback').html text_remaining + ' characters remaining'
+          $('#textarea_feedback').html  '(' + text_remaining + ' /' +' 14)'
         return
       tl = new TimelineLite
       form = $('.sub-form')
