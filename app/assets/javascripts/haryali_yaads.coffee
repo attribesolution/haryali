@@ -41,7 +41,7 @@ class App.HaryaliYaads extends App.Base
         if ($(this).val().length > 0)
           $('#name_plaque')[0].innerText = '"'+$('#lead_dedicate_name').val()+'"'
         else
-          $('#name_plaque')[0].innerText = '"  "'
+          $('#name_plaque')[0].innerText = ''
         return
 
       $('.submit').on 'click', (e) ->

@@ -11,7 +11,7 @@ body.my-plants-body
           - unless lead.plant.nil?
             img src=lead.plant.image
           - else
-            img src="/assets/11.jpg"
+            = image_tag "11.jpg"
         aside
           .my-plant-info
             table
@@ -25,12 +25,20 @@ body.my-plants-body
                   td Neem Tree
               tr
                 td Paid:
-                td #{lead.status == 'Paid' ? 'Yes' : 'No'}
+                - case lead.status
+                  - when "Placed"
+                    td No
+                  - when "Confirmed"
+                    td No
+                  - when "Paid"
+                    td Yes
+                  - when "Planted"
+                    td Yes
               tr
                 td Status:
                 td #{lead.status}
         .location-plant.pull-right
-          img src="assets/icon2.png" style=("width: 45px; height: 50px; margin-top: -30px; margin-left: 34px") 
+          = image_tag "icon2.png" style: "width: 45px; height: 50px; margin-top: -30px; margin-left: 34px" 
           - unless lead.location.nil?
             p #{lead.location.address.split(',')[0].truncate(15)}
           - else 
@@ -44,71 +52,3 @@ body.my-plants-body
         .div-footer
           .created-on.pull-right
             p Created On: #{lead.created_at.strftime("%-d-%b-%Y")}
-
-/body.my-plants-body
-  .banner-plants
-    h1.my-plants-text AISHA ANWAR
-    p.my-plants-p You have donated only 2 plants so far, donate more for the sake of charity.
-    button.rounded.plants-btn-color.my-plants-btn.btn type="button"  Donate More!
-    .my-plants
-      .div-header
-        p Updated 3 days ago
-      .img-plant
-        img src="/assets/11.jpg" /
-      aside
-        .my-plant-info
-          table
-            tr
-              th.in-memory-head colspan="2"  In Memory Of "Sadia Anwar"
-            tr
-              td Plants:
-              td Neem Tree
-            tr
-              td Paid:
-              td Yes
-            tr
-              td Status:
-              td Confirmed
-      .price-plant
-        h3
-          | Rupees
-        p 500/-
-      .location-plant.pull-right
-        img src="assets/icon2.png" style=("width: 45px; height: 50px; margin-top: -30px; margin-left: 34px") /
-        p Ghoura Ground
-      .more-details
-        button.rounded.plants-btn-color.btn.more-detais-btn type="button"  More Details
-      .div-footer
-        .created-on.pull-right
-          p Created On: 6-Aug-2017
-    .my-plants
-      .div-header
-        p Updated 3 days ago
-      .img-plant
-        img src="assets/11.jpg" /
-      aside
-        .my-plant-info
-          table
-            tr
-              th.in-memory-head colspan="2"  In Memory Of "Sadia Anwar"
-            tr
-              td Plants:
-              td Neem Tree
-            tr
-              td Paid:
-              td Yes
-            tr
-              td Status:
-              td Confirmed
-      .location-plant.pull-right
-        img src="assets/icon2.png" style=("width: 45px; height: 50px; margin-top: -30px; margin-left: 34px") /
-        p Ghoura Ground
-      .price-plant
-        h3
-          | Rupees
-        p 500/-
-      .more-details
-        button.rounded.plants-btn-color.btn.more-detais-btn type="button"  More Details
-      .div-footer
-        .created-on.pull-right
-          p Created On: 6-Aug-2017
