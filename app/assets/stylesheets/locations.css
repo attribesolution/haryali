@@ -27,20 +27,76 @@ padding: 0%;
   max-width: 100%;
   margin: 0;
 }
+#current_location {
+    font-size: 14px;
+    height: 41px;
+    padding: 6px 11px;
+    color: #7b8b8e;
+    line-height: 1.33;
+    border: 1px solid #ccc;
+    transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    width: 53% !important;
+    margin-left: 4% !important;
+}
+.location-back {
+    margin-right: 28% !important;
+}
 
+.img-responsive {
+    width: 32%;
+    margin-left: 9%;
+    margin-top: -29%;
+}
+.t1 {
+    text-decoration: bold;
+    margin-left: -59%;
+    color: #8ac53a;
+    font-weight: bold;
+    width: 332%;
+    font-size: 33px;
+}
+.thankyou-form {
+    width: 0%;
+    margin-left: -3.3%;
+}
+.t3 {
+    margin-left: -87%;
+    font-size: 12px;
+    font-weight: 10%;
+    color: black;
+    width: 212%;
+    text-align: center;
+}
+.thankyoupage-align {
+    margin-left: 35%;
+    width: 44%;
+    margin-top: -13%;
+}
+.button-center {
+    margin-left: 32%;
+    background-color: #8ac53a;
+}.button-center {
+    margin-left: 32%;
+    background-color: #8ac53a;
+}
+ 
     
 .btn-gray {
   width: 85%;
   max-width: 100%;
   text-align: left;
   font-size: 10px;
+  text-indent: -14px !important;
 }
 .color-active {
-  width: 85%;
-  max-width: 100%;
-  text-align: left;
-  font-size: 10px;
-  text-align: left;
+    width: 80%;
+    max-width: 100%;
+    text-align: left;
+    font-size: 10px;
+    text-align: left;
+    text-indent: -18px !important;
 }
 
 .haryali-location {
@@ -90,11 +146,11 @@ margin-left:0%;
   padding-bottom: 2%;
 
  }
- .map-align {
-  margin-top: 4%;
-  margin-left: 4%;
-  width: 140%;
- }
+.map-align {
+    margin-top: 4%;
+    margin-left: 4%;
+    width: 96% !important;
+}
  .btn-lg {
   margin-right:15%;
  }
