@@ -38,10 +38,11 @@
             strong Status:
           td = @lead.status.capitalize
     - unless @lead.plant.nil?
-      = image_tag @lead.plant.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-45%;"
+      = image_tag @lead.plant.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:12%;"
     - else
-      = image_tag '11.jpg', style:"max-height:400px; float:right; margin-right:-35%; margin-top:-20%;"
-    br
+      = image_tag '11.jpg', style:"max-height:400px; float:right; margin-right:-35%; margin-top:12%;"
+    br    
+}
     br
   - if @lead.updates.any?
     .container.thankyoupage-align
@@ -66,4 +67,5 @@
 - else 
   h1.t1 No Submission found 
 br
-= link_to "Back", :back, class:"btn btn-success btn-lg pull-left"
+= link_to "Back", :back, class:"btn btn-success btn-lg style="margin-top: 12%; margin-left: 33%;"
+
