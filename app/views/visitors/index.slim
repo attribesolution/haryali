@@ -38,7 +38,7 @@ body.my-plants-body
                 td Status:
                 td #{lead.status}
         .location-plant.pull-right
-          = image_tag "icon2.png" style: "width: 45px; height: 50px; margin-top: -30px; margin-left: 34px;" 
+          = image_tag "icon2.png" 
           - unless lead.location.nil?
             p #{lead.location.address.split(',')[0].truncate(15)}
           - else 

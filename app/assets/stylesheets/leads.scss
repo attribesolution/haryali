@@ -66,7 +66,12 @@
     margin-bottom: 5%;
     display: block;
 }
-
+.location-plant img {
+  width: 45px; 
+  height: 50px; 
+  margin-top: -30px; 
+  margin-left: 34px; 
+}
 
 .form-side {
 
@@ -136,6 +141,10 @@
     height: 41px;
     padding-top: 9px !important;
  }
+
+ /* My plants */
+
+ 
 }
 
 /*media queries end */
