@@ -40,7 +40,7 @@
     - unless @lead.plant.nil?
       = image_tag @lead.plant.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:12%;"
     - else
-      = image_tag '11.jpg', style:"max-height:400px; float:right; margin-right:-35%; margin-top:12%;"
+      = image_tag .loc '11.jpg', style:"max-height:400px; float:right; margin-right:-35%; margin-top:-34%;"
     br
     br
   - if @lead.updates.any?
