@@ -1,7 +1,7 @@
 .yaad {
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url(/assets/download.jpg);
+    background-image: url(/assets/download2.jpg);
     background-attachment: scroll;
     padding-bottom: 120px;
     margin-bottom: -80px;
@@ -231,11 +231,13 @@
 }
 
 #textarea_feedback {
-  color: #77a43e;
-  font-size: 14px;
-  text-align: center;
-  font-weight: 600;
-  display: none;
+    color: #77a43e;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 600;
+    display: none;
+    margin-left: 75%;
+    margin-top: -4%;
 }
 
 .section {

@@ -38,9 +38,11 @@
             strong Status:
           td = @lead.status.capitalize
     - unless @lead.plant.nil?
-      = image_tag @lead.plant.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-45%;"
+
+      = image_tag .location-plant @lead.plant.image, 
     - else
-      = image_tag '11.jpg', style:"max-height:400px; float:right; margin-right:-35%; margin-top:-20%;"
+      = image_tag .location-plant '11.jpg', 
+
     br
     br
   - if @lead.updates.any?
