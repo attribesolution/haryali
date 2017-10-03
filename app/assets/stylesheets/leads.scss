@@ -4,13 +4,24 @@
 /* Smartphones (portrait and landscape) ----------- */
 
 
-@media only screen and (min-device-width : 320px) and (max-device-width :600px) {
+@media only screen and (min-device-width : 320px) and (max-device-width :500px) {
 
     
 .form-side-1 {
     margin-left: 3% !important;
     width: 38% !important;
     margin-top: -5%;
+}
+.vertical-center {
+    padding-left: 30px;
+    padding-right: 30px;
+    max-width: 100%;
+    border: 1px solid #8ac53a;
+    padding-top: 0px;
+    vertical-align: center;
+    width: 740px;
+    margin-left: -6%;
+    margin-top: -6%;
 }
 
 .btn-position-next {
@@ -520,9 +531,6 @@ background-color: #8ac53a;
 .vertical-center {
     padding-left: 30px;
     padding-right: 30px;
-    margin: 0 auto;
-        margin-top: 0px;
-        margin-left: auto;
     max-width: 100%;
     border: 1px solid #8ac53a;
     padding-top: 0px;
