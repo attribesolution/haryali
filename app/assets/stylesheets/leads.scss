@@ -517,15 +517,19 @@ background-color: #8ac53a;
   align-items: center;
 
 }
-.vertical-center{
-  padding-left:30px;
-   padding-right:30px;
-   margin: 0 auto;
-    max-width:100%;
+.vertical-center {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto;
+        margin-top: 0px;
+        margin-left: auto;
+    max-width: 100%;
     border: 1px solid #8ac53a;
     padding-top: 0px;
-    vertical-align:center;
-
+    vertical-align: center;
+    width: 740px;
+    margin-left: 29%;
+    margin-top: -6%;
 }
 .vertical-center:before {    
   content: " ";
