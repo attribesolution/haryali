@@ -296,18 +296,17 @@
   body {
     background-size: 100% 100%;
   }
-  .banner {
+ .banner {
     font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.8);
-    position: relative;
-    text-align: center;
-    margin-top: -100px;
-    padding-top: 5%;
-    padding-bottom: 2%;
-    margin-left: -63%;
-    margin-right: -47%;
-    padding-left: 78%;
-  }
+    background-color: rgba(255,255,255,0.8);
+    padding: 17px 94px 16px 140px;
+    min-width: 100%;
+    max-width: 100%;
+    width: 214%;
+    margin-left: -47%;
+    margin-top: 17%;
+    margin-bottom: 13%;
+}
   .yaad-form form {
     background: #faf5f3;
     width: 65%;
