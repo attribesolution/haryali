@@ -38,9 +38,11 @@
             strong Status:
           td = @lead.status.capitalize
     - unless @lead.plant.nil?
+
       = image_tag .location-plant @lead.plant.image, 
     - else
       = image_tag .location-plant '11.jpg', 
+
     br
     br
   - if @lead.updates.any?
@@ -66,5 +68,4 @@
 - else 
   h1.t1 No Submission found 
 br
-= link_to "Back", :back, class:"btn btn-success btn-lg"
-
+= link_to "Back", :back, class:"btn btn-success btn-lg pull-left"
