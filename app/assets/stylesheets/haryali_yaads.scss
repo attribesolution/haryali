@@ -298,13 +298,13 @@
   }
  .banner {
     font-size: 16px;
-    background-color: rgba(255,255,255,0.8);
-    padding: 17px 94px 16px 140px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 17px 4px 16px 0px;
     min-width: 100%;
     max-width: 100%;
-    width: 214%;
-    margin-left: -47%;
-    margin-top: 17%;
+    width: 178%;
+    margin-left: 11%;
+    margin-top: -24%;
     margin-bottom: 13%;
 }
   .yaad-form form {
@@ -318,24 +318,40 @@
     left: 17%;
     opacity: 0.85;
   }
+  .yaad {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(/assets/bg1-0e4a2c9bea1b47cf839b321ad3db20f8159515a938b528e9e3d74462814068cf.jpg);
+    background-attachment: scroll;
+    padding-bottom: 120px;
+    margin-bottom: -80px;
+    margin-left: -19%;
+    margin-right: -9.5%;
+    background-position: center center;
+    width: 128.1 0.2% !important;
+
+}
   .haryali-text {
     font-size: 32px !important;
-    margin-left: -8% !important;
-  }
- .haryali-p {
+    margin-left: -11% !important;
+}
+
+element {
+}
+.haryali-p {
     font-size: 12px;
     color: #000000;
     text-align: center;
-    margin-left: -6%;
+    margin-left: 0%;
     padding: 5px;
     width: 322px;
 }
-  .btn-yaad {
+.btn-yaad {
     background: gray;
     color: #f1f1f1;
     margin-bottom: 0;
-    margin-left: -12%;
-  }
+    margin-left: -21%;
+}
   #header {
     height: 96px;
   }
