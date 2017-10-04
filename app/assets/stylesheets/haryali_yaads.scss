@@ -233,7 +233,7 @@
 
 #textarea_feedback {
     color: #77a43e;
-    font-size: 14px;
+    font-size: 10px;
     text-align: center;
     font-weight: 600;
     display: none;
@@ -298,27 +298,27 @@
   }
  .banner {
     font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 17px 4px 16px 0px;
+    background-color: rgba(255,255,255,0.8);
+    padding: 20px 2px 16px 7px;
     min-width: 100%;
     max-width: 100%;
     width: 178%;
-    margin-left: 11%;
-    margin-top: -24%;
+    margin-left: 0%;
+    margin-top: -29%;
     margin-bottom: 13%;
 }
-  .yaad-form form {
+ .yaad-form form {
     background: #faf5f3;
-    width: 65%;
+    width: 77%;
     margin-top: 12%;
     margin-bottom: 50px;
     position: relative;
     z-index: 10;
     padding: 27% 5% 10% 5%;
-    left: 17%;
+    left: 9%;
     opacity: 0.85;
-  }
-  .yaad {
+}
+.yaad {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url(/assets/bg1-0e4a2c9bea1b47cf839b321ad3db20f8159515a938b528e9e3d74462814068cf.jpg);
@@ -326,14 +326,14 @@
     padding-bottom: 120px;
     margin-bottom: -80px;
     margin-left: -19%;
-    margin-right: -9.5%;
+    margin-right: -6.5%;
     background-position: center center;
     width: 128.1 0.2% !important;
-
 }
   .haryali-text {
     font-size: 32px !important;
-    margin-left: -11% !important;
+     margin: 0%;
+    text-align: center;
 }
 
 element {
@@ -342,15 +342,15 @@ element {
     font-size: 12px;
     color: #000000;
     text-align: center;
-    margin-left: 0%;
-    padding: 5px;
-    width: 322px;
+    margin-left: 2%;
+    padding: 1px 87px 0px -1px;
+    width: 323px;
 }
 .btn-yaad {
     background: gray;
     color: #f1f1f1;
-    margin-bottom: 0;
-    margin-left: -21%;
+    padding: 11px;
+    margin: 0 auto;
 }
   #header {
     height: 96px;
