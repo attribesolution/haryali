@@ -10,13 +10,20 @@ class App.HaryaliYaads extends App.Base
   index: =>
     $(document).ready ->
       text_max = 14
-      $('#textarea_feedback').html '(' + text_max + ' /' +' 14)'
-      $('#lead_dedicate_name').keyup ->
-        text_length = $('#lead_dedicate_name').val().length
-        text_remaining = text_max - text_length
-        if text_remaining >= 0
-          $('#textarea_feedback').html  '(' + text_remaining + ' /' +' 14)'
-        return
+      $('#lead_dedicate_name').focus ->
+        $(this).keyup ->
+           
+        $('#textarea_feedback').html '(' + text_max + ' /' +' 14)'
+        $('#lead_dedicate_name').keyup ->
+          text_length = $('#lead_dedicate_name').val().length
+          text_remaining = text_max - text_length
+          if text_remaining >= 0
+            $('#textarea_feedback').html  '(' + text_remaining + ' /' +' 14)'
+          return
+        $('#lead_dedicate_name').blur ->
+          $('#textarea_feedback').hide()
+          return
+
       tl = new TimelineLite
       form = $('.sub-form')
       sub = $('.submit-under')
