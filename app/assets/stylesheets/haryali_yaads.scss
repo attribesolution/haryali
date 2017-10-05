@@ -93,22 +93,25 @@
     margin-bottom: 5%;
     width: 100%;
     &.success {
-      color: #356e64;
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 0;
+     color: #fff;
+     margin-top: 0;
+     margin-bottom: 0;
+     padding: 0;
+     font-weight: bold;
+     font-size: 27px;
     }
   }
   p.success-dialog {
     margin-top: -150px;
-    color: #356e64;
+    color: #fff;
     letter-spacing: 0.02em;
     text-align: center;
     line-height: 1.8em;
     text-transform: uppercase;
     a {
-      color: #9d775f;
+      color: #c93b3b;
       text-decoration: none;
+      -webkit-transition: 0.8s all ease;
       transition: 0.8s all ease;
       &:hover {
         color: #c08159;
