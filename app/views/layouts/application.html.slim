@@ -96,23 +96,7 @@ html
                   / img.logo-sticky alt="logo" src="img/logo-black.png" /
                   = image_tag "logo-black.png", class: "logo-sticky", alt: "logo"
 
-              .col-md-2.pull-right
-                ul
-                  li.dropdown
-                    a.dropdown-toggle data-toggle="dropdown" href="javascript:void(0)"
-                      | Your Plants
-                  span.glyphicon.glyphicon-log-in
-                    .dropdown-menu style="width: 240px;"
-                      = form_tag session_path(:user), class: 'form' do
-                        .form-group style="font-size:11px;" 
-                          = text_field_tag 'user[email]', '', class: 'form-control form-control-lg', type: 'email', placeholder: 'Enter your Email', style: 'width:210px;'
-                          = password_field_tag 'user[password]', 'password', hidden: true
-                        button.btn.btn-block.btn-sm style='background-color: #8ac53a; color:white; width:210px;padding: 11px; margin-top: -8%; margin-left: 5%; margin-bottom: 7px;' Sign In
-                  li
-                    a href=new_lead_path
-                      .sticky-top.nav-btn 
-                        button.btn.btn-success.color-green.btn-sm type="button" Own a Tree
-                        #page-header.content-contrast
+              
               nav.menu-container
                 ul#menu.sm.me-menu
                   li.active
