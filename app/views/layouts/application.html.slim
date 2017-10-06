@@ -35,6 +35,8 @@ html
                   li
                     i.fa.fa-user-circle-o aria-hidden="true" 
                     | Logged In: #{current_user.email}
+
+                    
               .pull-right
                 ul.header-social.social-icon
                   - if current_user && current_user.role == "admin"
@@ -137,16 +139,11 @@ html
                               = text_field_tag 'user[email]', '', class: 'form-control form-control-lg', type: 'email', placeholder: 'Enter your Email', style: 'width:210px;'
                               = password_field_tag 'user[password]', 'password', hidden: true
                             button.btn.btn-block.btn-sm style='background-color: #8ac53a; color:white; width:210px;padding: 11px; margin-top: -8%; margin-left: 5%; margin-bottom: 7px;' Sign In
-                    li
-                 
-   
-   
-   
-}
-                      a href=new_lead_path
-                        .sticky-top.nav-btn 
-                          button.btn.btn-success.color-green.btn-sm type="button" Own a Tree
-    #page-header.content-contrast
+                      li
+                        a href=new_lead_path
+                          .sticky-top.nav-btn 
+                            button.btn.btn-success.color-green.btn-sm type="button" Own a Tree
+      #page-header.content-contrast
       
 
     section.section
