@@ -37,13 +37,26 @@ class App.HaryaliLocations extends App.Base
       while $('#location')[0] != undefined
         $('#location')[0].id = 'location' + count
         $('#location' + count)[0].onclick = ZoomLocation
+        infowindow = new google.maps.InfoWindow()
         coordinates = 
           lat: parseFloat($('#location' + count).attr 'lat')
           lng: parseFloat($('#location' + count).attr 'lng')
-        new google.maps.Marker(
+        marker = new google.maps.Marker(
           position: coordinates
           icon: 'http://maps.google.com/mapfiles/ms/icons/tree.png'
+          url: "https://maps.google.com/maps?ll=#{coordinates['lat']},#{coordinates['lng']}&z=17&t=p&hl=en-US&gl=US&mapclient=apiv3"
           map: window.map)
+        
+        google.maps.event.addListener(marker, 'mouseover', ->
+          infowindow.setContent("<a class='location_details' href=#{this.url}><center><strong> Get Directions</strong></center></a><br>
+                                  <div class='progress' style='width: 100% !important;'>
+                                    <div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='20' aria-valuemin='0' aria-valuemax='50' style='width:100%;'>
+                                      150 planted.
+                                    </div>
+                                  </div>")
+                                
+          infowindow.open(map, this);
+        )
         count++
 
     ZoomLocation = ->
