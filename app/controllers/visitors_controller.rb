@@ -10,5 +10,6 @@ class VisitorsController < ApplicationController
   # GET /visitors/id 
   def show
     @lead = Lead.find_by_id(params[:id])
+    @timeline_events = @lead.timeline_events
   end
 end

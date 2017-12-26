@@ -61,6 +61,8 @@ class LeadsController < ApplicationController
         UserMailer.notify_email_confirmed(lead).deliver
       when 'Paid'
         UserMailer.notify_email_paid(lead).deliver
+        UserMailer.payment_email_customer(lead).deliver
+        UserMailer.payment_email_accountant(lead).deliver
       when 'Planted'
         UserMailer.notify_email_planted(lead).deliver
       end

@@ -45,6 +45,28 @@
 
     br
     br
+
+  - if @timeline_events.any?
+    section#cd-timeline.cd-container.body-1
+      - @timeline_events.each do |event|
+        .cd-timeline-block
+          
+          br
+          .cd-timeline-img.cd-picture
+            img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
+          .cd-timeline-content
+            .inner-body
+              .head-green
+                h2.heading-timeline.h2_1 #{event.title}
+              p #{event.caption}
+              hr 
+              img#myImg.img1_image alt="Location Image" height="200" src="#{event.image}" width="300"
+              #myModal.modal
+                span.close &times;
+                img#img01.modal-content.img1
+              span.cd-date #{event.created_at.strftime("%B %Y")}
+  
+
   - if @lead.updates.any?
     .container.thankyoupage-align
       h1.t1 Updates 

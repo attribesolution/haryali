@@ -20,8 +20,10 @@ class HaryaliYaadsController < ApplicationController
         user.skip_confirmation!
         user.save
         UserMailer.welcome_email(lead).deliver
+        UserMailer.admin_email(lead).deliver
       else
         UserMailer.welcome_email_user(lead).deliver
+        UserMailer.admin_email(lead).deliver
       end
     else 
       return false

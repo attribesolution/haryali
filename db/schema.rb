@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830042945) do
+ActiveRecord::Schema.define(version: 20171226103702) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20170830042945) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "current", default: 0, null: false
-    t.integer "target", default: 0, null: false
+    t.integer "target", default: 1, null: false
     t.boolean "is_active", default: true
     t.string "optional_address"
     t.string "image"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20170830042945) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "location_id"
+    t.bigint "lead_id"
     t.index ["location_id"], name: "index_timeline_events_on_location_id"
   end
 
