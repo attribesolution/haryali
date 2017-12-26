@@ -15,6 +15,48 @@ h1 All Leads
       = render partial: 'table', locals: { leads: @leads_placed, update: false }
     #confirmed.tab-pane role="tabpanel"
       = render partial: 'table', locals: { leads: @leads_confirmed, update: false }
+      #edit.modal.fade role="dialog" 
+        .modal-dialog role="document" 
+          .modal-content
+            .modal-header
+              button.close data-dismiss="modal" type="button"  &times;
+              h4.modal-title Add Customer Details
+            .modal-body
+              label.col-form-label for="recipient-name"  Select a date
+              .input-group.fetched-date
+                input.form-control type="text" value="07/07/2017" /
+                .input-group-addon
+                  span.glyphicon.glyphicon-th
+              br/
+              form
+                .form-group
+                  label.col-form-label for="recipient-name"  Location
+                  input#recipient-name.form-control type="text" /
+                .form-group
+                  label.col-form-label for="message-text"  Comments
+                  textarea#message-text.form-control
+                  #modal-body.modal-body
+                    #upload
+                      #drop
+                        | Drop files here
+                        a Browse
+                        input multiple="multiple" name="upl" type="file" /
+                      .fileupload-buttonbar
+                        div
+                          button.btn.btn-success.start type="submit" 
+                            i.glyphicon.glyphicon-upload
+                            span Start upload
+                          button.btn.btn-warning.cancel type="reset" 
+                            i.glyphicon.glyphicon-upload
+                            span Clear upload
+                          button.btn.btn-danger.cancel type="reset" 
+                            i.glyphicon.glyphicon-ban-circle
+                            span Cancel All
+            .modal-footer
+              button.btn.btn-secondary data-dismiss="modal" type="button"  Close
+              button.btn.btn-primary type="button"  Save
+              button.btn.btn-success.btn-sm data-target="#edit" data-toggle="modal" title="Detail" type="button" 
+                i.glyphicon.glyphicon-eye-open
     #paid.tab-pane role="tabpanel"
       = render partial: 'table', locals: { leads: @leads_paid, update: false }
     #planted.tab-pane role="tabpanel"

@@ -14,6 +14,8 @@
             path d=d="M0,25C3.125,15.625,11.304,0,25,0c-6.421,5.151-9.375,17.188-14.062,17.188s-4.688,0-4.688,0L1.562,25H0z" fill="#77a43e" /
         h2.info.yaad-form Plant a tree in the name of your loved one's.
         h2.success.yaad-form Thankyou!
+        br 
+        /= image_tag "animated-tree-gif.gif" 
         = f.input :name, label:false, placeholder: "First Name", maxlength: 20
         = f.input :dedicate_name, label:false, placeholder: "In Memory Of", maxlength: 14
         p#textarea_feedback
@@ -27,10 +29,14 @@
         svg.loader2 enable-background=("new 0 0 55 55") height="55px" viewbox=("0 0 55 55") width="55px" x="0px" xml:space="preserve" y="0px" 
           circle cx="27.583" cy="27.334" fill="none" r="26.583" stroke="#B29EAC" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" 
         p.success-dialog.yaad-form
+          / = image_tag "tree-animated.gif" 
           | We’ll be in touch shortly.
           br
           | In the meantime,
           br
-          a href=new_lead_path  Plant more Trees.
+          strong
+            a href=new_lead_path  Plant more Trees.
   .name-plaque
     .name-text#name_plaque 
+    | onfocus="myFunction('#name_plaque')"
+

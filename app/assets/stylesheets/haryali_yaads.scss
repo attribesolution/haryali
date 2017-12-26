@@ -1,14 +1,21 @@
 .yaad {
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    
     background-image: url(/assets/bg1-0e4a2c9bea1b47cf839b321ad3db20f8159515a938b528e9e3d74462814068cf.jpg);
     background-attachment: scroll;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     padding-bottom: 120px;
     margin-bottom: -80px;
-    margin-left: -19%;
-    margin-right: -9.5%;
+    margin-left: -13%;
+    margin-right: -12.5%;
     background-position: center center;
     width: 128.1.2% !important;
+   
+    /*background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: fill;
+    background-attachment: fixed;
+    margin: 0;*/
 }
 
 
@@ -18,12 +25,11 @@
     position: relative;
     text-align: center;
     margin-top: -100px;
-    padding-top: 2%;
+    
     padding-bottom: 2%;
-    margin-left: -56%;
-    padding-left: 42%;
+    
     overflow-x: hidden;
-    width: 156.1%;
+  
     overflow-y: hidden;
 }
 
@@ -99,6 +105,10 @@
      padding: 0;
      font-weight: bold;
      font-size: 27px;
+    visibility: visible; 
+    opacity: 1; 
+    transform: matrix(1, 0, 0, 1, 0, 0); 
+
     }
   }
   p.success-dialog {
@@ -129,7 +139,7 @@
     border: 1px solid #77a43e;
     padding-top: 8px;
     padding-bottom: 8px;
-    text-transform: uppercase;
+    
     font-size: 11px;
     position: relative;
     z-index: 500;
@@ -191,9 +201,9 @@
 }
 
 .circle-paper {
-  border: 1px solid #9ac0ba;
-  background: #5d978e;
-  padding-left: 12px;
+  border: 2px solid #77a43e;
+  background: #fff;
+  padding-left: 13px;
 }
 
 .submit-under, .loader, .loader2, .circle-paper, p.success-dialog, h2.success {
@@ -219,7 +229,7 @@
 
 .name-plaque {
   float: right;
-  margin-top: -22.7%;
+  margin-top: -16.7%;
   padding-left: 52%;
   width: 100%;
 }
@@ -280,6 +290,56 @@
   }
 }
 
+@media (min-width: 1301px) and (max-width: 1350px) 
+{
+  .yaad 
+  {
+    margin-right: -9.3%;
+    margin-left: -9%;
+  }
+
+}
+@media (min-width: 770px) and (max-width: 991px) 
+{
+  
+  .yaad {
+    
+    margin-left: -22%;
+    margin-right: -22.9%;
+   
+}
+.banner {
+    
+    margin-top: 35px;
+    padding-bottom: 2%;
+
+.yaad-form form {
+      
+        width: 28%;
+        padding: 10% 2% 8% 2%;
+      }
+}
+
+}
+@media (min-width: 1302px) and (max-width: 1370px) 
+{
+  
+  .yaad {
+    
+    margin-left: -19%;
+    margin-right: -12.4%;
+   
+}
+.banner {
+    
+    margin-top:-7%;
+    padding-left: 0%;
+    margin-left: 0%;
+
+
+}
+
+}
 /*Form End*/
 
 /* Name Plaque */
@@ -355,3 +415,4 @@
     height: 96px;
   }
 }
+
