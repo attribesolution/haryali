@@ -12,6 +12,10 @@ class App.Leads extends App.Base
     while $('#status').length == 1
       $('#status')[0].id = "status"+count
       $('#status' + count).change ->
+        if $(this).val() == "1"          
+          $('#myModal1').show()        
+        if $(this).val() == "3"          
+          $('#myModal2').show()
         $.ajax
           url: '/leads/update_status'
           type: 'put'
@@ -19,7 +23,30 @@ class App.Leads extends App.Base
             'id': $(this).attr 'name'
             'status': this.options[this.selectedIndex].text 
       count++
+
+    $('#status').change ->
+      if $(this).val() == "1"          
+        $('#myModal1').show()        
+      if $(this).val() == "3"          
+        $('#myModal2').show()
+      $.ajax
+        url: '/leads/update_status'
+        type: 'put'
+        data: 
+          'id': $(this).attr 'name'
+          'status': this.options[this.selectedIndex].text 
+     
+      $('.fetched-date').datepicker
+        calendarWeeks: true
+        todayHighlight: true
+        autoclose: true
+       return
+    
+    $('.close-modal').click ->
+      $('.modal').hide()
     return
+
+        
 
   show: =>
     return

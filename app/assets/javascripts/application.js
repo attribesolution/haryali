@@ -21,4 +21,5 @@
 //= require cocoon
 //= require greensock/TimelineLite
 //= require greensock/TweenMax
+//= require jquery-ui
 //= require_tree .
