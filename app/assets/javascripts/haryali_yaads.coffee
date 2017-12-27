@@ -24,25 +24,44 @@ class App.HaryaliYaads extends App.Base
         $('#lead_dedicate_name').blur ->
           $('#textarea_feedback').hide()
           return
-        
-        $('#exampleModal').on 'show.bs.modal', (event) ->
-          button = $(event.relatedTarget)
-          # Button that triggered the modal
-          recipient = button.data('whatever')
-          # Extract info from data-* attributes
-          # If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-          # Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-          modal = $(this)
-          modal.find('.modal-title').text 'New message to ' + recipient
-          modal.find('.modal-body input').val recipient
+            
+          
+
+      $('lead.id').on 'change', ->
+          debugger
+          val = $(this).val()
+          if val == '0'
+            $('#myModal1').show()
+          else if val == '1'
+            $('#myModal2').show()
           return
-          $ ->
-            $('.fetched-date input').datepicker
-              calendarWeeks: true
-              todayHighlight: true
-              autoclose: true
-            return
+
+        button = $(event.relatedTarget)
+        # Button that triggered the modal
+        recipient = button.data('whatever')
+       
+        modal = $(this)
+        modal.find('.modal-title').text 'New message to ' + recipient
+        modal.find('.modal-body input').val recipient
+
+        return
+        $ ->
+          $('.fetched-date input').datepicker
+            calendarWeeks: true
+            todayHighlight: true
+            autoclose: true
+          return
         
+      $('#file').change ->
+        reader = new FileReader
+
+        reader.onload = (image) ->
+          $('.imageUploadOrNot').show 0
+          $('#blankImg').attr 'src, image.target.result'
+          return
+
+        reader.readAsDataURL @files[0]
+        return
       tl = new TimelineLite
       form = $('.sub-form')
       sub = $('.submit-under')
