@@ -36,12 +36,8 @@ class App.Leads extends App.Base
           'id': $(this).attr 'name'
           'status': this.options[this.selectedIndex].text 
      
-      $('.fetched-date').datepicker
-        calendarWeeks: true
-        todayHighlight: true
-        autoclose: true
-       return
-    
+    $('.fetched-date').datetimepicker()
+
     $('.close-modal').click ->
       $('.modal').hide()
     return
