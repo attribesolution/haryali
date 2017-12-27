@@ -12,7 +12,7 @@ class App.HaryaliYaads extends App.Base
       text_max = 14
       $('#lead_dedicate_name').focus ->
         $(this).keyup ->
-           
+        
         $('#textarea_feedback').html '(' + text_max + ' /' +' 14)'
         $('#lead_dedicate_name').keyup ->
           text_length = $('#lead_dedicate_name').val().length
@@ -23,7 +23,25 @@ class App.HaryaliYaads extends App.Base
         $('#lead_dedicate_name').blur ->
           $('#textarea_feedback').hide()
           return
-
+        
+        $('#exampleModal').on 'show.bs.modal', (event) ->
+          button = $(event.relatedTarget)
+          # Button that triggered the modal
+          recipient = button.data('whatever')
+          # Extract info from data-* attributes
+          # If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+          # Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+          modal = $(this)
+          modal.find('.modal-title').text 'New message to ' + recipient
+          modal.find('.modal-body input').val recipient
+          return
+          $ ->
+            $('.fetched-date input').datepicker
+              calendarWeeks: true
+              todayHighlight: true
+              autoclose: true
+            return
+        
       tl = new TimelineLite
       form = $('.sub-form')
       sub = $('.submit-under')
