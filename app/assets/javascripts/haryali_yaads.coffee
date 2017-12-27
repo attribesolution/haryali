@@ -9,15 +9,16 @@ class App.HaryaliYaads extends App.Base
 
   index: =>
     $(document).ready ->
-      text_max = 14
+      # text_max = 14
+      text_min = 0
       $('#lead_dedicate_name').focus ->
         $(this).keyup ->
         
-        $('#textarea_feedback').html '(' + text_max + ' /' +' 14)'
+        $('#textarea_feedback').html '(' + text_min + ' /' +' 14)'
         $('#lead_dedicate_name').keyup ->
           text_length = $('#lead_dedicate_name').val().length
-          text_remaining = text_max - text_length
-          if text_remaining >= 0
+          text_remaining = text_min + text_length
+          if text_remaining <= 14
             $('#textarea_feedback').html  '(' + text_remaining + ' /' +' 14)'
           return
         $('#lead_dedicate_name').blur ->
