@@ -28,7 +28,6 @@ class App.HaryaliYaads extends App.Base
           
 
       $('lead.id').on 'change', ->
-          debugger
           val = $(this).val()
           if val == '0'
             $('#myModal1').show()
