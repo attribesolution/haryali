@@ -63,7 +63,7 @@ class UserMailer < ApplicationMailer
   def payment_email_accountant(lead)
     @lead = lead
     @url  = "http://plant.haryali.pk"
-    mail(to: lead.email, 
+    mail(to: Rails.application.secrets.accountant_email, 
       subject: "Haryali.pk - Update regarding customer's payment")
   end
 end

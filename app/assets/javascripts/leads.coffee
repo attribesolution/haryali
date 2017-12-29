@@ -12,16 +12,21 @@ class App.Leads extends App.Base
     while $('#status').length == 1
       $('#status')[0].id = "status"+count
       $('#status' + count).change ->
+        
         if $(this).val() == "1"          
-          $('#myModal1').show()        
+          $('#myModal1').show()
+          $("#myModal1 .lead-id").val(this.name)
+        
         if $(this).val() == "3"          
           $('#myModal2').show()
-        $.ajax
-          url: '/leads/update_status'
-          type: 'put'
-          data: 
-            'id': $(this).attr 'name'
-            'status': this.options[this.selectedIndex].text 
+          $("#myModal2 .lead-id").val(this.name)
+        if $(this).val() == "2" || $(this).val() == "0" 
+          $.ajax
+            url: '/leads/update_status'
+            type: 'put'
+            data: 
+              'id': $(this).attr 'name'
+              'status': this.options[this.selectedIndex].text 
       count++
 
     $('#status').change ->

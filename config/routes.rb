@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :leads, only: [:new, :create, :show, :index, :destroy] do
     collection do
       put :update_status
+      post :update_detail
+      post :timeline_event
     end
   end
 

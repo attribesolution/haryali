@@ -32,14 +32,25 @@ class LeadsController < ApplicationController
     end
   end
 
-  # def update
-  #   @wizard = ModelWizard.new(@lead, session, params, lead_params).continue
-  #   if @wizard.save
-  #     redirect_to @lead, notice: 'Lead updated.'
-  #   else
-  #     render :edit
-  #   end
-  # end
+  def update_detail
+    lead = Lead.find(params[:lead_id])
+    lead.update(status: "Confirmed", address: params[:address], payment_date: params[:payment_date], comment: params[:comment])
+    if lead.save
+      UserMailer.notify_email_confirmed(lead).deliver
+      redirect_to leads_url, notice: 'Lead was updated successfully'
+    end
+  end
+
+  def timeline_event
+    lead = Lead.find(params[:lead_id])
+    lead.update(status: "Planted", planted_date: params[:planted_date], comment: params[:comment])
+    timeline_event = TimelineEvent.new(image: params[:image], location_id: lead.location_id, lead_id: lead.id)
+    timeline_event.save!
+    if lead.save
+      UserMailer.notify_email_planted(lead).deliver
+      redirect_to leads_url, notice: 'Lead was updated successfully'
+    end
+  end
 
   def index
     if Lead.count > 0
@@ -57,14 +68,14 @@ class LeadsController < ApplicationController
     lead = Lead.find(params[:id])
     if lead.update_column(:status, params[:status])
       puts case params[:status]
-      when 'Confirmed'
-        UserMailer.notify_email_confirmed(lead).deliver
+      # when 'Confirmed'
+      #   UserMailer.notify_email_confirmed(lead).deliver
       when 'Paid'
         UserMailer.notify_email_paid(lead).deliver
         UserMailer.payment_email_customer(lead).deliver
         UserMailer.payment_email_accountant(lead).deliver
-      when 'Planted'
-        UserMailer.notify_email_planted(lead).deliver
+      # when 'Planted'
+      #   UserMailer.notify_email_planted(lead).deliver
       end
     end
   end
