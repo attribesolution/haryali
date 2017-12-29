@@ -13,7 +13,6 @@ class App.HaryaliYaads extends App.Base
       text_min = 0
       $('#lead_dedicate_name').focus ->
         $(this).keyup ->
-        
         $('#textarea_feedback').html '(' + text_min + ' /' +' 14)'
         $('#lead_dedicate_name').keyup ->
           text_length = $('#lead_dedicate_name').val().length
@@ -24,43 +23,18 @@ class App.HaryaliYaads extends App.Base
         $('#lead_dedicate_name').blur ->
           $('#textarea_feedback').hide()
           return
-            
-          
-
-      $('lead.id').on 'change', ->
-          val = $(this).val()
-          if val == '0'
-            $('#myModal1').show()
-          else if val == '1'
-            $('#myModal2').show()
-          return
-
-        button = $(event.relatedTarget)
-        # Button that triggered the modal
-        recipient = button.data('whatever')
-       
-        modal = $(this)
-        modal.find('.modal-title').text 'New message to ' + recipient
-        modal.find('.modal-body input').val recipient
-
-        return
-        $ ->
-          $('.fetched-date input').datepicker
-            calendarWeeks: true
-            todayHighlight: true
-            autoclose: true
-          return
         
-      $('#file').change ->
-        reader = new FileReader
-
-        reader.onload = (image) ->
-          $('.imageUploadOrNot').show 0
-          $('#blankImg').attr 'src, image.target.result'
+        $('#lead_dedicate_name').focus ->
+          $('#name_plaque').css 'color', '#FFDF00'
           return
-
-        reader.readAsDataURL @files[0]
-        return
+        $('#lead_dedicate_name').focusout ->
+          $('.name-text').css 'color', '#2f1902'
+          return
+        return   
+    # document.getElementById('#hide-image').onclick = ->
+    #   document.getElementById('#loadingImage ').style.visibility = 'hidden'
+    #   return
+            
       tl = new TimelineLite
       form = $('.sub-form')
       sub = $('.submit-under')
@@ -166,6 +140,11 @@ class App.HaryaliYaads extends App.Base
             error: (err) ->
               #clearInterval(icon_loading)
               # Unhide 'Donate' Button 
+
+        document.getElementById('#hide-image').onclick = ->
+          document.getElementById('#loadingImage ').hide()
+          return  
+
 
       count = 1.8
       SpinLoader = ->
