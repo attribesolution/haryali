@@ -42,15 +42,15 @@
             strong Created at:
           td = @lead.created_at.strftime("%d %B, %Y")
     - unless @lead.timeline_events.empty?
-      = image_tag @lead.timeline_events.last.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-29%;"
+      = image_tag @lead.timeline_events.last.image, style:"height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
     - else
-      = image_tag '11.jpg', style:"max-height:400px; float:right; margin-right:-35%; margin-top:-12%;"
+      = image_tag '11.jpg', style:"max-height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
 
     br
     br
 
   - if @timeline_events.any?
-    section#cd-timeline.cd-container.body-1
+    section#cd-timeline.cd-container.body-1 style="margin-left:130px;"
       - @timeline_events.each do |event|
         .cd-timeline-block
           
@@ -70,26 +70,26 @@
               span.cd-date #{event.created_at.strftime("%B %Y")}
   
 
-  - if @lead.updates.any?
-    .container.thankyoupage-align
-      h1.t1 Updates 
-    section#cd-timeline.cd-container.body-1
-      - @lead.updates.each do |update|
-        .cd-timeline-block
-          br
-          .cd-timeline-img.cd-picture
-            img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
-          .cd-timeline-content
-            .inner-body
-              .head-green
-                h2.heading-timeline.h2_1 #{update.title}
-              p #{update.description}
-              hr 
-              img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
-              #myModal.modal
-                span.close &times;
-                img#img01.modal-content.img1
-              span.cd-date #{update.created_at.strftime("%B %Y")}
+  / - if @lead.updates.any?
+  /   .container.thankyoupage-align
+  /     h1.t1 Updates 
+  /   section#cd-timeline.cd-container.body-1
+  /     - @lead.updates.each do |update|
+  /       .cd-timeline-block
+  /         br
+  /         .cd-timeline-img.cd-picture
+  /           img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
+  /         .cd-timeline-content
+  /           .inner-body
+  /             .head-green
+  /               h2.heading-timeline.h2_1 #{update.title}
+  /             p #{update.description}
+  /             hr 
+  /             img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
+  /             #myModal.modal
+  /               span.close &times;
+  /               img#img01.modal-content.img1
+  /             span.cd-date #{update.created_at.strftime("%B %Y")}
 - else 
   h1.t1 No Submission found 
 br

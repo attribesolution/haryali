@@ -7,7 +7,7 @@ table.table.table-hover.table-responsive
       th Dedicate 
       th Plant 
       th Quantity 
-      /th Payment  
+      th Payment Date
       th Location 
       th Coupon 
       th Status
@@ -34,7 +34,11 @@ table.table.table-hover.table-responsive
             = lead.quantity 
           - else 
             | -
-        /td = lead.payment_type.humanize 
+        td 
+          - if lead.payment_date
+            = lead.payment_date.strftime('%D %r')
+          - else 
+            | -
         td 
           - if lead.location_id
             a href=location_path(lead.location) data-toggle="tooltip" title="#{lead.location.try(:optional_address) ? lead.location.optional_address+', ' : ''}#{lead.location.address}"

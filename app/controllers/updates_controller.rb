@@ -10,13 +10,15 @@ class UpdatesController < ApplicationController
 
   # POST /updates 
   def create
-    @update = Update.new(update_params)
-    if @update.save!
-      UserMailer.update_email(@update.lead).deliver
-      redirect_to lead_path(@update.lead_id)
+    @lead = Lead.find_by(id: params["update"][:lead_id])
+    @timeline_event = TimelineEvent.new(title: params["update"][:title], caption: params["update"][:description], image: params["update"][:image], location_id: @lead.location.id, lead_id: @lead.id)
+    if @timeline_event.save!
+      UserMailer.update_email(@timeline_event.lead).deliver
+      redirect_to lead_path(@timeline_event.lead_id)
     else
       render :new
     end
+
   end
 
   private 

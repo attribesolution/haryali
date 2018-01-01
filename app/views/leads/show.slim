@@ -46,19 +46,20 @@
             strong Price:
           td = total_price(@lead)
         tr
-          td 
-            strong Payment Type:
-          td = @lead.payment_type.humanize
+          - if @lead.payment_type
+            td 
+              strong Payment Type:
+            td = @lead.payment_type.humanize
         - if current_user
           tr
             td 
               strong Status:
             td = @lead.status.capitalize
-  - if current_user and @lead.updates.any?
+  - if current_user and @timeline_events.any?
     .container.thankyoupage-align
-      h1.t1 Updates 
+      h1.t1 Timeline Event 
     section#cd-timeline.cd-container.body-1
-      - @lead.updates.each do |update|
+      - @timeline_events.each do |event|
         .cd-timeline-block
           br
           .cd-timeline-img.cd-picture
@@ -66,14 +67,14 @@
           .cd-timeline-content
             .inner-body
               .head-green
-                h2.heading-timeline.h2_1 #{update.title}
-              p #{update.description}
+                h2.heading-timeline.h2_1 #{event.title}
+              p #{event.caption}
               hr 
-              img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
+              img#myImg.img1_image alt="Location Image" height="200" src="#{event.image}" width="300"
               #myModal.modal
                 span.close &times;
                 img#img01.modal-content.img1
-              span.cd-date #{update.created_at.strftime("%B %Y")}
+              span.cd-date #{event.created_at.strftime("%B %Y")}
 - else 
   h1.t1 No Submission found 
   br

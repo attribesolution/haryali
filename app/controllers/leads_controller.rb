@@ -1,7 +1,7 @@
 class LeadsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :update_status, :destroy]
   before_action :user_admin, only: [:index, :update_status, :destroy]
-  before_action :load_lead, only: [:show, :destroy]
+  before_action :load_lead, only: [:show]
 
   def new
     @wizard = ModelWizard.new(Lead, session, params).start
@@ -101,6 +101,7 @@ private
 
   def load_lead
     @lead = Lead.find_by(id: params[:id])
+    @timeline_events = @lead.timeline_events.order(created_at: :DESC)
   end
 
   def lead_params
