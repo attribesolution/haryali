@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171229101258) do
+ActiveRecord::Schema.define(version: 20180101073038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20171229101258) do
     t.datetime "payment_date"
     t.string "comment"
     t.datetime "planted_date"
+    t.boolean "archive", default: false
     t.index ["plant_id"], name: "index_leads_on_plant_id"
   end
 

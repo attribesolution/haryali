@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       put :update_status
       post :update_detail
       post :timeline_event
+      get :archive
     end
   end
 

@@ -58,10 +58,10 @@ class LeadsController < ApplicationController
     else
       @leads = false
     end
-    @leads_placed = Lead.where(status: :Placed).order(created_at: :desc)
-    @leads_confirmed = Lead.where(status: :Confirmed).order(created_at: :desc)
-    @leads_paid = Lead.where(status: :Paid).order(created_at: :desc)
-    @leads_planted = Lead.where(status: :Planted).order(created_at: :desc)
+    @leads_placed = Lead.where(status: :Placed, archive: false).order(payment_date: :asc)
+    @leads_confirmed = Lead.where(status: :Confirmed, archive: false).order(payment_date: :asc)
+    @leads_paid = Lead.where(status: :Paid, archive: false).order(payment_date: :asc)
+    @leads_planted = Lead.where(status: :Planted, archive: false).order(payment_date: :asc)
   end
 
   def update_status
@@ -72,7 +72,6 @@ class LeadsController < ApplicationController
       #   UserMailer.notify_email_confirmed(lead).deliver
       when 'Paid'
         UserMailer.notify_email_paid(lead).deliver
-        UserMailer.payment_email_customer(lead).deliver
         UserMailer.payment_email_accountant(lead).deliver
       # when 'Planted'
       #   UserMailer.notify_email_planted(lead).deliver
@@ -89,6 +88,13 @@ class LeadsController < ApplicationController
       coupon.save
       redirect_to leads_url, notice: 'Lead was deleted successfully'
     end
+  end
+
+  def archive
+    lead = Lead.find_by(id: params[:lead_id])
+    lead.archive = true
+    lead.save
+    redirect_to leads_url, notice: 'Lead was archived successfully'
   end
 
 private
