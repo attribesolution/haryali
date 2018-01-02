@@ -57,8 +57,8 @@
             td = @lead.status.capitalize
   - if current_user and @timeline_events.any?
     .container.thankyoupage-align
-      h1.t1 Timeline Event 
-    section#cd-timeline.cd-container.body-1
+      h1.t1 style="margin:0" Timeline Event 
+    section#cd-timeline.cd-container.body-1 style="width:100%"
       - @timeline_events.each do |event|
         .cd-timeline-block
           br
@@ -80,5 +80,5 @@
   br
   = link_to "Back", :back, class:"btn btn-success btn-lg pull-right"
 
-a href="http://haryali.pk" class="btn btn-success btn-lg button-center" Done
+a href="/leads" class="btn btn-success btn-lg button-center" Done
 br

@@ -41,16 +41,23 @@
           td 
             strong Created at:
           td = @lead.created_at.strftime("%d %B, %Y")
-    - unless @lead.timeline_events.empty?
+    / - unless @lead.timeline_events.empty?
       = image_tag @lead.timeline_events.last.image, style:"height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
-    - else
+    / - else
       = image_tag '11.jpg', style:"max-height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
+    input.lat#location_lat value=@lead.location.lat type='hidden'
+    input.lng#location_lng value=@lead.location.lng type='hidden'
+    .map.map-align style=("width: 65%; height: 371px; margin-bottom:16px; margin-left:87%; margin-top:-39%") 
+    .input-group style="width:119%;margin-left:33%"
+      input#current_location placeholder="Enter Your Address" class="form-control"
+      span
+        button#get_directions class="btn btn-info" disabled="" Get Directions
 
     br
     br
 
   - if @timeline_events.any?
-    section#cd-timeline.cd-container.body-1 style="margin-left:130px;"
+    section#cd-timeline.cd-container.body-1 style="width:100%"
       - @timeline_events.each do |event|
         .cd-timeline-block
           

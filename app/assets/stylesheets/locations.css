@@ -253,7 +253,7 @@ max-width: 100%;
     transition: 0.3s;
     height: 210px;
     margin: 0 auto;
-    padding-bottom: 3px;
+    width: 100%;
 }
 
 

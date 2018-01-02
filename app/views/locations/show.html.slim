@@ -38,7 +38,7 @@
       button#get_directions class="btn btn-info" disabled="" Get Directions
   br
     - if @location.timeline_events.any?
-      section#cd-timeline.cd-container.body-1
+      section#cd-timeline.cd-container.body-1 style="width:100%"
         - @location.timeline_events.each do |event|
           .cd-timeline-block
             
