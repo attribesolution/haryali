@@ -10,15 +10,27 @@ class UpdatesController < ApplicationController
 
   # POST /updates 
   def create
-    @lead = Lead.find_by(id: params["update"][:lead_id])
-    @timeline_event = TimelineEvent.new(title: params["update"][:title], caption: params["update"][:description], image: params["update"][:image], location_id: @lead.location.id, lead_id: @lead.id)
-    if @timeline_event.save!
-      UserMailer.update_email(@timeline_event.lead).deliver
-      redirect_to lead_path(@timeline_event.lead_id)
+    if params["update"]
+      @lead = Lead.find_by(id: params["update"][:lead_id])
+      update = Update.new(title: params["update"][:title], description: params["update"][:description], image: params["update"][:image], lead_id: @lead.id)
+      if update.save!
+        UserMailer.update_email(@lead).deliver
+        redirect_to lead_path(@lead.id)
+      else
+        render :new
+      end
     else
-      render :new
+      lead = Lead.find(params[:lead_id])
+      lead.update(status: "Planted", planted_date: params[:planted_date], comment: params[:comment])
+      update = Update.new(image: params[:image], lead_id: lead.id)
+      update.save!
+      if lead.save
+        UserMailer.notify_email_planted(lead).deliver
+        redirect_to leads_url, notice: 'Lead was updated successfully'
+      else
+        render :new
+      end
     end
-
   end
 
   private 

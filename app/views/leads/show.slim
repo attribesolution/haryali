@@ -55,11 +55,11 @@
             td 
               strong Status:
             td = @lead.status.capitalize
-  - if current_user and @timeline_events.any?
+  - if current_user and @updates.any?
     .container.thankyoupage-align
-      h1.t1 style="margin:0" Timeline Event 
+      h1.t1 style="margin:0" Timeline Event
     section#cd-timeline.cd-container.body-1 style="width:100%"
-      - @timeline_events.each do |event|
+      - @updates.each do |update|
         .cd-timeline-block
           br
           .cd-timeline-img.cd-picture
@@ -67,14 +67,14 @@
           .cd-timeline-content
             .inner-body
               .head-green
-                h2.heading-timeline.h2_1 #{event.title}
-              p #{event.caption}
+                h2.heading-timeline.h2_1 #{update.title}
+              p #{update.description}
               hr 
-              img#myImg.img1_image alt="Location Image" height="200" src="#{event.image}" width="300"
+              img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
               #myModal.modal
                 span.close &times;
                 img#img01.modal-content.img1
-              span.cd-date #{event.created_at.strftime("%B %Y")}
+              span.cd-date #{update.created_at.strftime("%B %Y")}
 - else 
   h1.t1 No Submission found 
   br

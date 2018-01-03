@@ -37,9 +37,9 @@
     span
       button#get_directions class="btn btn-info" disabled="" Get Directions
   br
-    - if @location.timeline_events.any?
+    - if @timeline_events.any?
       section#cd-timeline.cd-container.body-1 style="width:100%"
-        - @location.timeline_events.each do |event|
+        - @timeline_events.each do |event|
           .cd-timeline-block
             
             br
@@ -59,9 +59,10 @@
 
     - if current_user && current_user.role == 'admin' && @location && @location.type == "HaryaliLocation"
       br
-      = simple_form_for(@location, html: { class: 'form-horizontal' }) do |f|
+      = simple_form_for(@location, url: timeline_event_locations_path, :method => :put, html: { multipart: true, class: 'form-horizontal' }) do |f|
         #timeline_events
         .links
+          = f.hidden_field :location_id, value: @location.id
           = link_to_add_association '+ Add Event', f, :timeline_events, class: "btn btn-primary disabled", id: "add_event"
           = f.submit "Save", class: "btn btn-basic btn-gray", disabled: true, id: "save"
 

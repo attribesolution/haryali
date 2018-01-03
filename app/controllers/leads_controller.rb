@@ -41,16 +41,16 @@ class LeadsController < ApplicationController
     end
   end
 
-  def timeline_event
-    lead = Lead.find(params[:lead_id])
-    lead.update(status: "Planted", planted_date: params[:planted_date], comment: params[:comment])
-    timeline_event = TimelineEvent.new(image: params[:image], location_id: lead.location_id, lead_id: lead.id)
-    timeline_event.save!
-    if lead.save
-      UserMailer.notify_email_planted(lead).deliver
-      redirect_to leads_url, notice: 'Lead was updated successfully'
-    end
-  end
+  # def timeline_event
+  #   lead = Lead.find(params[:lead_id])
+  #   lead.update(status: "Planted", planted_date: params[:planted_date], comment: params[:comment])
+  #   timeline_event = TimelineEvent.new(image: params[:image], location_id: lead.location_id, lead_id: lead.id)
+  #   timeline_event.save!
+  #   if lead.save
+  #     UserMailer.notify_email_planted(lead).deliver
+  #     redirect_to leads_url, notice: 'Lead was updated successfully'
+  #   end
+  # end
 
   def index
     if Lead.count > 0
@@ -101,7 +101,7 @@ private
 
   def load_lead
     @lead = Lead.find_by(id: params[:id])
-    @timeline_events = @lead.timeline_events.order(created_at: :DESC)
+    @updates = @lead.updates.order(created_at: :DESC)
   end
 
   def lead_params

@@ -61,7 +61,7 @@ h1 All Leads
         button.close class="close-modal" data-dismiss="modal" type="button"  &times;
         h4.modal-title Add Customer Details
       .modal-body
-        = form_tag timeline_event_leads_path, :multipart => true do
+        = form_tag updates_path, :multipart => true do
           label.col-form-label Select a date
           .input-group
             input.form-control.fetched-date  name="planted_date" type="text" placeholder="Choose a date"

@@ -41,8 +41,8 @@
           td 
             strong Created at:
           td = @lead.created_at.strftime("%d %B, %Y")
-    / - unless @lead.timeline_events.empty?
-      = image_tag @lead.timeline_events.last.image, style:"height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
+    / - unless @lead.updates.empty?
+      = image_tag @lead.updates.last.image, style:"height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
     / - else
       = image_tag '11.jpg', style:"max-height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
     input.lat#location_lat value=@lead.location.lat type='hidden'
@@ -56,9 +56,9 @@
     br
     br
 
-  - if @timeline_events.any?
+  - if @updates.any?
     section#cd-timeline.cd-container.body-1 style="width:100%"
-      - @timeline_events.each do |event|
+      - @updates.each do |update|
         .cd-timeline-block
           
           br
@@ -67,14 +67,14 @@
           .cd-timeline-content
             .inner-body
               .head-green
-                h2.heading-timeline.h2_1 #{event.title}
-              p #{event.caption}
+                h2.heading-timeline.h2_1 #{update.title}
+              p #{update.description}
               hr 
-              img#myImg.img1_image alt="Location Image" height="200" src="#{event.image}" width="300"
+              img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
               #myModal.modal
                 span.close &times;
                 img#img01.modal-content.img1
-              span.cd-date #{event.created_at.strftime("%B %Y")}
+              span.cd-date #{update.created_at.strftime("%B %Y")}
   
 
   / - if @lead.updates.any?
