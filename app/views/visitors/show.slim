@@ -42,7 +42,7 @@
             strong Created at:
           td = @lead.created_at.strftime("%d %B, %Y")
     - unless @lead.timeline_events.empty?
-      = image_tag @lead.timeline_events.last.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-29%;"
+      = image_tag @lead.timeline_events.last.image, style:"max-height:400px; float:right; margin-right:-35%; margin-top:-33%;"
     - else
       = image_tag '11.jpg', style:"max-height:400px; float:right; margin-right:-35%; margin-top:-12%;"
 
