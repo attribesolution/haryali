@@ -6,13 +6,13 @@ body.my-plants-body
     - @leads.each do |lead|
       .my-plants
         .div-header
-          - unless lead.timeline_events.empty?
-            p Updated #{time_ago_in_words(lead.timeline_events.last.created_at)} ago
+          - unless lead.updates.empty?
+            p Updated #{time_ago_in_words(lead.updates.last.created_at)} ago
           - else
             p Updated #{time_ago_in_words(lead.created_at)} ago
         .img-plant
-          - unless lead.timeline_events.empty?
-            img src=lead.timeline_events.last.image
+          - unless lead.updates.empty?
+            img src=lead.updates.last.image
           - else
             = image_tag "11.jpg"
         aside

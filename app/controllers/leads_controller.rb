@@ -1,7 +1,7 @@
 class LeadsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :update_status, :destroy]
   before_action :user_admin, only: [:index, :update_status, :destroy]
-  before_action :load_lead, only: [:show, :destroy]
+  before_action :load_lead, only: [:show]
 
   def new
     @wizard = ModelWizard.new(Lead, session, params).start
@@ -41,16 +41,16 @@ class LeadsController < ApplicationController
     end
   end
 
-  def timeline_event
-    lead = Lead.find(params[:lead_id])
-    lead.update(status: "Planted", planted_date: params[:planted_date], comment: params[:comment])
-    timeline_event = TimelineEvent.new(image: params[:image], location_id: lead.location_id, lead_id: lead.id)
-    timeline_event.save!
-    if lead.save
-      UserMailer.notify_email_planted(lead).deliver
-      redirect_to leads_url, notice: 'Lead was updated successfully'
-    end
-  end
+  # def timeline_event
+  #   lead = Lead.find(params[:lead_id])
+  #   lead.update(status: "Planted", planted_date: params[:planted_date], comment: params[:comment])
+  #   timeline_event = TimelineEvent.new(image: params[:image], location_id: lead.location_id, lead_id: lead.id)
+  #   timeline_event.save!
+  #   if lead.save
+  #     UserMailer.notify_email_planted(lead).deliver
+  #     redirect_to leads_url, notice: 'Lead was updated successfully'
+  #   end
+  # end
 
   def index
     if Lead.count > 0
@@ -58,10 +58,10 @@ class LeadsController < ApplicationController
     else
       @leads = false
     end
-    @leads_placed = Lead.where(status: :Placed).order(created_at: :desc)
-    @leads_confirmed = Lead.where(status: :Confirmed).order(created_at: :desc)
-    @leads_paid = Lead.where(status: :Paid).order(created_at: :desc)
-    @leads_planted = Lead.where(status: :Planted).order(created_at: :desc)
+    @leads_placed = Lead.where(status: :Placed, archive: false).order(payment_date: :asc)
+    @leads_confirmed = Lead.where(status: :Confirmed, archive: false).order(payment_date: :asc)
+    @leads_paid = Lead.where(status: :Paid, archive: false).order(payment_date: :asc)
+    @leads_planted = Lead.where(status: :Planted, archive: false).order(payment_date: :asc)
   end
 
   def update_status
@@ -72,7 +72,6 @@ class LeadsController < ApplicationController
       #   UserMailer.notify_email_confirmed(lead).deliver
       when 'Paid'
         UserMailer.notify_email_paid(lead).deliver
-        UserMailer.payment_email_customer(lead).deliver
         UserMailer.payment_email_accountant(lead).deliver
       # when 'Planted'
       #   UserMailer.notify_email_planted(lead).deliver
@@ -91,10 +90,18 @@ class LeadsController < ApplicationController
     end
   end
 
+  def archive
+    lead = Lead.find_by(id: params[:lead_id])
+    lead.archive = true
+    lead.save
+    redirect_to leads_url, notice: 'Lead was archived successfully'
+  end
+
 private
 
   def load_lead
     @lead = Lead.find_by(id: params[:id])
+    @updates = @lead.updates.order(created_at: :DESC)
   end
 
   def lead_params

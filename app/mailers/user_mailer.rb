@@ -41,7 +41,7 @@ class UserMailer < ApplicationMailer
 
   def notify_email_planted(lead)
     @lead = lead
-    @url  = "http://plant.haryali.pk"
+    @url  = "http://"+Rails.application.secrets.domain_name+'/visitors/'+@lead.id.to_s
     mail(to: lead.email, 
       subject: "Haryali.pk - Your #{@lead.quantity > 1 ? 'Plants have' : 'Plant has'} been Planted")
   end

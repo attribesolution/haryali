@@ -46,19 +46,20 @@
             strong Price:
           td = total_price(@lead)
         tr
-          td 
-            strong Payment Type:
-          td = @lead.payment_type.humanize
+          - if @lead.payment_type
+            td 
+              strong Payment Type:
+            td = @lead.payment_type.humanize
         - if current_user
           tr
             td 
               strong Status:
             td = @lead.status.capitalize
-  - if current_user and @lead.updates.any?
+  - if current_user and @updates.any?
     .container.thankyoupage-align
-      h1.t1 Updates 
-    section#cd-timeline.cd-container.body-1
-      - @lead.updates.each do |update|
+      h1.t1 style="margin:0" Timeline Event
+    section#cd-timeline.cd-container.body-1 style="width:100%"
+      - @updates.each do |update|
         .cd-timeline-block
           br
           .cd-timeline-img.cd-picture
@@ -79,5 +80,5 @@
   br
   = link_to "Back", :back, class:"btn btn-success btn-lg pull-right"
 
-a href="http://haryali.pk" class="btn btn-success btn-lg button-center" Done
+a href="/leads" class="btn btn-success btn-lg button-center" Done
 br

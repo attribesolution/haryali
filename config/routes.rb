@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     collection do
       put :update_status
       post :update_detail
-      post :timeline_event
+      # post :timeline_event
+      get :archive
     end
   end
 
@@ -17,7 +18,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :locations, only: [:show, :new, :create, :index]
+  resources :locations, only: [:show, :new, :create, :index] do
+    collection do
+        put :timeline_event
+    end
+  end
 
   resources :haryali_locations, only: [:edit, :update, :index]
 

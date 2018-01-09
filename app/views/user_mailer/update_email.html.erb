@@ -3,12 +3,12 @@
   On <strong><%= @lead.updated_at.strftime("%d-%m-%Y") %></strong>, as per your request, <strong><%= @lead.quantity %> "<%= @lead.plant.name %>"</strong> <% @lead.quantity > 0 ? 'were' : 'was' %> planted at <strong><%= @lead.location.address %></strong>.<br/>
 </p>
 <p>
-  This email is to inform you that there has been an update to your <% @lead.quantity > 1 ? 'plants' : 'plant' %>.<br/>
+  This email is to inform you that there has been an update to your <%= @lead.quantity > 1 ? 'plants' : 'plant' %>.<br/>
 </p>
 <%# description for plant update (if any) %>
 <%# image for plant update (if any) %>
 <p>
-  We will be posting more updates of your <% @lead.quantity > 1 ? 'plants' : 'plant' %> soon.
+  We will be posting more updates of your <%= @lead.quantity > 1 ? 'plants' : 'plant' %> soon.
   You can view them by logging in to your account at: <%= @url %>.
 </p>
 <%# image showing 'your plants' tab with email field highlighted %>
