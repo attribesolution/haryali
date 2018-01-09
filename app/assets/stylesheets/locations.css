@@ -253,7 +253,9 @@ max-width: 100%;
     transition: 0.3s;
     height: 210px;
     margin: 0 auto;
+    padding: 22px;
     width: 100%;
+
 }
 
 
@@ -356,7 +358,7 @@ max-width: 100%;
   -------------------------------- */
   .cd-container {
     /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
-    width: 75%;
+    width: 100%;
     max-width: 1170px;
     margin: 0 auto;
 

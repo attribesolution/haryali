@@ -41,6 +41,7 @@
           td 
             strong Created at:
           td = @lead.created_at.strftime("%d %B, %Y")
+
     / - unless @lead.updates.empty?
       = image_tag @lead.updates.last.image, style:"height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
     / - else
