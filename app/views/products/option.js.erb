@@ -3,7 +3,7 @@
   $('.product_sub_category select').append("<option value></option>");
   var i = 1
   <% @subcategories.each do |sub| %>
-      $('.product_sub_category select').append("<option value="+i+">"+"<%= sub.name %>"+"</option>");
+      $('.product_sub_category select').append("<option value="+"<%= sub.id %>"+">"+"<%= sub.name %>"+"</option>");
       i++
   <% end %>
 <% end %>
