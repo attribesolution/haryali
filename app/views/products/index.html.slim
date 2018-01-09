@@ -1,0 +1,33 @@
+h1 Listing products
+
+table
+  thead
+    tr
+      th Sub category
+      th Name
+      th Image
+      th Price
+      th Rating
+      th Description
+      th Comment
+      th
+      th
+      th
+
+  tbody
+    - @products.each do |product|
+      tr
+        td = product.sub_category
+        td = product.name
+        td = product.image
+        td = product.price
+        td = product.rating
+        td = product.description
+        td = product.comment
+        td = link_to 'Show', product
+        td = link_to 'Edit', edit_product_path(product)
+        td = link_to 'Destroy', product, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Product', new_product_path

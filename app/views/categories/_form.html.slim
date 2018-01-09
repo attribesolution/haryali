@@ -1,0 +1,9 @@
+= simple_form_for(@category) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name, label: false, placeholder: "Enter Category name", class: "form-control"
+    = f.input :parent_id, collection: Category.all, class: "form-control"
+
+  .form-actions
+    = f.submit "Save", class: "btn btn-basic pull-right btn-gray"

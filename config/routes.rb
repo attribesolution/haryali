@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :products do
+    collection do
+      get :option
+    end
+  end
+  resources :sub_categories
+  resources :categories
   root to: 'haryali_locations#index'
   
   devise_for :users, skip: [:registrations], :controllers => {sessions: 'sessions'}

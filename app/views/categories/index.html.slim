@@ -1,0 +1,24 @@
+h1.pull-left All Categories
+= link_to '+ Product', new_product_path, class: "btn btn-success btn-sm pull-right"
+
+= link_to '+ Sub Category', new_sub_category_path, class: "btn btn-success btn-sm pull-right", style:"margin-right:5px;"
+
+= link_to '+ Category', new_category_path, class: "btn btn-success btn-sm pull-right", style:"margin-right:-5px;"
+table.table.table-hover.table-hover
+  thead
+    tr
+      th Name
+      th
+
+
+  tbody
+    - @categories.each do |category|
+      tr
+
+        td = category.name
+        td 
+          = link_to 'Show', category, class: "btn-sm btn-primary"
+          |  
+          = link_to 'Edit', edit_category_path(category), class: "btn-sm btn-success"
+          |  
+          = link_to 'Destroy', category, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn-sm btn-danger"

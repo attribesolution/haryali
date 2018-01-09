@@ -1,0 +1,32 @@
+= simple_form_for(@product) do |f|
+  = f.error_notification
+
+  .form-inputs
+    .row
+      .col-md-6
+        = f.input :category_id, collection: Category.all.collect{|c| [c.name, c.id]}, input_html: { remote: true }
+      .col-md-6
+        = f.association :sub_category, placeholder: 'Select sub category', class: "form-control"
+
+    .row
+      .col-md-6
+        = f.input :name, placeholder: 'Enter product name', class: "form-control"
+      .col-md-6
+        = f.input :price, placeholder: 'Enter product price', class: "form-control"
+    .row
+      .col-md-6
+        = f.input :rating, placeholder: 'Enter product rating', class: "form-control"
+      .col-md-6
+        = f.input :description, placeholder: 'Enter product description', class: "form-control"
+    .row  
+      .col-md-6
+        = f.input :comment, placeholder: 'Enter comments', class: "form-control"
+    .row
+      .col-md-6
+        = f.file_field :image, id: 'update-image', accept: '.png,.jpeg,.jpg'
+        br
+        img#img_prev alt="update image" height="300" width="300" style=("visibility: hidden;")
+    br
+
+  .form-actions
+    = f.submit "Save", class: "btn btn-basic pull-right btn-gray"
