@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       post :update_detail
       # post :timeline_event
       get :archive
+      post :payment_date_update
     end
   end
 
