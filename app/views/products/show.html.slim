@@ -8,14 +8,14 @@ p#notice = notice
         tbody
           tr
             td
-              strong Sub category:
-            td
-              = @product.sub_category.name
-          tr
-            td
               strong Name:
             td
               = @product.name
+          tr
+            td
+              strong Sub category:
+            td
+              = @product.sub_category.name
           tr
             td
              strong Image:
@@ -46,4 +46,4 @@ p#notice = notice
 br
 = link_to 'Edit', edit_product_path, class:"btn btn-success btn-lg pull-left"
 
-= link_to 'Back', categories_path, class:"btn btn-success btn-lg pull-right"
+= link_to 'Back', products_path, class:"btn btn-success btn-lg pull-right"

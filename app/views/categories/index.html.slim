@@ -1,24 +1,26 @@
-h1.pull-left All Categories
+h1.pull-left Categories
+br
+br
+br
 = link_to '+ Product', new_product_path, class: "btn btn-success btn-sm pull-right"
 
 = link_to '+ Sub Category', new_sub_category_path, class: "btn btn-success btn-sm pull-right", style:"margin-right:5px;"
 
 = link_to '+ Category', new_category_path, class: "btn btn-success btn-sm pull-right", style:"margin-right:-5px;"
-table.table.table-hover.table-hover
-  thead
-    tr
-      th Name
-      th
+
+ul.nav.nav-tabs role="tablist"
+  li.nav-item
+    a.nav-link.active data-toggle="tab" href="#categories" role="tab" Categories (#{@categories.size})
+  li.nav-item
+    a.nav-link data-toggle="tab" href="#sub_categories" role="tab" Sub Categories (#{@sub_categories.size})
+  li.nav-item
+    a.nav-link data-toggle="tab" href="#products" role="tab" Products (#{@products.size})
 
 
-  tbody
-    - @categories.each do |category|
-      tr
-
-        td = category.name
-        td 
-          = link_to 'Show', category, class: "btn-sm btn-primary"
-          |  
-          = link_to 'Edit', edit_category_path(category), class: "btn-sm btn-success"
-          |  
-          = link_to 'Destroy', category, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn-sm btn-danger"
+.tab-content
+  #categories.tab-pane.active role="tabpanel"
+    = render partial: 'category', locals: { categories: @categories, update: false }
+  #sub_categories.tab-pane role="tabpanel"
+    = render partial: 'sub_category', locals: { sub_categories: @sub_categories, update: false }
+  #products.tab-pane role="tabpanel"
+    = render partial: 'product', locals: { products: @products, update: false }
