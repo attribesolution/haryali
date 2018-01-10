@@ -1,0 +1,11 @@
+<% if @subcategories.any? %>
+  $('.product_sub_category select').empty()
+  $('.product_sub_category select').append("<option value></option>");
+  var i = 1
+  <% @subcategories.each do |sub| %>
+      $('.product_sub_category select').append("<option value="+"<%= sub.id %>"+">"+"<%= sub.name %>"+"</option>");
+      i++
+  <% end %>
+<% end %>
+
+// $('.product_sub_category').replaceWith("<h2> Umer </h2>")

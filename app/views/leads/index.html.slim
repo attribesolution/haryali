@@ -79,3 +79,21 @@ h1 All Leads
             = submit_tag "Save", class: "btn btn-primary", style: "cursor:pointer;"
  
             / button.btn.btn-primary.save name=2 type="button" style="cursor:pointer;" Save
+
+
+#myModal3.modal aria-hidden="true" role="dialog" tabindex="-1" 
+  .modal-dialog role="document" 
+    .modal-content
+      .modal-header
+        button.close class="close-modal" data-dismiss="modal" type="button"  &times;
+        h4.modal-title Update Payment Date
+      .modal-body
+        = form_tag payment_date_update_leads_path, :multipart => true do
+          label.col-form-label Select a date
+          .input-group
+            input.form-control.fetched-date  name="new_payment_date" type="text" placeholder="Choose a date"
+            input.form-control.lead-id name="lead_id" type="hidden"
+
+          .modal-footer
+            button.btn.btn-secondary class="close-modal" data-dismiss="modal" type="button" style="background-color: darkgrey; cursor:pointer;" Close 
+            = submit_tag "Save", class: "btn btn-primary", style: "cursor:pointer;" 

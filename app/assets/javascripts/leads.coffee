@@ -29,6 +29,10 @@ class App.Leads extends App.Base
               'status': this.options[this.selectedIndex].text 
       count++
 
+    $('.payment_date_update').click ->
+      $('#myModal3').show()
+      $("#myModal3 .lead-id").val(this.name)
+
     $('#status').change ->
       if $(this).val() == "1"          
         $('#myModal1').show()        

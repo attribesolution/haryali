@@ -97,6 +97,12 @@ class LeadsController < ApplicationController
     redirect_to leads_url, notice: 'Lead was archived successfully'
   end
 
+  def payment_date_update
+    lead = Lead.find_by(id: params[:lead_id])
+    lead.update_column(:payment_date, params[:new_payment_date])
+    redirect_to leads_url
+  end
+
 private
 
   def load_lead
