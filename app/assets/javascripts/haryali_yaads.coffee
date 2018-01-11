@@ -13,13 +13,13 @@ class App.HaryaliYaads extends App.Base
       text_min = 0
       $('#lead_dedicate_name').focus ->
         $(this).keyup ->
-        $('#textarea_feedback').html '(' + text_min + ' /' +' 15)'
+        $('#textarea_feedback').html '(' + text_min + ' /' +' 30)'
         $('#lead_dedicate_name').keyup ->
           text_length = $('#lead_dedicate_name').val().length
           text_remaining = text_min + text_length
 
-          if text_remaining <= 315
-            $('#textarea_feedback').html  '(' + text_remaining + ' /' +' 15)'
+          if text_remaining <= 30
+            $('#textarea_feedback').html  '(' + text_remaining + ' /' +' 30)'
           return
  
         $('#lead_dedicate_name').blur ->
@@ -36,12 +36,15 @@ class App.HaryaliYaads extends App.Base
 
       $('#lead_dedicate_name').keyup ->
         textLength = this.value.length
-        if (textLength > 5 && textLength < 12)
-          console.log('less than 5');
-          $('.name-text').css 'font-size', '70%'
-        else if textLength > 12
-          console.log('greater than 12');
-          $('.name-text').css 'font-size', '50%'
+        if (textLength > 15 && textLength < 20)
+          console.log('less than 15');
+          $('.name-text').css 'font-size', '100%'
+        else if (textLength > 20 && textLength < 23)
+          console.log('greater than 20');
+          $('.name-text').css 'font-size', '90%'
+        else if (textLength > 23 && textLength < 27)
+          console.log('greater than 20');
+          $('.name-text').css 'font-size', '77%'
         return
 
           
