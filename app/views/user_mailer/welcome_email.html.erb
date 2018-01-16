@@ -1,14 +1,16 @@
-<h1>Welcome to Haryali, <%= @lead.name %></h1>
+<h1> Hi <%= @lead.name %>, </h1> 
 <p>
-  We have received your request for <strong><%= @lead.quantity %> <%= @lead.plant.name %></strong> at <strong><%= @lead.location.address %></strong>.<br/>
+  Thank you for taking interest in <i> Haryali</i>,
 </p>
 <p>
-  Our representative will contact you shortly, to confirm your order.<br/>
+  We have received your request. You’ll be contacted soon for confirmation by our team at your given phone number <%= @lead.contact %>. If the number is not correct reply this email with correct number. 
 </p>
 <p>
-  To explore our site, just follow this link: <%= @url %>.
+  Thanks once again, 
 </p>
-<p>Thank you for joining Haryali and have a great day!</p>
-<%# haryali logo %>
-<%# haryali contact info %>
-<%# this is an auto generated email? %>
+<p>
+  Team Haryali
+  <br>
+    <%= @url %>
+  </br>
+</p>
