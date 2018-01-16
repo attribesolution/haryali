@@ -49,6 +49,25 @@ class App.Leads extends App.Base
 
     $('.close-modal').click ->
       $('.modal').hide()
+
+    $('#planted_status_form').validate 
+      rules: 
+        'planted_date':
+          required: true
+        'image':
+          required: true
+
+    $('#confirm_status_form').validate 
+      rules: 
+        'payment_date':
+          required: true
+        'address':
+          required: true
+
+    $('#update_payment_date').validate 
+      rules: 
+        'new_payment_date':
+          required: true
     return
 
         

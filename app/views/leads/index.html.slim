@@ -35,7 +35,7 @@ h1 All Leads
         button.close class="close-modal" data-dismiss="modal" type="button"  &times;
         h4.modal-title Add Customer Details
       .modal-body
-        = form_tag update_detail_leads_path do
+        = form_tag update_detail_leads_path, id: "confirm_status_form"do
           label.col-form-label Select a date
           .input-group
             input.form-control.fetched-date  name="payment_date" type="text" placeholder="Choose a date"
@@ -61,7 +61,7 @@ h1 All Leads
         button.close class="close-modal" data-dismiss="modal" type="button"  &times;
         h4.modal-title Add Customer Details
       .modal-body
-        = form_tag updates_path, :multipart => true do
+        = form_tag updates_path, :multipart => true, id: "planted_status_form" do
           label.col-form-label Select a date
           .input-group
             input.form-control.fetched-date  name="planted_date" type="text" placeholder="Choose a date"
@@ -88,7 +88,7 @@ h1 All Leads
         button.close class="close-modal" data-dismiss="modal" type="button"  &times;
         h4.modal-title Update Payment Date
       .modal-body
-        = form_tag payment_date_update_leads_path, :multipart => true do
+        = form_tag payment_date_update_leads_path, :multipart => true, id: "update_payment_date" do
           label.col-form-label Select a date
           .input-group
             input.form-control.fetched-date  name="new_payment_date" type="text" placeholder="Choose a date"
