@@ -140,12 +140,12 @@ html
                         a.dropdown-toggle data-toggle="dropdown" href="javascript:void(0)"
                           | Your Plants
                           span.glyphicon.glyphicon-log-in
-                        .dropdown-menu style="width: 240px;"
+                        .dropdown-menu style="width: 223px; "
                           = form_tag session_path(:user), class: 'form' do
                             .form-group style="font-size:11px;" 
-                              = text_field_tag 'user[email]', '', class: 'form-control form-control-lg', type: 'email', placeholder: 'Enter your Email', style: 'width:210px;'
+                              = text_field_tag 'user[email]', '', class: 'form-control form-control-lg', type: 'email', placeholder: 'Enter your Email', style: 'width:192px;'
                               = password_field_tag 'user[password]', 'password', hidden: true
-                            button.btn.btn-block.btn-sm style='background-color: #8ac53a; color:white; width:210px;padding: 11px; margin-top: -8%; margin-left: 5%; margin-bottom: 7px;' Sign In
+                            button.btn.btn-block.btn-sm style='background-color: #8ac53a; color:white; width:188px;padding: 11px; margin-top: -8%; margin-left: 3%; margin-bottom: 7px;' Sign In
                       li
                       / a href=new_lead_path
                           .sticky-top.nav-btn 
