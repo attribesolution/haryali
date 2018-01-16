@@ -5,8 +5,7 @@
     - else
       strong #{@location.address.split(',')[0]}
   br
-  .table-align
-    table.table.table-striped
+    table.table.table-striped style= "width:48%;"
       tbody
         tr
           td 
@@ -31,7 +30,7 @@
               .progress-bar.color role="progressbar" style="width:#{percentage(@location).ceil}%"
   input.lat#location_lat value=@location.lat type='hidden'
   input.lng#location_lng value=@location.lng type='hidden'
-  .map.map-align style=("width: 50%; height: 200px; margin-bottom:15px;") 
+  .map.map-align style=("width: 50%; height: 230px; margin-bottom:15px; margin-top: -23.7%;") 
   .input-group
     input#current_location placeholder="Enter Your Address" class="form-control"
     span

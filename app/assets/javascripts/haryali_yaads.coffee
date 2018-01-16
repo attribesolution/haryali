@@ -47,12 +47,13 @@ class App.HaryaliYaads extends App.Base
           $('.name-text').css 'font-size', '77%'
         return
 
-          
-          
-    # document.getElementById('#hide-image').onclick = ->
-    #   document.getElementById('#loadingImage ').style.visibility = 'hidden'
-    #   return
+      
+      $('.change-image').click ->
+        $('#myImg').attr 'src', 'assets/legacy_plant_hands.png'
+        return
 
+       
+    
       $(document).ready ->
         # Handler for .ready() called.
         $('html, body').animate { scrollTop: $('.yaad-form').offset().top }, 'slow'
@@ -234,7 +235,7 @@ class App.HaryaliYaads extends App.Base
           maxlength: 20
         'lead[dedicate_name]':
           required: true
-          maxlength: 15
+          maxlength: 30
         'lead[contact]':
           required: true
           pkphone: true

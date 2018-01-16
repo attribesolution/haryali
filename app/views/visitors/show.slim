@@ -2,102 +2,101 @@
   h1.h1-align.location-heading
     strong #{@lead.name.capitalize}
   br
-  .table-align
-    table.table.table-striped
-      tbody
-        - unless @lead.plant.nil?
-          tr
-            td 
-              strong Plant:
-            td = @lead.plant.name
-        - unless @lead.location.nil?
-          tr  
-            td 
-              strong Location:
-            td 
-              - if @lead.location.try(:optional_address)
-                = @lead.location.optional_address + ', ' + @lead.location.address
-              - else
-                = @lead.location.address
-        - if @lead.dedicate_name and @lead.dedicate_type
-          tr  
-            td 
-              strong Dedicated in #{@lead.dedicate_type.capitalize} of:
-            td = @lead.dedicate_name.capitalize
-        - if @lead.quantity
-          tr  
-            td 
-              strong Quantity:
-            td = @lead.quantity.to_s
-          tr
-            td 
-              strong Price:
-            td = total_price(@lead)
+  table.table.table-striped style="width: 47%;"
+    tbody
+      - unless @lead.plant.nil?
         tr
           td 
-            strong Status:
-          td = @lead.status.capitalize
+            strong Plant:
+          td = @lead.plant.name
+      - unless @lead.location.nil?
+        tr  
+          td 
+            strong Location:
+          td 
+            - if @lead.location.try(:optional_address)
+              = @lead.location.optional_address + ', ' + @lead.location.address
+            - else
+              = @lead.location.address
+      - if @lead.dedicate_name and @lead.dedicate_type
+        tr  
+          td 
+            strong Dedicated in #{@lead.dedicate_type.capitalize} of:
+          td = @lead.dedicate_name.capitalize
+      - if @lead.quantity
+        tr  
+          td 
+            strong Quantity:
+          td = @lead.quantity.to_s
         tr
           td 
-            strong Created at:
-          td = @lead.created_at.strftime("%d %B, %Y")
+            strong Price:
+          td = total_price(@lead)
+      tr
+        td 
+          strong Status:
+        td = @lead.status.capitalize
+      tr
+        td 
+          strong Created at:
+        td = @lead.created_at.strftime("%d %B, %Y")
 
-    / - unless @lead.updates.empty?
-      = image_tag @lead.updates.last.image, style:"height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
-    / - else
-      = image_tag '11.jpg', style:"max-height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
-    input.lat#location_lat value=@lead.location.lat type='hidden'
-    input.lng#location_lng value=@lead.location.lng type='hidden'
-    .map.map-align style=("width: 65%; height: 371px; margin-bottom:16px; margin-left:87%; margin-top:-39%") 
-    .input-group style="width:119%;margin-left:33%"
-      input#current_location placeholder="Enter Your Address" class="form-control"
-      span
-        button#get_directions class="btn btn-info" disabled="" Get Directions
+  / - unless @lead.updates.empty?
+    = image_tag @lead.updates.last.image, style:"height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
+  / - else
+    = image_tag '11.jpg', style:"max-height:300px; float:right; margin-right:-50%; margin-top:-39.4%;"
+  input.lat#location_lat value=@lead.location.lat type='hidden'
+  input.lng#location_lng value=@lead.location.lng type='hidden'
+  .map.map-align style=("width: 55%; height: 371px; margin-left:50%; margin-bottom:16px; margin-top:-35%") 
+  .input-group style="width:105%;"
+    input#current_location placeholder="Enter Your Address" class="form-control"
+    span
+      button#get_directions class="btn btn-info" disabled="" Get Directions
 
-    br
-    br
+  br
+  br
 
-  - if @updates.any?
-    section#cd-timeline.cd-container.body-1 style="width:100%"
-      - @updates.each do |update|
-        .cd-timeline-block
-          
-          br
-          .cd-timeline-img.cd-picture
-            img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
-          .cd-timeline-content
-            .inner-body
-              .head-green
-                h2.heading-timeline.h2_1 #{update.title}
-              p #{update.description}
-              hr 
-              img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
-              #myModal.modal
-                span.close &times;
-                img#img01.modal-content.img1
-              span.cd-date #{update.created_at.strftime("%B %Y")}
-  
+- if @updates.any?
+  section#cd-timeline.cd-container.body-1 style="width:100%"
+    - @updates.each do |update|
+      .cd-timeline-block
+        
+        br
+        .cd-timeline-img.cd-picture
+          img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
+        .cd-timeline-content
+          .inner-body
+            .head-green
+              h2.heading-timeline.h2_1 #{update.title}
+            p #{update.description}
+            hr 
+            img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
+            #myModal.modal
+              span.close &times;
+              img#img01.modal-content.img1
+            span.cd-date #{update.created_at.strftime("%B %Y")}
 
-  / - if @lead.updates.any?
-  /   .container.thankyoupage-align
-  /     h1.t1 Updates 
-  /   section#cd-timeline.cd-container.body-1
-  /     - @lead.updates.each do |update|
-  /       .cd-timeline-block
-  /         br
-  /         .cd-timeline-img.cd-picture
-  /           img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
-  /         .cd-timeline-content
-  /           .inner-body
-  /             .head-green
-  /               h2.heading-timeline.h2_1 #{update.title}
-  /             p #{update.description}
-  /             hr 
-  /             img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
-  /             #myModal.modal
-  /               span.close &times;
-  /               img#img01.modal-content.img1
-  /             span.cd-date #{update.created_at.strftime("%B %Y")}
+
+/ - if @lead.updates.any?
+/   .container.thankyoupage-align
+/     h1.t1 Updates 
+/   section#cd-timeline.cd-container.body-1
+/     - @lead.updates.each do |update|
+/       .cd-timeline-block
+/         br
+/         .cd-timeline-img.cd-picture
+/           img.img1 alt="Picture" src="/assets/cd-icon-picture.svg"
+/         .cd-timeline-content
+/           .inner-body
+/             .head-green
+/               h2.heading-timeline.h2_1 #{update.title}
+/             p #{update.description}
+/             hr 
+/             img#myImg.img1_image alt="Location Image" height="200" src="#{update.image}" width="300"
+/             #myModal.modal
+/               span.close &times;
+/               img#img01.modal-content.img1
+/             span.cd-date #{update.created_at.strftime("%B %Y")}
 - else 
   h1.t1 No Submission found 
 br

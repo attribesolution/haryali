@@ -48,6 +48,8 @@ Rails.application.routes.draw do
 
   get "cart" => "carts#cart"
 
+  get "your_cart" => "carts#your_cart"
+
   get 'yaad' => "haryali_yaads#index"
 
   namespace :haryali_location_api, defaults: { format: :json } do
