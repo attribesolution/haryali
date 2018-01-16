@@ -10,7 +10,18 @@ class App.Carts extends App.Base
 
 
   index: =>
-    return
+    $ ->
+      $(document).ready ->
+        $('.flexslider').flexslider
+          animation: 'fade'
+          slideshowSpeed: 4000
+          animationSpeed: 600
+          controlNav: false
+          directionNav: true
+          controlsContainer: '.flex-container'
+        return
+      return
+    
 
 
   show: =>
