@@ -13,7 +13,7 @@
   height: 68%;
   float: left;
   background-color: #fff;
-  margin-top: -106%;
+  margin-top: -129%;
   
 }
 
@@ -70,7 +70,7 @@
   background: url(../images/trigger_right.png) transparent no-repeat 5px 8px;
 }
 .nav-list > .active > a, .nav-list > .active > a:hover{
-  background-color: transparent;
+  background-color: #90C64A;
   color:#eb4800;
   text-shadow: none;  
   font-weight: bold;
@@ -78,7 +78,7 @@
 .carousel.carousel-setting {
    
     position: relative;
-    margin-top: -14%;
+    margin-top: -13%;
     width: 1246px;
     margin-left: -7%;
 }
@@ -372,10 +372,10 @@ section.navbar{
   color:#fff;
 }
 #menu > ul a:hover{
-  color: #eb4800; 
+  color: #90C64A;; 
   text-decoration:none;
 }
-#menu .current{color: #eb4800 !important;}
+#menu .current{color: #90C64A !important;}
 
 #menu ul ul {
     background: none repeat scroll 0 0 #eee;
@@ -407,7 +407,7 @@ section.navbar{
     color: #333;
     font-size: 12px;
 }
-#menu ul ul a:hover,#menu > ul > li:hover > a{color: #fff;background-color:#eb4800}
+#menu ul ul a:hover,#menu > ul > li:hover > a{color: #fff;background-color:#90C64A;}
 #menu ul ul a:hover{background-color:#eb4800;}
 #menu > ul > li:hover {visibility: inherit;}
 #menu li:hover {visibility: inherit;}
@@ -537,11 +537,12 @@ h4.title.m{
   width:100%;
 }
 h4.title strong{
-  color:#eb4800;
+  color:#90C64A;
+  margin-left: 50%;
 }
 h4.title span.text{
   background-color:#fff;
-  padding-right:10px;
+ 
 }
 h4.title .left{
   background: url(../images/arrow-pleft.png) #eee no-repeat center center;  
@@ -791,6 +792,7 @@ $product-box-shadow: 0px 0px 0px 1px $light-gray;
     color: $primary;
     font-weight: bold;
     letter-spacing: .4px;
+    margin-left: -48%;
   }
   
   
@@ -849,9 +851,9 @@ $product-box-shadow: 0px 0px 0px 1px $light-gray;
   
   &__add-to-cart {
     color: #fff;
-    background: $primary;
+    background: #90C64A;;
     
-    &:hover { background: lighten($primary, 10%); }
+    &:hover { background: lighten(green, 10%); }
   }
   
   &__view {
@@ -861,3 +863,43 @@ $product-box-shadow: 0px 0px 0px 1px $light-gray;
     &:hover { background: lighten($light-gray, 10%); }
   }
 }
+
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
