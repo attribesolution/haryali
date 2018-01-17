@@ -36,6 +36,16 @@ class App.Carts extends App.Base
           i++
         return
       return
+    (($) ->
+      $('.spinner .btn:first-of-type').on 'click', ->
+        $('.spinner input').val parseInt($('.spinner input').val(), 10) + 1
+        return
+        $('.spinner .btn:last-of-type').on 'click', ->
+          $('.spinner input').val parseInt($('.spinner input').val(), 10) - 1
+          return
+        return
+      ) jQuery
+
 
 
   show: =>
