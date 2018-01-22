@@ -37,6 +37,15 @@ class App.Carts extends App.Base
         return
       return
 
+  cart: =>
+    $(".subcategory").click ->
+      $('li').removeClass('active');
+      $(this).addClass('active');
+      $.ajax
+        type: 'get'
+        url: '/cart'
+        data: 
+          id: this.id
 
   show: =>
     return

@@ -1,0 +1,41 @@
+- if products.any?
+  - products.each do |product|
+    .product-grid__product-wrapper
+      .product-grid__product
+        .product-grid__img-wrapper
+          img.product-grid__img alt="Img" src=product.image /
+        span.product-grid__title #{product.name}
+        span 
+          fieldset.rating
+            input#star5 name="rating" type="radio" value="5" /
+            label.full for="star5" title=("Awesome - 5 stars") 
+            input#star4half name="rating" type="radio" value=("4 and a half") /
+            label.half for="star4half" title=("Pretty good - 4.5 stars") 
+            input#star4 name="rating" type="radio" value="4" /
+            label.full for="star4" title=("Pretty good - 4 stars") 
+            input#star3half name="rating" type="radio" value=("3 and a half") /
+            label.half for="star3half" title=("Lovely - 3.5 stars") 
+            input#star3 name="rating" type="radio" value="3" /
+            label.full for="star3" title=("Lovely - 3 stars") 
+            input#star2half name="rating" type="radio" value=("2 and a half") /
+            label.half for="star2half" title=("Very Nice - 2.5 stars") 
+            input#star2 name="rating" type="radio" value="2" /
+            label.full for="star2" title=("Very Nice - 2 stars") 
+            input#star1half name="rating" type="radio" value=("1 and a half") /
+            label.half for="star1half" title=("Nice - 1.5 stars") 
+            input#star1 name="rating" type="radio" value="1" /
+            label.full for="star1" title=("Not Satisfied - 1 star") 
+            input#starhalf name="rating" type="radio" value="half" /
+            label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+        br
+          span.product-grid__price 
+            br
+            | Rs. #{product.price}
+          .product-grid__extend-wrapper
+            .product-grid__extend
+              p.product-grid__description #{product.description}
+              span.product-grid__btn.product-grid__add-to-cart
+                i.fa.fa-cart-arrow-down
+                | Add to cart
+- else
+  h2 No products available
