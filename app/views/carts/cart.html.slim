@@ -86,6 +86,51 @@ br
             / li
             /   a href="./products.html"  Top Seller
     .product-grid.product-grid--flexbox#products
+        ul
+          li
+            .dropdown
+              button.dropbtn href="./products.html" Outdoor Plants
+              .dropdown-content
+                a href="#"  Link 1
+                a href="#"  Link 2
+                a href="#"  Link 3
+           
+          li
+            .dropdown
+              button.dropbtn href="./products.html" Indoor Plants
+              .dropdown-content
+                a href="#"  Link 1
+                a href="#"  Link 2
+                a href="#"  Link 3
+          li
+            .dropdown
+              button.dropbtn href="./products.html" Ornamental & Shade Trees
+              .dropdown-content
+                a href="#"  Link 1
+                a href="#"  Link 2
+                a href="#"  Link 3
+          li
+            .dropdown
+              button.dropbtn href="./products.html" Tree Seeds
+              .dropdown-content
+                a href="#"  Link 1
+                a href="#"  Link 2
+                a href="#"  Link 3  
+          li
+            .dropdown
+              button.dropbtn href="./products.html" Flower Seeds
+              .dropdown-content
+                a href="#"  Link 1
+                a href="#"  Link 2
+                a href="#"  Link 3  
+          li
+            .dropdown
+              button.dropbtn href="./products.html" Top Seller
+              .dropdown-content
+                a href="#"  Link 1
+                a href="#"  Link 2
+                a href="#"  Link 3  
+    .product-grid.product-grid--flexbox
       .product-grid__wrapper
         = render partial: 'product', locals: { products: @products, update: false }
         /! Product list start here
@@ -133,7 +178,7 @@ br
 
     .sidebar
       .span4.col
-        .block
+        .block style="    margin-top: -352%;"
           h4 YOUR ORDER
           p You haven’t added anything to your cart yet! Start adding your favourite plants.
           table.table style="text-align:left; margin-left:-5px;"
@@ -155,7 +200,7 @@ br
       
           button.btn.btn-success.btn-lg.btn-block href="" style="width: 280px; cursor:pointer; background-color:#90C64A;" type="button"  Checkout
 
-        .block
+        .block 
           h4.title
             span.pull-left
               span.text Best Sellers
