@@ -1,504 +1,467 @@
 
-/ #top-bar.container
-/   .row
-/     .span4
-/       .col-sm-12
-/         form.pull-left style="width: 100%"
-/           .input-group
-/             input.form-control placeholder="Search" type="text" /
-/             .input-group-btn
-/               button.btn.btn-default type="submit" 
-/                 i.glyphicon.glyphicon-search
-/     .col-sm-12
-/       .span8
-/         .account.pull-right
-/           ul.user-menu
-/             li
-/               a href="#"  My Account
-/             li
-/               a href="cart.html"  Your Cart
-/             li
-/               a href="checkout.html"  Checkout
-/             li
-/               a href="register.html"  Login
-/ #wrapper.container
-/   section.navbar.main-menu
-/     .navbar-inner.main-menu
-/       a.logo.pull-left href="index.html" 
-/         img.site_logo alt="" src="themes/images/logo-black.png" style=("height: 40px;") /
-/       nav#menu.pull-right
-/         ul
-/           li
-/             a href="./products.html"  Outdoor Plants
-/           li
-/             a href="./products.html"  Indoor Plants
-/           li
-/             a href="./products.html"  Ornamental & Shade Trees
-/           li
-/             a href="./products.html"  Tree Seeds
-/           li
-/             a href="./products.html"  Flower Seeds
-/           li
-/             a href="./products.html"  Top Seller
+/ #carouselExampleControls.carousel.slide.carousel-setting data-ride="carousel" 
+/   .carousel-inner role="listbox" 
+/     .carousel-item.active
+/       img.d-block.img-fluid alt=("First slide") src="assets/Take-Root-Tree-2.jpg" /
+/     .carousel-item
+/       img.d-block.img-fluid alt=("Second slide") src="assets/cart-banner2.jpg" /
+/     .carousel-item
+/       img.d-block.img-fluid alt=("Third slide") src="assets/cart-banner3.jpg" /
+/     a.carousel-control-prev data-slide="prev" href="#carouselExampleControls" role="button" 
+/       span.carousel-control-prev-icon aria-hidden="true" 
+/       span.sr-only Previous
+/     a.carousel-control-next data-slide="next" href="#carouselExampleControls" role="button" 
+/       span.carousel-control-next-icon aria-hidden="true" 
+/       span.sr-only Next
 
+#carouselExampleIndicators.carousel.slide data-ride="carousel" 
+  ol.carousel-indicators
+    li.active data-slide-to="0" data-target="#carouselExampleIndicators" 
+    li data-slide-to="1" data-target="#carouselExampleIndicators" 
+    li data-slide-to="2" data-target="#carouselExampleIndicators" 
+  .carousel-inner
+    .carousel-item.active
+      img.d-block.w-100 alt=("First slide") class=".=img-responsive" src="assets/pageBanner.jpg" /
+    .carousel-item
+      img.d-block.w-100 alt=("Second slide") src="assets/Take-Root-Tree-2.jpg" /
+    .carousel-item
+      img.d-block.w-100 alt=("Third slide") src="assets/cart-banner2.jpg" /
+  a.carousel-control-prev data-slide="prev" href="#carouselExampleIndicators" role="button" 
+    span.carousel-control-prev-icon aria-hidden="true" 
+    span.sr-only Previous
+  a.carousel-control-next data-slide="next" href="#carouselExampleIndicators" role="button" 
+    span.carousel-control-next-icon aria-hidden="true" 
+    span.sr-only Next
 
-
-br
-  br
-  #carouselExampleControls.carousel.slide.carousel-setting data-ride="carousel" 
-    .carousel-inner role="listbox" 
-      .carousel-item.active
-        img.d-block.img-fluid alt=("First slide") src="assets/Take-Root-Tree-2.jpg" /
-      .carousel-item
-        img.d-block.img-fluid alt=("Second slide") src="assets/cart-banner2.jpg" /
-      .carousel-item
-        img.d-block.img-fluid alt=("Third slide") src="assets/cart-banner3.jpg" /
-      a.carousel-control-prev data-slide="prev" href="#carouselExampleControls" role="button" 
-        span.carousel-control-prev-icon aria-hidden="true" 
-        span.sr-only Previous
-      a.carousel-control-next data-slide="next" href="#carouselExampleControls" role="button" 
-        span.carousel-control-next-icon aria-hidden="true" 
-        span.sr-only Next
 .row
-  
   h4.title
     span.text.text-center
       strong Featured
       |  Products  
-  
-.page
-  .main        
-    .row
-      
-      nav#menu.pull-right
-        ul
-          li
-            .dropdown
-              button.dropbtn href="./products.html" Outdoor Plants
-              .dropdown-content
-                a href="#"  Link 1
-                a href="#"  Link 2
-                a href="#"  Link 3
-           
-          li
-            .dropdown
-              button.dropbtn href="./products.html" Indoor Plants
-              .dropdown-content
-                a href="#"  Link 1
-                a href="#"  Link 2
-                a href="#"  Link 3
-          li
-            .dropdown
-              button.dropbtn href="./products.html" Ornamental & Shade Trees
-              .dropdown-content
-                a href="#"  Link 1
-                a href="#"  Link 2
-                a href="#"  Link 3
-          li
-            .dropdown
-              button.dropbtn href="./products.html" Tree Seeds
-              .dropdown-content
-                a href="#"  Link 1
-                a href="#"  Link 2
-                a href="#"  Link 3  
-          li
-            .dropdown
-              button.dropbtn href="./products.html" Flower Seeds
-              .dropdown-content
-                a href="#"  Link 1
-                a href="#"  Link 2
-                a href="#"  Link 3  
-          li
-            .dropdown
-              button.dropbtn href="./products.html" Top Seller
-              .dropdown-content
-                a href="#"  Link 1
-                a href="#"  Link 2
-                a href="#"  Link 3  
-    .product-grid.product-grid--flexbox
-      .product-grid__wrapper
-        /! Product list start here
-        /! Single product
-        .product-grid__product-wrapper
-          .product-grid__product
-            .product-grid__img-wrapper
-              img.product-grid__img alt="Img" src="assets/plant1.jpg" /
-            span.product-grid__title Pink Mini Orchid
-            span 
-              fieldset.rating
-                input#star5 name="rating" type="radio" value="5" /
-                label.full for="star5" title=("Awesome - 5 stars") 
-                input#star4half name="rating" type="radio" value=("4 and a half") /
-                label.half for="star4half" title=("Pretty good - 4.5 stars") 
-                input#star4 name="rating" type="radio" value="4" /
-                label.full for="star4" title=("Pretty good - 4 stars") 
-                input#star3half name="rating" type="radio" value=("3 and a half") /
-                label.half for="star3half" title=("Lovely - 3.5 stars") 
-                input#star3 name="rating" type="radio" value="3" /
-                label.full for="star3" title=("Lovely - 3 stars") 
-                input#star2half name="rating" type="radio" value=("2 and a half") /
-                label.half for="star2half" title=("Very Nice - 2.5 stars") 
-                input#star2 name="rating" type="radio" value="2" /
-                label.full for="star2" title=("Very Nice - 2 stars") 
-                input#star1half name="rating" type="radio" value=("1 and a half") /
-                label.half for="star1half" title=("Nice - 1.5 stars") 
-                input#star1 name="rating" type="radio" value="1" /
-                label.full for="star1" title=("Not Satisfied - 1 star") 
-                input#starhalf name="rating" type="radio" value="half" /
-                label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
-            br
-              span.product-grid__price 
-                | Rs. 500
-              .product-grid__extend-wrapper
-                .product-grid__extend
-                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
-                  span.product-grid__btn.product-grid__add-to-cart
-                    i.fa.fa-cart-arrow-down
-                    | Add to cart
-                
-        /! end Single product
-        .product-grid__product-wrapper
-          .product-grid__product
-            .product-grid__img-wrapper
-              img.product-grid__img alt="Img" src="assets/plant2.jpg" /
-            span.product-grid__title Peaceful White Garden
-            span 
-              fieldset.rating
-                input#star5 name="rating" type="radio" value="5" /
-                label.full for="star5" title=("Awesome - 5 stars") 
-                input#star4half name="rating" type="radio" value=("4 and a half") /
-                label.half for="star4half" title=("Pretty good - 4.5 stars") 
-                input#star4 name="rating" type="radio" value="4" /
-                label.full for="star4" title=("Pretty good - 4 stars") 
-                input#star3half name="rating" type="radio" value=("3 and a half") /
-                label.half for="star3half" title=("Lovely - 3.5 stars") 
-                input#star3 name="rating" type="radio" value="3" /
-                label.full for="star3" title=("Lovely - 3 stars") 
-                input#star2half name="rating" type="radio" value=("2 and a half") /
-                label.half for="star2half" title=("Very Nice - 2.5 stars") 
-                input#star2 name="rating" type="radio" value="2" /
-                label.full for="star2" title=("Very Nice - 2 stars") 
-                input#star1half name="rating" type="radio" value=("1 and a half") /
-                label.half for="star1half" title=("Nice - 1.5 stars") 
-                input#star1 name="rating" type="radio" value="1" /
-                label.full for="star1" title=("Not Satisfied - 1 star") 
-                input#starhalf name="rating" type="radio" value="half" /
-                label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
-            br
-              span.product-grid__price 
-                | Rs. 500
-              .product-grid__extend-wrapper
-                .product-grid__extend
-                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
-                  span.product-grid__btn.product-grid__add-to-cart
-                    i.fa.fa-cart-arrow-down
-                    | Add to cart
-                
-        .product-grid__product-wrapper
-          .product-grid__product
-            .product-grid__img-wrapper
-              img.product-grid__img alt="Img" src="assets/plant3.jpg" /
-            span.product-grid__title Nature's Grace Peace 
-            span 
-              fieldset.rating
-                input#star5 name="rating" type="radio" value="5" /
-                label.full for="star5" title=("Awesome - 5 stars") 
-                input#star4half name="rating" type="radio" value=("4 and a half") /
-                label.half for="star4half" title=("Pretty good - 4.5 stars") 
-                input#star4 name="rating" type="radio" value="4" /
-                label.full for="star4" title=("Pretty good - 4 stars") 
-                input#star3half name="rating" type="radio" value=("3 and a half") /
-                label.half for="star3half" title=("Lovely - 3.5 stars") 
-                input#star3 name="rating" type="radio" value="3" /
-                label.full for="star3" title=("Lovely - 3 stars") 
-                input#star2half name="rating" type="radio" value=("2 and a half") /
-                label.half for="star2half" title=("Very Nice - 2.5 stars") 
-                input#star2 name="rating" type="radio" value="2" /
-                label.full for="star2" title=("Very Nice - 2 stars") 
-                input#star1half name="rating" type="radio" value=("1 and a half") /
-                label.half for="star1half" title=("Nice - 1.5 stars") 
-                input#star1 name="rating" type="radio" value="1" /
-                label.full for="star1" title=("Not Satisfied - 1 star") 
-                input#starhalf name="rating" type="radio" value="half" /
-                label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
-            br
-              span.product-grid__price 
-                | Rs. 500
-              .product-grid__extend-wrapper
-                .product-grid__extend
-                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
-                  span.product-grid__btn.product-grid__add-to-cart
-                    i.fa.fa-cart-arrow-down
-                    | Add to cart
 
-        .product-grid__product-wrapper
-          .product-grid__product
-            .product-grid__img-wrapper
-              img.product-grid__img alt="Img" src="assets/plant4.jpg" /
-            span.product-grid__title Heart Bamboo
-            span 
-              fieldset.rating
-                input#star5 name="rating" type="radio" value="5" /
-                label.full for="star5" title=("Awesome - 5 stars") 
-                input#star4half name="rating" type="radio" value=("4 and a half") /
-                label.half for="star4half" title=("Pretty good - 4.5 stars") 
-                input#star4 name="rating" type="radio" value="4" /
-                label.full for="star4" title=("Pretty good - 4 stars") 
-                input#star3half name="rating" type="radio" value=("3 and a half") /
-                label.half for="star3half" title=("Lovely - 3.5 stars") 
-                input#star3 name="rating" type="radio" value="3" /
-                label.full for="star3" title=("Lovely - 3 stars") 
-                input#star2half name="rating" type="radio" value=("2 and a half") /
-                label.half for="star2half" title=("Very Nice - 2.5 stars") 
-                input#star2 name="rating" type="radio" value="2" /
-                label.full for="star2" title=("Very Nice - 2 stars") 
-                input#star1half name="rating" type="radio" value=("1 and a half") /
-                label.half for="star1half" title=("Nice - 1.5 stars") 
-                input#star1 name="rating" type="radio" value="1" /
-                label.full for="star1" title=("Not Satisfied - 1 star") 
-                input#starhalf name="rating" type="radio" value="half" /
-                label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
-            br
-              span.product-grid__price 
-                | Rs. 500
-              .product-grid__extend-wrapper
-                .product-grid__extend
-                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
-                  span.product-grid__btn.product-grid__add-to-cart
-                    i.fa.fa-cart-arrow-down
-                    | Add to cart
-               
-        .product-grid__product-wrapper
-          .product-grid__product
-            .product-grid__img-wrapper
-              img.product-grid__img alt="Img" src="assets/plant5.jpg" /
-            span.product-grid__title Perfectly Pink Garden
-            span 
-              fieldset.rating
-                input#star5 name="rating" type="radio" value="5" /
-                label.full for="star5" title=("Awesome - 5 stars") 
-                input#star4half name="rating" type="radio" value=("4 and a half") /
-                label.half for="star4half" title=("Pretty good - 4.5 stars") 
-                input#star4 name="rating" type="radio" value="4" /
-                label.full for="star4" title=("Pretty good - 4 stars") 
-                input#star3half name="rating" type="radio" value=("3 and a half") /
-                label.half for="star3half" title=("Lovely - 3.5 stars") 
-                input#star3 name="rating" type="radio" value="3" /
-                label.full for="star3" title=("Lovely - 3 stars") 
-                input#star2half name="rating" type="radio" value=("2 and a half") /
-                label.half for="star2half" title=("Very Nice - 2.5 stars") 
-                input#star2 name="rating" type="radio" value="2" /
-                label.full for="star2" title=("Very Nice - 2 stars") 
-                input#star1half name="rating" type="radio" value=("1 and a half") /
-                label.half for="star1half" title=("Nice - 1.5 stars") 
-                input#star1 name="rating" type="radio" value="1" /
-                label.full for="star1" title=("Not Satisfied - 1 star") 
-                input#starhalf name="rating" type="radio" value="half" /
-                label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
-            br
-              span.product-grid__price 
-                | Rs. 500
-              .product-grid__extend-wrapper
-                .product-grid__extend
-                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
-                  span.product-grid__btn.product-grid__add-to-cart
-                    i.fa.fa-cart-arrow-down
-                    | Add to cart
-                
-        .product-grid__product-wrapper
-          .product-grid__product
-            .product-grid__img-wrapper
-              img.product-grid__img alt="Img" src="assets/plant6.jpg" /
-            span.product-grid__title Guardian Angel Tree
-            span 
-              fieldset.rating
-                input#star5 name="rating" type="radio" value="5" /
-                label.full for="star5" title=("Awesome - 5 stars") 
-                input#star4half name="rating" type="radio" value=("4 and a half") /
-                label.half for="star4half" title=("Pretty good - 4.5 stars") 
-                input#star4 name="rating" type="radio" value="4" /
-                label.full for="star4" title=("Pretty good - 4 stars") 
-                input#star3half name="rating" type="radio" value=("3 and a half") /
-                label.half for="star3half" title=("Lovely - 3.5 stars") 
-                input#star3 name="rating" type="radio" value="3" /
-                label.full for="star3" title=("Lovely - 3 stars") 
-                input#star2half name="rating" type="radio" value=("2 and a half") /
-                label.half for="star2half" title=("Very Nice - 2.5 stars") 
-                input#star2 name="rating" type="radio" value="2" /
-                label.full for="star2" title=("Very Nice - 2 stars") 
-                input#star1half name="rating" type="radio" value=("1 and a half") /
-                label.half for="star1half" title=("Nice - 1.5 stars") 
-                input#star1 name="rating" type="radio" value="1" /
-                label.full for="star1" title=("Not Satisfied - 1 star") 
-                input#starhalf name="rating" type="radio" value="half" /
-                label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
-            br
-              span.product-grid__price 
-                | Rs. 500
-              .product-grid__extend-wrapper
-                .product-grid__extend
-                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
-                  span.product-grid__btn.product-grid__add-to-cart
-                    i.fa.fa-cart-arrow-down
-                    | Add to cart
-               
-        .product-grid__product-wrapper
-          .product-grid__product
-            .product-grid__img-wrapper
-              img.product-grid__img alt="Img" src="assets/plant7.jpg" /
-            span.product-grid__title Butterfly Bulb Garden
-            span 
-              fieldset.rating
-                input#star5 name="rating" type="radio" value="5" /
-                label.full for="star5" title=("Awesome - 5 stars") 
-                input#star4half name="rating" type="radio" value=("4 and a half") /
-                label.half for="star4half" title=("Pretty good - 4.5 stars") 
-                input#star4 name="rating" type="radio" value="4" /
-                label.full for="star4" title=("Pretty good - 4 stars") 
-                input#star3half name="rating" type="radio" value=("3 and a half") /
-                label.half for="star3half" title=("Lovely - 3.5 stars") 
-                input#star3 name="rating" type="radio" value="3" /
-                label.full for="star3" title=("Lovely - 3 stars") 
-                input#star2half name="rating" type="radio" value=("2 and a half") /
-                label.half for="star2half" title=("Very Nice - 2.5 stars") 
-                input#star2 name="rating" type="radio" value="2" /
-                label.full for="star2" title=("Very Nice - 2 stars") 
-                input#star1half name="rating" type="radio" value=("1 and a half") /
-                label.half for="star1half" title=("Nice - 1.5 stars") 
-                input#star1 name="rating" type="radio" value="1" /
-                label.full for="star1" title=("Not Satisfied - 1 star") 
-                input#starhalf name="rating" type="radio" value="half" /
-                label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
-            br
-              span.product-grid__price 
-                | Rs. 500
-              .product-grid__extend-wrapper
-                .product-grid__extend
-                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
-                  span.product-grid__btn.product-grid__add-to-cart
-                    i.fa.fa-cart-arrow-down
-                    | Add to cart
-                
-        .product-grid__product-wrapper
-          .product-grid__product
-            .product-grid__img-wrapper
-              img.product-grid__img alt="Img" src="assets/plant8.jpg" /
-            span.product-grid__title Deluxe Peace Lily
-            span 
-              fieldset.rating
-                input#star5 name="rating" type="radio" value="5" /
-                label.full for="star5" title=("Awesome - 5 stars") 
-                input#star4half name="rating" type="radio" value=("4 and a half") /
-                label.half for="star4half" title=("Pretty good - 4.5 stars") 
-                input#star4 name="rating" type="radio" value="4" /
-                label.full for="star4" title=("Pretty good - 4 stars") 
-                input#star3half name="rating" type="radio" value=("3 and a half") /
-                label.half for="star3half" title=("Lovely - 3.5 stars") 
-                input#star3 name="rating" type="radio" value="3" /
-                label.full for="star3" title=("Lovely - 3 stars") 
-                input#star2half name="rating" type="radio" value=("2 and a half") /
-                label.half for="star2half" title=("Very Nice - 2.5 stars") 
-                input#star2 name="rating" type="radio" value="2" /
-                label.full for="star2" title=("Very Nice - 2 stars") 
-                input#star1half name="rating" type="radio" value=("1 and a half") /
-                label.half for="star1half" title=("Nice - 1.5 stars") 
-                input#star1 name="rating" type="radio" value="1" /
-                label.full for="star1" title=("Not Satisfied - 1 star") 
-                input#starhalf name="rating" type="radio" value="half" /
-                label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
-            br
-              span.product-grid__price 
-                | Rs. 500
-              .product-grid__extend-wrapper
-                .product-grid__extend
-                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
-                  span.product-grid__btn.product-grid__add-to-cart
-                    i.fa.fa-cart-arrow-down
-                    | Add to cart
-                
-        .product-grid__product-wrapper
-          .product-grid__product
-            .product-grid__img-wrapper
-              img.product-grid__img alt="Img" src="assets/plant9.jpg" /
-            span.product-grid__title Sunshine & Joy Garden
-            span 
-              fieldset.rating
-                input#star5 name="rating" type="radio" value="5" /
-                label.full for="star5" title=("Awesome - 5 stars") 
-                input#star4half name="rating" type="radio" value=("4 and a half") /
-                label.half for="star4half" title=("Pretty good - 4.5 stars") 
-                input#star4 name="rating" type="radio" value="4" /
-                label.full for="star4" title=("Pretty good - 4 stars") 
-                input#star3half name="rating" type="radio" value=("3 and a half") /
-                label.half for="star3half" title=("Lovely - 3.5 stars") 
-                input#star3 name="rating" type="radio" value="3" /
-                label.full for="star3" title=("Lovely - 3 stars") 
-                input#star2half name="rating" type="radio" value=("2 and a half") /
-                label.half for="star2half" title=("Very Nice - 2.5 stars") 
-                input#star2 name="rating" type="radio" value="2" /
-                label.full for="star2" title=("Very Nice - 2 stars") 
-                input#star1half name="rating" type="radio" value=("1 and a half") /
-                label.half for="star1half" title=("Nice - 1.5 stars") 
-                input#star1 name="rating" type="radio" value="1" /
-                label.full for="star1" title=("Not Satisfied - 1 star") 
-                input#starhalf name="rating" type="radio" value="half" /
-                label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
-            br
-              span.product-grid__price 
-                | Rs. 500
-              .product-grid__extend-wrapper
-                .product-grid__extend
-                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
-                  span.product-grid__btn.product-grid__add-to-cart
-                    i.fa.fa-cart-arrow-down
-                    | Add to cart
-                
-
-
-    .sidebar
-      .span4.col
-        .block style="    margin-top: -352%;"
-          h4 YOUR ORDER
-          p You haven’t added anything to your cart yet! Start adding your favourite plants.
-          table.table style="text-align:left; margin-left:-5px;"
-            tbody
-              tr
-                th scope="row"  
-                td Delivery Fee
-                td PKR 0.00
-              tr
-                th scope="row"  
-                td Quantity
-                td 2
-              tr
-                th scope="row"  
-                td 
-                  strong
-                    | Total Amount
-                td PKR 0.00
-      
-          button.btn.btn-success.btn-lg.btn-block href="" style="width: 280px; cursor:pointer; background-color:#90C64A;" type="button"  Checkout
-
-        .block 
-          h4.title
-            span.pull-left
-              span.text Best Sellers
-            span.pull-right
-              a.left.button data-slide="prev" href="#myCarousel" 
-              a.right.button data-slide="next" href="#myCarousel" 
-          #myCarousel.carousel.slide
-            .carousel-inner
-              .item
-                ul.thumbnails.listing-products
-                  .span3
-                    .product-box
-                      a href="product_detail.html" 
-                        img alt="" src="assets/bamboo.jpg" /
-                      br/
-                      a.title href="product_detail.html"  Tempor sem sodales
-                      br/
-                      a.category href="#"  Urna nec lectus mollis
-                      p.price $134
-  
-           
  
+    nav#menu.pull-right
+      ul
+        li
+          .dropdown
+            button.dropbtn href="./products.html" Outdoor Plants
+            .dropdown-content
+              a href="#"  Link 1
+              a href="#"  Link 2
+              a href="#"  Link 3
+         
+        li
+          .dropdown
+            button.dropbtn href="./products.html" Indoor Plants
+            .dropdown-content
+              a href="#"  Link 1
+              a href="#"  Link 2
+              a href="#"  Link 3
+        li
+          .dropdown
+            button.dropbtn href="./products.html" Ornamental & Shade Trees
+            .dropdown-content
+              a href="#"  Link 1
+              a href="#"  Link 2
+              a href="#"  Link 3
+        li
+          .dropdown
+            button.dropbtn href="./products.html" Tree Seeds
+            .dropdown-content
+              a href="#"  Link 1
+              a href="#"  Link 2
+              a href="#"  Link 3  
+        li
+          .dropdown
+            button.dropbtn href="./products.html" Flower Seeds
+            .dropdown-content
+              a href="#"  Link 1
+              a href="#"  Link 2
+              a href="#"  Link 3  
+        li
+          .dropdown
+            button.dropbtn href="./products.html" Top Seller
+            .dropdown-content
+              a href="#"  Link 1
+              a href="#"  Link 2
+              a href="#"  Link 3  
+
+ 
+
+
+
+.cart-content
+  .container
+    .row
+      .col-md-4
+        .block
+          .list-group.disabed style="width: 100% !important"
+              h4 YOUR ORDER
+              p You haven’t added anything to your cart yet! Start adding your favourite plants.
+              table.table style="text-align:left; margin-left:-5px;"
+                tbody
+                  tr
+                    th scope="row"  
+                    td Delivery Fee
+                    td PKR 0.00
+                  tr
+                    th scope="row"  
+                    td Quantity
+                    td 2
+                  tr
+                    th scope="row"  
+                    td 
+                      strong
+                        | Total Amount
+                    td PKR 0.00
+              a.btn.continue.checkout-btn.text-center href="#"  Checkout
+      .col-md-8
+        .span6
+          .product-grid__product-wrapper
+            .product-grid__product
+              .product-grid__img-wrapper
+                img.product-grid__img alt="Img" src="assets/plant1.jpg" /
+              span.product-grid__title Pink Mini Orchid
+              span 
+                fieldset.rating
+                  input#star5 name="rating" type="radio" value="5" /
+                  label.full for="star5" title=("Awesome - 5 stars") 
+                  input#star4half name="rating" type="radio" value=("4 and a half") /
+                  label.half for="star4half" title=("Pretty good - 4.5 stars") 
+                  input#star4 name="rating" type="radio" value="4" /
+                  label.full for="star4" title=("Pretty good - 4 stars") 
+                  input#star3half name="rating" type="radio" value=("3 and a half") /
+                  label.half for="star3half" title=("Lovely - 3.5 stars") 
+                  input#star3 name="rating" type="radio" value="3" /
+                  label.full for="star3" title=("Lovely - 3 stars") 
+                  input#star2half name="rating" type="radio" value=("2 and a half") /
+                  label.half for="star2half" title=("Very Nice - 2.5 stars") 
+                  input#star2 name="rating" type="radio" value="2" /
+                  label.full for="star2" title=("Very Nice - 2 stars") 
+                  input#star1half name="rating" type="radio" value=("1 and a half") /
+                  label.half for="star1half" title=("Nice - 1.5 stars") 
+                  input#star1 name="rating" type="radio" value="1" /
+                  label.full for="star1" title=("Not Satisfied - 1 star") 
+                  input#starhalf name="rating" type="radio" value="half" /
+                  label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+              br
+                span.product-grid__price 
+                    | Rs. 500
+              .product-grid__extend-wrapper
+                .product-grid__extend
+                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
+                  span.product-grid__btn.product-grid__add-to-cart
+                    i.fa.fa-cart-arrow-down
+                    | Add to cart
+        .span6
+          .product-grid__product-wrapper
+            .product-grid__product
+              .product-grid__img-wrapper
+                img.product-grid__img alt="Img" src="assets/plant5.jpg" /
+              span.product-grid__title Pink Mini Orchid
+              span 
+                fieldset.rating
+                  input#star5 name="rating" type="radio" value="5" /
+                  label.full for="star5" title=("Awesome - 5 stars") 
+                  input#star4half name="rating" type="radio" value=("4 and a half") /
+                  label.half for="star4half" title=("Pretty good - 4.5 stars") 
+                  input#star4 name="rating" type="radio" value="4" /
+                  label.full for="star4" title=("Pretty good - 4 stars") 
+                  input#star3half name="rating" type="radio" value=("3 and a half") /
+                  label.half for="star3half" title=("Lovely - 3.5 stars") 
+                  input#star3 name="rating" type="radio" value="3" /
+                  label.full for="star3" title=("Lovely - 3 stars") 
+                  input#star2half name="rating" type="radio" value=("2 and a half") /
+                  label.half for="star2half" title=("Very Nice - 2.5 stars") 
+                  input#star2 name="rating" type="radio" value="2" /
+                  label.full for="star2" title=("Very Nice - 2 stars") 
+                  input#star1half name="rating" type="radio" value=("1 and a half") /
+                  label.half for="star1half" title=("Nice - 1.5 stars") 
+                  input#star1 name="rating" type="radio" value="1" /
+                  label.full for="star1" title=("Not Satisfied - 1 star") 
+                  input#starhalf name="rating" type="radio" value="half" /
+                  label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+              br
+                span.product-grid__price 
+                    | Rs. 500
+              .product-grid__extend-wrapper
+                .product-grid__extend
+                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
+                  span.product-grid__btn.product-grid__add-to-cart
+                    i.fa.fa-cart-arrow-down
+                    | Add to cart
+
+        .span6
+          .product-grid__product-wrapper
+            .product-grid__product
+              .product-grid__img-wrapper
+                img.product-grid__img alt="Img" src="assets/plant3.jpg" /
+              span.product-grid__title Pink Mini Orchid
+              span 
+                fieldset.rating
+                  input#star5 name="rating" type="radio" value="5" /
+                  label.full for="star5" title=("Awesome - 5 stars") 
+                  input#star4half name="rating" type="radio" value=("4 and a half") /
+                  label.half for="star4half" title=("Pretty good - 4.5 stars") 
+                  input#star4 name="rating" type="radio" value="4" /
+                  label.full for="star4" title=("Pretty good - 4 stars") 
+                  input#star3half name="rating" type="radio" value=("3 and a half") /
+                  label.half for="star3half" title=("Lovely - 3.5 stars") 
+                  input#star3 name="rating" type="radio" value="3" /
+                  label.full for="star3" title=("Lovely - 3 stars") 
+                  input#star2half name="rating" type="radio" value=("2 and a half") /
+                  label.half for="star2half" title=("Very Nice - 2.5 stars") 
+                  input#star2 name="rating" type="radio" value="2" /
+                  label.full for="star2" title=("Very Nice - 2 stars") 
+                  input#star1half name="rating" type="radio" value=("1 and a half") /
+                  label.half for="star1half" title=("Nice - 1.5 stars") 
+                  input#star1 name="rating" type="radio" value="1" /
+                  label.full for="star1" title=("Not Satisfied - 1 star") 
+                  input#starhalf name="rating" type="radio" value="half" /
+                  label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+              br
+                span.product-grid__price 
+                    | Rs. 500
+              .product-grid__extend-wrapper
+                .product-grid__extend
+                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
+                  span.product-grid__btn.product-grid__add-to-cart
+                    i.fa.fa-cart-arrow-down
+                    | Add to cart
+        .span6
+          .product-grid__product-wrapper
+            .product-grid__product
+              .product-grid__img-wrapper
+                img.product-grid__img alt="Img" src="assets/plant4.jpg" /
+              span.product-grid__title Pink Mini Orchid
+              span 
+                fieldset.rating
+                  input#star5 name="rating" type="radio" value="5" /
+                  label.full for="star5" title=("Awesome - 5 stars") 
+                  input#star4half name="rating" type="radio" value=("4 and a half") /
+                  label.half for="star4half" title=("Pretty good - 4.5 stars") 
+                  input#star4 name="rating" type="radio" value="4" /
+                  label.full for="star4" title=("Pretty good - 4 stars") 
+                  input#star3half name="rating" type="radio" value=("3 and a half") /
+                  label.half for="star3half" title=("Lovely - 3.5 stars") 
+                  input#star3 name="rating" type="radio" value="3" /
+                  label.full for="star3" title=("Lovely - 3 stars") 
+                  input#star2half name="rating" type="radio" value=("2 and a half") /
+                  label.half for="star2half" title=("Very Nice - 2.5 stars") 
+                  input#star2 name="rating" type="radio" value="2" /
+                  label.full for="star2" title=("Very Nice - 2 stars") 
+                  input#star1half name="rating" type="radio" value=("1 and a half") /
+                  label.half for="star1half" title=("Nice - 1.5 stars") 
+                  input#star1 name="rating" type="radio" value="1" /
+                  label.full for="star1" title=("Not Satisfied - 1 star") 
+                  input#starhalf name="rating" type="radio" value="half" /
+                  label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+              br
+                span.product-grid__price 
+                    | Rs. 500
+              .product-grid__extend-wrapper
+                .product-grid__extend
+                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
+                  span.product-grid__btn.product-grid__add-to-cart
+                    i.fa.fa-cart-arrow-down
+                    | Add to cart
+        .span6
+          .product-grid__product-wrapper
+            .product-grid__product
+              .product-grid__img-wrapper
+                img.product-grid__img alt="Img" src="assets/plant2.jpg" /
+              span.product-grid__title Pink Mini Orchid
+              span 
+                fieldset.rating
+                  input#star5 name="rating" type="radio" value="5" /
+                  label.full for="star5" title=("Awesome - 5 stars") 
+                  input#star4half name="rating" type="radio" value=("4 and a half") /
+                  label.half for="star4half" title=("Pretty good - 4.5 stars") 
+                  input#star4 name="rating" type="radio" value="4" /
+                  label.full for="star4" title=("Pretty good - 4 stars") 
+                  input#star3half name="rating" type="radio" value=("3 and a half") /
+                  label.half for="star3half" title=("Lovely - 3.5 stars") 
+                  input#star3 name="rating" type="radio" value="3" /
+                  label.full for="star3" title=("Lovely - 3 stars") 
+                  input#star2half name="rating" type="radio" value=("2 and a half") /
+                  label.half for="star2half" title=("Very Nice - 2.5 stars") 
+                  input#star2 name="rating" type="radio" value="2" /
+                  label.full for="star2" title=("Very Nice - 2 stars") 
+                  input#star1half name="rating" type="radio" value=("1 and a half") /
+                  label.half for="star1half" title=("Nice - 1.5 stars") 
+                  input#star1 name="rating" type="radio" value="1" /
+                  label.full for="star1" title=("Not Satisfied - 1 star") 
+                  input#starhalf name="rating" type="radio" value="half" /
+                  label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+              br
+                span.product-grid__price 
+                    | Rs. 500
+              .product-grid__extend-wrapper
+                .product-grid__extend
+                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
+                  span.product-grid__btn.product-grid__add-to-cart
+                    i.fa.fa-cart-arrow-down
+                    | Add to cart
+        .span6
+          .product-grid__product-wrapper
+            .product-grid__product
+              .product-grid__img-wrapper
+                img.product-grid__img alt="Img" src="assets/plant6.jpg" /
+              span.product-grid__title Pink Mini Orchid
+              span 
+                fieldset.rating
+                  input#star5 name="rating" type="radio" value="5" /
+                  label.full for="star5" title=("Awesome - 5 stars") 
+                  input#star4half name="rating" type="radio" value=("4 and a half") /
+                  label.half for="star4half" title=("Pretty good - 4.5 stars") 
+                  input#star4 name="rating" type="radio" value="4" /
+                  label.full for="star4" title=("Pretty good - 4 stars") 
+                  input#star3half name="rating" type="radio" value=("3 and a half") /
+                  label.half for="star3half" title=("Lovely - 3.5 stars") 
+                  input#star3 name="rating" type="radio" value="3" /
+                  label.full for="star3" title=("Lovely - 3 stars") 
+                  input#star2half name="rating" type="radio" value=("2 and a half") /
+                  label.half for="star2half" title=("Very Nice - 2.5 stars") 
+                  input#star2 name="rating" type="radio" value="2" /
+                  label.full for="star2" title=("Very Nice - 2 stars") 
+                  input#star1half name="rating" type="radio" value=("1 and a half") /
+                  label.half for="star1half" title=("Nice - 1.5 stars") 
+                  input#star1 name="rating" type="radio" value="1" /
+                  label.full for="star1" title=("Not Satisfied - 1 star") 
+                  input#starhalf name="rating" type="radio" value="half" /
+                  label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+              br
+                span.product-grid__price 
+                    | Rs. 500
+              .product-grid__extend-wrapper
+                .product-grid__extend
+                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
+                  span.product-grid__btn.product-grid__add-to-cart
+                    i.fa.fa-cart-arrow-down
+                    | Add to cart
+        .span6
+          .product-grid__product-wrapper
+            .product-grid__product
+              .product-grid__img-wrapper
+                img.product-grid__img alt="Img" src="assets/plant7.jpg" /
+              span.product-grid__title Pink Mini Orchid
+              span 
+                fieldset.rating
+                  input#star5 name="rating" type="radio" value="5" /
+                  label.full for="star5" title=("Awesome - 5 stars") 
+                  input#star4half name="rating" type="radio" value=("4 and a half") /
+                  label.half for="star4half" title=("Pretty good - 4.5 stars") 
+                  input#star4 name="rating" type="radio" value="4" /
+                  label.full for="star4" title=("Pretty good - 4 stars") 
+                  input#star3half name="rating" type="radio" value=("3 and a half") /
+                  label.half for="star3half" title=("Lovely - 3.5 stars") 
+                  input#star3 name="rating" type="radio" value="3" /
+                  label.full for="star3" title=("Lovely - 3 stars") 
+                  input#star2half name="rating" type="radio" value=("2 and a half") /
+                  label.half for="star2half" title=("Very Nice - 2.5 stars") 
+                  input#star2 name="rating" type="radio" value="2" /
+                  label.full for="star2" title=("Very Nice - 2 stars") 
+                  input#star1half name="rating" type="radio" value=("1 and a half") /
+                  label.half for="star1half" title=("Nice - 1.5 stars") 
+                  input#star1 name="rating" type="radio" value="1" /
+                  label.full for="star1" title=("Not Satisfied - 1 star") 
+                  input#starhalf name="rating" type="radio" value="half" /
+                  label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+              br
+                span.product-grid__price 
+                    | Rs. 500
+              .product-grid__extend-wrapper
+                .product-grid__extend
+                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
+                  span.product-grid__btn.product-grid__add-to-cart
+                    i.fa.fa-cart-arrow-down
+                    | Add to cart
+        .span6
+          .product-grid__product-wrapper
+            .product-grid__product
+              .product-grid__img-wrapper
+                img.product-grid__img alt="Img" src="assets/plant8.jpg" /
+              span.product-grid__title Pink Mini Orchid
+              span 
+                fieldset.rating
+                  input#star5 name="rating" type="radio" value="5" /
+                  label.full for="star5" title=("Awesome - 5 stars") 
+                  input#star4half name="rating" type="radio" value=("4 and a half") /
+                  label.half for="star4half" title=("Pretty good - 4.5 stars") 
+                  input#star4 name="rating" type="radio" value="4" /
+                  label.full for="star4" title=("Pretty good - 4 stars") 
+                  input#star3half name="rating" type="radio" value=("3 and a half") /
+                  label.half for="star3half" title=("Lovely - 3.5 stars") 
+                  input#star3 name="rating" type="radio" value="3" /
+                  label.full for="star3" title=("Lovely - 3 stars") 
+                  input#star2half name="rating" type="radio" value=("2 and a half") /
+                  label.half for="star2half" title=("Very Nice - 2.5 stars") 
+                  input#star2 name="rating" type="radio" value="2" /
+                  label.full for="star2" title=("Very Nice - 2 stars") 
+                  input#star1half name="rating" type="radio" value=("1 and a half") /
+                  label.half for="star1half" title=("Nice - 1.5 stars") 
+                  input#star1 name="rating" type="radio" value="1" /
+                  label.full for="star1" title=("Not Satisfied - 1 star") 
+                  input#starhalf name="rating" type="radio" value="half" /
+                  label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+              br
+                span.product-grid__price 
+                    | Rs. 500
+              .product-grid__extend-wrapper
+                .product-grid__extend
+                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
+                  span.product-grid__btn.product-grid__add-to-cart
+                    i.fa.fa-cart-arrow-down
+                    | Add to cart
+        .span6
+          .product-grid__product-wrapper
+            .product-grid__product
+              .product-grid__img-wrapper
+                img.product-grid__img alt="Img" src="assets/plant9.jpg" /
+              span.product-grid__title Pink Mini Orchid
+              span 
+                fieldset.rating
+                  input#star5 name="rating" type="radio" value="5" /
+                  label.full for="star5" title=("Awesome - 5 stars") 
+                  input#star4half name="rating" type="radio" value=("4 and a half") /
+                  label.half for="star4half" title=("Pretty good - 4.5 stars") 
+                  input#star4 name="rating" type="radio" value="4" /
+                  label.full for="star4" title=("Pretty good - 4 stars") 
+                  input#star3half name="rating" type="radio" value=("3 and a half") /
+                  label.half for="star3half" title=("Lovely - 3.5 stars") 
+                  input#star3 name="rating" type="radio" value="3" /
+                  label.full for="star3" title=("Lovely - 3 stars") 
+                  input#star2half name="rating" type="radio" value=("2 and a half") /
+                  label.half for="star2half" title=("Very Nice - 2.5 stars") 
+                  input#star2 name="rating" type="radio" value="2" /
+                  label.full for="star2" title=("Very Nice - 2 stars") 
+                  input#star1half name="rating" type="radio" value=("1 and a half") /
+                  label.half for="star1half" title=("Nice - 1.5 stars") 
+                  input#star1 name="rating" type="radio" value="1" /
+                  label.full for="star1" title=("Not Satisfied - 1 star") 
+                  input#starhalf name="rating" type="radio" value="half" /
+                  label.half for="starhalf" title=("Sucks big time - 0.5 stars") 
+              br
+                span.product-grid__price 
+                    | Rs. 500
+              .product-grid__extend-wrapper
+                .product-grid__extend
+                  p.product-grid__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis velit itaque odit.
+                  span.product-grid__btn.product-grid__add-to-cart
+                    i.fa.fa-cart-arrow-down
+                    | Add to cart
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
