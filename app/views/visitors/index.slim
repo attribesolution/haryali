@@ -1,15 +1,18 @@
 body.my-plants-body
   .banner-plants
     h1.my-plants-text #{current_user.name ? current_user.name.capitalize : current_user.email.capitalize}
-    p.my-plants-p You have donated only #{pluralize(@leads.size, 'plant')} so far, donate more for the sake of charity.
+    p.my-plants-p You have donated #{pluralize(@leads.size, 'plant')} so far, donate more for the sake of charity.
     a.rounded.plants-btn-color.my-plants-btn.btn href=yaad_path  Donate More!
     - @leads.each do |lead|
       .my-plants
         .div-header
-          p Updated #{time_ago_in_words(lead.created_at)} ago
+          - unless lead.updates.empty?
+            p Updated #{time_ago_in_words(lead.updates.last.created_at)} ago
+          - else
+            p Updated #{time_ago_in_words(lead.created_at)} ago
         .img-plant
-          - unless lead.plant.nil?
-            img src=lead.plant.image
+          - unless lead.updates.empty?
+            img src=lead.updates.last.image
           - else
             = image_tag "11.jpg"
         aside

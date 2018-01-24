@@ -1,12 +1,16 @@
 doctype html
 html
   head
+
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title
       = content_for?(:title) ? yield(:title) : 'Haryali • Hara Bhara Pakistan'
     meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Haryali'}"
     == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => 'reload'
     script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API_KEY']}&v=3&libraries=places" type="text/javascript"
+    script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" 
+    script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+
     == javascript_include_tag 'application', 'data-turbolinks-track' => 'reload'
     == csrf_meta_tags
     == favicon_link_tag '/favicon.ico'
@@ -121,6 +125,9 @@ html
                     li
                       a href=coupons_path
                         | Coupons
+                    li
+                      a href=categories_path
+                        | Categories
                   - else 
                     li
                       a href=haryali_locations_path Haryali Locations
@@ -133,16 +140,16 @@ html
                         a.dropdown-toggle data-toggle="dropdown" href="javascript:void(0)"
                           | Your Plants
                           span.glyphicon.glyphicon-log-in
-                        .dropdown-menu style="width: 240px;"
+                        .dropdown-menu style="width: 223px; "
                           = form_tag session_path(:user), class: 'form' do
                             .form-group style="font-size:11px;" 
-                              = text_field_tag 'user[email]', '', class: 'form-control form-control-lg', type: 'email', placeholder: 'Enter your Email', style: 'width:210px;'
+                              = text_field_tag 'user[email]', '', class: 'form-control form-control-lg', type: 'email', placeholder: 'Enter your Email', style: 'width:192px;'
                               = password_field_tag 'user[password]', 'password', hidden: true
-                            button.btn.btn-block.btn-sm style='background-color: #8ac53a; color:white; width:210px;padding: 11px; margin-top: -8%; margin-left: 5%; margin-bottom: 7px;' Sign In
+                            button.btn.btn-block.btn-sm style='background-color: #8ac53a; color:white; width:188px;padding: 11px; margin-top: -8%; margin-left: 3%; margin-bottom: 7px;' Sign In
                       li
                         a href=new_lead_path
                           .sticky-top.nav-btn 
-                            button.btn.btn-success.color-green.btn-sm type="button" Own a Tree
+                            button.btn.btn-success.color-green.btn-sm type="button" Own a Tree 
       #page-header.content-contrast
       
 

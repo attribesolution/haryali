@@ -1,9 +1,12 @@
 <h1>Dear Haryali user, <%= @lead.name %></h1>
 <p>
-  On <strong><%= @lead.created_at.strftime("%d-%m-%Y") %></strong>, you requested the plantation of <strong><%= @lead.quantity %> "<%= @lead.plant.name %>"</strong> at <strong><%= @lead.location.address %></strong>.<br/>
+  On <strong><%= @lead.created_at.strftime("%d-%m-%Y") %></strong>, you requested the plantation of <strong><%= @lead.quantity %> "<%= @lead.plant.name %>"</strong> at <strong><%= @lead.location.address %></strong>.
+  <br/>
+  <br/>
+  You have requested to collect the payment on <strong><%= @lead.payment_date.strftime('%D') %></strong> at <strong><%= @lead.payment_date.strftime('%r') %></strong> from <strong><%= @lead.address %></strong>.<br/>
 </p>
 <p>
-  This email is to inform you that your request has been confirmed.<br/>
+  This email is to inform you that your request has been confirmed and our staff will contact you shortly.<br/>
 </p>
 <p>Thank you for using Haryali and have a great day!</p>
 <%# haryali logo %>

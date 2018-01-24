@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830042945) do
+ActiveRecord::Schema.define(version: 20180109130546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "parent_id"
+  end
 
   create_table "coupons", force: :cascade do |t|
     t.string "code"
@@ -37,6 +44,10 @@ ActiveRecord::Schema.define(version: 20170830042945) do
     t.string "status", default: "Placed", null: false
     t.string "dedicate_type"
     t.string "dedicate_name"
+    t.datetime "payment_date"
+    t.string "comment"
+    t.datetime "planted_date"
+    t.boolean "archive", default: false
     t.index ["plant_id"], name: "index_leads_on_plant_id"
   end
 
@@ -48,7 +59,7 @@ ActiveRecord::Schema.define(version: 20170830042945) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "current", default: 0, null: false
-    t.integer "target", default: 0, null: false
+    t.integer "target", default: 1, null: false
     t.boolean "is_active", default: true
     t.string "optional_address"
     t.string "image"
@@ -64,6 +75,27 @@ ActiveRecord::Schema.define(version: 20170830042945) do
     t.boolean "is_available", default: true, null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.bigint "sub_category_id"
+    t.string "name"
+    t.string "image"
+    t.string "price"
+    t.string "rating"
+    t.string "description"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["sub_category_id"], name: "index_products_on_sub_category_id"
+  end
+
+  create_table "sub_categories", force: :cascade do |t|
+    t.bigint "category_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_sub_categories_on_category_id"
+  end
+
   create_table "timeline_events", force: :cascade do |t|
     t.string "title"
     t.string "caption"
@@ -71,6 +103,7 @@ ActiveRecord::Schema.define(version: 20170830042945) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "location_id"
+    t.bigint "lead_id"
     t.index ["location_id"], name: "index_timeline_events_on_location_id"
   end
 
@@ -120,6 +153,8 @@ ActiveRecord::Schema.define(version: 20170830042945) do
   end
 
   add_foreign_key "leads", "plants"
+  add_foreign_key "products", "sub_categories"
+  add_foreign_key "sub_categories", "categories"
   add_foreign_key "timeline_events", "locations"
   add_foreign_key "updates", "leads"
 end

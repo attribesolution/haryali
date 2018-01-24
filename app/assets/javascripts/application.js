@@ -19,6 +19,10 @@
 //= require bootstrap-sprockets
 //= require rails_script
 //= require cocoon
+//= require datetimepicker
 //= require greensock/TimelineLite
 //= require greensock/TweenMax
+//= require jquery-ui
 //= require_tree .
+
+

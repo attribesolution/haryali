@@ -5,8 +5,7 @@
     - else
       strong #{@location.address.split(',')[0]}
   br
-  .table-align
-    table.table.table-striped
+    table.table.table-striped style= "width:48%;"
       tbody
         tr
           td 
@@ -31,15 +30,15 @@
               .progress-bar.color role="progressbar" style="width:#{percentage(@location).ceil}%"
   input.lat#location_lat value=@location.lat type='hidden'
   input.lng#location_lng value=@location.lng type='hidden'
-  .map.map-align style=("width: 50%; height: 200px; margin-bottom:15px;") 
+  .map.map-align style=("width: 50%; height: 230px; margin-bottom:15px; margin-top: -23.7%;") 
   .input-group
     input#current_location placeholder="Enter Your Address" class="form-control"
     span
       button#get_directions class="btn btn-info" disabled="" Get Directions
   br
-    - if @location.timeline_events.any?
-      section#cd-timeline.cd-container.body-1
-        - @location.timeline_events.each do |event|
+    - if @timeline_events.any?
+      section#cd-timeline.cd-container.body-1 style="width:100%"
+        - @timeline_events.each do |event|
           .cd-timeline-block
             
             br
@@ -59,9 +58,10 @@
 
     - if current_user && current_user.role == 'admin' && @location && @location.type == "HaryaliLocation"
       br
-      = simple_form_for(@location, html: { class: 'form-horizontal' }) do |f|
+      = simple_form_for(@location, url: timeline_event_locations_path, :method => :put, html: { multipart: true, class: 'form-horizontal' }) do |f|
         #timeline_events
         .links
+          = f.hidden_field :location_id, value: @location.id
           = link_to_add_association '+ Add Event', f, :timeline_events, class: "btn btn-primary disabled", id: "add_event"
           = f.submit "Save", class: "btn btn-basic btn-gray", disabled: true, id: "save"
 

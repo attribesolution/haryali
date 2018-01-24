@@ -9,21 +9,56 @@ class App.HaryaliYaads extends App.Base
 
   index: =>
     $(document).ready ->
-      text_max = 14
+      # text_max = 14
+      text_min = 0
       $('#lead_dedicate_name').focus ->
         $(this).keyup ->
-           
-        $('#textarea_feedback').html '(' + text_max + ' /' +' 14)'
+        $('#textarea_feedback').html '(' + text_min + ' /' +' 30)'
         $('#lead_dedicate_name').keyup ->
           text_length = $('#lead_dedicate_name').val().length
-          text_remaining = text_max - text_length
-          if text_remaining >= 0
-            $('#textarea_feedback').html  '(' + text_remaining + ' /' +' 14)'
+          text_remaining = text_min + text_length
+
+          if text_remaining <= 30
+            $('#textarea_feedback').html  '(' + text_remaining + ' /' +' 30)'
           return
+ 
         $('#lead_dedicate_name').blur ->
           $('#textarea_feedback').hide()
           return
+        
+        $('#lead_dedicate_name').keyup ->
+          $('#name_plaque').css 'color', '#D4AF37'
+          return
+        $('#lead_dedicate_name').focusout ->
+          $('.name-text').css 'color', '#2f1902'
+          return
+        return
 
+      $('#lead_dedicate_name').keyup ->
+        textLength = this.value.length
+        if (textLength > 15 && textLength < 20)
+          console.log('less than 15');
+          $('.name-text').css 'font-size', '100%'
+        else if (textLength > 20 && textLength < 23)
+          console.log('greater than 20');
+          $('.name-text').css 'font-size', '90%'
+        else if (textLength > 23 && textLength < 27)
+          console.log('greater than 20');
+          $('.name-text').css 'font-size', '77%'
+        return
+
+      
+      $('.change-image').click ->
+        $('#myImg').attr 'src', 'assets/legacy_plant_hands.png'
+        return
+
+       
+    
+      $(document).ready ->
+        # Handler for .ready() called.
+        $('html, body').animate { scrollTop: $('.yaad-form').offset().top }, 'slow'
+        return
+            
       tl = new TimelineLite
       form = $('.sub-form')
       sub = $('.submit-under')
@@ -130,6 +165,11 @@ class App.HaryaliYaads extends App.Base
               #clearInterval(icon_loading)
               # Unhide 'Donate' Button 
 
+        document.getElementById('#hide-image').onclick = ->
+          document.getElementById('#loadingImage ').hide()
+          return  
+
+
       count = 1.8
       SpinLoader = ->
         value = 'flip+='+count
@@ -195,7 +235,7 @@ class App.HaryaliYaads extends App.Base
           maxlength: 20
         'lead[dedicate_name]':
           required: true
-          maxlength: 15
+          maxlength: 30
         'lead[contact]':
           required: true
           pkphone: true

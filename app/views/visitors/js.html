@@ -1,0 +1,29 @@
+<html>
+<head>
+  <style><!--
+.REmail {color:red}
+.BEmail {color:black}
+--></style>
+<script><!--
+function eFocus(field){
+if (field.value == 'enter email address'){
+field.value ='';
+}
+field.className="BEmail"
+}
+function eBlur(field){
+if (field.value == ''){
+field.value ='enter email address';
+field.className="REmail";
+}else{
+field.className="BEmail";
+}
+}
+// --></script>
+</head>
+
+<body>
+<input name="login" Class="REmail" onfocus="eFocus(this)" onblur="eBlur(this)" value="enter email address" type="text" size="30" maxlength="40" Class="REmail">
+
+</body>
+</html>

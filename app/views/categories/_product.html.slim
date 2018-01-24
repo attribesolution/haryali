@@ -1,0 +1,30 @@
+table.table.table-hover.table-hover
+  thead
+    tr
+      th Product Name
+      th Sub category
+      th Image
+      th Price
+      th Rating
+      th Description
+      th Comment
+      th Actions
+
+
+  tbody
+    - @products.each do |product|
+      tr
+        td = product.name
+        td = product.sub_category.name
+        td = image_tag product.image, class: "img-responsive2"
+        td = product.price
+        td = product.rating
+        td = product.description
+        td = product.comment
+        td  
+          = link_to 'Show', product, class: "btn-sm btn-primary"
+          |  
+          = link_to 'Edit', edit_product_path(product), class: "btn-sm btn-success"
+          |  
+          = link_to 'Destroy', product, data: { confirm: 'Are you sure?' }, method: :delete, class: "btn-sm btn-danger"
+

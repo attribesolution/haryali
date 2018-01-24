@@ -1,0 +1,107 @@
+ .flipcard {
+  position: relative;
+  height: 250px;
+  width: 350px;
+  perspective: 2000px;
+
+  &>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 40px 50px;
+    box-sizing: border-box;
+    transition: .6s ease-out transform;
+    backface-visibility: hidden; /* hides the front when rotated */
+
+    &:first-of-type {
+      z-index: 1;
+      background: #EBECED;
+      color: #333;
+    }
+    &:last-of-type {
+      background: #3D454C;
+      color: white;
+    }
+  }
+}
+
+/* other direction */
+.flipcard.left {
+  &>div {
+    &:last-of-type {
+      transform: rotateY(180deg);
+    }
+  }
+  &:hover {
+    &>div:first-of-type {
+      transform: rotateY(-180deg);
+    }
+    &>div:last-of-type {
+      transform: rotateY(0);
+    }
+  }
+}
+.flipcard.right {
+  &>div {
+    &:last-of-type {
+      transform: rotateY(-180deg);
+    }
+  }
+  &:hover {
+    &>div:first-of-type {
+      transform: rotateY(180deg);
+    }
+    &>div:last-of-type {
+      transform: rotateY(0);
+    }
+  }
+}
+
+.flipcard.up {
+  &>div {
+    &:last-of-type {
+      transform: rotateX(-180deg);
+    }
+  }
+  &:hover {
+    &>div:first-of-type {
+      transform: rotateX(180deg);
+    }
+    &>div:last-of-type {
+      transform: rotateX(0);
+    }
+  }
+}
+.flipcard.down {
+  &>div {
+    &:last-of-type {
+      transform: rotateX(180deg);
+    }
+  }
+  &:hover {
+    &>div:first-of-type {
+      transform: rotateX(-180deg);
+    }
+    &>div:last-of-type {
+      transform: rotateX(0);
+    }
+  }
+}
+
+/* prettyness */
+body {
+  margin: 50px;
+  font-family: "Lato", sans-serif;
+  line-height: 1.2;
+  h1 {
+    margin-top: auto;
+  }
+  .flipcard {
+    display: inline-block;
+    margin: 20px;
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato);

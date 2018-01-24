@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :products do
+    collection do
+      get :option
+    end
+  end
+  resources :sub_categories
+  resources :categories
   root to: 'haryali_locations#index'
   
   devise_for :users, skip: [:registrations], :controllers => {sessions: 'sessions'}
@@ -6,6 +13,10 @@ Rails.application.routes.draw do
   resources :leads, only: [:new, :create, :show, :index, :destroy] do
     collection do
       put :update_status
+      post :update_detail
+      # post :timeline_event
+      get :archive
+      post :payment_date_update
     end
   end
 
@@ -15,7 +26,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :locations, only: [:show, :new, :create, :index]
+  resources :locations, only: [:show, :new, :create, :index] do
+    collection do
+        put :timeline_event
+    end
+  end
 
   resources :haryali_locations, only: [:edit, :update, :index]
 
@@ -30,6 +45,10 @@ Rails.application.routes.draw do
       put :submit_form
     end
   end
+
+  get "cart" => "carts#cart"
+
+  get "your_cart" => "carts#your_cart"
 
   get 'yaad' => "haryali_yaads#index"
 

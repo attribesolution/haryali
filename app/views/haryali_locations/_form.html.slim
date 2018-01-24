@@ -27,5 +27,5 @@
       = link_to_add_association 'Add Event', f, :timeline_events, class: "btn btn-primary disabled", id: "add_event"
 
     .form-group
-      = link_to 'Cancel', locations_path, class: "btn btn-danger pull-left"
+      = link_to 'Cancel', location_path(@location.id), class: "btn btn-danger pull-left"
       = f.submit "Save", class: "btn btn-basic pull-left btn-gray"

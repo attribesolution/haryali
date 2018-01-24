@@ -10,14 +10,90 @@ h1 All Leads
       a.nav-link data-toggle="tab" href="#paid" role="tab" Paid (#{@leads_paid.size})
     li.nav-item
       a.nav-link data-toggle="tab" href="#planted" role="tab" Planted (#{@leads_planted.size})
+
+
   .tab-content
     #placed.tab-pane.active role="tabpanel"
       = render partial: 'table', locals: { leads: @leads_placed, update: false }
     #confirmed.tab-pane role="tabpanel"
       = render partial: 'table', locals: { leads: @leads_confirmed, update: false }
+     
     #paid.tab-pane role="tabpanel"
       = render partial: 'table', locals: { leads: @leads_paid, update: false }
     #planted.tab-pane role="tabpanel"
       = render partial: 'table', locals: { leads: @leads_planted, update: true }
+
+    
 - else 
   h3 No Submissions Recieved 
+
+
+#myModal1.modal aria-hidden="true" role="dialog" tabindex="-1" 
+  .modal-dialog role="document" 
+    .modal-content
+      .modal-header
+        button.close class="close-modal" data-dismiss="modal" type="button"  &times;
+        h4.modal-title Add Customer Details
+      .modal-body
+        = form_tag update_detail_leads_path, id: "confirm_status_form"do
+          label.col-form-label Select a date
+          .input-group
+            input.form-control.fetched-date  name="payment_date" type="text" placeholder="Choose a date"
+
+          .form-group
+            label.col-form-label for="recipient-name"  Address
+            input#address.form-control  name="address" type="text" /
+          .form-group
+            label.col-form-label for="message-text"  Comments
+            textarea#comment.form-control name="comment"
+          input.form-control.lead-id name="lead_id" type="hidden"
+
+          .modal-footer
+            button.btn.btn-secondary class="close-modal" data-dismiss="modal" type="button" style="background-color: darkgrey; cursor:pointer;" Close 
+            = submit_tag "Save", class: "btn btn-primary", style: "cursor:pointer;"
+
+
+/! modal 2
+#myModal2.modal aria-hidden="true" role="dialog" tabindex="-1" 
+  .modal-dialog role="document" 
+    .modal-content
+      .modal-header
+        button.close class="close-modal" data-dismiss="modal" type="button"  &times;
+        h4.modal-title Add Customer Details
+      .modal-body
+        = form_tag updates_path, :multipart => true, id: "planted_status_form" do
+          label.col-form-label Select a date
+          .input-group
+            input.form-control.fetched-date  name="planted_date" type="text" placeholder="Choose a date"
+
+          .form-group
+            label.col-form-label for="message-text"  Comments
+            textarea#comment.form-control name="comment"
+          input.form-control.lead-id name="lead_id" type="hidden"
+
+          / .form-group action="#" method="POST" 
+            input type="image" src="public/uploads" alt="submit"
+          input name="image" type="file" id="file" style="cursor: pointer; margin-left:3%;"
+          .modal-footer
+            button.btn.btn-secondary class="close-modal" data-dismiss="modal" type="button" style="background-color: darkgrey; cursor:pointer;" Close 
+            = submit_tag "Save", class: "btn btn-primary", style: "cursor:pointer;"
+ 
+            / button.btn.btn-primary.save name=2 type="button" style="cursor:pointer;" Save
+
+
+#myModal3.modal aria-hidden="true" role="dialog" tabindex="-1" 
+  .modal-dialog role="document" 
+    .modal-content
+      .modal-header
+        button.close class="close-modal" data-dismiss="modal" type="button"  &times;
+        h4.modal-title Update Payment Date
+      .modal-body
+        = form_tag payment_date_update_leads_path, :multipart => true, id: "update_payment_date" do
+          label.col-form-label Select a date
+          .input-group
+            input.form-control.fetched-date  name="new_payment_date" type="text" placeholder="Choose a date"
+            input.form-control.lead-id name="lead_id" type="hidden"
+
+          .modal-footer
+            button.btn.btn-secondary class="close-modal" data-dismiss="modal" type="button" style="background-color: darkgrey; cursor:pointer;" Close 
+            = submit_tag "Save", class: "btn btn-primary", style: "cursor:pointer;" 

@@ -10,5 +10,6 @@ class VisitorsController < ApplicationController
   # GET /visitors/id 
   def show
     @lead = Lead.find_by_id(params[:id])
+    @updates = @lead.updates.order(created_at: :DESC)
   end
 end

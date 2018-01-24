@@ -5,6 +5,7 @@ class LocationsController < ApplicationController
 
   # GET /locations/1
   def show
+    @timeline_events = @location.timeline_events.order(created_at: :DESC)
   end
 
   # GET /locations/new
@@ -28,6 +29,15 @@ class LocationsController < ApplicationController
   # GET /locations 
   def index
     @locations = HaryaliLocation.all.order(:created_at)
+  end
+
+  def timeline_event
+    @location = Location.find(params[:haryali_location][:location_id])
+    params[:haryali_location][:timeline_events_attributes].values.each do |event|
+      timeline_event = TimelineEvent.new(title: event[:title], caption: event[:caption], image: event[:image], location_id: @location.id)
+      timeline_event.save
+    end
+    redirect_to location_path(@location)
   end
 
   private

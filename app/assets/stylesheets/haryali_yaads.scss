@@ -1,29 +1,35 @@
 .yaad {
+    
+   
+    background-attachment: scroll;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url(/assets/bg1-0e4a2c9bea1b47cf839b321ad3db20f8159515a938b528e9e3d74462814068cf.jpg);
-    background-attachment: scroll;
     padding-bottom: 120px;
     margin-bottom: -80px;
-    margin-left: -19%;
-    margin-right: -9.5%;
+    margin-left: -13%;
+    margin-right: -9.4%;
     background-position: center center;
     width: 128.1.2% !important;
+   background-image: url(/assets/download.jpg);
+    /*background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: fill;
+    background-attachment: fixed;
+    margin: 0;*/
 }
 
 
 .banner {
     font-size: 16px;
-    background-color: rgba(255,255,255,0.8);
+    
     position: relative;
     text-align: center;
     margin-top: -100px;
-    padding-top: 2%;
+    
     padding-bottom: 2%;
-    margin-left: -56%;
-    padding-left: 42%;
+    
     overflow-x: hidden;
-    width: 156.1%;
+  
     overflow-y: hidden;
 }
 
@@ -77,12 +83,13 @@
   margin-bottom: 50px;
   position: relative;
   z-index: 10;
-  padding: 10% 2% 4% 2%;
+  padding: 10% 2% 6% 2%;
   left: 15%;
   line-height:0px;
   margin-left: 0px;
   opacity: 0.85;
   line-height: 0px;
+  height: 770px;
   h2 {
     text-transform: uppercase;
     text-align: center;
@@ -99,10 +106,14 @@
      padding: 0;
      font-weight: bold;
      font-size: 27px;
+    visibility: visible; 
+    opacity: 1; 
+    transform: matrix(1, 0, 0, 1, 0, 0); 
+
     }
   }
   p.success-dialog {
-    margin-top: -150px;
+    margin-top: -200px;
     color: #fff;
     letter-spacing: 0.02em;
     text-align: center;
@@ -129,8 +140,8 @@
     border: 1px solid #77a43e;
     padding-top: 8px;
     padding-bottom: 8px;
-    text-transform: uppercase;
-    font-size: 11px;
+    
+    font-size: 14px;
     position: relative;
     z-index: 500;
     letter-spacing: 0.06em;
@@ -191,9 +202,9 @@
 }
 
 .circle-paper {
-  border: 1px solid #9ac0ba;
-  background: #5d978e;
-  padding-left: 12px;
+  border: 2px solid #77a43e;
+  background: #fff;
+  padding-left: 13px;
 }
 
 .submit-under, .loader, .loader2, .circle-paper, p.success-dialog, h2.success {
@@ -219,19 +230,19 @@
 
 .name-plaque {
   float: right;
-  margin-top: -22.7%;
+  margin-top: -20.9%;
   padding-left: 52%;
   width: 100%;
 }
 
 .name-text {
     text-transform: capitalize;
-    font-size: 25px;
+    font-size: 18px;
     font-weight: bold;
     color: #fff;
     text-align: center;
     color: #2b1503;
-    margin-top: -1%;
+    margin-top: -4%;
 }
 
 #textarea_feedback {
@@ -247,6 +258,10 @@
 .section {
   margin-left: 0px;
   margin-right: 0px;
+}
+
+.close-modal {
+  background-color:red;
 }
 
 /* Form end */
@@ -280,6 +295,66 @@
   }
 }
 
+@media (min-width: 1301px) and (max-width: 1350px) 
+{
+  .yaad 
+  {
+    margin-right: -9.3%;
+    margin-left: -9%;
+  }
+
+}
+
+@media (min-width: 1350px) and (max-width: 1360px) 
+{
+.yaad {
+    
+    margin-left: -13%;
+    margin-right: -9%;
+    
+ }
+}
+@media (min-width: 770px) and (max-width: 991px) 
+{
+  
+  .yaad {
+    
+    margin-left: -22%;
+    margin-right: -22.9%;
+   
+}
+.banner {
+    
+    margin-top: 35px;
+    padding-bottom: 2%;
+
+.yaad-form form {
+      
+        width: 28%;
+        padding: 10% 2% 8% 2%;
+      }
+}
+
+}
+@media (min-width: 1302px) and (max-width: 1370px) 
+{
+  
+  .yaad {
+    
+    margin-left: -19%;
+    margin-right: -12.4%;
+   
+}
+.banner {
+    
+    margin-top:-7%;
+    padding-left: 0%;
+    margin-left: 0%;
+
+
+}
+
+}
 /*Form End*/
 
 /* Name Plaque */
@@ -291,8 +366,9 @@
 
 @font-face {
   font-family: "Latin Modern Mono";
-  src: url(/assets/fonts/lmmono10-regular.otf) format("truetype");
+  src: url(/assets/lmmono10-regular.otf) format("truetype");
 }
+
 
 
 @media screen and (max-width: 520px) and (min-width: 320px) {
@@ -307,7 +383,7 @@
     max-width: 100%;
     width: 189% !important;
     margin-left: 1%;
-    margin-top: -29%;
+    margin-top: -39%;
     margin-bottom: 13%;
 }
 .yaad-form form {
@@ -355,3 +431,4 @@
     height: 96px;
   }
 }
+

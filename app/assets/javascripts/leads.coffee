@@ -12,14 +12,68 @@ class App.Leads extends App.Base
     while $('#status').length == 1
       $('#status')[0].id = "status"+count
       $('#status' + count).change ->
-        $.ajax
-          url: '/leads/update_status'
-          type: 'put'
-          data: 
-            'id': $(this).attr 'name'
-            'status': this.options[this.selectedIndex].text 
+        
+        if $(this).val() == "1"          
+          $('#myModal1').show()
+          $("#myModal1 .lead-id").val(this.name)
+        
+        if $(this).val() == "3"          
+          $('#myModal2').show()
+          $("#myModal2 .lead-id").val(this.name)
+        if $(this).val() == "2" || $(this).val() == "0" 
+          $.ajax
+            url: '/leads/update_status'
+            type: 'put'
+            data: 
+              'id': $(this).attr 'name'
+              'status': this.options[this.selectedIndex].text 
+            success: 
+              window.location.href = '/leads';
       count++
+
+    $('.payment_date_update').click ->
+      $('#myModal3').show()
+      $("#myModal3 .lead-id").val(this.name)
+
+    # $('#status').change ->
+    #   if $(this).val() == "1"          
+    #     $('#myModal1').show()        
+    #   if $(this).val() == "3"          
+    #     $('#myModal2').show()
+    #   $.ajax
+    #     url: '/leads/update_status'
+    #     type: 'put'
+    #     data: 
+    #       'id': $(this).attr 'name'
+    #       'status': this.options[this.selectedIndex].text 
+     
+    $('.fetched-date').datetimepicker()
+
+    $('.close-modal').click ->
+      $('.modal').hide()
+      window.location.href = '/leads'
+
+    $('#planted_status_form').validate 
+      rules: 
+        'planted_date':
+          required: true
+        'image':
+          required: true
+
+    $('#confirm_status_form').validate 
+      rules: 
+        'payment_date':
+          required: true
+        'address':
+          required: true
+
+    $('#update_payment_date').validate 
+      rules: 
+        'new_payment_date':
+          required: true
     return
+
+        
 
   show: =>
     return
