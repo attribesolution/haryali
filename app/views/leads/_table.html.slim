@@ -17,6 +17,9 @@ table.table.table-hover.table-responsive
       - if lead.payment_date && lead.payment_date.strftime('%D') == Date.today.strftime('%D')
         tr class="alert alert-success" 
           = render partial: 'rows', locals: { lead: lead, update: update }
+      - elsif lead.payment_date && lead.payment_date.strftime('%D') < Date.today.strftime('%D')
+        tr class="alert alert-danger" 
+          = render partial: 'rows', locals: { lead: lead, update: update }
       - else
         tr
           = render partial: 'rows', locals: { lead: lead, update: update }

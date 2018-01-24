@@ -49,6 +49,7 @@ class App.Leads extends App.Base
 
     $('.close-modal').click ->
       $('.modal').hide()
+      window.location.href = '/leads'
 
     $('#planted_status_form').validate 
       rules: 

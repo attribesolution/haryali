@@ -34,7 +34,7 @@ td
 td = (!lead.coupon_id.nil?).to_s.capitalize 
 td = select_tag "status", options_for_select(Lead.status_types, Lead.status_types[lead.status]), name: lead.id
 td 
-  - if lead.payment_date && lead.payment_date.strftime('%D') == Date.today.strftime('%D')
+  - if lead.payment_date && lead.payment_date.strftime('%D') < Date.today.strftime('%D')
     = link_to 'Date', "#" , class: "btn-sm btn-success payment_date_update", name:lead.id
     |  
   = link_to 'Archive', archive_leads_path(lead_id: lead.id), class: "btn-sm btn-danger"

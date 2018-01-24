@@ -49,8 +49,6 @@ class App.Carts extends App.Base
 
   cart: =>
     $(".subcategory").click ->
-      $('li').removeClass('active');
-      $(this).addClass('active');
       $.ajax
         type: 'get'
         url: '/cart'
