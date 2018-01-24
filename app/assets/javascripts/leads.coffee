@@ -27,23 +27,25 @@ class App.Leads extends App.Base
             data: 
               'id': $(this).attr 'name'
               'status': this.options[this.selectedIndex].text 
+            success: 
+              window.location.href = '/leads';
       count++
 
     $('.payment_date_update').click ->
       $('#myModal3').show()
       $("#myModal3 .lead-id").val(this.name)
 
-    $('#status').change ->
-      if $(this).val() == "1"          
-        $('#myModal1').show()        
-      if $(this).val() == "3"          
-        $('#myModal2').show()
-      $.ajax
-        url: '/leads/update_status'
-        type: 'put'
-        data: 
-          'id': $(this).attr 'name'
-          'status': this.options[this.selectedIndex].text 
+    # $('#status').change ->
+    #   if $(this).val() == "1"          
+    #     $('#myModal1').show()        
+    #   if $(this).val() == "3"          
+    #     $('#myModal2').show()
+    #   $.ajax
+    #     url: '/leads/update_status'
+    #     type: 'put'
+    #     data: 
+    #       'id': $(this).attr 'name'
+    #       'status': this.options[this.selectedIndex].text 
      
     $('.fetched-date').datetimepicker()
 

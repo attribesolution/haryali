@@ -43,42 +43,42 @@
 
 
 
-br
-  br
-  #carouselExampleControls.carousel.slide.carousel-setting data-ride="carousel" 
-    .carousel-inner role="listbox" 
-      .carousel-item.active
-        img.d-block.img-fluid alt=("First slide") src="assets/Take-Root-Tree-2.jpg" /
-      .carousel-item
-        img.d-block.img-fluid alt=("Second slide") src="assets/Take-Root-Tree-2.jpg"
-      .carousel-item
-        img.d-block.img-fluid alt=("Third slide") src="assets/Take-Root-Tree-2.jpg"
-      a.carousel-control-prev data-slide="prev" href="#carouselExampleControls" role="button" 
-        span.carousel-control-prev-icon aria-hidden="true" 
-        span.sr-only Previous
-      a.carousel-control-next data-slide="next" href="#carouselExampleControls" role="button" 
-        span.carousel-control-next-icon aria-hidden="true" 
-        span.sr-only Next
+#carouselExampleIndicators.carousel.slide data-ride="carousel" 
+  ol.carousel-indicators
+    li.active data-slide-to="0" data-target="#carouselExampleIndicators" 
+    li data-slide-to="1" data-target="#carouselExampleIndicators" 
+    li data-slide-to="2" data-target="#carouselExampleIndicators" 
+  .carousel-inner
+    .carousel-item.active
+      img.d-block.w-100 alt=("First slide") class=".=img-responsive" src="assets/Take-Root-Tree-2.jpg" /
+    .carousel-item
+      img.d-block.w-100 alt=("Second slide") src="assets/Take-Root-Tree-2.jpg" /
+    .carousel-item
+      img.d-block.w-100 alt=("Third slide") src="assets/Take-Root-Tree-2.jpg" /
+  a.carousel-control-prev data-slide="prev" href="#carouselExampleIndicators" role="button" 
+    span.carousel-control-prev-icon aria-hidden="true" 
+    span.sr-only Previous
+  a.carousel-control-next data-slide="next" href="#carouselExampleIndicators" role="button" 
+    span.carousel-control-next-icon aria-hidden="true" 
+    span.sr-only Next
+
 .row
-  
   h4.title
     span.text.text-center
       strong Featured
       |  Products  
-  
-.page
-  .main        
-    .row
-      
-      nav#menu.pull-right style="margin-left:-40px;"
-        ul#products
-          - @categories.each do |category|
-            li class="#{'active' if category == @categories.first} category"
-              .dropdown
-                button.dropbtn #{category.name}
-                .dropdown-content
-                  - category.sub_categories.each do |sub|
-                    a href="#products" class="subcategory" id=sub.id #{sub.name} 
+
+ 
+      / nav#menu.pull-right style="margin-left:-40px;"
+    nav#menu
+      ul#products
+        - @categories.each do |category|
+          li class="#{'active' if category == @categories.first} category"
+            .dropdown
+              button.dropbtn #{category.name}
+              .dropdown-content
+                - category.sub_categories.each do |sub|
+                  a href="#products" class="subcategory" id=sub.id #{sub.name} 
             / li
             /   a href="./products.html"  Indoor Plants
             / li
@@ -134,7 +134,7 @@ br
                 a href="#"  Link 1
                 a href="#"  Link 2
                 a href="#"  Link 3  
-    .product-grid.product-grid--flexbox
+    / .product-grid.product-grid--flexbox
       .product-grid__wrapper
         = render partial: 'product', locals: { products: @products, update: false }
         /! Product list start here
@@ -180,50 +180,31 @@ br
                 
 
 
-    .sidebar
-      .span4.col
-        .block style="    margin-top: -352%;"
-          h4 YOUR ORDER
-          p You haven’t added anything to your cart yet! Start adding your favourite plants.
-          table.table style="text-align:left; margin-left:-5px;"
-            tbody
-              tr
-                th scope="row"  
-                td Delivery Fee
-                td PKR 0.00
-              tr
-                th scope="row"  
-                td Quantity
-                td 2
-              tr
-                th scope="row"  
-                td 
-                  strong
-                    | Total Amount
-                td PKR 0.00
-      
-          button.btn.btn-success.btn-lg.btn-block href="" style="width: 280px; cursor:pointer; background-color:#90C64A;" type="button"  Checkout
-
-        .block 
-          h4.title
-            span.pull-left
-              span.text Best Sellers
-            span.pull-right
-              a.left.button data-slide="prev" href="#myCarousel" 
-              a.right.button data-slide="next" href="#myCarousel" 
-          #myCarousel.carousel.slide
-            .carousel-inner
-              .item
-                ul.thumbnails.listing-products
-                  .span3
-                    .product-box
-                      a href="product_detail.html" 
-                        img alt="" src="assets/bamboo.jpg" /
-                      br/
-                      a.title href="product_detail.html"  Tempor sem sodales
-                      br/
-                      a.category href="#"  Urna nec lectus mollis
-                      p.price $134
-  
-           
- 
+.cart-content
+  .container
+    .row
+      .col-md-4
+        .block
+          .list-group.disabed style="width: 100% !important"
+              h4 YOUR ORDER
+              p You haven’t added anything to your cart yet! Start adding your favourite plants.
+              table.table style="text-align:left; margin-left:-5px;"
+                tbody
+                  tr
+                    th scope="row"  
+                    td Delivery Fee
+                    td PKR 0.00
+                  tr
+                    th scope="row"  
+                    td Quantity
+                    td 2
+                  tr
+                    th scope="row"  
+                    td 
+                      strong
+                        | Total Amount
+                    td PKR 0.00
+              a.btn.continue.checkout-btn.text-center href="#"  Checkout
+      .col-md-8
+        .product-grid__wrapper
+          = render partial: 'product', locals: { products: @products, update: false }
