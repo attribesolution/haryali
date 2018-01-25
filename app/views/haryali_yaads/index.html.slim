@@ -13,7 +13,9 @@
           svg.paper enable-background=("new 0 0 25.125 25.125") height="25.1" viewbox=("0 0 25.1 25.1") width="25.1" x="0" xml:space="preserve" y="0" 
             path d="M0,25C3.125,15.625,11.304,0,25,0c-6.421,5.151-9.375,17.188-14.062,17.188s-4.688,0-4.688,0L1.562,25H0z" fill="#77a43e" /
         h2.info.yaad-form Plant a tree in the name of your loved one's.
-        img#myImg src="assets/tree-animated.gif" /
+        / img#myImg src="assets/tree-animated.gif" /
+        = image_tag "tree-animated.gif", id: "myImg"
+        = image_tag "legacy_plant_hands.png", id: "myImg1", hidden: true
         h2.success.yaad-form Thank You!
         br 
 

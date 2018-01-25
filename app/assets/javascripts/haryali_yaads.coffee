@@ -49,7 +49,8 @@ class App.HaryaliYaads extends App.Base
 
       
       $('.change-image').click ->
-        $('#myImg').attr 'src', 'assets/legacy_plant_hands.png'
+        $('#myImg').hide()
+        $('#myImg1').prop('hidden', false)
         return
 
        
