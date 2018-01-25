@@ -58,8 +58,8 @@ class LeadsController < ApplicationController
     else
       @leads = false
     end
-    @leads_placed = Lead.where(status: :Placed, archive: false).order(payment_date: :asc)
-    @leads_confirmed = Lead.where(status: :Confirmed, archive: false).order(payment_date: :asc)
+    @leads_placed = Lead.where(status: :Placed, archive: false).order(created_at: :desc)
+    @leads_confirmed = Lead.where(status: :Confirmed, archive: false).order(updated_at: :desc)
     @leads_paid = Lead.where(status: :Paid, archive: false).order(payment_date: :asc)
     @leads_planted = Lead.where(status: :Planted, archive: false).order(payment_date: :asc)
   end
