@@ -7,4 +7,7 @@ class CartsController < ApplicationController
   def your_cart
   end
 
+  def payment_details
+  end
+
 end

@@ -534,7 +534,7 @@ h4.title{
   width:100%;
   margin-top: 35px;
   padding-top: 20px;
-  padding-bottom: 60px;
+ 
 }
 h4.title.m{
   margin-top:25px;  
@@ -1485,4 +1485,33 @@ a.remove:hover {
 
 .quantity-form {
   width: 70%;
+}
+
+/* payment details */
+.custom-control {
+    position: relative;
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5rem;
+}
+.custom-control-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.delete-item {
+    float: right;
+    color: #ff000d;
+}
+
+.kababjees-minicart .cart-total {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 5px 0px;
+    border-top: #e5e5e5 solid 1px;
+}
+
+#menu {
+  margin-left: 18%;
 }

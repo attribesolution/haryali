@@ -1,18 +1,4 @@
 
-/ #carouselExampleControls.carousel.slide.carousel-setting data-ride="carousel" 
-/   .carousel-inner role="listbox" 
-/     .carousel-item.active
-/       img.d-block.img-fluid alt=("First slide") src="assets/Take-Root-Tree-2.jpg" /
-/     .carousel-item
-/       img.d-block.img-fluid alt=("Second slide") src="assets/cart-banner2.jpg" /
-/     .carousel-item
-/       img.d-block.img-fluid alt=("Third slide") src="assets/cart-banner3.jpg" /
-/     a.carousel-control-prev data-slide="prev" href="#carouselExampleControls" role="button" 
-/       span.carousel-control-prev-icon aria-hidden="true" 
-/       span.sr-only Previous
-/     a.carousel-control-next data-slide="next" href="#carouselExampleControls" role="button" 
-/       span.carousel-control-next-icon aria-hidden="true" 
-/       span.sr-only Next
 
 #carouselExampleIndicators.carousel.slide data-ride="carousel" 
   ol.carousel-indicators
@@ -39,7 +25,7 @@
       strong Featured
       |  Products  
 
- 
+  br
     nav#menu.pull-right
       ul
         li
@@ -98,22 +84,22 @@
           .list-group.disabed style="width: 100% !important"
               h4 YOUR ORDER
               p You haven’t added anything to your cart yet! Start adding your favourite plants.
+              hr/
               table.table style="text-align:left; margin-left:-5px;"
                 tbody
                   tr
-                    th scope="row"  
-                    td Delivery Fee
-                    td PKR 0.00
-                  tr
-                    th scope="row"  
-                    td Quantity
-                    td 2
-                  tr
-                    th scope="row"  
-                    td 
+                    .cart-item
+                      input#item_quantity_21289.quantity min="1" onchange="updateItemQuantity(jQuery(this), 21289, true)" style="width:60px" type="number" value="1" /
+                      span   Supereme Nachos
+                      span.delete-item.r.remove onclick="removeItem(jQuery(this), 21289, true)" 
+                        | Rs. 499 &nbsp;
+                        i.fa.fa-close
+                      hr/
+                      hr/
                       strong
-                        | Total Amount
-                    td PKR 0.00
+                        .cart-total Subtotal: Rs. 499.00
+                      
+
               a.btn.continue.checkout-btn.text-center href="#"  Checkout
       .col-md-8
         .span6
