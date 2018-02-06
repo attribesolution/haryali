@@ -24,16 +24,16 @@
 /* Block 
 ----------------------------------------------------------------------------- */
 .block {
-  text-align: center;
-  padding: 7px;
-  border: 1px solid #ddd;
-  border-top: 3px solid #87ba45;;
-  -moz-box-shadow: 0 0 3px 0 #ccc;
-  -webkit-box-shadow: 0 0 3px 0 #ccc;
-  box-shadow: 0 0 3px 0 #ccc;
-  margin-bottom: 20px;
-      border-bottom-left-radius: 25px;
+     text-align: center;
+    padding: 15px 7px;
+    border: 1px solid #ddd;
+    border-top: 3px solid #87ba45;
+    -webkit-box-shadow: 0 0 3px 0 #ccc;
+    box-shadow: 0 0 3px 0 #ccc;
+    margin-bottom: 20px;
+    border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
+    margin-top: 5%;
 }
 .small-product {
   margin: 0;
