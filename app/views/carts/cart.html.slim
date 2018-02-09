@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 / #top-bar.container
 /   .row
 /     .span4
@@ -41,9 +42,7 @@
 /           li
 /             a href="./products.html"  Top Seller
 
-
-
-#carouselExampleIndicators.carousel.slide data-ride="carousel" 
+#carouselExampleIndicators.carousel.slide.carousal-position data-ride="carousel" 
   ol.carousel-indicators
     li.active data-slide-to="0" data-target="#carouselExampleIndicators" 
     li data-slide-to="1" data-target="#carouselExampleIndicators" 
@@ -67,7 +66,6 @@
     span.text.text-center
       strong Featured
       |  Products  
-
  
       / nav#menu.pull-right style="margin-left:-40px;"
     nav#menu
@@ -178,8 +176,6 @@
                 
         /! end Single product
                 
-
-
 .cart-content
   .container
     .row
@@ -188,22 +184,22 @@
           .list-group.disabed style="width: 100% !important"
               h4 YOUR ORDER
               p You haven’t added anything to your cart yet! Start adding your favourite plants.
+              hr/
               table.table style="text-align:left; margin-left:-5px;"
                 tbody
                   tr
-                    th scope="row"  
-                    td Delivery Fee
-                    td PKR 0.00
-                  tr
-                    th scope="row"  
-                    td Quantity
-                    td 2
-                  tr
-                    th scope="row"  
-                    td 
+                    .cart-item
+                      input#item_quantity_21289.quantity min="1" onchange="updateItemQuantity(jQuery(this), 21289, true)" style="width:60px;" type="number" value="1" /
+                      span   Pink Mini Orchid
+                      span.delete-item.r.remove onclick="removeItem(jQuery(this), 21289, true)" 
+                        | Rs. 499 &nbsp;
+                        i.fa.fa-close
+                      hr/
+                      hr/
                       strong
-                        | Total Amount
-                    td PKR 0.00
+                        .cart-total Subtotal: Rs. 499.00
+
+
               a.btn.continue.checkout-btn.text-center href="#"  Checkout
       .col-md-8
         .product-grid__wrapper

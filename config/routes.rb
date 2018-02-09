@@ -52,6 +52,8 @@ Rails.application.routes.draw do
 
   get 'yaad' => "haryali_yaads#index"
 
+   get "payment_details" => "carts#payment_details"
+
   namespace :haryali_location_api, defaults: { format: :json } do
     namespace :v1 do
       resources :haryali_locations, only: [:index, :show]
