@@ -240,6 +240,7 @@ GEM
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     gmaps4rails (2.1.2)
+    google-analytics-rails (1.1.1)
     greensock-rails (1.20.2.0)
     i18n (0.8.4)
     inflecto (0.0.2)
@@ -464,6 +465,7 @@ DEPENDENCIES
   font-awesome-rails
   foreman
   gmaps4rails
+  google-analytics-rails (= 1.1.1)
   greensock-rails (~> 1.19)
   jbuilder (~> 2.5)
   jquery-rails
@@ -500,4 +502,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.15.1
+   1.16.1

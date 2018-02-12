@@ -9,6 +9,7 @@ development:
   AWS_ACCESS_KEY: aws_access_key
   AWS_SECRET_KEY: aws_secret_key
   AWS_BUCKET_NAME: development_bucket_name
+  GA_TRACKING_ID: UA-XXXXXXX-1
 
 test:
   GMAIL_USERNAME: gmail_email
@@ -32,3 +33,4 @@ production:
   AWS_ACCESS_KEY: aws_access_key
   AWS_SECRET_KEY: aws_secret_key
   AWS_BUCKET_NAME: production_bucket_name
+  GA_TRACKING_ID: UA-XXXXXXXXX-1

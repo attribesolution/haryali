@@ -68,3 +68,4 @@ group :test do
   gem 'database_cleaner'
   gem 'launchy'
 end
+gem 'google-analytics-rails', '1.1.1'
